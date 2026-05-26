@@ -1,0 +1,2348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dell XPS 15 - Product Details | Akku Electronics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/product-detail.css">
+</head>
+<body class="dark-theme">
+    <!-- Header -->
+    <header class="header">
+        <!-- Main Header (Sticky) -->
+        <div class="header__main">
+            <div class="container">
+                <a href="index.html" class="header__logo">
+                    <img src="assets/images/logo.png" alt="AKKU Electronics">
+                </a>
+
+                <!-- Search Bar -->
+                <div class="header__search">
+                    <input type="text" placeholder="Search for products, brands and more...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+
+                <!-- Header Actions -->
+                <div class="header__actions">
+                    <!-- Language & Currency Button -->
+                    <button class="header__settings-btn" id="openSettingsModal">
+                        <i class="fas fa-globe"></i>
+                        <span>EN / NPR</span>
+                    </button>
+
+                    <!-- Wishlist -->
+                    <a href="#" class="header__action-item" aria-label="Wishlist" title="Wishlist">
+                        <i class="fas fa-heart"></i>
+                    </a>
+
+                    <!-- Cart -->
+                    <a href="#" class="header__action-item" aria-label="Shopping Cart (5 items)" title="Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge">5</span>
+                    </a>
+
+                    <!-- Login Button -->
+                    <a href="#" class="header__login-btn">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Login</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="header__menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation (Not Sticky) -->
+        <nav class="header__nav" id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="#">Laptops</a></li>
+                <li><a href="#">Mobiles</a></li>
+                <li><a href="#">Accessories</a></li>
+                <li><a href="#">Deals</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <i class="fas fa-home"></i>
+            <a href="index.html">Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <a href="products.html">Products</a>
+            <i class="fas fa-chevron-right"></i>
+            <a href="#">Laptops</a>
+            <i class="fas fa-chevron-right"></i>
+            <span class="current">Dell XPS 15</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="product-detail">
+        <div class="container">
+            <div class="product-detail__wrapper row">
+                <!-- Product Images -->
+                <div class="product-detail__images col-12 col-md-4">
+                    <div class="product-detail__main-image">
+                        <img id="mainImage" src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&h=500&fit=crop&q=80" alt="Dell XPS 15">
+                        <span class="product-detail__badge">New Arrival</span>
+
+                        <!-- Navigation Arrows -->
+                        <button class="image-nav image-nav--prev" onclick="navigateImage(-1)">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="image-nav image-nav--next" onclick="navigateImage(1)">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+
+                        <!-- Zoom Button -->
+                        <button class="image-zoom-btn" onclick="openImageZoom()">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </div>
+                    <div class="product-detail__thumbnails row">
+                        <div class="col-3 col-md-3">
+                            <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=100&h=80&fit=crop&q=80"
+                                 data-large="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=1200&h=1000&fit=crop&q=80"
+                                 alt="Front view" class="active" onclick="changeImage(this, 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&h=500&fit=crop&q=80', 0)">
+                        </div>
+                        <div class="col-3 col-md-3">
+                            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=100&h=80&fit=crop&q=80"
+                                 data-large="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=1200&h=1000&fit=crop&q=80"
+                                 alt="Side view" onclick="changeImage(this, 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&h=500&fit=crop&q=80', 1)">
+                        </div>
+                        <div class="col-3 col-md-3">
+                            <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=100&h=80&fit=crop&q=80"
+                                 data-large="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=1200&h=1000&fit=crop&q=80"
+                                 alt="Keyboard view" onclick="changeImage(this, 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&h=500&fit=crop&q=80', 2)">
+                        </div>
+                        <div class="col-3 col-md-3">
+                            <img src="https://images.unsplash.com/photo-1484788984921-03950022c9ef?w=100&h=80&fit=crop&q=80"
+                                 data-large="https://images.unsplash.com/photo-1484788984921-03950022c9ef?w=1200&h=1000&fit=crop&q=80"
+                                 alt="Angled view" onclick="changeImage(this, 'https://images.unsplash.com/photo-1484788984921-03950022c9ef?w=600&h=500&fit=crop&q=80', 3)">
+                        </div>
+                        <div class="col-3 col-md-3">
+                            <img src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=100&h=80&fit=crop&q=80"
+                                 data-large="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=1200&h=1000&fit=crop&q=80"
+                                 alt="Screen view" onclick="changeImage(this, 'https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=600&h=500&fit=crop&q=80', 4)">
+                        </div>
+                        <div class="col-3 col-md-3">
+                            <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=100&h=80&fit=crop&q=80"
+                                 data-large="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=1200&h=1000&fit=crop&q=80"
+                                 alt="Ports view" onclick="changeImage(this, 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&h=500&fit=crop&q=80', 5)">
+                        </div>
+                        <div class="col-3 col-md-3">
+                            <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=100&h=80&fit=crop&q=80"
+                                 data-large="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=1200&h=1000&fit=crop&q=80"
+                                 alt="Top view" onclick="changeImage(this, 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=600&h=500&fit=crop&q=80', 6)">
+                        </div>
+                        <div class="col-3 col-md-3">
+                            <img src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=100&h=80&fit=crop&q=80"
+                                 data-large="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=1200&h=1000&fit=crop&q=80"
+                                 alt="Detail view" onclick="changeImage(this, 'https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=600&h=500&fit=crop&q=80', 7)">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-detail__info col-12 col-md-5">
+                    <h1 class="product-detail__title">Dell XPS 15 (2024) - 15.6" OLED Laptop</h1>
+
+                    <div class="product-detail__rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="rating-value">4.5</span>
+                        </div>
+                        <a href="#reviews" class="reviews-count">(248 Reviews)</a>
+                        <span class="separator">|</span>
+                        <span class="badge badge-stock in-stock">In Stock</span>
+                    </div>
+
+                    <!-- Configuration Options -->
+                    <div class="product-detail__options">
+                        <div class="option-group">
+                            <label>Color:</label>
+                            <div class="option-buttons">
+                                <button class="option-btn color-btn active" style="background-color: #ddd;" title="Platinum Silver"></button>
+                                <button class="option-btn color-btn" style="background-color: #333;" title="Graphite"></button>
+                            </div>
+                        </div>
+
+                        <div class="option-group">
+                            <label>Configuration:</label>
+                            <div class="option-buttons">
+                                <button class="option-btn">8GB | 256GB</button>
+                                <button class="option-btn">8GB | 512GB</button>
+                                <button class="option-btn">16GB | 512GB</button>
+                                <button class="option-btn active">32GB | 1TB</button>
+                                <button class="option-btn">32GB | 2TB</button>
+                                <button class="option-btn">64GB | 1TB</button>
+                                <button class="option-btn">64GB | 2TB</button>
+                                <button class="option-btn">64GB | 4TB</button>
+                            </div>
+                        </div>
+
+                        <div class="option-group">
+                            <label>Screen Size:</label>
+                            <div class="option-buttons">
+                                <button class="option-btn">13.3-inch</button>
+                                <button class="option-btn">14-inch</button>
+                                <button class="option-btn active">15.6-inch</button>
+                                <button class="option-btn">17-inch</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accordion -->
+                    <div class="accordion accordion-flush product-detail__accordion" id="productAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpecs" aria-expanded="false" aria-controls="collapseSpecs">
+                                    <div class="accordion-title-wrapper">
+                                        <span class="accordion-title">Technical Specifications</span>
+                                        <span class="accordion-subtitle">View detailed product specifications</span>
+                                    </div>
+                                </button>
+                            </h2>
+                            <div id="collapseSpecs" class="accordion-collapse collapse" data-bs-parent="#productAccordion">
+                                <div class="accordion-body">
+                                    <div class="spec-list">
+                                        <div class="spec-item">
+                                            <div class="spec-icon">
+                                                <i class="fas fa-microchip"></i>
+                                            </div>
+                                            <div class="spec-content">
+                                                <div class="spec-label">Processor</div>
+                                                <div class="spec-value">Intel® Core™ Ultra 5 226V (40 TOPS NPU, 8 cores, up to 4.5 GHz)</div>
+                                            </div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="spec-icon">
+                                                <i class="fas fa-desktop"></i>
+                                            </div>
+                                            <div class="spec-content">
+                                                <div class="spec-label">Operating System</div>
+                                                <div class="spec-value">Windows 11 Home, Copilot+ PC</div>
+                                            </div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="spec-icon">
+                                                <i class="fas fa-memory"></i>
+                                            </div>
+                                            <div class="spec-content">
+                                                <div class="spec-label">Memory</div>
+                                                <div class="spec-value">16GB, LPDDR5X, 8533MT/s, Memory on Package, onboard</div>
+                                            </div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="spec-icon">
+                                                <i class="fas fa-hdd"></i>
+                                            </div>
+                                            <div class="spec-content">
+                                                <div class="spec-label">Storage</div>
+                                                <div class="spec-value">512GB M.2 PCIe NVMe Solid State Drive</div>
+                                            </div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="spec-icon">
+                                                <i class="fas fa-tv"></i>
+                                            </div>
+                                            <div class="spec-content">
+                                                <div class="spec-label">Display</div>
+                                                <div class="spec-value">16", Touch, 2K, WVA, 300 nits</div>
+                                            </div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="spec-icon">
+                                                <i class="fas fa-palette"></i>
+                                            </div>
+                                            <div class="spec-content">
+                                                <div class="spec-label">Color</div>
+                                                <div class="spec-value">Ice Blue, with Fingerprint Reader</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWarranty" aria-expanded="false" aria-controls="collapseWarranty">
+                                    <div class="accordion-title-wrapper">
+                                        <span class="accordion-title">Warranty & Support</span>
+                                        <span class="accordion-subtitle">Product warranty and return policy details</span>
+                                    </div>
+                                </button>
+                            </h2>
+                            <div id="collapseWarranty" class="accordion-collapse collapse" data-bs-parent="#productAccordion">
+                                <div class="accordion-body">
+                                    <div class="spec-list">
+                                        <div class="spec-item">
+                                            <div class="spec-icon">
+                                                <i class="fas fa-shield-alt"></i>
+                                            </div>
+                                            <div class="spec-content">
+                                                <div class="spec-label">Warranty Period</div>
+                                                <div class="spec-value">2 Years Official Warranty from manufacturer</div>
+                                            </div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="spec-icon">
+                                                <i class="fas fa-undo"></i>
+                                            </div>
+                                            <div class="spec-content">
+                                                <div class="spec-label">Return Policy</div>
+                                                <div class="spec-value">7 Days Easy Return - No questions asked return policy</div>
+                                            </div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="spec-icon">
+                                                <i class="fas fa-headset"></i>
+                                            </div>
+                                            <div class="spec-content">
+                                                <div class="spec-label">Customer Support</div>
+                                                <div class="spec-value">24/7 Customer Support via Phone, Email & Chat</div>
+                                            </div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="spec-icon">
+                                                <i class="fas fa-tools"></i>
+                                            </div>
+                                            <div class="spec-content">
+                                                <div class="spec-label">Service Center</div>
+                                                <div class="spec-value">On-site service available in major cities across Nepal</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing Info Column -->
+                <div class="pricing-info col-12 col-md-3">
+                    <div class="pricing-info__card">
+                        <!-- Price -->
+                        <div class="pricing-info__price">
+                            <span class="badge bg-danger discount-percent">7% OFF</span>
+                            <div class="price-label">Price</div>
+                            <div class="price-amount">
+                                <span class="current-price">Rs. 185,000</span>
+                                <div class="price-details">
+                                    <span class="original-price">Rs. 200,000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="pricing-info__actions">
+                            <button class="btn btn-primary btn-add-cart" onclick="addToCart()">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
+                            <button class="btn btn-secondary btn-buy-now" onclick="buyNow()">
+                                <i class="fas fa-bolt"></i> Buy Now
+                            </button>
+                        </div>
+
+                        <!-- Delivery Options -->
+                        <div class="pricing-info__delivery-options">
+                            <h5>Delivery Options</h5>
+                            <div class="delivery-option">
+                                <input type="radio" id="delivery" name="delivery_method" value="delivery" checked>
+                                <label for="delivery" id="deliveryLabel">
+                                    <div class="option-header">
+                                        <i class="fas fa-truck"></i>
+                                        <strong>Home Delivery</strong>
+                                    </div>
+                                    <p>Free delivery in 2-3 days</p>
+                                </label>
+                            </div>
+                            <div class="delivery-option">
+                                <input type="radio" id="pickup" name="delivery_method" value="pickup">
+                                <label for="pickup" id="pickupLabel">
+                                    <div class="option-header">
+                                        <i class="fas fa-store"></i>
+                                        <strong>Store Pickup</strong>
+                                    </div>
+                                    <p>Available in 2 hours from nearby store</p>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="availability-actions">
+                            <button class="action-link">
+                                <i class="far fa-heart"></i> Wishlist
+                            </button>
+                            <button class="action-link">
+                                <i class="fas fa-balance-scale"></i> Compare
+                            </button>
+                            <button class="action-link">
+                                <i class="fas fa-share-alt"></i> Share
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabs Section -->
+            <div class="product-tabs">
+                <div class="product-tabs__header">
+                    <button class="tab-btn active" onclick="openTab(event, 'specifications')">Specifications</button>
+                    <button class="tab-btn" onclick="openTab(event, 'description')">Description</button>
+                    <button class="tab-btn" onclick="openTab(event, 'reviews')">Reviews (248)</button>
+                </div>
+
+                <div id="specifications" class="product-tabs__content active">
+                    <h3>Technical Specifications</h3>
+                    <table class="specs-table">
+                        <tr>
+                            <td><strong>Processor</strong></td>
+                            <td>Intel Core i7-13700H (13th Gen, 14 cores, up to 5.0 GHz)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Graphics</strong></td>
+                            <td>NVIDIA GeForce RTX 4050 6GB GDDR6</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Display</strong></td>
+                            <td>15.6" 3.5K (3456 x 2160) OLED Touch, 400 nits, 100% DCI-P3</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Memory</strong></td>
+                            <td>32GB DDR5 4800MHz (Upgradable to 64GB)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Storage</strong></td>
+                            <td>1TB M.2 PCIe NVMe SSD</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Battery</strong></td>
+                            <td>86Wh, up to 12 hours</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ports</strong></td>
+                            <td>2x Thunderbolt 4, 1x USB-C 3.2, SD Card Reader, 3.5mm Audio</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Wireless</strong></td>
+                            <td>Intel Killer Wi-Fi 6E AX1675, Bluetooth 5.2</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Operating System</strong></td>
+                            <td>Windows 11 Pro</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dimensions</strong></td>
+                            <td>344.7 x 230.1 x 18 mm</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Weight</strong></td>
+                            <td>1.96 kg (4.31 lbs)</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id="description" class="product-tabs__content">
+                    <div class="product-description">
+                        <!-- Hero Banner -->
+                        <div class="description-hero">
+                            <h3>Dell XPS 15 (2024) - Professional Performance Redefined</h3>
+                            <p class="description-lead">Experience unmatched power, stunning visuals, and premium craftsmanship in one beautifully designed package. The Dell XPS 15 is engineered for professionals who demand excellence in every aspect.</p>
+                        </div>
+
+                        <!-- Key Features Grid -->
+                        <div class="key-features">
+                            <h4 class="section-title">
+                                <i class="fas fa-star"></i> Key Features
+                            </h4>
+                            <div class="features-grid">
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-tv"></i>
+                                    </div>
+                                    <h5>Stunning OLED Display</h5>
+                                    <p>15.6" 3.5K OLED touchscreen with 400 nits brightness and 100% DCI-P3 color gamut for true-to-life visuals</p>
+                                </div>
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-microchip"></i>
+                                    </div>
+                                    <h5>Powerful Processing</h5>
+                                    <p>13th Gen Intel Core i7-13700H with 14 cores (6P + 8E) delivering up to 5.0 GHz performance</p>
+                                </div>
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-gamepad"></i>
+                                    </div>
+                                    <h5>Graphics Excellence</h5>
+                                    <p>NVIDIA GeForce RTX 4050 with 6GB GDDR6 VRAM for smooth rendering and gaming</p>
+                                </div>
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-memory"></i>
+                                    </div>
+                                    <h5>Fast Memory</h5>
+                                    <p>32GB DDR5 4800MHz RAM (upgradable to 64GB) for seamless multitasking</p>
+                                </div>
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-hdd"></i>
+                                    </div>
+                                    <h5>Lightning Storage</h5>
+                                    <p>1TB M.2 PCIe NVMe SSD with ultra-fast read/write speeds</p>
+                                </div>
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-battery-full"></i>
+                                    </div>
+                                    <h5>All-Day Battery</h5>
+                                    <p>86Wh battery providing up to 12 hours of productivity</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Highlights -->
+                        <div class="product-highlights">
+                            <h4 class="section-title">
+                                <i class="fas fa-lightbulb"></i> Product Highlights
+                            </h4>
+                            <div class="highlights-container">
+                                <div class="highlight-item">
+                                    <div class="highlight-number">01</div>
+                                    <div class="highlight-content">
+                                        <h5>InfinityEdge Display</h5>
+                                        <p>Ultra-thin bezels maximize screen real estate, giving you more viewing area in a compact form factor. The 4-sided InfinityEdge design creates an immersive visual experience perfect for content creation and entertainment.</p>
+                                    </div>
+                                </div>
+                                <div class="highlight-item">
+                                    <div class="highlight-number">02</div>
+                                    <div class="highlight-content">
+                                        <h5>Premium Build Quality</h5>
+                                        <p>Precision-machined aluminum chassis with carbon fiber palm rest. Every detail is meticulously crafted for durability and style. The platinum silver finish exudes professionalism while maintaining a lightweight profile at just 1.96kg.</p>
+                                    </div>
+                                </div>
+                                <div class="highlight-item">
+                                    <div class="highlight-number">03</div>
+                                    <div class="highlight-content">
+                                        <h5>Thunderbolt 4 Connectivity</h5>
+                                        <p>Two Thunderbolt 4 ports support up to 40Gbps data transfer, dual 4K displays, and power delivery. Connect everything you need with a single cable including external GPUs, high-speed storage, and docking stations.</p>
+                                    </div>
+                                </div>
+                                <div class="highlight-item">
+                                    <div class="highlight-number">04</div>
+                                    <div class="highlight-content">
+                                        <h5>Advanced Cooling System</h5>
+                                        <p>Dual-fan thermal design with vapor chamber cooling keeps the system running efficiently even under heavy loads. The intelligent thermal management ensures consistent performance without throttling.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Detailed Sections -->
+                        <div class="description-details">
+                            <div class="detail-section">
+                                <h4><i class="fas fa-rocket"></i> Performance That Delivers</h4>
+                                <p>Powered by the cutting-edge 13th Gen Intel Core i7-13700H processor featuring hybrid architecture with 6 Performance-cores and 8 Efficient-cores, the XPS 15 handles demanding workloads with ease. Whether you're editing 4K video, rendering 3D models, or running multiple virtual machines, this laptop delivers consistent, reliable performance.</p>
+                                <p>The NVIDIA GeForce RTX 4050 GPU with dedicated 6GB GDDR6 memory brings hardware-accelerated ray tracing and AI-enhanced graphics to your creative workflow. Experience faster rendering in Adobe Premiere Pro, smoother viewport performance in Blender, and the ability to game at high settings during your downtime.</p>
+                            </div>
+
+                            <div class="detail-section">
+                                <h4><i class="fas fa-palette"></i> Visual Excellence</h4>
+                                <p>The 15.6-inch 3.5K (3456 x 2160) OLED touchscreen is factory-calibrated for 100% DCI-P3 color accuracy, making it perfect for professional photo and video editing. With true blacks, infinite contrast ratio, and HDR support, every frame comes to life with stunning clarity and vibrant colors.</p>
+                                <p>The touchscreen supports pen input for creative work, while the anti-reflective coating ensures visibility even in bright environments. At 400 nits brightness, you can work comfortably indoors or outdoors.</p>
+                            </div>
+
+                            <div class="detail-section">
+                                <h4><i class="fas fa-tools"></i> Built for Professionals</h4>
+                                <p>The backlit keyboard with 1.3mm key travel provides a comfortable typing experience for long work sessions. The precision touchpad is 62% larger than previous generations, supporting Windows 11 gestures and multi-finger controls with accuracy.</p>
+                                <p>Quad-speaker design tuned by Waves MaxxAudio Pro delivers immersive sound for video calls, content consumption, and multimedia editing. Dual-array microphones with AI noise reduction ensure crystal-clear audio in online meetings.</p>
+                            </div>
+
+                            <div class="detail-section">
+                                <h4><i class="fas fa-shield-alt"></i> Security & Privacy</h4>
+                                <p>Windows Hello facial recognition with IR camera provides secure, password-free login. The fingerprint reader integrated into the power button offers an additional biometric security option. TPM 2.0 chip ensures hardware-level encryption for sensitive data.</p>
+                                <p>Physical camera shutter provides privacy when you need it, while Dell Optimizer with ExpressResponse prioritizes your most-used applications for improved performance and responsiveness.</p>
+                            </div>
+                        </div>
+
+                        <!-- What's in the Box -->
+                        <div class="whats-in-box">
+                            <h4 class="section-title">
+                                <i class="fas fa-box-open"></i> What's in the Box
+                            </h4>
+                            <div class="box-items">
+                                <div class="box-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Dell XPS 15 (2024) Laptop</span>
+                                </div>
+                                <div class="box-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>130W USB-C Power Adapter</span>
+                                </div>
+                                <div class="box-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>USB-C to USB-A Adapter</span>
+                                </div>
+                                <div class="box-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Quick Start Guide</span>
+                                </div>
+                                <div class="box-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Safety & Regulatory Information</span>
+                                </div>
+                                <div class="box-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Warranty Card (2 Years)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Target Audience -->
+                        <div class="target-audience">
+                            <h4 class="section-title">
+                                <i class="fas fa-users"></i> Perfect For
+                            </h4>
+                            <div class="audience-tags">
+                                <span class="audience-tag"><i class="fas fa-video"></i> Video Editors</span>
+                                <span class="audience-tag"><i class="fas fa-camera"></i> Photographers</span>
+                                <span class="audience-tag"><i class="fas fa-cube"></i> 3D Designers</span>
+                                <span class="audience-tag"><i class="fas fa-code"></i> Software Developers</span>
+                                <span class="audience-tag"><i class="fas fa-briefcase"></i> Business Professionals</span>
+                                <span class="audience-tag"><i class="fas fa-graduation-cap"></i> Students</span>
+                                <span class="audience-tag"><i class="fas fa-paint-brush"></i> Content Creators</span>
+                                <span class="audience-tag"><i class="fas fa-chart-line"></i> Data Analysts</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="reviews" class="product-tabs__content">
+                    <div class="reviews-container">
+                        <!-- Reviews Header -->
+                        <div class="reviews-header">
+                            <h3>Customer Reviews</h3>
+                            <button class="btn btn-primary btn-write-review" onclick="openWriteReview()">
+                                <i class="fas fa-pen"></i> Write a Review
+                            </button>
+                        </div>
+
+                        <!-- Review Summary -->
+                        <div class="review-summary">
+                            <div class="review-summary__score">
+                                <div class="score">4.5</div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <p>Based on 248 reviews</p>
+                            </div>
+                            <div class="review-summary__bars">
+                                <div class="rating-bar" onclick="filterByRating(5)">
+                                    <span>5 <i class="fas fa-star"></i></span>
+                                    <div class="bar"><div class="fill" style="width: 70%"></div></div>
+                                    <span class="count">174</span>
+                                </div>
+                                <div class="rating-bar" onclick="filterByRating(4)">
+                                    <span>4 <i class="fas fa-star"></i></span>
+                                    <div class="bar"><div class="fill" style="width: 20%"></div></div>
+                                    <span class="count">50</span>
+                                </div>
+                                <div class="rating-bar" onclick="filterByRating(3)">
+                                    <span>3 <i class="fas fa-star"></i></span>
+                                    <div class="bar"><div class="fill" style="width: 7%"></div></div>
+                                    <span class="count">17</span>
+                                </div>
+                                <div class="rating-bar" onclick="filterByRating(2)">
+                                    <span>2 <i class="fas fa-star"></i></span>
+                                    <div class="bar"><div class="fill" style="width: 2%"></div></div>
+                                    <span class="count">5</span>
+                                </div>
+                                <div class="rating-bar" onclick="filterByRating(1)">
+                                    <span>1 <i class="fas fa-star"></i></span>
+                                    <div class="bar"><div class="fill" style="width: 1%"></div></div>
+                                    <span class="count">2</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review Filters & Sort -->
+                        <div class="reviews-controls">
+                            <div class="reviews-filter">
+                                <button class="filter-btn active" onclick="filterReviews('all')">All Reviews (248)</button>
+                                <button class="filter-btn" onclick="filterReviews('verified')">
+                                    <i class="fas fa-badge-check"></i> Verified Purchase
+                                </button>
+                                <button class="filter-btn" onclick="filterReviews('photos')">
+                                    <i class="fas fa-camera"></i> With Photos
+                                </button>
+                            </div>
+                            <div class="reviews-sort">
+                                <label>Sort by:</label>
+                                <select id="reviewSort" onchange="sortReviews(this.value)">
+                                    <option value="helpful">Most Helpful</option>
+                                    <option value="recent">Most Recent</option>
+                                    <option value="highest">Highest Rating</option>
+                                    <option value="lowest">Lowest Rating</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Reviews List -->
+                        <div class="reviews-list">
+                            <!-- Review Item 1 -->
+                            <div class="review-item" data-rating="5" data-verified="true" data-photos="true" data-helpful="123" data-date="2024-01-15">
+                                <div class="review-item__header">
+                                    <div class="reviewer-info">
+                                        <div class="avatar">RM</div>
+                                        <div>
+                                            <div class="reviewer-name">
+                                                <strong>Rajesh Maharjan</strong>
+                                                <span class="verified-badge" title="Verified Purchase">
+                                                    <i class="fas fa-badge-check"></i> Verified Purchase
+                                                </span>
+                                            </div>
+                                            <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">2 days ago</span>
+                                </div>
+                                <div class="review-item__content">
+                                    <h4>Excellent laptop for video editing!</h4>
+                                    <p>I've been using this laptop for a month now, and it's perfect for my video editing work. The OLED screen is absolutely stunning, and the performance is top-notch. Battery life could be better, but overall highly recommended!</p>
+                                    <div class="review-images">
+                                        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=150&h=150&fit=crop" alt="Review image">
+                                        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=150&h=150&fit=crop" alt="Review image">
+                                    </div>
+                                </div>
+                                <div class="review-item__footer">
+                                    <div class="review-helpful">
+                                        <span>Was this helpful?</span>
+                                        <button class="helpful-btn" onclick="voteHelpful(this, 'yes')">
+                                            <i class="far fa-thumbs-up"></i> Yes <span class="vote-count">(123)</span>
+                                        </button>
+                                        <button class="helpful-btn" onclick="voteHelpful(this, 'no')">
+                                            <i class="far fa-thumbs-down"></i> No <span class="vote-count">(5)</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Review Item 2 -->
+                            <div class="review-item" data-rating="4" data-verified="false" data-photos="false" data-helpful="45" data-date="2024-01-10">
+                                <div class="review-item__header">
+                                    <div class="reviewer-info">
+                                        <div class="avatar">SP</div>
+                                        <div>
+                                            <div class="reviewer-name">
+                                                <strong>Sita Poudel</strong>
+                                            </div>
+                                            <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">1 week ago</span>
+                                </div>
+                                <div class="review-item__content">
+                                    <h4>Great build quality</h4>
+                                    <p>The build quality is exceptional. Feels premium in every way. The keyboard is comfortable for long typing sessions. Only downside is it gets a bit warm during heavy tasks.</p>
+                                </div>
+                                <div class="review-item__footer">
+                                    <div class="review-helpful">
+                                        <span>Was this helpful?</span>
+                                        <button class="helpful-btn" onclick="voteHelpful(this, 'yes')">
+                                            <i class="far fa-thumbs-up"></i> Yes <span class="vote-count">(45)</span>
+                                        </button>
+                                        <button class="helpful-btn" onclick="voteHelpful(this, 'no')">
+                                            <i class="far fa-thumbs-down"></i> No <span class="vote-count">(3)</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Review Item 3 -->
+                            <div class="review-item" data-rating="5" data-verified="true" data-photos="false" data-helpful="89" data-date="2024-01-08">
+                                <div class="review-item__header">
+                                    <div class="reviewer-info">
+                                        <div class="avatar">AK</div>
+                                        <div>
+                                            <div class="reviewer-name">
+                                                <strong>Anil KC</strong>
+                                                <span class="verified-badge" title="Verified Purchase">
+                                                    <i class="fas fa-badge-check"></i> Verified Purchase
+                                                </span>
+                                            </div>
+                                            <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">2 weeks ago</span>
+                                </div>
+                                <div class="review-item__content">
+                                    <h4>Best laptop I've ever owned</h4>
+                                    <p>This is hands down the best laptop I've ever used. The display is gorgeous, performance is smooth, and it looks professional. Worth every rupee!</p>
+                                </div>
+                                <div class="review-item__footer">
+                                    <div class="review-helpful">
+                                        <span>Was this helpful?</span>
+                                        <button class="helpful-btn" onclick="voteHelpful(this, 'yes')">
+                                            <i class="far fa-thumbs-up"></i> Yes <span class="vote-count">(89)</span>
+                                        </button>
+                                        <button class="helpful-btn" onclick="voteHelpful(this, 'no')">
+                                            <i class="far fa-thumbs-down"></i> No <span class="vote-count">(2)</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Load More -->
+                        <div class="reviews-load-more">
+                            <button class="btn btn-secondary" onclick="loadMoreReviews()">
+                                <i class="fas fa-sync-alt"></i> Load More Reviews
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products Section -->
+            <section class="related-products">
+                <div class="related-products__header">
+                    <h3><i class="fas fa-layer-group"></i> Similar Products You May Like</h3>
+                    <div class="carousel-nav">
+                        <button class="carousel-nav-btn prev" onclick="scrollRelatedProducts(-1)">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-nav-btn next" onclick="scrollRelatedProducts(1)">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="related-products__carousel" id="relatedProductsCarousel">
+                    <!-- Product Card 1 -->
+                    <div class="product-card">
+                        <div class="product-card__image">
+                            <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=400&h=300&fit=crop" alt="Dell XPS 13">
+                            <span class="badge-discount">5% OFF</span>
+                            <button class="btn-wishlist" onclick="toggleWishlist(this)">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-card__content">
+                            <h5><a href="product-detail.html">Dell XPS 13 (2024)</a></h5>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-value">4.5</span>
+                                <span class="rating-count">(156)</span>
+                            </div>
+                            <p class="product-specs">Intel i7 • 16GB • 512GB SSD</p>
+                            <div class="product-price">
+                                <span class="current-price">Rs. 142,500</span>
+                                <span class="original-price">Rs. 150,000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="product-card">
+                        <div class="product-card__image">
+                            <img src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=400&h=300&fit=crop" alt="HP Spectre x360">
+                            <span class="badge-new">New</span>
+                            <button class="btn-wishlist" onclick="toggleWishlist(this)">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-card__content">
+                            <h5><a href="product-detail.html">HP Spectre x360 14</a></h5>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="rating-value">4.0</span>
+                                <span class="rating-count">(89)</span>
+                            </div>
+                            <p class="product-specs">Intel i7 • 32GB • 1TB SSD</p>
+                            <div class="product-price">
+                                <span class="current-price">Rs. 195,000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="product-card">
+                        <div class="product-card__image">
+                            <img src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=400&h=300&fit=crop" alt="Lenovo ThinkPad X1">
+                            <span class="badge-discount">10% OFF</span>
+                            <button class="btn-wishlist" onclick="toggleWishlist(this)">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-card__content">
+                            <h5><a href="product-detail.html">Lenovo ThinkPad X1 Carbon</a></h5>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-value">5.0</span>
+                                <span class="rating-count">(203)</span>
+                            </div>
+                            <p class="product-specs">Intel i7 • 16GB • 512GB SSD</p>
+                            <div class="product-price">
+                                <span class="current-price">Rs. 162,000</span>
+                                <span class="original-price">Rs. 180,000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 4 -->
+                    <div class="product-card">
+                        <div class="product-card__image">
+                            <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400&h=300&fit=crop" alt="MacBook Pro">
+                            <button class="btn-wishlist" onclick="toggleWishlist(this)">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-card__content">
+                            <h5><a href="product-detail.html">MacBook Pro 14" M3</a></h5>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-value">4.5</span>
+                                <span class="rating-count">(312)</span>
+                            </div>
+                            <p class="product-specs">Apple M3 • 18GB • 512GB SSD</p>
+                            <div class="product-price">
+                                <span class="current-price">Rs. 285,000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 5 -->
+                    <div class="product-card">
+                        <div class="product-card__image">
+                            <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&h=300&fit=crop" alt="ASUS ROG Zephyrus">
+                            <span class="badge-discount">8% OFF</span>
+                            <button class="btn-wishlist" onclick="toggleWishlist(this)">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-card__content">
+                            <h5><a href="product-detail.html">ASUS ROG Zephyrus G14</a></h5>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="rating-value">4.0</span>
+                                <span class="rating-count">(127)</span>
+                            </div>
+                            <p class="product-specs">AMD Ryzen 9 • 32GB • 1TB SSD</p>
+                            <div class="product-price">
+                                <span class="current-price">Rs. 220,800</span>
+                                <span class="original-price">Rs. 240,000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 6 -->
+                    <div class="product-card">
+                        <div class="product-card__image">
+                            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&h=300&fit=crop" alt="Microsoft Surface Laptop">
+                            <span class="badge-new">New</span>
+                            <button class="btn-wishlist" onclick="toggleWishlist(this)">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-card__content">
+                            <h5><a href="product-detail.html">Microsoft Surface Laptop 5</a></h5>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-value">5.0</span>
+                                <span class="rating-count">(178)</span>
+                            </div>
+                            <p class="product-specs">Intel i7 • 16GB • 512GB SSD</p>
+                            <div class="product-price">
+                                <span class="current-price">Rs. 165,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recently Viewed Products Section -->
+            <section class="recently-viewed">
+                <div class="recently-viewed__header">
+                    <h3><i class="fas fa-history"></i> Recently Viewed Products</h3>
+                </div>
+                <div class="recently-viewed__carousel" id="recentlyViewedCarousel">
+                    <!-- Product Card 1 -->
+                    <div class="product-card">
+                        <div class="product-card__image">
+                            <img src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400&h=300&fit=crop" alt="Gaming Laptop">
+                            <button class="btn-wishlist" onclick="toggleWishlist(this)">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-card__content">
+                            <h5><a href="product-detail.html">Acer Predator Helios 300</a></h5>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="rating-value">4.0</span>
+                                <span class="rating-count">(94)</span>
+                            </div>
+                            <p class="product-specs">Intel i7 • RTX 4060 • 16GB</p>
+                            <div class="product-price">
+                                <span class="current-price">Rs. 175,000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="product-card">
+                        <div class="product-card__image">
+                            <img src="https://images.unsplash.com/photo-1504707748692-419802cf939d?w=400&h=300&fit=crop" alt="Business Laptop">
+                            <button class="btn-wishlist" onclick="toggleWishlist(this)">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-card__content">
+                            <h5><a href="product-detail.html">HP EliteBook 840 G9</a></h5>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-value">4.5</span>
+                                <span class="rating-count">(142)</span>
+                            </div>
+                            <p class="product-specs">Intel i7 • 32GB • 1TB SSD</p>
+                            <div class="product-price">
+                                <span class="current-price">Rs. 198,000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="product-card">
+                        <div class="product-card__image">
+                            <img src="https://images.unsplash.com/photo-1484788984921-03950022c9ef?w=400&h=300&fit=crop" alt="Ultrabook">
+                            <span class="badge-discount">12% OFF</span>
+                            <button class="btn-wishlist" onclick="toggleWishlist(this)">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-card__content">
+                            <h5><a href="product-detail.html">LG Gram 17</a></h5>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-value">5.0</span>
+                                <span class="rating-count">(87)</span>
+                            </div>
+                            <p class="product-specs">Intel i7 • 16GB • 1TB SSD</p>
+                            <div class="product-price">
+                                <span class="current-price">Rs. 176,000</span>
+                                <span class="original-price">Rs. 200,000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 4 -->
+                    <div class="product-card">
+                        <div class="product-card__image">
+                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=300&fit=crop" alt="Coding Laptop">
+                            <button class="btn-wishlist" onclick="toggleWishlist(this)">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-card__content">
+                            <h5><a href="product-detail.html">Dell Inspiron 15 3000</a></h5>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="rating-value">4.0</span>
+                                <span class="rating-count">(256)</span>
+                            </div>
+                            <p class="product-specs">Intel i5 • 8GB • 256GB SSD</p>
+                            <div class="product-price">
+                                <span class="current-price">Rs. 68,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq-section">
+                <div class="faq-section__header">
+                    <h3><i class="fas fa-question-circle"></i> Frequently Asked Questions</h3>
+                    <p class="faq-subtitle">Find answers to common questions about this product</p>
+                </div>
+                <div class="accordion accordion-flush faq-accordion" id="faqAccordion">
+                    <!-- FAQ Item 1 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
+                                <i class="fas fa-laptop-code me-3"></i>
+                                <span>What makes the Dell XPS 15 stand out from other laptops?</span>
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>The Dell XPS 15 combines premium build quality with exceptional performance. Key standout features include:</p>
+                                <ul>
+                                    <li><strong>InfinityEdge Display:</strong> Ultra-thin bezels provide maximum screen real estate in a compact form factor</li>
+                                    <li><strong>OLED Technology:</strong> True blacks, infinite contrast ratio, and 100% DCI-P3 color accuracy</li>
+                                    <li><strong>Premium Materials:</strong> CNC machined aluminum and carbon fiber construction</li>
+                                    <li><strong>Powerful Performance:</strong> 13th Gen Intel processors with NVIDIA RTX graphics</li>
+                                    <li><strong>Long Battery Life:</strong> Up to 12 hours on a single charge</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                                <i class="fas fa-memory me-3"></i>
+                                <span>Is the RAM and storage upgradeable?</span>
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p><strong>Storage:</strong> Yes, the M.2 SSD is user-replaceable and upgradeable. You can upgrade from the included 1TB SSD up to 4TB using standard M.2 2280 PCIe Gen 4 SSDs.</p>
+                                <p><strong>RAM:</strong> The RAM is soldered on this model and cannot be upgraded after purchase. We recommend selecting the configuration that meets your long-term needs. The laptop supports up to 64GB DDR5 RAM depending on the configuration you choose at purchase.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                                <i class="fas fa-shield-alt me-3"></i>
+                                <span>What warranty and support options are included?</span>
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>This Dell XPS 15 comes with comprehensive warranty coverage:</p>
+                                <ul>
+                                    <li><strong>2 Years Manufacturer Warranty:</strong> Full coverage from Dell Nepal</li>
+                                    <li><strong>On-site Service:</strong> Available in Kathmandu, Pokhara, and major cities</li>
+                                    <li><strong>24/7 Support:</strong> Phone, email, and chat support available</li>
+                                    <li><strong>7-Day Return Policy:</strong> No questions asked return within 7 days of purchase</li>
+                                    <li><strong>Extended Warranty:</strong> Available for purchase up to 4 years total coverage</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                                <i class="fas fa-desktop me-3"></i>
+                                <span>Does this laptop support dual 4K external displays?</span>
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>Yes, the Dell XPS 15 fully supports dual 4K external displays through its Thunderbolt 4 ports. Here's what you need to know:</p>
+                                <ul>
+                                    <li>Both Thunderbolt 4 ports support DisplayPort 2.0 over USB-C</li>
+                                    <li>You can connect two 4K displays at 60Hz simultaneously</li>
+                                    <li>Alternatively, you can connect one 8K display at 30Hz</li>
+                                    <li>Use a Thunderbolt 4 dock for expanded connectivity options</li>
+                                    <li>The laptop display can remain active while using external monitors (3 total displays)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 5 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+                                <i class="fas fa-battery-full me-3"></i>
+                                <span>How is the battery life for everyday use and heavy workloads?</span>
+                            </button>
+                        </h2>
+                        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>The 86Wh battery provides excellent endurance across different usage scenarios:</p>
+                                <ul>
+                                    <li><strong>Light Use (Web browsing, documents):</strong> Up to 12 hours</li>
+                                    <li><strong>Mixed Use (Office work, streaming):</strong> 8-10 hours</li>
+                                    <li><strong>Heavy Use (Video editing, gaming):</strong> 4-6 hours</li>
+                                    <li><strong>4K Video Playback:</strong> 6-8 hours</li>
+                                </ul>
+                                <p>The laptop supports fast charging via the included 130W USB-C adapter, reaching 80% charge in about 1 hour. Power Delivery charging is also supported through Thunderbolt 4 ports.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 6 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">
+                                <i class="fas fa-gamepad me-3"></i>
+                                <span>Is this laptop suitable for gaming?</span>
+                            </button>
+                        </h2>
+                        <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>Yes, the NVIDIA GeForce RTX 4050 GPU makes this laptop capable of gaming, though it's primarily designed for creative professionals:</p>
+                                <ul>
+                                    <li><strong>AAA Games:</strong> Most modern games run at 1080p High settings at 60+ FPS</li>
+                                    <li><strong>Esports Titles:</strong> CS:GO, Valorant, Dota 2 run at 100+ FPS at high settings</li>
+                                    <li><strong>Ray Tracing:</strong> Supported in compatible games, though performance varies</li>
+                                    <li><strong>Thermal Management:</strong> Advanced cooling keeps temperatures reasonable during gaming</li>
+                                </ul>
+                                <p>For dedicated gaming, consider our ROG or Predator series. However, the XPS 15 offers excellent occasional gaming performance alongside professional productivity.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 7 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7" aria-expanded="false" aria-controls="faq7">
+                                <i class="fas fa-box-open me-3"></i>
+                                <span>What's included in the box?</span>
+                            </button>
+                        </h2>
+                        <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>Your Dell XPS 15 package includes everything you need to get started:</p>
+                                <ul>
+                                    <li>Dell XPS 15 (2024) Laptop</li>
+                                    <li>130W USB-C Power Adapter with cable</li>
+                                    <li>USB-C to USB-A Adapter (for legacy devices)</li>
+                                    <li>Quick Start Guide</li>
+                                    <li>Safety and Regulatory Information</li>
+                                    <li>2-Year Warranty Card</li>
+                                </ul>
+                                <p>Windows 11 Pro comes pre-installed and activated. Dell software suite including Dell Optimizer and Dell Cinema are also pre-loaded.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 8 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8" aria-expanded="false" aria-controls="faq8">
+                                <i class="fas fa-video me-3"></i>
+                                <span>Can I use this laptop for video editing and 3D rendering?</span>
+                            </button>
+                        </h2>
+                        <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>Absolutely! The Dell XPS 15 is an excellent choice for creative professionals:</p>
+                                <p><strong>Video Editing:</strong></p>
+                                <ul>
+                                    <li>Adobe Premiere Pro: Smooth 4K editing with GPU acceleration</li>
+                                    <li>DaVinci Resolve: Handles 4K timelines with color grading efficiently</li>
+                                    <li>Final Cut Pro (via Boot Camp): Excellent performance on Windows side</li>
+                                </ul>
+                                <p><strong>3D Rendering:</strong></p>
+                                <ul>
+                                    <li>Blender: CUDA acceleration with RTX 4050 for faster viewport and renders</li>
+                                    <li>Cinema 4D: Smooth modeling and previewing, good render performance</li>
+                                    <li>3ds Max / Maya: Professional workflows fully supported</li>
+                                </ul>
+                                <p>The 100% DCI-P3 color accurate OLED display ensures what you see is exactly what you'll get in the final output.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 9 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9" aria-expanded="false" aria-controls="faq9">
+                                <i class="fas fa-fan me-3"></i>
+                                <span>How does the cooling system work and is it loud?</span>
+                            </button>
+                        </h2>
+                        <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>The XPS 15 features Dell's advanced dual-fan cooling system with vapor chamber technology:</p>
+                                <ul>
+                                    <li><strong>Vapor Chamber Cooling:</strong> Efficiently distributes heat across the chassis</li>
+                                    <li><strong>Dual-Fan Design:</strong> Ultra-thin fans optimize airflow while minimizing noise</li>
+                                    <li><strong>Intelligent Thermal Management:</strong> Dynamic fan curves adjust based on workload</li>
+                                    <li><strong>Noise Levels:</strong>
+                                        <ul>
+                                            <li>Idle/Light Use: Nearly silent (< 25dB)</li>
+                                            <li>Medium Load: 35-40dB (quiet hum)</li>
+                                            <li>Heavy Load: 45-50dB (noticeable but not distracting)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p>Dell Optimizer allows you to customize thermal profiles for different scenarios - prioritize performance, quiet operation, or balanced mode.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 10 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq10" aria-expanded="false" aria-controls="faq10">
+                                <i class="fas fa-shopping-cart me-3"></i>
+                                <span>What payment and delivery options are available?</span>
+                            </button>
+                        </h2>
+                        <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p><strong>Payment Options:</strong></p>
+                                <ul>
+                                    <li>Credit/Debit Cards (Visa, Mastercard, UnionPay)</li>
+                                    <li>eSewa, Khalti, IME Pay, ConnectIPS</li>
+                                    <li>Bank Transfer / Direct Deposit</li>
+                                    <li>Cash on Delivery (available in Kathmandu Valley)</li>
+                                    <li>EMI Options: 0% interest for 3, 6, or 12 months (selected banks)</li>
+                                </ul>
+                                <p><strong>Delivery Options:</strong></p>
+                                <ul>
+                                    <li><strong>Home Delivery:</strong> Free delivery within 2-3 business days across Nepal</li>
+                                    <li><strong>Same-Day Delivery:</strong> Available in Kathmandu Valley for orders placed before 2 PM</li>
+                                    <li><strong>Store Pickup:</strong> Available in 2 hours from selected locations</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Still Have Questions -->
+                <div class="faq-contact">
+                    <div class="faq-contact__content">
+                        <h4>Still Have Questions?</h4>
+                        <p>Our team is here to help you make the right decision. Contact us for personalized assistance.</p>
+                    </div>
+                    <div class="faq-contact__actions">
+                        <a href="tel:+9771234567890" class="btn btn-outline">
+                            <i class="fas fa-phone"></i> Call Us
+                        </a>
+                        <a href="#" class="btn btn-primary">
+                            <i class="fas fa-comments"></i> Live Chat
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- Trust Badges / Security Icons -->
+            <section class="trust-badges">
+                <div class="container">
+                    <div class="trust-badges__wrapper">
+                        <!-- Payment Security -->
+                        <div class="trust-badge">
+                            <div class="trust-badge__icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="trust-badge__content">
+                                <h5>Secure Payment</h5>
+                                <p>256-bit SSL encryption</p>
+                                <div class="payment-icons">
+                                    <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" title="Visa">
+                                    <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" title="Mastercard">
+                                    <img src="https://img.icons8.com/color/48/000000/paypal.png" alt="PayPal" title="PayPal">
+                                    <img src="https://img.icons8.com/fluency/48/000000/bank-card-back-side.png" alt="Debit Card" title="Debit Card">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Return Policy -->
+                        <div class="trust-badge">
+                            <div class="trust-badge__icon">
+                                <i class="fas fa-undo-alt"></i>
+                            </div>
+                            <div class="trust-badge__content">
+                                <h5>Easy Returns</h5>
+                                <p>30-day money-back guarantee</p>
+                                <ul class="trust-list">
+                                    <li><i class="fas fa-check-circle"></i> No questions asked</li>
+                                    <li><i class="fas fa-check-circle"></i> Free return shipping</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Authentic Product -->
+                        <div class="trust-badge">
+                            <div class="trust-badge__icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="trust-badge__content">
+                                <h5>100% Authentic</h5>
+                                <p>Genuine products guaranteed</p>
+                                <ul class="trust-list">
+                                    <li><i class="fas fa-check-circle"></i> Official distributor</li>
+                                    <li><i class="fas fa-check-circle"></i> Manufacturer warranty</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Fast Delivery -->
+                        <div class="trust-badge">
+                            <div class="trust-badge__icon">
+                                <i class="fas fa-shipping-fast"></i>
+                            </div>
+                            <div class="trust-badge__content">
+                                <h5>Fast Delivery</h5>
+                                <p>Same-day delivery available</p>
+                                <ul class="trust-list">
+                                    <li><i class="fas fa-check-circle"></i> Track your order</li>
+                                    <li><i class="fas fa-check-circle"></i> Secure packaging</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Customer Support -->
+                        <div class="trust-badge">
+                            <div class="trust-badge__icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div class="trust-badge__content">
+                                <h5>24/7 Support</h5>
+                                <p>Expert assistance anytime</p>
+                                <ul class="trust-list">
+                                    <li><i class="fas fa-check-circle"></i> Live chat support</li>
+                                    <li><i class="fas fa-check-circle"></i> Phone & email</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Warranty Badge -->
+                        <div class="trust-badge">
+                            <div class="trust-badge__icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="trust-badge__content">
+                                <h5>Extended Warranty</h5>
+                                <p>Up to 3 years coverage</p>
+                                <ul class="trust-list">
+                                    <li><i class="fas fa-check-circle"></i> Comprehensive protection</li>
+                                    <li><i class="fas fa-check-circle"></i> Free servicing</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security Certifications -->
+                    <div class="security-certifications">
+                        <div class="certification-item">
+                            <i class="fas fa-lock"></i>
+                            <span>PCI DSS Compliant</span>
+                        </div>
+                        <div class="certification-item">
+                            <i class="fas fa-user-shield"></i>
+                            <span>Privacy Protected</span>
+                        </div>
+                        <div class="certification-item">
+                            <i class="fas fa-check-double"></i>
+                            <span>Verified Seller</span>
+                        </div>
+                        <div class="certification-item">
+                            <i class="fas fa-star"></i>
+                            <span>5000+ Happy Customers</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+            const icon = this.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Change main image
+        // Image Gallery
+        let currentImageIndex = 0;
+        const images = [
+            {
+                thumb: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=100&h=80&fit=crop&q=80',
+                main: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&h=500&fit=crop&q=80',
+                large: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=1200&h=1000&fit=crop&q=80',
+                alt: 'Front view'
+            },
+            {
+                thumb: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=100&h=80&fit=crop&q=80',
+                main: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&h=500&fit=crop&q=80',
+                large: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=1200&h=1000&fit=crop&q=80',
+                alt: 'Side view'
+            },
+            {
+                thumb: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=100&h=80&fit=crop&q=80',
+                main: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&h=500&fit=crop&q=80',
+                large: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=1200&h=1000&fit=crop&q=80',
+                alt: 'Keyboard view'
+            },
+            {
+                thumb: 'https://images.unsplash.com/photo-1484788984921-03950022c9ef?w=100&h=80&fit=crop&q=80',
+                main: 'https://images.unsplash.com/photo-1484788984921-03950022c9ef?w=600&h=500&fit=crop&q=80',
+                large: 'https://images.unsplash.com/photo-1484788984921-03950022c9ef?w=1200&h=1000&fit=crop&q=80',
+                alt: 'Angled view'
+            }
+        ];
+
+        function changeImage(thumbnail, src, index) {
+            currentImageIndex = index;
+            document.getElementById('mainImage').src = src;
+            document.querySelectorAll('.product-detail__thumbnails img').forEach(img => {
+                img.classList.remove('active');
+            });
+            thumbnail.classList.add('active');
+        }
+
+        function navigateImage(direction) {
+            currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+            const thumbnails = document.querySelectorAll('.product-detail__thumbnails img');
+            thumbnails[currentImageIndex].click();
+        }
+
+        function openImageZoom() {
+            const modal = document.getElementById('imageZoomModal');
+            const zoomImage = document.getElementById('zoomImage');
+            const thumbnailsContainer = document.getElementById('zoomThumbnails');
+
+            zoomImage.src = images[currentImageIndex].large;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            // Create zoom thumbnails
+            thumbnailsContainer.innerHTML = images.map((img, index) =>
+                `<img src="${img.thumb}" alt="${img.alt}" class="${index === currentImageIndex ? 'active' : ''}"
+                      onclick="changeZoomImage(${index}); event.stopPropagation();">`
+            ).join('');
+        }
+
+        function closeImageZoom(event) {
+            if (event && event.target.id !== 'imageZoomModal' && !event.target.classList.contains('zoom-close-btn') && !event.target.classList.contains('fa-times')) {
+                return;
+            }
+            const modal = document.getElementById('imageZoomModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function navigateZoomImage(direction) {
+            currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+            changeZoomImage(currentImageIndex);
+        }
+
+        function changeZoomImage(index) {
+            currentImageIndex = index;
+            document.getElementById('zoomImage').src = images[index].large;
+
+            // Update zoom thumbnails active state
+            document.querySelectorAll('#zoomThumbnails img').forEach((img, i) => {
+                img.classList.toggle('active', i === index);
+            });
+
+            // Update main gallery thumbnails
+            document.querySelectorAll('.product-detail__thumbnails img').forEach((img, i) => {
+                img.classList.toggle('active', i === index);
+            });
+        }
+
+        // Close zoom modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeImageZoom();
+            }
+        });
+
+        // Add to Cart
+        function addToCart() {
+            const productName = document.querySelector('.product-detail__title').textContent;
+            const price = document.querySelector('.current-price').textContent;
+
+            // Get selected options
+            const selectedColor = document.querySelector('.color-btn.active')?.getAttribute('title') || 'Not selected';
+            const selectedConfig = document.querySelector('.option-group:nth-child(2) .option-btn.active')?.textContent || 'Not selected';
+            const selectedScreen = document.querySelector('.option-group:nth-child(3) .option-btn.active')?.textContent || 'Not selected';
+
+            // Animate button
+            const btn = event.target.closest('.btn-add-cart');
+            btn.innerHTML = '<i class="fas fa-check"></i> Added!';
+            btn.style.backgroundColor = '#27ae60';
+
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-shopping-cart"></i> Add to Cart';
+                btn.style.backgroundColor = '';
+            }, 2000);
+
+            // Show success toast
+            showToast(
+                'Added to Cart!',
+                `${productName} added to your cart`,
+                'success'
+            );
+
+            // Here you would typically send data to backend/localStorage
+            console.log('Added to cart:', {
+                product: productName,
+                quantity: 1,
+                price: price,
+                color: selectedColor,
+                configuration: selectedConfig,
+                screen: selectedScreen
+            });
+        }
+
+        // Buy Now
+        function buyNow() {
+            const productName = document.querySelector('.product-detail__title').textContent;
+
+            // Show loading state
+            const btn = event.target.closest('.btn-buy-now');
+            const originalHTML = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            btn.disabled = true;
+
+            // Simulate processing
+            setTimeout(() => {
+                btn.innerHTML = originalHTML;
+                btn.disabled = false;
+
+                // Redirect to checkout (you can change this URL)
+                showToast(
+                    'Redirecting to Checkout',
+                    'Taking you to complete your purchase...',
+                    'success'
+                );
+
+                // In real implementation, you would redirect to checkout
+                // window.location.href = '/checkout';
+            }, 1500);
+
+            console.log('Buy now clicked:', {
+                product: productName,
+                quantity: 1
+            });
+        }
+
+        // Tab switching
+        function openTab(evt, tabName) {
+            const tabContents = document.querySelectorAll('.product-tabs__content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            tabBtns.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+
+        // Option buttons
+        document.querySelectorAll('.option-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const parent = this.closest('.option-group');
+                parent.querySelectorAll('.option-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Smooth scroll for review link
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+
+    <!-- Language & Currency Modal -->
+    <div class="settings-modal" id="settingsModal">
+        <div class="settings-modal__overlay" id="closeSettingsModal"></div>
+        <div class="settings-modal__content">
+            <div class="settings-modal__header">
+                <h3>Language & Currency</h3>
+                <button class="close-btn" id="closeSettingsModalBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="settings-modal__body">
+                <!-- Language Selection -->
+                <div class="settings-section">
+                    <h4><i class="fas fa-globe"></i> Select Language</h4>
+                    <div class="settings-options">
+                        <label class="settings-option active">
+                            <input type="radio" name="language" value="en" checked>
+                            <span class="option-content">
+                                <span class="option-label">English</span>
+                                <i class="fas fa-check"></i>
+                            </span>
+                        </label>
+                        <label class="settings-option">
+                            <input type="radio" name="language" value="ne">
+                            <span class="option-content">
+                                <span class="option-label">नेपाली (Nepali)</span>
+                                <i class="fas fa-check"></i>
+                            </span>
+                        </label>
+                        <label class="settings-option">
+                            <input type="radio" name="language" value="hi">
+                            <span class="option-content">
+                                <span class="option-label">हिन्दी (Hindi)</span>
+                                <i class="fas fa-check"></i>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Currency Selection -->
+                <div class="settings-section">
+                    <h4><i class="fas fa-dollar-sign"></i> Select Currency</h4>
+                    <div class="settings-options">
+                        <label class="settings-option active">
+                            <input type="radio" name="currency" value="npr" checked>
+                            <span class="option-content">
+                                <span class="option-label">NPR - Nepali Rupee (रु)</span>
+                                <i class="fas fa-check"></i>
+                            </span>
+                        </label>
+                        <label class="settings-option">
+                            <input type="radio" name="currency" value="usd">
+                            <span class="option-content">
+                                <span class="option-label">USD - US Dollar ($)</span>
+                                <i class="fas fa-check"></i>
+                            </span>
+                        </label>
+                        <label class="settings-option">
+                            <input type="radio" name="currency" value="inr">
+                            <span class="option-content">
+                                <span class="option-label">INR - Indian Rupee (₹)</span>
+                                <i class="fas fa-check"></i>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="settings-modal__footer">
+                <button class="btn-apply">Apply Settings</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Settings Modal
+        const settingsModal = document.getElementById('settingsModal');
+        const openSettingsBtn = document.getElementById('openSettingsModal');
+        const closeSettingsOverlay = document.getElementById('closeSettingsModal');
+        const closeSettingsBtn = document.getElementById('closeSettingsModalBtn');
+
+        openSettingsBtn.addEventListener('click', () => {
+            settingsModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        [closeSettingsOverlay, closeSettingsBtn].forEach(el => {
+            el.addEventListener('click', () => {
+                settingsModal.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Settings option selection
+        document.querySelectorAll('.settings-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const radio = this.querySelector('input[type="radio"]');
+                const group = radio.name;
+
+                // Remove active from all options in this group
+                document.querySelectorAll(`input[name="${group}"]`).forEach(r => {
+                    r.closest('.settings-option').classList.remove('active');
+                });
+
+                // Add active to clicked option
+                this.classList.add('active');
+                radio.checked = true;
+            });
+        });
+
+        // Apply settings
+        document.querySelector('.btn-apply').addEventListener('click', () => {
+            const language = document.querySelector('input[name="language"]:checked').value;
+            const currency = document.querySelector('input[name="currency"]:checked').value;
+
+            // Update button text
+            const langMap = { en: 'EN', ne: 'NE', hi: 'HI' };
+            const currencyMap = { npr: 'NPR', usd: 'USD', inr: 'INR' };
+            document.querySelector('#openSettingsModal span').textContent =
+                `${langMap[language]} / ${currencyMap[currency]}`;
+
+            // Close modal
+            settingsModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    </script>
+
+    <!-- Mobile Sticky Cart -->
+    <div class="mobile-sticky-cart">
+        <div class="mobile-sticky-cart__content">
+            <div class="price-summary">
+                <span class="current-price">₹185,000</span>
+                <span class="save-amount">Save ₹15,000</span>
+            </div>
+            <div class="actions">
+                <button class="btn btn-cart">
+                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                </button>
+                <button class="btn btn-buy">
+                    Buy Now
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delivery Modal -->
+    <div class="modal fade" id="deliveryModal" tabindex="-1" aria-labelledby="deliveryModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-end">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deliveryModalLabel">Delivery Options</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="delivery-modal__intro">
+                        <h4>Use your location</h4>
+                        <p>Get updated information about product delivery and stock availability for your area.</p>
+                    </div>
+                    <div class="delivery-modal__form">
+                        <label for="pincode" class="form-label">Enter a PIN code</label>
+                        <input type="text" class="form-control" id="pincode" placeholder="e.g. 560075" maxlength="6">
+                    </div>
+                    <div class="delivery-modal__notice">
+                        <p>We use cookies to provide this service. Read more about how we use cookies in our <a href="#">policy</a>. Please note that your location won't be shared.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary w-100" id="savePincode">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Store Pickup Modal -->
+    <div class="modal fade" id="pickupModal" tabindex="-1" aria-labelledby="pickupModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-end">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="pickupModalLabel">Select store</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="store-modal__intro">
+                        <p>Get updated information about product delivery and stock availability for your area.</p>
+                    </div>
+                    <div class="store-modal__search">
+                        <input type="text" class="form-control" id="storeSearch" placeholder="Search by location">
+                    </div>
+                    <div class="store-modal__filter">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="stockFilter" checked>
+                            <label class="form-check-label" for="stockFilter">
+                                Only stores with available stock
+                            </label>
+                        </div>
+                    </div>
+                    <div class="store-modal__list">
+                        <div class="store-item" data-location="kathmandu">
+                            <div class="store-info">
+                                <h6>Akku Electronics - New Road</h6>
+                                <p class="store-address">New Road, Kathmandu, Nepal</p>
+                                <span class="store-stock in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+                            </div>
+                            <button class="btn btn-sm btn-outline-primary select-store">Select</button>
+                        </div>
+                        <div class="store-item" data-location="pokhara">
+                            <div class="store-info">
+                                <h6>Akku Electronics - Lakeside</h6>
+                                <p class="store-address">Lakeside, Pokhara, Nepal</p>
+                                <span class="store-stock in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+                            </div>
+                            <button class="btn btn-sm btn-outline-primary select-store">Select</button>
+                        </div>
+                        <div class="store-item" data-location="bhaktapur">
+                            <div class="store-info">
+                                <h6>Akku Electronics - Durbar Square</h6>
+                                <p class="store-address">Durbar Square, Bhaktapur, Nepal</p>
+                                <span class="store-stock in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+                            </div>
+                            <button class="btn btn-sm btn-outline-primary select-store">Select</button>
+                        </div>
+                        <div class="store-item" data-location="kathmandu">
+                            <div class="store-info">
+                                <h6>Akku Electronics - Thamel</h6>
+                                <p class="store-address">Thamel, Kathmandu, Nepal</p>
+                                <span class="store-stock out-of-stock"><i class="fas fa-times-circle"></i> Out of Stock</span>
+                            </div>
+                            <button class="btn btn-sm btn-outline-primary select-store" disabled>Select</button>
+                        </div>
+                        <div class="store-item" data-location="kathmandu">
+                            <div class="store-info">
+                                <h6>Akku Electronics - Durbarmarg</h6>
+                                <p class="store-address">Durbarmarg, Kathmandu, Nepal</p>
+                                <span class="store-stock in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+                            </div>
+                            <button class="btn btn-sm btn-outline-primary select-store">Select</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary w-100" id="saveStore" data-bs-dismiss="modal">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Delivery Modal
+        const deliveryModal = new bootstrap.Modal(document.getElementById('deliveryModal'));
+        const deliveryLabel = document.getElementById('deliveryLabel');
+
+        // Open modal when clicking on Home Delivery option
+        deliveryLabel.addEventListener('click', (e) => {
+            e.preventDefault();
+            deliveryModal.show();
+        });
+
+        document.getElementById('savePincode').addEventListener('click', () => {
+            const pincode = document.getElementById('pincode').value;
+            if (pincode) {
+                alert('PIN code saved: ' + pincode);
+                deliveryModal.hide();
+            }
+        });
+
+        // Store Pickup Modal
+        const pickupModal = new bootstrap.Modal(document.getElementById('pickupModal'));
+        const pickupLabel = document.getElementById('pickupLabel');
+
+        // Open modal when clicking on Store Pickup option
+        pickupLabel.addEventListener('click', (e) => {
+            e.preventDefault();
+            pickupModal.show();
+        });
+
+        // Store search filter
+        const storeSearch = document.getElementById('storeSearch');
+        const stockFilter = document.getElementById('stockFilter');
+        const storeItems = document.querySelectorAll('.store-item');
+
+        function filterStores() {
+            const searchTerm = storeSearch.value.toLowerCase();
+            const onlyInStock = stockFilter.checked;
+
+            storeItems.forEach(item => {
+                const address = item.querySelector('.store-address').textContent.toLowerCase();
+                const storeName = item.querySelector('h6').textContent.toLowerCase();
+                const isInStock = item.querySelector('.store-stock').classList.contains('in-stock');
+
+                const matchesSearch = address.includes(searchTerm) || storeName.includes(searchTerm);
+                const matchesStock = !onlyInStock || isInStock;
+
+                if (matchesSearch && matchesStock) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        storeSearch.addEventListener('input', filterStores);
+        stockFilter.addEventListener('change', filterStores);
+
+        // Store selection
+        document.querySelectorAll('.select-store').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.store-item').forEach(item => {
+                    item.classList.remove('selected');
+                });
+                this.closest('.store-item').classList.add('selected');
+            });
+        });
+        // Wishlist, Compare, Share functionality
+        const wishlistBtn = document.querySelector('.availability-actions .action-link:nth-child(1)');
+        const compareBtn = document.querySelector('.availability-actions .action-link:nth-child(2)');
+        const shareBtn = document.querySelector('.availability-actions .action-link:nth-child(3)');
+
+        // Toast notification function
+        function showToast(title, message, type = 'success') {
+            const toast = document.createElement('div');
+            toast.className = `custom-toast ${type}`;
+            toast.innerHTML = `
+                <div class="toast-icon">
+                    <i class="fas ${type === 'success' ? 'fa-check' : 'fa-info-circle'}"></i>
+                </div>
+                <div class="toast-content">
+                    <div class="toast-title">${title}</div>
+                    <div class="toast-message">${message}</div>
+                </div>
+            `;
+            document.body.appendChild(toast);
+
+            setTimeout(() => toast.classList.add('show'), 100);
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 400);
+            }, 3500);
+        }
+
+        // Wishlist functionality
+        let isInWishlist = false;
+        wishlistBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            isInWishlist = !isInWishlist;
+            const icon = wishlistBtn.querySelector('i');
+
+            if (isInWishlist) {
+                icon.classList.remove('far');
+                icon.classList.add('fas');
+                wishlistBtn.style.color = '#ED3237';
+                showToast('Success!', 'Product added to your wishlist', 'success');
+            } else {
+                icon.classList.remove('fas');
+                icon.classList.add('far');
+                wishlistBtn.style.color = '';
+                showToast('Removed', 'Product removed from wishlist', 'success');
+            }
+        });
+
+        // Compare functionality
+        let isInCompare = false;
+        compareBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            isInCompare = !isInCompare;
+
+            if (isInCompare) {
+                compareBtn.style.color = '#ED3237';
+                showToast('Success!', 'Product added to compare list', 'success');
+            } else {
+                compareBtn.style.color = '';
+                showToast('Removed', 'Product removed from compare list', 'success');
+            }
+        });
+
+        // Share functionality
+        shareBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const shareModal = new bootstrap.Modal(document.getElementById('shareModal'));
+            shareModal.show();
+        });
+
+        // Copy link functionality
+        document.getElementById('copyLink').addEventListener('click', () => {
+            navigator.clipboard.writeText(window.location.href);
+            showToast('Copied!', 'Product link copied to clipboard', 'success');
+        });
+
+        // Reviews functionality
+        function openWriteReview() {
+            // Check if user is logged in (mock check)
+            const isLoggedIn = false; // Change to true to test logged-in state
+
+            if (!isLoggedIn) {
+                showToast('Login Required', 'Please login to write a review', 'success');
+                // In real implementation: window.location.href = '/login';
+            } else {
+                // Show write review modal (to be implemented)
+                showToast('Write Review', 'Review form would open here', 'success');
+            }
+        }
+
+        function voteHelpful(button, voteType) {
+            // Check if user is logged in
+            const isLoggedIn = false; // Mock check
+
+            if (!isLoggedIn) {
+                showToast('Login Required', 'Please login to vote', 'success');
+                return;
+            }
+
+            // Toggle vote
+            const isActive = button.classList.contains('voted');
+
+            if (isActive) {
+                button.classList.remove('voted');
+                // Decrease count
+                const countSpan = button.querySelector('.vote-count');
+                const currentCount = parseInt(countSpan.textContent.match(/\d+/)[0]);
+                countSpan.textContent = `(${currentCount - 1})`;
+            } else {
+                // Remove vote from opposite button if exists
+                const parentFooter = button.closest('.review-item__footer');
+                parentFooter.querySelectorAll('.helpful-btn').forEach(btn => btn.classList.remove('voted'));
+
+                button.classList.add('voted');
+                // Increase count
+                const countSpan = button.querySelector('.vote-count');
+                const currentCount = parseInt(countSpan.textContent.match(/\d+/)[0]);
+                countSpan.textContent = `(${currentCount + 1})`;
+            }
+        }
+
+        function filterReviews(filterType) {
+            const reviewItems = document.querySelectorAll('.review-item');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+
+            // Update active button
+            filterBtns.forEach(btn => btn.classList.remove('active'));
+            event.target.closest('.filter-btn').classList.add('active');
+
+            // Filter reviews
+            reviewItems.forEach(item => {
+                let shouldShow = false;
+
+                if (filterType === 'all') {
+                    shouldShow = true;
+                } else if (filterType === 'verified') {
+                    shouldShow = item.dataset.verified === 'true';
+                } else if (filterType === 'photos') {
+                    shouldShow = item.dataset.photos === 'true';
+                }
+
+                item.style.display = shouldShow ? 'block' : 'none';
+            });
+        }
+
+        function filterByRating(rating) {
+            const reviewItems = document.querySelectorAll('.review-item');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+
+            // Reset filter buttons
+            filterBtns.forEach(btn => btn.classList.remove('active'));
+
+            // Filter by rating
+            reviewItems.forEach(item => {
+                const itemRating = parseInt(item.dataset.rating);
+                item.style.display = (itemRating === rating) ? 'block' : 'none';
+            });
+
+            showToast('Filtered', `Showing ${rating}-star reviews only`, 'success');
+        }
+
+        function sortReviews(sortType) {
+            const reviewsList = document.querySelector('.reviews-list');
+            const reviewItems = Array.from(document.querySelectorAll('.review-item'));
+
+            reviewItems.sort((a, b) => {
+                if (sortType === 'helpful') {
+                    return parseInt(b.dataset.helpful) - parseInt(a.dataset.helpful);
+                } else if (sortType === 'recent') {
+                    return new Date(b.dataset.date) - new Date(a.dataset.date);
+                } else if (sortType === 'highest') {
+                    return parseInt(b.dataset.rating) - parseInt(a.dataset.rating);
+                } else if (sortType === 'lowest') {
+                    return parseInt(a.dataset.rating) - parseInt(b.dataset.rating);
+                }
+            });
+
+            // Re-append sorted items
+            reviewItems.forEach(item => reviewsList.appendChild(item));
+        }
+
+        function loadMoreReviews() {
+            const btn = event.target.closest('button');
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
+
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-sync-alt"></i> Load More Reviews';
+                showToast('No More Reviews', 'All reviews have been loaded', 'success');
+            }, 1000);
+        }
+
+        // Related Products Carousel
+        function scrollRelatedProducts(direction) {
+            const carousel = document.getElementById('relatedProductsCarousel');
+            const cardWidth = carousel.querySelector('.product-card').offsetWidth + 20; // card width + gap
+            const scrollAmount = cardWidth * 2; // Scroll 2 cards at a time
+
+            carousel.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+
+        // Wishlist Toggle
+        function toggleWishlist(button) {
+            const icon = button.querySelector('i');
+            const isActive = icon.classList.contains('fas');
+
+            if (isActive) {
+                icon.classList.remove('fas');
+                icon.classList.add('far');
+                showToast('Removed', 'Product removed from wishlist', 'success');
+            } else {
+                icon.classList.remove('far');
+                icon.classList.add('fas');
+                showToast('Added!', 'Product added to your wishlist', 'success');
+            }
+        }
+
+        // Quick View
+        function quickView(productId) {
+            showToast('Quick View', `Opening quick view for product ${productId}...`, 'success');
+            // In real implementation, would open a modal with product details
+        }
+
+        // Bootstrap handles FAQ accordion automatically - no custom JS needed
+    </script>
+
+    <!-- Toast Container -->
+    <div id="toastContainer"></div>
+
+    <!-- Share Modal -->
+    <div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="shareModalLabel">Share Product</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="share-options">
+                        <button class="share-option" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank')">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Facebook</span>
+                        </button>
+                        <button class="share-option" onclick="window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href), '_blank')">
+                            <i class="fab fa-twitter"></i>
+                            <span>Twitter</span>
+                        </button>
+                        <button class="share-option" onclick="window.open('https://wa.me/?text=' + encodeURIComponent(window.location.href), '_blank')">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </button>
+                        <button class="share-option" onclick="window.location.href='mailto:?subject=Check out this product&body=' + encodeURIComponent(window.location.href)">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email</span>
+                        </button>
+                    </div>
+                    <div class="copy-link-section">
+                        <input type="text" class="form-control" value="${window.location.href}" readonly id="productLink">
+                        <button class="btn btn-primary" id="copyLink">
+                            <i class="fas fa-copy"></i> Copy Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Zoom Modal -->
+    <div class="image-zoom-modal" id="imageZoomModal" onclick="closeImageZoom(event)">
+        <button class="zoom-close-btn" onclick="closeImageZoom()">
+            <i class="fas fa-times"></i>
+        </button>
+        <button class="zoom-nav zoom-nav--prev" onclick="navigateZoomImage(-1); event.stopPropagation();">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="zoom-nav zoom-nav--next" onclick="navigateZoomImage(1); event.stopPropagation();">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="zoom-image-container">
+            <img id="zoomImage" src="" alt="Product Image">
+        </div>
+        <div class="zoom-thumbnails" id="zoomThumbnails"></div>
+    </div>
+</body>
+</html>

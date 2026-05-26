@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Akku Electronics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/products.css">
+</head>
+<body>
+    <!-- Header (Same as home page) -->
+    <header class="header">
+        <!-- Top Bar -->
+        <div class="header__topbar">
+            <div class="container">
+                <div class="header__topbar-left">
+                    <span><i class="fas fa-phone"></i> +977-1234567890</span>
+                    <span><i class="fas fa-envelope"></i> info@akkuelectronics.com</span>
+                </div>
+                <div class="header__topbar-right">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Header -->
+        <div class="header__main">
+            <div class="container">
+                <a href="index.html" class="header__logo">
+                    <i class="fas fa-bolt"></i> AKKU
+                </a>
+
+                <!-- Search Bar -->
+                <div class="header__search">
+                    <input type="text" placeholder="Search for products...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+
+                <!-- Header Actions -->
+                <div class="header__actions">
+                    <a href="#" class="header__action-item">
+                        <i class="fas fa-user"></i>
+                        <span>Account</span>
+                    </a>
+                    <a href="#" class="header__action-item">
+                        <i class="fas fa-heart"></i>
+                        <span>Wishlist</span>
+                        <span class="badge">3</span>
+                    </a>
+                    <a href="#" class="header__action-item">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Cart</span>
+                        <span class="badge">5</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="header__menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Search -->
+        <div class="header__mobile-search">
+            <input type="text" placeholder="Search for products...">
+        </div>
+
+        <!-- Navigation -->
+        <nav class="header__nav" id="mainNav">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Deals</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="products-page">
+        <div class="container">
+            <div class="products-page__header">
+                <h1>Our Products</h1>
+                <p>Browse through our wide range of electronic products</p>
+            </div>
+
+            <div class="products-page__filters">
+                <h3>Filter Products</h3>
+                <div class="filter-group">
+                    <label for="category">Category</label>
+                    <select id="category">
+                        <option>All Categories</option>
+                        <option>Laptops</option>
+                        <option>Smartphones</option>
+                        <option>Accessories</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="price">Price Range</label>
+                    <input type="range" id="price" min="0" max="100000">
+                </div>
+            </div>
+
+            <div class="products-page__grid">
+                <!-- Laptops -->
+                <div class="product-card">
+                    <div class="product-card__image">
+                        <img src="https://via.placeholder.com/280x200/4CAF50/ffffff?text=Dell+XPS+15" alt="Dell XPS 15">
+                        <span class="product-card__badge">New</span>
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">Dell XPS 15</h3>
+                        <p class="product-card__category">Laptop</p>
+                        <div class="product-card__rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.5)</span>
+                        </div>
+                        <div class="product-card__price">
+                            <span class="product-card__price--current">Rs. 185,000</span>
+                            <span class="product-card__price--original">Rs. 200,000</span>
+                        </div>
+                        <button class="product-card__btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-card__image">
+                        <img src="https://via.placeholder.com/280x200/2196F3/ffffff?text=MacBook+Pro" alt="MacBook Pro">
+                        <span class="product-card__badge product-card__badge--hot">Hot</span>
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">MacBook Pro M3</h3>
+                        <p class="product-card__category">Laptop</p>
+                        <div class="product-card__rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                        <div class="product-card__price">
+                            <span class="product-card__price--current">Rs. 285,000</span>
+                        </div>
+                        <button class="product-card__btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-card__image">
+                        <img src="https://via.placeholder.com/280x200/9C27B0/ffffff?text=HP+Pavilion" alt="HP Pavilion">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">HP Pavilion Gaming</h3>
+                        <p class="product-card__category">Laptop</p>
+                        <div class="product-card__rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.0)</span>
+                        </div>
+                        <div class="product-card__price">
+                            <span class="product-card__price--current">Rs. 125,000</span>
+                        </div>
+                        <button class="product-card__btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Mobiles -->
+                <div class="product-card">
+                    <div class="product-card__image">
+                        <img src="https://via.placeholder.com/280x200/FF5722/ffffff?text=iPhone+15+Pro" alt="iPhone 15 Pro">
+                        <span class="product-card__badge product-card__badge--hot">Hot</span>
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">iPhone 15 Pro Max</h3>
+                        <p class="product-card__category">Mobile</p>
+                        <div class="product-card__rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                        <div class="product-card__price">
+                            <span class="product-card__price--current">Rs. 189,000</span>
+                            <span class="product-card__price--original">Rs. 199,000</span>
+                        </div>
+                        <button class="product-card__btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-card__image">
+                        <img src="https://via.placeholder.com/280x200/607D8B/ffffff?text=Samsung+S24" alt="Samsung Galaxy S24">
+                        <span class="product-card__badge">New</span>
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">Samsung Galaxy S24 Ultra</h3>
+                        <p class="product-card__category">Mobile</p>
+                        <div class="product-card__rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.5)</span>
+                        </div>
+                        <div class="product-card__price">
+                            <span class="product-card__price--current">Rs. 159,000</span>
+                        </div>
+                        <button class="product-card__btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-card__image">
+                        <img src="https://via.placeholder.com/280x200/FF9800/ffffff?text=OnePlus+12" alt="OnePlus 12">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">OnePlus 12</h3>
+                        <p class="product-card__category">Mobile</p>
+                        <div class="product-card__rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.0)</span>
+                        </div>
+                        <div class="product-card__price">
+                            <span class="product-card__price--current">Rs. 89,000</span>
+                            <span class="product-card__price--original">Rs. 95,000</span>
+                        </div>
+                        <button class="product-card__btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Tablets -->
+                <div class="product-card">
+                    <div class="product-card__image">
+                        <img src="https://via.placeholder.com/280x200/3F51B5/ffffff?text=iPad+Pro" alt="iPad Pro">
+                        <span class="product-card__badge">New</span>
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">iPad Pro 12.9"</h3>
+                        <p class="product-card__category">Tablet</p>
+                        <div class="product-card__rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.5)</span>
+                        </div>
+                        <div class="product-card__price">
+                            <span class="product-card__price--current">Rs. 145,000</span>
+                        </div>
+                        <button class="product-card__btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-card__image">
+                        <img src="https://via.placeholder.com/280x200/009688/ffffff?text=Galaxy+Tab" alt="Galaxy Tab S9">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">Galaxy Tab S9</h3>
+                        <p class="product-card__category">Tablet</p>
+                        <div class="product-card__rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.0)</span>
+                        </div>
+                        <div class="product-card__price">
+                            <span class="product-card__price--current">Rs. 95,000</span>
+                        </div>
+                        <button class="product-card__btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Accessories -->
+                <div class="product-card">
+                    <div class="product-card__image">
+                        <img src="https://via.placeholder.com/280x200/E91E63/ffffff?text=AirPods+Pro" alt="AirPods Pro">
+                        <span class="product-card__badge product-card__badge--hot">Hot</span>
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">AirPods Pro (2nd Gen)</h3>
+                        <p class="product-card__category">Accessory</p>
+                        <div class="product-card__rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                        <div class="product-card__price">
+                            <span class="product-card__price--current">Rs. 35,000</span>
+                        </div>
+                        <button class="product-card__btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-card__image">
+                        <img src="https://via.placeholder.com/280x200/795548/ffffff?text=Magic+Mouse" alt="Magic Mouse">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">Apple Magic Mouse</h3>
+                        <p class="product-card__category">Accessory</p>
+                        <div class="product-card__rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.0)</span>
+                        </div>
+                        <div class="product-card__price">
+                            <span class="product-card__price--current">Rs. 12,500</span>
+                            <span class="product-card__price--original">Rs. 15,000</span>
+                        </div>
+                        <button class="product-card__btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-card__image">
+                        <img src="https://via.placeholder.com/280x200/00BCD4/ffffff?text=USB-C+Hub" alt="USB-C Hub">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">Anker USB-C Hub 7-in-1</h3>
+                        <p class="product-card__category">Accessory</p>
+                        <div class="product-card__rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.5)</span>
+                        </div>
+                        <div class="product-card__price">
+                            <span class="product-card__price--current">Rs. 8,500</span>
+                        </div>
+                        <button class="product-card__btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-card__image">
+                        <img src="https://via.placeholder.com/280x200/CDDC39/333333?text=Wireless+Charger" alt="Wireless Charger">
+                        <span class="product-card__badge">New</span>
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">Belkin 3-in-1 Wireless Charger</h3>
+                        <p class="product-card__category">Accessory</p>
+                        <div class="product-card__rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.0)</span>
+                        </div>
+                        <div class="product-card__price">
+                            <span class="product-card__price--current">Rs. 18,500</span>
+                        </div>
+                        <button class="product-card__btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+            const icon = this.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+    </script>
+</body>
+</html>

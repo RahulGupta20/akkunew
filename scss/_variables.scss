@@ -1,0 +1,22 @@
+// Custom Variables
+$primary-color: #ED3237;
+$secondary-color: #004e89;
+$dark-color: #1a1a2e;
+$light-color: #f8f9fa;
+$text-color: #333;
+$border-color: #dee2e6;
+
+// Bootstrap Override Variables
+$primary: $primary-color;
+$secondary: $secondary-color;
+$dark: $dark-color;
+
+// Spacing
+$header-height: 80px;
+$header-mobile-height: 60px;
+
+// Breakpoints
+$mobile: 576px;
+$tablet: 768px;
+$desktop: 992px;
+$large-desktop: 1200px;

@@ -1,0 +1,542 @@
+// E-commerce Header Styles - Dark Theme
+.header {
+  // Main Header (Sticky - Logo & Search)
+  &__main {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #0C0304;
+    padding: 10px 0;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+    width: 100%;
+
+    .container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      @media (max-width: $desktop) {
+        gap: 12px;
+      }
+
+      @media (max-width: $mobile) {
+        gap: 8px;
+      }
+    }
+  }
+
+  // Logo
+  &__logo {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s;
+
+    img {
+      height: 32px;
+      width: auto;
+      display: block;
+
+      @media (max-width: $mobile) {
+        height: 28px;
+      }
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  // Search Bar
+  &__search {
+    flex: 1;
+    max-width: 700px;
+    position: relative;
+    margin: 0 auto;
+
+    @media (max-width: $tablet) {
+      max-width: 500px;
+    }
+
+    @media (max-width: $mobile) {
+      max-width: 100%;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px 100px 8px 16px;
+      background-color: #080203;
+      border: 1px solid #2a2a2a;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 0.9rem;
+      outline: none;
+      transition: all 0.3s;
+
+      @media (max-width: $tablet) {
+        padding: 8px 90px 8px 14px;
+        font-size: 0.85rem;
+      }
+
+      @media (max-width: $mobile) {
+        padding: 8px 50px 8px 12px;
+        font-size: 0.8rem;
+      }
+
+      &::placeholder {
+        color: #666;
+      }
+
+      &:focus {
+        border-color: $primary-color;
+        background-color: #0C0304;
+        box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+      }
+    }
+
+    button {
+      position: absolute;
+      right: 4px;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 6px 20px;
+      background-color: $primary-color;
+      border: none;
+      border-radius: 4px;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      @media (max-width: $tablet) {
+        padding: 5px 16px;
+        font-size: 0.8rem;
+      }
+
+      @media (max-width: $mobile) {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+      }
+
+      &:hover {
+        background-color: darken($primary-color, 8%);
+        transform: translateY(-50%) scale(1.05);
+      }
+
+      i {
+        font-size: 1rem;
+
+        @media (max-width: $mobile) {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+
+  // Header Actions
+  &__actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-left: auto;
+
+    @media (max-width: $tablet) {
+      gap: 6px;
+    }
+
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+
+  // Settings Button (Language & Currency)
+  &__settings-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #140506;
+    border: 1px solid #2a2a2a;
+    border-radius: 6px;
+    padding: 8px 12px;
+    color: #bbb;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: all 0.3s;
+
+    i {
+      font-size: 0.9rem;
+      color: $primary-color;
+    }
+
+    &:hover {
+      border-color: $primary-color;
+      background-color: #1a1a1a;
+      color: #fff;
+    }
+  }
+
+  &__action-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #bbb;
+    position: relative;
+    transition: all 0.3s;
+    padding: 8px 10px;
+    border-radius: 6px;
+    background-color: #140506;
+    border: 1px solid #2a2a2a;
+
+    &:hover {
+      color: $primary-color;
+      background-color: #1a1a1a;
+      border-color: $primary-color;
+    }
+
+    i {
+      font-size: 1.1rem;
+    }
+
+    .badge {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      background: linear-gradient(135deg, $primary-color, darken($primary-color, 10%));
+      color: #fff;
+      font-size: 0.65rem;
+      padding: 3px 6px;
+      border-radius: 12px;
+      font-weight: 700;
+      min-width: 18px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba($primary-color, 0.4);
+    }
+  }
+
+  // Login Button
+  &__login-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, $primary-color, darken($primary-color, 10%));
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba($primary-color, 0.3);
+
+    i {
+      font-size: 0.9rem;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba($primary-color, 0.5);
+      background: linear-gradient(135deg, darken($primary-color, 5%), darken($primary-color, 15%));
+    }
+  }
+
+  // Mobile Menu Toggle
+  &__menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px;
+
+    @media (max-width: $mobile) {
+      display: block;
+    }
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  // Navigation Menu (Not Sticky)
+  &__nav {
+    background-color: #140506;
+    border-top: 1px solid #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
+    position: relative;
+    z-index: 9;
+
+    @media (max-width: $mobile) {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media (max-width: $mobile) {
+        flex-direction: column;
+      }
+    }
+
+    li {
+      position: relative;
+
+      a {
+        display: block;
+        padding: 16px 24px;
+        color: #bbb;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: all 0.3s;
+        position: relative;
+
+        @media (max-width: $mobile) {
+          padding: 12px 20px;
+          border-bottom: 1px solid #1a1a1a;
+        }
+
+        &:hover {
+          color: #fff;
+          background-color: #0C0304;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 0;
+          height: 2px;
+          background-color: $primary-color;
+          transition: width 0.3s;
+        }
+
+        &:hover::after {
+          width: 80%;
+        }
+      }
+
+      &.active a {
+        color: $primary-color;
+
+        &::after {
+          width: 80%;
+        }
+      }
+    }
+  }
+}
+
+// Settings Modal
+.settings-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  &.active {
+    display: flex;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+  }
+
+  &__content {
+    position: relative;
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    animation: modalSlideIn 0.3s ease;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    background-color: #140506;
+    border-bottom: 1px solid #2a2a2a;
+
+    h3 {
+      margin: 0;
+      color: #fff;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .close-btn {
+      background: none;
+      border: none;
+      color: #999;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: #2a2a2a;
+        color: $primary-color;
+      }
+    }
+  }
+
+  &__body {
+    padding: 24px;
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+
+  &__footer {
+    padding: 16px 24px;
+    background-color: #140506;
+    border-top: 1px solid #2a2a2a;
+
+    .btn-apply {
+      width: 100%;
+      padding: 12px 20px;
+      background: linear-gradient(135deg, $primary-color, darken($primary-color, 10%));
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 4px 12px rgba($primary-color, 0.3);
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba($primary-color, 0.5);
+      }
+    }
+  }
+}
+
+.settings-section {
+  margin-bottom: 30px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  h4 {
+    color: #fff;
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    i {
+      color: $primary-color;
+      font-size: 1rem;
+    }
+  }
+}
+
+.settings-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.settings-option {
+  display: block;
+  cursor: pointer;
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  .option-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    background-color: #140506;
+    border: 2px solid #2a2a2a;
+    border-radius: 8px;
+    transition: all 0.3s;
+
+    .option-label {
+      color: #bbb;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    i {
+      color: transparent;
+      font-size: 1rem;
+      transition: all 0.3s;
+    }
+  }
+
+  &:hover .option-content {
+    border-color: #3a3a3a;
+    background-color: #151515;
+  }
+
+  &.active .option-content {
+    border-color: $primary-color;
+    background-color: rgba($primary-color, 0.1);
+
+    .option-label {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    i {
+      color: $primary-color;
+    }
+  }
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

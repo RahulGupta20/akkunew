@@ -1,0 +1,27 @@
+// Common styles shared across all pages
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Bai Jamjuree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: $text-color;
+  line-height: 1.6;
+
+  &.dark-theme {
+    background: linear-gradient(135deg, #080203 0%, #100405 50%, #080203 100%);
+    background-attachment: fixed;
+    color: #fff;
+  }
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+// Import header
+@import 'header';

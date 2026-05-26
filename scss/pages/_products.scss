@@ -1,0 +1,178 @@
+// Products Page Specific Styles
+.products-page {
+  padding: 40px 20px;
+
+  &__header {
+    margin-bottom: 30px;
+
+    h1 {
+      color: $dark-color;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__filters {
+    background-color: $light-color;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+
+    h3 {
+      margin-bottom: 15px;
+      color: $dark-color;
+    }
+
+    .filter-group {
+      margin-bottom: 20px;
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      select,
+      input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid $border-color;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+  }
+}
+
+// Product Card Styles
+.product-card {
+  background-color: #fff;
+  border: 1px solid $border-color;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  &__image {
+    position: relative;
+    overflow: hidden;
+    background-color: $light-color;
+
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: $primary-color;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &--hot {
+      background-color: #e74c3c;
+    }
+  }
+
+  &__content {
+    padding: 20px;
+  }
+
+  &__title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $dark-color;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__category {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    margin-bottom: 12px;
+
+    i {
+      color: #ffa500;
+      font-size: 0.9rem;
+    }
+
+    span {
+      margin-left: 5px;
+      color: #666;
+      font-size: 0.85rem;
+    }
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+
+    &--current {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: $primary-color;
+    }
+
+    &--original {
+      font-size: 1rem;
+      color: #999;
+      text-decoration: line-through;
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    padding: 12px;
+    background-color: $secondary-color;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+
+    &:hover {
+      background-color: darken($secondary-color, 10%);
+      transform: scale(1.02);
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}

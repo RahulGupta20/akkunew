@@ -1,0 +1,345 @@
+// Common SCSS Entry Point
+@import 'variables';
+@import '../node_modules/bootstrap/scss/bootstrap';
+@import 'common/common';
+
+// Button Styles
+.btn {
+  padding: 14px 28px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  i {
+    font-size: 1rem;
+  }
+}
+
+.btn-primary {
+  background-color: #ED3237;
+  color: #fff !important;
+
+  &:hover {
+    background-color: darken(#ED3237, 8%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(237, 50, 55, 0.3);
+  }
+
+  &:disabled {
+    background-color: #666;
+    cursor: not-allowed;
+    opacity: 0.6;
+
+    &:hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #333;
+
+  &:hover {
+    background-color: #100405;
+    border-color: #555;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: transparent;
+      border-color: #333;
+    }
+  }
+}
+
+.btn-outline-primary {
+  background-color: transparent;
+  color: #ED3237;
+  border: 1px solid #ED3237;
+
+  &:hover {
+    background-color: #ED3237;
+    color: #fff;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: transparent;
+      color: #ED3237;
+    }
+  }
+}
+
+// Action Link Buttons (Wishlist, Compare, Share)
+.action-link {
+  flex: 1;
+  background-color: #080203;
+  border: 1px solid #333;
+  border-radius: 6px;
+  color: #ccc;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 8px;
+  transition: all 0.3s;
+
+  i {
+    font-size: 1.1rem;
+    transition: color 0.3s;
+  }
+
+  &:hover {
+    border-color: #ED3237;
+    background-color: #100405;
+    color: #fff;
+
+    i {
+      color: #ED3237;
+    }
+  }
+}
+
+// Stock Badge Styles
+.badge-stock {
+  padding: 4px 10px !important;
+  border-radius: 4px !important;
+  font-size: 0.75rem !important;
+  font-weight: 600;
+  text-transform: uppercase;
+
+  &.in-stock {
+    background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(39, 174, 96, 0.3);
+  }
+
+  &.out-of-stock {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3);
+  }
+
+  &.limited-stock {
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(243, 156, 18, 0.3);
+  }
+
+  &.pre-order {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+  }
+
+  &.coming-soon {
+    background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(155, 89, 182, 0.3);
+  }
+}
+
+// Toast Notification Styles
+.custom-toast {
+  position: fixed;
+  top: -100px;
+  right: 20px;
+  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+  color: #fff;
+  padding: 18px 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(39, 174, 96, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  z-index: 10000;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  min-width: 300px;
+  opacity: 0;
+  transform: translateY(-20px) scale(0.9);
+
+  &.show {
+    top: 20px;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    animation: slideInBounce 0.5s ease-out;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #27ae60 0%, #229954 100%);
+    border-radius: 12px 0 0 12px;
+  }
+
+  &.error {
+    border-color: rgba(231, 76, 60, 0.3);
+
+    &::before {
+      background: linear-gradient(180deg, #e74c3c 0%, #c0392b 100%);
+    }
+
+    .toast-icon {
+      background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+      box-shadow: 0 0 20px rgba(231, 76, 60, 0.4);
+    }
+  }
+
+  &.info {
+    border-color: rgba(52, 152, 219, 0.3);
+
+    &::before {
+      background: linear-gradient(180deg, #3498db 0%, #2980b9 100%);
+    }
+
+    .toast-icon {
+      background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+      box-shadow: 0 0 20px rgba(52, 152, 219, 0.4);
+    }
+  }
+
+  &.warning {
+    border-color: rgba(243, 156, 18, 0.3);
+
+    &::before {
+      background: linear-gradient(180deg, #f39c12 0%, #e67e22 100%);
+    }
+
+    .toast-icon {
+      background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+      box-shadow: 0 0 20px rgba(243, 156, 18, 0.4);
+    }
+  }
+
+  .toast-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    animation: iconPulse 0.6s ease-out;
+    box-shadow: 0 0 20px rgba(39, 174, 96, 0.4);
+
+    i {
+      font-size: 1.1rem;
+      color: #fff;
+    }
+  }
+
+  .toast-content {
+    flex: 1;
+
+    .toast-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+
+    .toast-message {
+      font-size: 0.85rem;
+      color: #b3b3b3;
+    }
+  }
+
+  @media (max-width: 768px) {
+    right: 10px;
+    left: 10px;
+    min-width: auto;
+  }
+}
+
+@keyframes slideInBounce {
+  0% {
+    transform: translateY(-100px) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(10px) scale(1.05);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes iconPulse {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+// Product Badge Styles (non-positioned badges for general use)
+.badge-product {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: #fff;
+
+  &.new-arrival {
+    background: linear-gradient(135deg, #ED3237 0%, darken(#ED3237, 10%) 100%);
+    box-shadow: 0 2px 8px rgba(237, 50, 55, 0.3);
+  }
+
+  &.hot-deal {
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+    box-shadow: 0 2px 8px rgba(243, 156, 18, 0.3);
+  }
+
+  &.best-seller {
+    background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%);
+    box-shadow: 0 2px 8px rgba(39, 174, 96, 0.3);
+  }
+
+  &.discount {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3);
+  }
+
+  &.featured {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+  }
+}
