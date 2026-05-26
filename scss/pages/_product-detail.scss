@@ -4224,7 +4224,8 @@
 
   &__content {
     padding: 20px;
-    background: linear-gradient(180deg, #ED3237 0%, #231D22 20%, #FFFFFF 100%);
+    background: linear-gradient(180deg, rgba(237, 50, 55, 0.15) 0%, rgba(35, 29, 34, 0.8) 100%);
+    backdrop-filter: blur(10px);
 
     h5 {
       font-size: 1rem;
