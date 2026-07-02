@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | Akku Electronics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/my-profile.css">
+</head>
+<body class="dark-theme">
+    <!-- Header -->
+    <header class="header">
+        <!-- Main Header (Sticky) -->
+        <div class="header__main">
+            <div class="container">
+                <a href="index.html" class="header__logo">
+                    <img src="assets/images/logo.png" alt="AKKU Electronics">
+                </a>
+
+                <!-- Search Bar -->
+                <form class="header__search" action="search-results.html" method="GET">
+                    <input type="text" name="q" id="searchInput" placeholder="Search for products, brands and more...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+
+                <!-- Header Actions -->
+                <div class="header__actions">
+                    <!-- Language & Currency Button -->
+                    <button class="header__settings-btn" id="openSettingsModal">
+                        <i class="fas fa-globe"></i>
+                        <span>EN / NPR</span>
+                    </button>
+
+                    <!-- Wishlist -->
+                    <a href="wishlist.html" class="header__action-item" aria-label="Wishlist" title="Wishlist">
+                        <i class="fas fa-heart"></i>
+                    </a>
+
+                    <!-- Cart -->
+                    <a href="#" class="header__action-item" aria-label="Shopping Cart (5 items)" title="Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge">5</span>
+                    </a>
+
+                    <!-- User Menu (Logged In) -->
+                    <div class="dropdown">
+                        <button class="header__user-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="user-avatar">RM</div>
+                            <span class="user-name">Rajesh</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li class="dropdown-header">
+                                <div class="user-avatar">RM</div>
+                                <div>
+                                    <div>Rajesh Maharjan</div>
+                                    <div>rajesh@example.com</div>
+                                </div>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="my-profile.html"><i class="fas fa-user"></i> My Profile</a></li>
+                            <li><a class="dropdown-item" href="my-orders.html"><i class="fas fa-shopping-bag"></i> My Orders</a></li>
+                            <li><a class="dropdown-item" href="wishlist.html"><i class="fas fa-heart"></i> Wishlist</a></li>
+                            <li><a class="dropdown-item" href="my-reviews.html"><i class="fas fa-star"></i> My Reviews</a></li>
+                            <li><a class="dropdown-item" href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="product-detail.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="header__menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation (Not Sticky) -->
+        <nav class="header__nav" id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="#">Laptops</a></li>
+                <li><a href="#">Mobiles</a></li>
+                <li><a href="#">Accessories</a></li>
+                <li><a href="#">Deals</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <i class="fas fa-home"></i>
+            <a href="index.html">Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <span class="current">My Profile</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="my-profile">
+        <div class="container">
+            <div class="my-profile__wrapper">
+                <!-- Sidebar -->
+                <aside class="my-profile__sidebar">
+                    <div class="profile-card">
+                        <div class="profile-card__avatar">
+                            <div class="avatar-circle">RM</div>
+                            <button class="avatar-edit"><i class="fas fa-camera"></i></button>
+                        </div>
+                        <h3 class="profile-card__name">Rajesh Maharjan</h3>
+                        <p class="profile-card__email">rajesh@example.com</p>
+                        <div class="profile-card__stats">
+                            <div class="stat-item">
+                                <span class="stat-value">12</span>
+                                <span class="stat-label">Orders</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">8</span>
+                                <span class="stat-label">Reviews</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">15</span>
+                                <span class="stat-label">Wishlist</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <nav class="profile-nav">
+                        <a href="my-profile.html" class="profile-nav__item active">
+                            <i class="fas fa-user"></i>
+                            <span>My Profile</span>
+                        </a>
+                        <a href="my-orders.html" class="profile-nav__item">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span>My Orders</span>
+                        </a>
+                        <a href="wishlist.html" class="profile-nav__item">
+                            <i class="fas fa-heart"></i>
+                            <span>Wishlist</span>
+                        </a>
+                        <a href="my-reviews.html" class="profile-nav__item">
+                            <i class="fas fa-star"></i>
+                            <span>My Reviews</span>
+                        </a>
+                        <a href="settings.html" class="profile-nav__item">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                        <a href="product-detail.html" class="profile-nav__item profile-nav__item--logout">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </a>
+                    </nav>
+                </aside>
+
+                <!-- Main Content -->
+                <div class="my-profile__content">
+                    <div class="content-header">
+                        <h1>My Profile</h1>
+                        <p>Manage your personal information and account details</p>
+                    </div>
+
+                    <!-- Personal Information Section -->
+                    <section class="profile-section">
+                        <div class="profile-section__header">
+                            <h2><i class="fas fa-user-circle"></i> Personal Information</h2>
+                            <button class="btn-edit" id="editPersonalInfo"><i class="fas fa-edit"></i> Edit</button>
+                        </div>
+                        <div class="profile-section__content">
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <label>Full Name</label>
+                                    <p>Rajesh Maharjan</p>
+                                </div>
+                                <div class="info-item">
+                                    <label>Email Address</label>
+                                    <p>rajesh@example.com</p>
+                                </div>
+                                <div class="info-item">
+                                    <label>Phone Number</label>
+                                    <p>+977 98XXXXXXXX</p>
+                                </div>
+                                <div class="info-item">
+                                    <label>Date of Birth</label>
+                                    <p>January 15, 1990</p>
+                                </div>
+                                <div class="info-item">
+                                    <label>Gender</label>
+                                    <p>Male</p>
+                                </div>
+                                <div class="info-item">
+                                    <label>Member Since</label>
+                                    <p>March 2024</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Address Section -->
+                    <section class="profile-section">
+                        <div class="profile-section__header">
+                            <h2><i class="fas fa-map-marker-alt"></i> Saved Addresses</h2>
+                            <button class="btn-add" id="addAddress"><i class="fas fa-plus"></i> Add New</button>
+                        </div>
+                        <div class="profile-section__content">
+                            <div class="address-grid">
+                                <!-- Address Card 1 -->
+                                <div class="address-card">
+                                    <div class="address-card__header">
+                                        <span class="address-badge">Default</span>
+                                        <div class="address-actions">
+                                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                                        </div>
+                                    </div>
+                                    <h4>Home</h4>
+                                    <p>Rajesh Maharjan</p>
+                                    <p>Kathmandu Metropolitan City,</p>
+                                    <p>Ward No. 10, Thamel</p>
+                                    <p>Kathmandu, Nepal - 44600</p>
+                                    <p class="address-phone">+977 98XXXXXXXX</p>
+                                </div>
+
+                                <!-- Address Card 2 -->
+                                <div class="address-card">
+                                    <div class="address-card__header">
+                                        <div class="address-actions">
+                                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                                        </div>
+                                    </div>
+                                    <h4>Office</h4>
+                                    <p>Rajesh Maharjan</p>
+                                    <p>Durbar Marg,</p>
+                                    <p>Office Building 2nd Floor</p>
+                                    <p>Kathmandu, Nepal - 44600</p>
+                                    <p class="address-phone">+977 98XXXXXXXX</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Security Section -->
+                    <section class="profile-section">
+                        <div class="profile-section__header">
+                            <h2><i class="fas fa-shield-alt"></i> Security Settings</h2>
+                        </div>
+                        <div class="profile-section__content">
+                            <div class="security-item">
+                                <div class="security-item__info">
+                                    <h4>Password</h4>
+                                    <p>Last changed 30 days ago</p>
+                                </div>
+                                <button class="btn-secondary"><i class="fas fa-key"></i> Change Password</button>
+                            </div>
+                            <div class="security-item">
+                                <div class="security-item__info">
+                                    <h4>Two-Factor Authentication</h4>
+                                    <p>Add an extra layer of security to your account</p>
+                                </div>
+                                <button class="btn-secondary"><i class="fas fa-shield-alt"></i> Enable 2FA</button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // My Profile Page - Complete UX Flow
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toast Notification System
+            function showToast(title, message, type = 'success') {
+                const toastHTML = `
+                    <div class="message-box message-box--${type}">
+                        <i class="fas ${type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle'}"></i>
+                        <div>
+                            <strong>${title}</strong>
+                            <p style="margin: 0; font-size: 0.85rem;">${message}</p>
+                        </div>
+                    </div>
+                `;
+
+                const container = document.querySelector('.my-profile__content');
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = toastHTML;
+                const toast = tempDiv.firstElementChild;
+
+                container.insertBefore(toast, container.firstChild);
+
+                setTimeout(() => {
+                    toast.style.opacity = '0';
+                    toast.style.transform = 'translateY(-20px)';
+                    setTimeout(() => toast.remove(), 300);
+                }, 3000);
+            }
+
+            // Avatar Upload Handler
+            const avatarEdit = document.querySelector('.avatar-edit');
+            if (avatarEdit) {
+                avatarEdit.addEventListener('click', function() {
+                    const input = document.createElement('input');
+                    input.type = 'file';
+                    input.accept = 'image/*';
+                    input.onchange = function(e) {
+                        const file = e.target.files[0];
+                        if (file) {
+                            const reader = new FileReader();
+                            reader.onload = function(e) {
+                                showToast('Avatar Updated', 'Your profile picture has been updated successfully!', 'success');
+                            };
+                            reader.readAsDataURL(file);
+                        }
+                    };
+                    input.click();
+                });
+            }
+
+            // Edit Personal Info
+            const editPersonalInfo = document.getElementById('editPersonalInfo');
+            if (editPersonalInfo) {
+                editPersonalInfo.addEventListener('click', function() {
+                    const section = this.closest('.profile-section');
+                    const infoItems = section.querySelectorAll('.info-item');
+
+                    infoItems.forEach(item => {
+                        const p = item.querySelector('p');
+                        const label = item.querySelector('label').textContent;
+                        const currentValue = p.textContent;
+
+                        const input = document.createElement('input');
+                        input.type = 'text';
+                        input.value = currentValue;
+                        input.className = 'form-control';
+                        input.style.cssText = 'background: #140506; border: 1px solid #333; color: #fff; padding: 8px 12px; border-radius: 6px; font-size: 0.9rem;';
+
+                        p.replaceWith(input);
+                    });
+
+                    // Change button to Save
+                    this.innerHTML = '<i class="fas fa-save"></i> Save';
+                    this.onclick = function() {
+                        infoItems.forEach(item => {
+                            const input = item.querySelector('input');
+                            if (input) {
+                                const p = document.createElement('p');
+                                p.textContent = input.value;
+                                input.replaceWith(p);
+                            }
+                        });
+
+                        this.innerHTML = '<i class="fas fa-edit"></i> Edit';
+                        this.onclick = null;
+                        showToast('Profile Updated', 'Your personal information has been saved successfully!', 'success');
+                    };
+                });
+            }
+
+            // Add New Address
+            const addAddress = document.getElementById('addAddress');
+            if (addAddress) {
+                addAddress.addEventListener('click', function() {
+                    openAddressModal();
+                });
+            }
+
+            // Open Address Modal (Add or Edit)
+            function openAddressModal(addressCard = null) {
+                const isEdit = addressCard !== null;
+                const title = isEdit ? 'Edit Address' : 'Add New Address';
+
+                // Get existing data if editing
+                let addressData = {
+                    label: '',
+                    name: '',
+                    address1: '',
+                    address2: '',
+                    city: '',
+                    postalCode: '',
+                    phone: '',
+                    isDefault: false
+                };
+
+                if (isEdit) {
+                    const badge = addressCard.querySelector('.address-badge');
+                    addressData.isDefault = badge !== null;
+                    addressData.label = addressCard.querySelector('h4')?.textContent || '';
+
+                    const lines = addressCard.querySelectorAll('p');
+                    if (lines.length > 0) {
+                        addressData.name = lines[0]?.textContent || '';
+                        addressData.address1 = lines[1]?.textContent || '';
+                        addressData.address2 = lines[2]?.textContent || '';
+                        addressData.city = lines[3]?.textContent?.split(' - ')[0] || '';
+                        addressData.postalCode = lines[3]?.textContent?.split(' - ')[1] || '';
+                        addressData.phone = addressCard.querySelector('.address-phone')?.textContent || '';
+                    }
+                }
+
+                const modal = createModal(title, `
+                    <form id="addressForm" style="display: flex; flex-direction: column; gap: 16px;">
+                        <!-- Address Label -->
+                        <div>
+                            <label style="color: #888; font-size: 0.85rem; display: block; margin-bottom: 6px;">
+                                Address Label <span style="color: #ED3237;">*</span>
+                            </label>
+                            <input type="text" id="addressLabel" value="${addressData.label}" placeholder="e.g., Home, Office, etc." required
+                                style="background: #140506; border: 1px solid #333; color: #fff; padding: 10px 14px; border-radius: 6px; width: 100%; transition: border-color 0.3s;"
+                                onfocus="this.style.borderColor='#ED3237'" onblur="this.style.borderColor='#333'">
+                        </div>
+
+                        <!-- Full Name -->
+                        <div>
+                            <label style="color: #888; font-size: 0.85rem; display: block; margin-bottom: 6px;">
+                                Full Name <span style="color: #ED3237;">*</span>
+                            </label>
+                            <input type="text" id="addressName" value="${addressData.name}" placeholder="Enter full name" required
+                                style="background: #140506; border: 1px solid #333; color: #fff; padding: 10px 14px; border-radius: 6px; width: 100%; transition: border-color 0.3s;"
+                                onfocus="this.style.borderColor='#ED3237'" onblur="this.style.borderColor='#333'">
+                        </div>
+
+                        <!-- Address Line 1 -->
+                        <div>
+                            <label style="color: #888; font-size: 0.85rem; display: block; margin-bottom: 6px;">
+                                Address Line 1 <span style="color: #ED3237;">*</span>
+                            </label>
+                            <input type="text" id="addressLine1" value="${addressData.address1}" placeholder="Street address, P.O. box" required
+                                style="background: #140506; border: 1px solid #333; color: #fff; padding: 10px 14px; border-radius: 6px; width: 100%; transition: border-color 0.3s;"
+                                onfocus="this.style.borderColor='#ED3237'" onblur="this.style.borderColor='#333'">
+                        </div>
+
+                        <!-- Address Line 2 -->
+                        <div>
+                            <label style="color: #888; font-size: 0.85rem; display: block; margin-bottom: 6px;">
+                                Address Line 2
+                            </label>
+                            <input type="text" id="addressLine2" value="${addressData.address2}" placeholder="Apartment, suite, unit, building, floor, etc."
+                                style="background: #140506; border: 1px solid #333; color: #fff; padding: 10px 14px; border-radius: 6px; width: 100%; transition: border-color 0.3s;"
+                                onfocus="this.style.borderColor='#ED3237'" onblur="this.style.borderColor='#333'">
+                        </div>
+
+                        <!-- City and Postal Code -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                            <div>
+                                <label style="color: #888; font-size: 0.85rem; display: block; margin-bottom: 6px;">
+                                    City <span style="color: #ED3237;">*</span>
+                                </label>
+                                <input type="text" id="addressCity" value="${addressData.city}" placeholder="City" required
+                                    style="background: #140506; border: 1px solid #333; color: #fff; padding: 10px 14px; border-radius: 6px; width: 100%; transition: border-color 0.3s;"
+                                    onfocus="this.style.borderColor='#ED3237'" onblur="this.style.borderColor='#333'">
+                            </div>
+                            <div>
+                                <label style="color: #888; font-size: 0.85rem; display: block; margin-bottom: 6px;">
+                                    Postal Code <span style="color: #ED3237;">*</span>
+                                </label>
+                                <input type="text" id="addressPostal" value="${addressData.postalCode}" placeholder="Postal code" required
+                                    style="background: #140506; border: 1px solid #333; color: #fff; padding: 10px 14px; border-radius: 6px; width: 100%; transition: border-color 0.3s;"
+                                    onfocus="this.style.borderColor='#ED3237'" onblur="this.style.borderColor='#333'">
+                            </div>
+                        </div>
+
+                        <!-- Phone Number -->
+                        <div>
+                            <label style="color: #888; font-size: 0.85rem; display: block; margin-bottom: 6px;">
+                                Phone Number <span style="color: #ED3237;">*</span>
+                            </label>
+                            <input type="tel" id="addressPhone" value="${addressData.phone}" placeholder="+977 98XXXXXXXX" required
+                                style="background: #140506; border: 1px solid #333; color: #fff; padding: 10px 14px; border-radius: 6px; width: 100%; transition: border-color 0.3s;"
+                                onfocus="this.style.borderColor='#ED3237'" onblur="this.style.borderColor='#333'">
+                        </div>
+
+                        <!-- Set as Default -->
+                        <div style="display: flex; align-items: center; gap: 10px; padding: 12px; background: rgba(237, 50, 55, 0.05); border: 1px solid rgba(237, 50, 55, 0.2); border-radius: 6px;">
+                            <input type="checkbox" id="setDefault" ${addressData.isDefault ? 'checked' : ''}
+                                style="width: 18px; height: 18px; cursor: pointer; accent-color: #ED3237;">
+                            <label for="setDefault" style="color: #ccc; font-size: 0.9rem; cursor: pointer; margin: 0;">
+                                <i class="fas fa-star" style="color: #ED3237; margin-right: 4px;"></i>
+                                Set as default delivery address
+                            </label>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div style="display: flex; gap: 12px; margin-top: 8px;">
+                            <button type="button" onclick="document.querySelector('.modal-overlay').remove()"
+                                style="flex: 1; padding: 12px; background: #1a1a1a; color: #ccc; border: 1px solid #333; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.3s;"
+                                onmouseover="this.style.borderColor='#555'" onmouseout="this.style.borderColor='#333'">
+                                <i class="fas fa-times"></i> Cancel
+                            </button>
+                            <button type="submit"
+                                style="flex: 2; padding: 12px; background: linear-gradient(135deg, #ED3237, #c82529); color: #fff; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.3s;"
+                                onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(237, 50, 55, 0.4)'"
+                                onmouseout="this.style.transform=''; this.style.boxShadow=''">
+                                <i class="fas fa-${isEdit ? 'save' : 'plus'}"></i> ${isEdit ? 'Update Address' : 'Add Address'}
+                            </button>
+                        </div>
+                    </form>
+                `);
+
+                document.body.appendChild(modal);
+
+                // Form Submit Handler
+                const form = document.getElementById('addressForm');
+                form.onsubmit = function(e) {
+                    e.preventDefault();
+
+                    const formData = {
+                        label: document.getElementById('addressLabel').value.trim(),
+                        name: document.getElementById('addressName').value.trim(),
+                        address1: document.getElementById('addressLine1').value.trim(),
+                        address2: document.getElementById('addressLine2').value.trim(),
+                        city: document.getElementById('addressCity').value.trim(),
+                        postalCode: document.getElementById('addressPostal').value.trim(),
+                        phone: document.getElementById('addressPhone').value.trim(),
+                        isDefault: document.getElementById('setDefault').checked
+                    };
+
+                    // Validation
+                    if (!formData.label || !formData.name || !formData.address1 || !formData.city || !formData.postalCode || !formData.phone) {
+                        showToast('Validation Error', 'Please fill in all required fields.', 'error');
+                        return;
+                    }
+
+                    if (isEdit) {
+                        updateAddressCard(addressCard, formData);
+                        showToast('Address Updated', 'Your address has been updated successfully!', 'success');
+                    } else {
+                        createAddressCard(formData);
+                        showToast('Address Added', 'New address has been added successfully!', 'success');
+                    }
+
+                    document.querySelector('.modal-overlay').remove();
+                };
+            }
+
+            // Create New Address Card
+            function createAddressCard(data) {
+                const addressGrid = document.querySelector('.address-grid');
+
+                // If this is default, remove default from others
+                if (data.isDefault) {
+                    document.querySelectorAll('.address-badge').forEach(badge => badge.remove());
+                }
+
+                const newCard = `
+                    <div class="address-card" style="animation: scaleIn 0.3s ease-out;">
+                        <div class="address-card__header">
+                            ${data.isDefault ? '<span class="address-badge">Default</span>' : ''}
+                            <div class="address-actions" style="${data.isDefault ? '' : 'margin-left: auto;'}">
+                                <button class="btn-icon edit-address"><i class="fas fa-edit"></i></button>
+                                <button class="btn-icon delete-address"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <h4>${data.label}</h4>
+                        <p>${data.name}</p>
+                        <p>${data.address1}</p>
+                        ${data.address2 ? `<p>${data.address2}</p>` : ''}
+                        <p>${data.city}, Nepal - ${data.postalCode}</p>
+                        <p class="address-phone">${data.phone}</p>
+                    </div>
+                `;
+
+                addressGrid.insertAdjacentHTML('beforeend', newCard);
+                attachAddressHandlers();
+            }
+
+            // Update Existing Address Card
+            function updateAddressCard(card, data) {
+                // If this is default, remove default from others
+                if (data.isDefault) {
+                    document.querySelectorAll('.address-badge').forEach(badge => {
+                        if (badge.closest('.address-card') !== card) {
+                            badge.remove();
+                        }
+                    });
+                }
+
+                const header = card.querySelector('.address-card__header');
+                const existingBadge = header.querySelector('.address-badge');
+
+                if (data.isDefault && !existingBadge) {
+                    header.insertAdjacentHTML('afterbegin', '<span class="address-badge">Default</span>');
+                } else if (!data.isDefault && existingBadge) {
+                    existingBadge.remove();
+                }
+
+                // Update content
+                card.querySelector('h4').textContent = data.label;
+
+                const paragraphs = card.querySelectorAll('p:not(.address-phone)');
+                paragraphs.forEach(p => p.remove());
+
+                const phoneP = card.querySelector('.address-phone');
+                phoneP.textContent = data.phone;
+
+                const content = `
+                    <p>${data.name}</p>
+                    <p>${data.address1}</p>
+                    ${data.address2 ? `<p>${data.address2}</p>` : ''}
+                    <p>${data.city}, Nepal - ${data.postalCode}</p>
+                `;
+
+                phoneP.insertAdjacentHTML('beforebegin', content);
+            }
+
+            // Address Card Handlers
+            function attachAddressHandlers() {
+                // Edit Address
+                document.querySelectorAll('.address-card').forEach(card => {
+                    const editBtn = card.querySelector('.btn-icon:has(.fa-edit)');
+                    if (editBtn) {
+                        editBtn.onclick = function(e) {
+                            e.stopPropagation();
+                            openAddressModal(card);
+                        };
+                    }
+
+                    const deleteBtn = card.querySelector('.btn-icon:has(.fa-trash)');
+                    if (deleteBtn) {
+                        deleteBtn.onclick = function(e) {
+                            e.stopPropagation();
+                            const isDefault = card.querySelector('.address-badge') !== null;
+
+                            if (isDefault) {
+                                showToast('Cannot Delete', 'Cannot delete default address. Set another address as default first.', 'error');
+                                return;
+                            }
+
+                            const addressLabel = card.querySelector('h4').textContent;
+                            const confirmMsg = `Are you sure you want to delete "${addressLabel}" address?`;
+
+                            if (confirm(confirmMsg)) {
+                                card.style.opacity = '0';
+                                card.style.transform = 'scale(0.9)';
+                                setTimeout(() => {
+                                    card.remove();
+                                    showToast('Address Deleted', 'Address has been removed successfully.', 'success');
+                                }, 300);
+                            }
+                        };
+                    }
+
+                    // Click card to set as default
+                    card.style.cursor = 'pointer';
+                    card.onclick = function(e) {
+                        if (e.target.closest('.btn-icon')) return;
+
+                        const isAlreadyDefault = this.querySelector('.address-badge') !== null;
+                        if (isAlreadyDefault) return;
+
+                        // Remove all default badges
+                        document.querySelectorAll('.address-badge').forEach(badge => badge.remove());
+
+                        // Add default badge to this card
+                        const header = this.querySelector('.address-card__header');
+                        header.insertAdjacentHTML('afterbegin', '<span class="address-badge" style="animation: scaleIn 0.3s ease-out;">Default</span>');
+
+                        showToast('Default Address Updated', 'This address has been set as your default delivery address.', 'success');
+                    };
+                });
+            }
+            attachAddressHandlers();
+
+            // Change Password Handler
+            const changePasswordBtns = document.querySelectorAll('.security-item .btn-secondary');
+            if (changePasswordBtns[0]) {
+                changePasswordBtns[0].addEventListener('click', function() {
+                    const modal = createModal('Change Password', `
+                        <div style="display: flex; flex-direction: column; gap: 16px;">
+                            <div>
+                                <label style="color: #888; font-size: 0.85rem; display: block; margin-bottom: 6px;">Current Password</label>
+                                <input type="password" class="form-control" placeholder="Enter current password" style="background: #140506; border: 1px solid #333; color: #fff; padding: 10px 14px; border-radius: 6px; width: 100%;">
+                            </div>
+                            <div>
+                                <label style="color: #888; font-size: 0.85rem; display: block; margin-bottom: 6px;">New Password</label>
+                                <input type="password" class="form-control" placeholder="Enter new password" style="background: #140506; border: 1px solid #333; color: #fff; padding: 10px 14px; border-radius: 6px; width: 100%;">
+                            </div>
+                            <div>
+                                <label style="color: #888; font-size: 0.85rem; display: block; margin-bottom: 6px;">Confirm Password</label>
+                                <input type="password" class="form-control" placeholder="Confirm new password" style="background: #140506; border: 1px solid #333; color: #fff; padding: 10px 14px; border-radius: 6px; width: 100%;">
+                            </div>
+                            <button class="btn-primary" onclick="document.querySelector('.modal-overlay').remove(); showToast('Password Changed', 'Your password has been updated successfully!', 'success');" style="margin-top: 8px; padding: 12px; background: linear-gradient(135deg, #ED3237, #c82529); color: #fff; border: none; border-radius: 6px; font-weight: 600; cursor: pointer;">
+                                <i class="fas fa-save"></i> Update Password
+                            </button>
+                        </div>
+                    `);
+                    document.body.appendChild(modal);
+                });
+            }
+
+            // Enable 2FA Handler
+            if (changePasswordBtns[1]) {
+                changePasswordBtns[1].addEventListener('click', function() {
+                    const modal = createModal('Enable Two-Factor Authentication', `
+                        <div style="text-align: center;">
+                            <div style="background: #fff; padding: 20px; border-radius: 8px; display: inline-block; margin: 20px 0;">
+                                <p style="color: #333; margin-bottom: 10px; font-weight: 600;">Scan this QR code with your authenticator app</p>
+                                <div style="width: 200px; height: 200px; background: #f0f0f0; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+                                    <i class="fas fa-qrcode" style="font-size: 120px; color: #333;"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <label style="color: #888; font-size: 0.85rem; display: block; margin-bottom: 6px;">Enter verification code</label>
+                                <input type="text" class="form-control" placeholder="000000" style="background: #140506; border: 1px solid #333; color: #fff; padding: 10px 14px; border-radius: 6px; width: 100%; text-align: center; font-size: 1.2rem; letter-spacing: 4px;">
+                            </div>
+                            <button class="btn-primary" onclick="document.querySelector('.modal-overlay').remove(); showToast('2FA Enabled', 'Two-factor authentication has been enabled!', 'success');" style="margin-top: 16px; padding: 12px 24px; background: linear-gradient(135deg, #ED3237, #c82529); color: #fff; border: none; border-radius: 6px; font-weight: 600; cursor: pointer;">
+                                <i class="fas fa-shield-alt"></i> Enable 2FA
+                            </button>
+                        </div>
+                    `);
+                    document.body.appendChild(modal);
+                });
+            }
+
+            // Modal Creator
+            function createModal(title, content) {
+                const modal = document.createElement('div');
+                modal.className = 'modal-overlay';
+                modal.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.8); display: flex; align-items: center; justify-content: flex-end; z-index: 10000; backdrop-filter: blur(4px); animation: fadeIn 0.3s;';
+
+                modal.innerHTML = `
+                    <div class="modal-content" style="background: linear-gradient(180deg, #1a0506 0%, #0C0304 100%); border: 1px solid rgba(237, 50, 55, 0.2); border-radius: 12px 0 0 12px; padding: 24px; max-width: 500px; width: 90%; height: 100%; overflow-y: auto; box-shadow: -12px 0 40px rgba(0, 0, 0, 0.6); animation: slideInRight 0.3s;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                            <h3 style="color: #fff; margin: 0; font-size: 1.25rem;">${title}</h3>
+                            <button onclick="this.closest('.modal-overlay').remove()" style="background: none; border: none; color: #888; font-size: 1.5rem; cursor: pointer; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 6px; transition: all 0.3s;" onmouseover="this.style.background='#2a2a2a'; this.style.color='#ED3237';" onmouseout="this.style.background='none'; this.style.color='#888';">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div>${content}</div>
+                    </div>
+                `;
+
+                modal.onclick = function(e) {
+                    if (e.target === modal) {
+                        modal.remove();
+                    }
+                };
+
+                return modal;
+            }
+
+            // Smooth scroll to sections
+            document.querySelectorAll('.profile-nav__item').forEach(item => {
+                item.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href && href.startsWith('#')) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+                });
+            });
+
+            // Add loading states to buttons
+            document.querySelectorAll('button').forEach(btn => {
+                if (!btn.classList.contains('header__user-btn')) {
+                    btn.addEventListener('click', function() {
+                        const originalHTML = this.innerHTML;
+                        this.style.opacity = '0.7';
+                        setTimeout(() => {
+                            this.style.opacity = '1';
+                        }, 200);
+                    });
+                }
+            });
+
+            // Keyboard shortcuts
+            document.addEventListener('keydown', function(e) {
+                // ESC to close modals
+                if (e.key === 'Escape') {
+                    const modal = document.querySelector('.modal-overlay');
+                    if (modal) modal.remove();
+                }
+            });
+
+            console.log('✅ My Profile UX Flow initialized successfully!');
+        });
+    </script>
+</body>
+</html>

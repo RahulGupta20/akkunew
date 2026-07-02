@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Email | Akku Electronics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="dark-theme auth-page">
+    <!-- Header -->
+    <header class="header">
+        <!-- Main Header (Sticky) -->
+        <div class="header__main">
+            <div class="container">
+                <a href="index.html" class="header__logo">
+                    <img src="assets/images/logo.png" alt="AKKU Electronics">
+                </a>
+
+                <!-- Search Bar -->
+                <form class="header__search" action="search-results.html" method="GET">
+                    <input type="text" name="q" id="searchInput" placeholder="Search for products, brands and more...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+
+                <!-- Header Actions -->
+                <div class="header__actions">
+                    <!-- Language & Currency Button -->
+                    <button class="header__settings-btn" id="openSettingsModal">
+                        <i class="fas fa-globe"></i>
+                        <span>EN / NPR</span>
+                    </button>
+
+                    <!-- Wishlist -->
+                    <a href="#" class="header__action-item" aria-label="Wishlist" title="Wishlist">
+                        <i class="fas fa-heart"></i>
+                    </a>
+
+                    <!-- Cart -->
+                    <a href="#" class="header__action-item" aria-label="Shopping Cart (5 items)" title="Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge">5</span>
+                    </a>
+
+                    <!-- Login Button -->
+                    <a href="login.html" class="header__login-btn">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Login</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="header__menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation (Not Sticky) -->
+        <nav class="header__nav" id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="#">Laptops</a></li>
+                <li><a href="#">Mobiles</a></li>
+                <li><a href="#">Accessories</a></li>
+                <li><a href="#">Deals</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Floating Particles Background -->
+    <div class="auth-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Auth Container -->
+    <div class="auth-container">
+        <div class="auth-wrapper split-layout">
+            <!-- Left: Visual Brand Section -->
+            <div class="auth-visual">
+                <div class="visual-overlay"></div>
+                <div class="visual-content">
+                    <div class="brand-section">
+                        <h1>Almost There!</h1>
+                        <p>Just one more step to complete your registration</p>
+                    </div>
+
+                    <div class="visual-features">
+                        <div class="visual-feature">
+                            <div class="feature-icon-circle">
+                                <i class="fas fa-envelope-open"></i>
+                            </div>
+                            <div>
+                                <h3>Check Your Email</h3>
+                                <p>We've sent a verification link to your inbox</p>
+                            </div>
+                        </div>
+                        <div class="visual-feature">
+                            <div class="feature-icon-circle">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h3>Quick Verification</h3>
+                                <p>Just click the link to verify your email</p>
+                            </div>
+                        </div>
+                        <div class="visual-feature">
+                            <div class="feature-icon-circle">
+                                <i class="fas fa-gift"></i>
+                            </div>
+                            <div>
+                                <h3>Welcome Bonus</h3>
+                                <p>Get NPR 500 off after verification</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="visual-stats">
+                        <div class="stat-box">
+                            <div class="stat-value">2min</div>
+                            <div class="stat-label">Average Time</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value">100%</div>
+                            <div class="stat-label">Secure</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value">NPR 500</div>
+                            <div class="stat-label">Bonus</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Verification Content -->
+            <div class="auth-form-side">
+                <div class="auth-form-wrapper">
+                    <div class="auth-form-header">
+                        <h2>Verify Your Email</h2>
+                        <p>We've sent a verification email to <strong id="userEmail">your@email.com</strong></p>
+                    </div>
+
+                    <div class="verification-content">
+                        <!-- Email Icon -->
+                        <div class="verification-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+
+                        <!-- Instructions -->
+                        <div class="verification-steps">
+                            <h3>What to do next:</h3>
+                            <ol>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Check your email inbox</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Click the verification link in the email</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>You'll be redirected to your account</span>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <!-- Resend Email -->
+                        <div class="resend-section">
+                            <p>Didn't receive the email?</p>
+                            <button type="button" class="btn-secondary btn-full" id="resendBtn">
+                                <i class="fas fa-redo"></i>
+                                Resend Verification Email
+                            </button>
+                            <p class="resend-timer" id="resendTimer" style="display: none;">
+                                You can resend in <span id="countdown">60</span> seconds
+                            </p>
+                        </div>
+
+                        <!-- Help Section -->
+                        <div class="auth-help-box">
+                            <div class="help-icon">
+                                <i class="fas fa-question-circle"></i>
+                            </div>
+                            <div class="help-content">
+                                <h4>Can't find the email?</h4>
+                                <ul>
+                                    <li>Check your spam or junk folder</li>
+                                    <li>Make sure the email address is correct</li>
+                                    <li>Contact support if you need help</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="verification-actions">
+                            <a href="login.html" class="btn-link-action">
+                                <i class="fas fa-arrow-left"></i>
+                                Back to Sign In
+                            </a>
+                            <a href="register.html" class="btn-link-action">
+                                <i class="fas fa-edit"></i>
+                                Change Email Address
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Set user email from URL parameter or storage
+        const urlParams = new URLSearchParams(window.location.search);
+        const email = urlParams.get('email') || 'your@email.com';
+        document.getElementById('userEmail').textContent = email;
+
+        // Resend functionality
+        const resendBtn = document.getElementById('resendBtn');
+        const resendTimer = document.getElementById('resendTimer');
+        const countdownSpan = document.getElementById('countdown');
+        let canResend = true;
+
+        resendBtn?.addEventListener('click', function() {
+            if (!canResend) return;
+
+            // In production, this would send request to server
+            console.log('Resending verification email to:', email);
+
+            // Show success message
+            alert('Verification email has been resent! Please check your inbox.');
+
+            // Start countdown
+            canResend = false;
+            resendBtn.disabled = true;
+            resendBtn.style.opacity = '0.5';
+            resendTimer.style.display = 'block';
+
+            let seconds = 60;
+            const countdown = setInterval(() => {
+                seconds--;
+                countdownSpan.textContent = seconds;
+
+                if (seconds <= 0) {
+                    clearInterval(countdown);
+                    canResend = true;
+                    resendBtn.disabled = false;
+                    resendBtn.style.opacity = '1';
+                    resendTimer.style.display = 'none';
+                }
+            }, 1000);
+        });
+
+        // Particle animation
+        const particles = document.querySelectorAll('.particle');
+        particles.forEach((particle, index) => {
+            particle.style.animationDelay = `${index * 0.5}s`;
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.animationDuration = `${15 + Math.random() * 10}s`;
+        });
+    </script>
+</body>
+</html>

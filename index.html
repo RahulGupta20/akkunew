@@ -3,56 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akku Electronics - Home</title>
+    <title>Akku Electronics - Your Trusted Electronics Store in Nepal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/home.css">
 </head>
-<body>
+<body class="dark-theme">
     <!-- Header -->
     <header class="header">
-        <!-- Top Bar -->
-        <div class="header__topbar">
-            <div class="container">
-                <div class="header__topbar-left">
-                    <span><i class="fas fa-phone"></i> +977-1234567890</span>
-                    <span><i class="fas fa-envelope"></i> info@akkuelectronics.com</span>
-                </div>
-                <div class="header__topbar-right">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Main Header -->
+        <!-- Main Header (Sticky) -->
         <div class="header__main">
             <div class="container">
                 <a href="index.html" class="header__logo">
-                    <i class="fas fa-bolt"></i> AKKU
+                    <img src="assets/images/logo.png" alt="AKKU Electronics">
                 </a>
 
                 <!-- Search Bar -->
-                <div class="header__search">
-                    <input type="text" placeholder="Search for products...">
-                    <button><i class="fas fa-search"></i></button>
-                </div>
+                <form class="header__search" action="search-results.html" method="GET">
+                    <input type="text" name="q" id="searchInput" placeholder="Search for products, brands and more...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
 
                 <!-- Header Actions -->
                 <div class="header__actions">
-                    <a href="#" class="header__action-item">
-                        <i class="fas fa-user"></i>
-                        <span>Account</span>
-                    </a>
-                    <a href="#" class="header__action-item">
+                    <!-- Language & Currency Button -->
+                    <button class="header__settings-btn" id="openSettingsModal">
+                        <i class="fas fa-globe"></i>
+                        <span>EN / NPR</span>
+                    </button>
+
+                    <!-- Wishlist -->
+                    <a href="wishlist.html" class="header__action-item" aria-label="Wishlist" title="Wishlist">
                         <i class="fas fa-heart"></i>
-                        <span>Wishlist</span>
-                        <span class="badge">3</span>
                     </a>
-                    <a href="#" class="header__action-item">
+
+                    <!-- Cart -->
+                    <a href="cart.html" class="header__action-item" aria-label="Shopping Cart" title="Cart">
                         <i class="fas fa-shopping-cart"></i>
-                        <span>Cart</span>
-                        <span class="badge">5</span>
+                        <span class="badge">0</span>
+                    </a>
+
+                    <!-- Login Button -->
+                    <a href="login.html" class="header__login-btn">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Login</span>
                     </a>
                 </div>
 
@@ -63,46 +60,756 @@
             </div>
         </div>
 
-        <!-- Mobile Search -->
-        <div class="header__mobile-search">
-            <input type="text" placeholder="Search for products...">
-        </div>
-
-        <!-- Navigation -->
+        <!-- Navigation (Not Sticky) -->
         <nav class="header__nav" id="mainNav">
-            <div class="container">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="#">Categories</a></li>
-                    <li><a href="#">Deals</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li class="has-dropdown">
+                    <a href="category.html">Laptops</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Laptops dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="category.html" class="dropdown-item">Gaming Laptops</a>
+                        <a href="category.html" class="dropdown-item">Business Laptops</a>
+                        <a href="category.html" class="dropdown-item">Student Laptops</a>
+                        <a href="category.html" class="dropdown-item">Ultrabooks</a>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    <a href="category.html">Desktop PCs</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Desktop PCs dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="category.html" class="dropdown-item">Gaming PCs</a>
+                        <a href="category.html" class="dropdown-item">Workstations</a>
+                        <a href="category.html" class="dropdown-item">All-in-One PCs</a>
+                        <a href="category.html" class="dropdown-item">Mini PCs</a>
+                    </div>
+                </li>
+                <li><a href="#">Custom PC Build</a></li>
+                <li class="has-dropdown">
+                    <a href="category.html">Mobile Phones</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Mobile Phones dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="category.html" class="dropdown-item">Smartphones</a>
+                        <a href="category.html" class="dropdown-item">Feature Phones</a>
+                        <a href="category.html" class="dropdown-item">Accessories</a>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    <a href="#">Peripherals</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Peripherals dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="category.html" class="dropdown-item">Keyboards</a>
+                        <a href="category.html" class="dropdown-item">Mice</a>
+                        <a href="category.html" class="dropdown-item">Headphones</a>
+                        <a href="category.html" class="dropdown-item">Monitors</a>
+                        <a href="category.html" class="dropdown-item">Webcams</a>
+                    </div>
+                </li>
+                <li><a href="#">Deals</a></li>
+                <li class="has-dropdown">
+                    <a href="#">Support</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Support dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Contact Us</a>
+                        <a href="#" class="dropdown-item">FAQs</a>
+                        <a href="#" class="dropdown-item">Warranty</a>
+                        <a href="#" class="dropdown-item">Track Order</a>
+                    </div>
+                </li>
+            </ul>
         </nav>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <section class="home__hero">
-            <div class="container">
-                <h1>Welcome to Akku Electronics</h1>
-                <p>Your one-stop shop for all electronic needs</p>
-                <a href="products.html" class="btn">Shop Now</a>
-            </div>
-        </section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero__grid">
+                <!-- Main Banner - Gaming Laptops -->
+                <div class="hero__banner hero__banner--main">
+                    <div class="hero__banner-content">
+                        <h1 class="hero__banner-title">Level Up<br>Your <span class="text-gradient">Game</span></h1>
+                        <p class="hero__banner-subtitle">Up to 40% Off Gaming Laptops</p>
+                        <a href="products.html" class="btn btn-primary btn-hero">Shop Now!</a>
+                    </div>
+                    <div class="hero__banner-image">
+                        <img src="https://images.unsplash.com/photo-1603481588273-2f908a9a7a1b?w=600&h=400&fit=crop&q=80" alt="Gaming Laptop">
+                    </div>
+                </div>
 
-        <section class="home__products">
-            <div class="container">
-                <h2>Featured Products</h2>
-                <div class="product-grid">
-                    <!-- Product items would go here -->
-                    <p>Product items will be displayed here...</p>
+                <!-- Top Right Banners -->
+                <div class="hero__banner hero__banner--secondary hero__banner--smartphones">
+                    <div class="hero__banner-content">
+                        <h3>Next-Gen<br>Smartphones</h3>
+                        <p>Power Meets Innovation</p>
+                        <a href="products.html" class="btn-link">Shop Now!</a>
+                    </div>
+                    <div class="hero__banner-image">
+                        <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400&h=300&fit=crop&q=80" alt="Smartphones">
+                    </div>
+                </div>
+
+                <div class="hero__banner hero__banner--secondary hero__banner--custom-pc">
+                    <div class="hero__banner-content">
+                        <h3>Custom Gaming PCs</h3>
+                        <p>Built to Dominate Every Frame</p>
+                    </div>
+                    <div class="hero__banner-image">
+                        <img src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=400&h=300&fit=crop&q=80" alt="Custom PC">
+                    </div>
+                </div>
+
+                <!-- Middle Right Banner -->
+                <div class="hero__banner hero__banner--medium hero__banner--accessories">
+                    <div class="hero__banner-content">
+                        <h3>Upgrade<br>Your Gear.</h3>
+                        <p>Power In Every Detail</p>
+                    </div>
+                    <div class="hero__banner-image">
+                        <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=400&h=300&fit=crop&q=80" alt="Gaming Accessories">
+                    </div>
+                </div>
+
+                <!-- Bottom Full Width Banner -->
+                <div class="hero__banner hero__banner--full hero__banner--build-pc">
+                    <div class="hero__banner-content">
+                        <h2>BUILD YOUR<br><span class="text-italic">CUSTOM PC</span></h2>
+                    </div>
+                    <div class="hero__banner-images">
+                        <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?w=300&h=200&fit=crop&q=80" alt="PC Components">
+                        <img src="https://images.unsplash.com/photo-1587202372616-b43abea06c2a?w=300&h=200&fit=crop&q=80" alt="Custom Build">
+                        <img src="https://images.unsplash.com/photo-1591238371727-e9d7b8944570?w=300&h=200&fit=crop&q=80" alt="RGB Setup">
+                    </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features__grid">
+                <div class="features__item">
+                    <div class="features__icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3 class="features__title">Free Delivery</h3>
+                    <p class="features__description">Free shipping on orders above NPR 10,000</p>
+                </div>
+                <div class="features__item">
+                    <div class="features__icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="features__title">Secure Payment</h3>
+                    <p class="features__description">100% secure payment methods</p>
+                </div>
+                <div class="features__item">
+                    <div class="features__icon">
+                        <i class="fas fa-undo-alt"></i>
+                    </div>
+                    <h3 class="features__title">Easy Returns</h3>
+                    <p class="features__description">7-day hassle-free return policy</p>
+                </div>
+                <div class="features__item">
+                    <div class="features__icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="features__title">24/7 Support</h3>
+                    <p class="features__description">Dedicated customer support team</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Shop by Category</h2>
+                <a href="category.html" class="section__link">View All <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="categories__scroll">
+                <a href="category.html" class="category__card">
+                    <div class="category__image">
+                        <img src="https://images.unsplash.com/photo-1587202372616-b43abea06c2a?w=300&h=300&fit=crop&q=80" alt="Gaming PCs">
+                    </div>
+                    <h3 class="category__title">Gaming PCs</h3>
+                </a>
+                <a href="category.html" class="category__card">
+                    <div class="category__image">
+                        <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?w=300&h=300&fit=crop&q=80" alt="PC Components">
+                    </div>
+                    <h3 class="category__title">PC Components</h3>
+                </a>
+                <a href="category.html" class="category__card">
+                    <div class="category__image">
+                        <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=300&h=300&fit=crop&q=80" alt="Smartphone">
+                    </div>
+                    <h3 class="category__title">Smartphone</h3>
+                </a>
+                <a href="category.html" class="category__card">
+                    <div class="category__image">
+                        <img src="https://images.unsplash.com/photo-1579829366248-204fe8413f31?w=300&h=300&fit=crop&q=80" alt="Drone & Flycam">
+                    </div>
+                    <h3 class="category__title">Drone & Flycam</h3>
+                </a>
+                <a href="category.html" class="category__card">
+                    <div class="category__image">
+                        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=300&h=300&fit=crop&q=80" alt="Laptops">
+                    </div>
+                    <h3 class="category__title">Laptops</h3>
+                </a>
+                <a href="category.html" class="category__card">
+                    <div class="category__image">
+                        <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=300&h=300&fit=crop&q=80" alt="Monitors">
+                    </div>
+                    <h3 class="category__title">Monitors</h3>
+                </a>
+                <a href="category.html" class="category__card">
+                    <div class="category__image">
+                        <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?w=300&h=300&fit=crop&q=80" alt="LED Tvs">
+                    </div>
+                    <h3 class="category__title">LED Tvs</h3>
+                </a>
+                <a href="category.html" class="category__card">
+                    <div class="category__image">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=300&fit=crop&q=80" alt="Headphones">
+                    </div>
+                    <h3 class="category__title">Headphones</h3>
+                </a>
+                <a href="category.html" class="category__card">
+                    <div class="category__image">
+                        <img src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=300&h=300&fit=crop&q=80" alt="Smartwatches">
+                    </div>
+                    <h3 class="category__title">Smartwatches</h3>
+                </a>
+                <a href="category.html" class="category__card">
+                    <div class="category__image">
+                        <img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=300&h=300&fit=crop&q=80" alt="Game Console">
+                    </div>
+                    <h3 class="category__title">Game Console</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deals of the Week Section -->
+    <section class="deals-week">
+        <div class="container">
+            <div class="deals-week__header">
+                <div class="deals-week__title-wrapper">
+                    <i class="fas fa-bolt"></i>
+                    <h2 class="deals-week__title">Deals of the Week</h2>
+                </div>
+                <div class="deals-week__timer">
+                    <span>Hurry up! offer ends in</span>
+                    <div class="deals-week__countdown">
+                        <div class="countdown__item">16</div>
+                        <div class="countdown__separator">:</div>
+                        <div class="countdown__item">12</div>
+                        <div class="countdown__separator">:</div>
+                        <div class="countdown__item">48</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="deals-week__content">
+                <!-- Left Promo Card -->
+                <div class="deals-week__promo">
+                    <div class="promo__badge">HURRY UP</div>
+                    <div class="promo__discount">80%</div>
+                    <div class="promo__text">THIS WEEK ONLY SHOPPING DAYS</div>
+                    <div class="promo__date">12.12</div>
+                </div>
+
+                <!-- Product Cards Slider -->
+                <div class="deals-week__slider">
+                    <div class="deals-week__track">
+                        <!-- Product 1 -->
+                        <div class="deal__card">
+                            <div class="deal__badge">-15%</div>
+                            <div class="deal__image">
+                                <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400&h=400&fit=crop&q=80" alt="Dell Inspiron i5 3520">
+                                <div class="deal__specs">
+                                    <span class="spec__tag">16GB DDR4</span>
+                                    <span class="spec__tag">1TB/2TB SSD</span>
+                                    <span class="spec__tag">Windows 11</span>
+                                    <span class="spec__tag">4K</span>
+                                </div>
+                            </div>
+                            <div class="deal__info">
+                                <p class="deal__category">Laptops</p>
+                                <h3 class="deal__title">Dell Inspiron i5 3520 i5 1235U (NSI5052W1)</h3>
+                                <div class="deal__price">
+                                    <span class="price__current">Rs. 213,500</span>
+                                    <span class="price__old">Rs. 213,500</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div class="deal__card">
+                            <div class="deal__badge">-15%</div>
+                            <div class="deal__image">
+                                <img src="https://images.unsplash.com/photo-1587202372616-b43abea06c2a?w=400&h=400&fit=crop&q=80" alt="Gaming PC">
+                            </div>
+                            <div class="deal__info">
+                                <p class="deal__category">Laptops</p>
+                                <h3 class="deal__title">Dell Inspiron i5 3520 i5 1235U (NSI5052W1)</h3>
+                                <div class="deal__price">
+                                    <span class="price__current">Rs. 213,500</span>
+                                    <span class="price__old">Rs. 213,500</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="deal__card">
+                            <div class="deal__badge">-15%</div>
+                            <div class="deal__image">
+                                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop&q=80" alt="Headphones">
+                            </div>
+                            <div class="deal__info">
+                                <p class="deal__category">Laptops</p>
+                                <h3 class="deal__title">Dell Inspiron i5 3520 i5 1235U (NSI5052W1)</h3>
+                                <div class="deal__price">
+                                    <span class="price__current">Rs. 213,500</span>
+                                    <span class="price__old">Rs. 213,500</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 4 -->
+                        <div class="deal__card">
+                            <div class="deal__badge">-15%</div>
+                            <div class="deal__image">
+                                <img src="https://images.unsplash.com/photo-1592286927505-4fd3e937ff37?w=400&h=400&fit=crop&q=80" alt="Samsung S26 Ultra">
+                                <div class="deal__phone-badge">
+                                    <span>New Arrival</span>
+                                    <strong>SAMSUNG S26 ULTRA</strong>
+                                    <small>What Will it Unleash? Discover at Phone. Switch Galaxy Unfolds</small>
+                                </div>
+                            </div>
+                            <div class="deal__info">
+                                <p class="deal__category">Laptops</p>
+                                <h3 class="deal__title">Dell Inspiron i5 3520 i5 1235U (NSI5052W1)</h3>
+                                <div class="deal__price">
+                                    <span class="price__current">Rs. 213,500</span>
+                                    <span class="price__old">Rs. 213,500</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="featured-products" id="featured">
+        <div class="container">
+            <div class="featured-products__header">
+                <h2 class="featured-products__title">Featured Products</h2>
+                <a href="products.html" class="featured-products__view-all">View All <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="featured-products__layout">
+                <!-- Left Sidebar Products -->
+                <div class="featured-products__sidebar">
+                    <div class="sidebar__product">
+                        <div class="sidebar__product-image">
+                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=200&h=200&fit=crop&q=80" alt="Gaming Headphones">
+                        </div>
+                        <div class="sidebar__product-info">
+                            <p class="sidebar__product-category">Laptops</p>
+                            <h4 class="sidebar__product-title">Dell Inspiron i5 3520 i5 1235U (NSI5052W1)</h4>
+                            <div class="sidebar__product-price">
+                                <span class="price-current">Rs. 213,500</span>
+                                <span class="price-old">Rs. 213,500</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar__product">
+                        <div class="sidebar__product-image">
+                            <img src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=200&h=200&fit=crop&q=80" alt="Smartwatch">
+                        </div>
+                        <div class="sidebar__product-info">
+                            <p class="sidebar__product-category">Laptops</p>
+                            <h4 class="sidebar__product-title">Dell Inspiron i5 3520 i5 1235U (NSI5052W1)</h4>
+                            <div class="sidebar__product-price">
+                                <span class="price-current">Rs. 213,500</span>
+                                <span class="price-old">Rs. 213,500</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar__product">
+                        <div class="sidebar__product-image">
+                            <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=200&h=200&fit=crop&q=80" alt="Gaming Gear">
+                        </div>
+                        <div class="sidebar__product-info">
+                            <p class="sidebar__product-category">Laptops</p>
+                            <h4 class="sidebar__product-title">Dell Inspiron i5 3520 i5 1235U (NSI5052W1)</h4>
+                            <div class="sidebar__product-price">
+                                <span class="price-current">Rs. 213,500</span>
+                                <span class="price-old">Rs. 213,500</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar__product">
+                        <div class="sidebar__product-image">
+                            <img src="https://images.unsplash.com/photo-1587202372616-b43abea06c2a?w=200&h=200&fit=crop&q=80" alt="Gaming PC">
+                        </div>
+                        <div class="sidebar__product-info">
+                            <p class="sidebar__product-category">Laptops</p>
+                            <h4 class="sidebar__product-title">Dell Inspiron i5 3520 i5 1235U (NSI5052W1)</h4>
+                            <div class="sidebar__product-price">
+                                <span class="price-current">Rs. 213,500</span>
+                                <span class="price-old">Rs. 213,500</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Center Featured Bundle -->
+                <div class="featured-products__main">
+                    <div class="featured-bundle">
+                        <div class="featured-bundle__image">
+                            <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=800&h=600&fit=crop&q=80" alt="Gaming Setup Bundle">
+                            <!-- Small product images grid overlay -->
+                            <div class="featured-bundle__products-grid">
+                                <img src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=100&h=100&fit=crop&q=80" alt="PC">
+                                <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=100&h=100&fit=crop&q=80" alt="Monitor">
+                                <img src="https://images.unsplash.com/photo-1595044426077-d36d9236d54a?w=100&h=100&fit=crop&q=80" alt="Keyboard">
+                                <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=100&h=100&fit=crop&q=80" alt="Mouse">
+                                <img src="https://images.unsplash.com/photo-1610647752706-3bb12232b3ab?w=100&h=100&fit=crop&q=80" alt="Headset">
+                                <img src="https://images.unsplash.com/photo-1587202372616-b43abea06c2a?w=100&h=100&fit=crop&q=80" alt="Case">
+                            </div>
+                        </div>
+                        <div class="featured-bundle__info">
+                            <h3 class="featured-bundle__title">Ultimate - Gaming Setup Bundle</h3>
+                            <p class="featured-bundle__description">Ultra-wide / High refresh rate Gaming Monitor, Mechanical Gaming Keyboard</p>
+                            <div class="featured-bundle__price">
+                                <span class="price-label">Starting from:</span>
+                                <span class="price-main">Rs. 213,500</span>
+                                <span class="price-original">Rs. 213,500</span>
+                                <a href="products.html" class="featured-bundle__arrow">
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Sidebar Products -->
+                <div class="featured-products__sidebar featured-products__sidebar--right">
+                    <div class="sidebar__product">
+                        <div class="sidebar__product-image">
+                            <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=200&h=200&fit=crop&q=80" alt="Laptop">
+                        </div>
+                        <div class="sidebar__product-info">
+                            <p class="sidebar__product-category">Laptops</p>
+                            <h4 class="sidebar__product-title">Dell Inspiron i5 3520 i5 1235U (NSI5052W1)</h4>
+                            <div class="sidebar__product-price">
+                                <span class="price-current">Rs. 213,500</span>
+                                <span class="price-old">Rs. 213,500</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar__product">
+                        <div class="sidebar__product-image">
+                            <img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=200&h=200&fit=crop&q=80" alt="Game Controller">
+                        </div>
+                        <div class="sidebar__product-info">
+                            <p class="sidebar__product-category">Laptops</p>
+                            <h4 class="sidebar__product-title">Dell Inspiron i5 3520 i5 1235U (NSI5052W1)</h4>
+                            <div class="sidebar__product-price">
+                                <span class="price-current">Rs. 213,500</span>
+                                <span class="price-old">Rs. 213,500</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar__product">
+                        <div class="sidebar__product-image">
+                            <img src="https://images.unsplash.com/photo-1595044426077-d36d9236d54a?w=200&h=200&fit=crop&q=80" alt="RGB Keyboard">
+                        </div>
+                        <div class="sidebar__product-info">
+                            <p class="sidebar__product-category">Laptops</p>
+                            <h4 class="sidebar__product-title">Dell Inspiron i5 3520 i5 1235U (NSI5052W1)</h4>
+                            <div class="sidebar__product-price">
+                                <span class="price-current">Rs. 213,500</span>
+                                <span class="price-old">Rs. 213,500</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar__product">
+                        <div class="sidebar__product-image">
+                            <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=200&h=200&fit=crop&q=80" alt="Monitor">
+                        </div>
+                        <div class="sidebar__product-info">
+                            <p class="sidebar__product-category">Laptops</p>
+                            <h4 class="sidebar__product-title">Dell Inspiron i5 3520 i5 1235U (NSI5052W1)</h4>
+                            <div class="sidebar__product-price">
+                                <span class="price-current">Rs. 213,500</span>
+                                <span class="price-old">Rs. 213,500</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Old Grid (Hidden, kept for reference) -->
+            <div class="products__grid" style="display: none;">
+                <!-- Product Card 1 -->
+                <div class="product__card">
+                    <div class="product__image">
+                        <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400&h=400&fit=crop&q=80" alt="Dell XPS 15">
+                        <span class="product__badge new-arrival">New</span>
+                        <div class="product__actions">
+                            <button class="product__action" title="Add to Wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="product__action" title="Quick View">
+                                <i class="far fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product__content">
+                        <h3 class="product__title">Dell XPS 15</h3>
+                        <div class="product__rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="product__rating-count">(4.5)</span>
+                        </div>
+                        <div class="product__price">
+                            <span class="product__price-current">NPR 2,45,000</span>
+                        </div>
+                        <button class="btn btn-primary btn-sm">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product__card">
+                    <div class="product__image">
+                        <img src="https://images.unsplash.com/photo-1592286927505-4fd3e937ff37?w=400&h=400&fit=crop&q=80" alt="iPhone 15 Pro">
+                        <span class="product__badge hot-deal">Hot</span>
+                        <div class="product__actions">
+                            <button class="product__action" title="Add to Wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="product__action" title="Quick View">
+                                <i class="far fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product__content">
+                        <h3 class="product__title">iPhone 15 Pro</h3>
+                        <div class="product__rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="product__rating-count">(5.0)</span>
+                        </div>
+                        <div class="product__price">
+                            <span class="product__price-current">NPR 1,89,999</span>
+                            <span class="product__price-old">NPR 2,09,999</span>
+                        </div>
+                        <button class="btn btn-primary btn-sm">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="product__card">
+                    <div class="product__image">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop&q=80" alt="Sony WH-1000XM5">
+                        <span class="product__badge best-seller">Best Seller</span>
+                        <div class="product__actions">
+                            <button class="product__action" title="Add to Wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="product__action" title="Quick View">
+                                <i class="far fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product__content">
+                        <h3 class="product__title">Sony WH-1000XM5</h3>
+                        <div class="product__rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span class="product__rating-count">(4.0)</span>
+                        </div>
+                        <div class="product__price">
+                            <span class="product__price-current">NPR 52,000</span>
+                        </div>
+                        <button class="btn btn-primary btn-sm">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="product__card">
+                    <div class="product__image">
+                        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400&h=400&fit=crop&q=80" alt="Apple Watch Ultra">
+                        <span class="product__badge featured">Featured</span>
+                        <div class="product__actions">
+                            <button class="product__action" title="Add to Wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="product__action" title="Quick View">
+                                <i class="far fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product__content">
+                        <h3 class="product__title">Apple Watch Ultra</h3>
+                        <div class="product__rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="product__rating-count">(4.7)</span>
+                        </div>
+                        <div class="product__price">
+                            <span class="product__price-current">NPR 1,25,000</span>
+                        </div>
+                        <button class="btn btn-primary btn-sm">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deals Banner -->
+    <section class="deals-banner">
+        <div class="container">
+            <div class="deals-banner__content">
+                <span class="deals-banner__subtitle">Limited Time Offer</span>
+                <h2 class="deals-banner__title">Mega Sale - Up to 40% Off</h2>
+                <p class="deals-banner__description">Don't miss out on our biggest sale of the season. Shop now and save big on your favorite electronics!</p>
+                <div class="deals-banner__timer">
+                    <div class="timer__item">
+                        <span class="timer__value">02</span>
+                        <span class="timer__label">Days</span>
+                    </div>
+                    <div class="timer__item">
+                        <span class="timer__value">14</span>
+                        <span class="timer__label">Hours</span>
+                    </div>
+                    <div class="timer__item">
+                        <span class="timer__value">32</span>
+                        <span class="timer__label">Minutes</span>
+                    </div>
+                    <div class="timer__item">
+                        <span class="timer__value">45</span>
+                        <span class="timer__label">Seconds</span>
+                    </div>
+                </div>
+                <a href="products.html" class="btn btn-primary">Shop Deals</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="brands">
+        <div class="container">
+            <h2 class="section__title">Top Brands</h2>
+            <div class="brands__grid">
+                <div class="brand__item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Dell_Logo.svg" alt="Dell">
+                </div>
+                <div class="brand__item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple">
+                </div>
+                <div class="brand__item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/HP_logo.svg" alt="HP">
+                </div>
+                <div class="brand__item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/LG_logo_%282015%29.svg" alt="LG">
+                </div>
+                <div class="brand__item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Samsung_Logo.svg" alt="Samsung">
+                </div>
+                <div class="brand__item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Sony_logo.svg" alt="Sony">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__col">
+                    <h3 class="footer__title">About Akku Electronics</h3>
+                    <p class="footer__text">Your trusted electronics store in Nepal. We provide genuine products with warranty and excellent customer service.</p>
+                    <div class="footer__social">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer__col">
+                    <h3 class="footer__title">Quick Links</h3>
+                    <ul class="footer__links">
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="#">Deals</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h3 class="footer__title">Customer Service</h3>
+                    <ul class="footer__links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h3 class="footer__title">Contact Info</h3>
+                    <ul class="footer__contact">
+                        <li><i class="fas fa-phone"></i> +977-1234567890</li>
+                        <li><i class="fas fa-envelope"></i> info@akkuelectronics.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2024 Akku Electronics. All rights reserved.</p>
+                <div class="footer__payment">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fas fa-credit-card"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script>
         // Mobile menu toggle
@@ -112,6 +819,172 @@
             icon.classList.toggle('fa-bars');
             icon.classList.toggle('fa-times');
         });
+
+        // Dropdown menu functionality
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const parentLi = this.closest('.has-dropdown');
+                const dropdownMenu = parentLi.querySelector('.dropdown-menu');
+
+                // Close all other dropdowns
+                document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+                    if (menu !== dropdownMenu) {
+                        menu.classList.remove('show');
+                        menu.closest('.has-dropdown').querySelector('.dropdown-toggle').classList.remove('active');
+                    }
+                });
+
+                // Toggle current dropdown
+                dropdownMenu.classList.toggle('show');
+                this.classList.toggle('active');
+            });
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.has-dropdown')) {
+                document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+                    menu.classList.remove('show');
+                    menu.closest('.has-dropdown').querySelector('.dropdown-toggle').classList.remove('active');
+                });
+            }
+        });
     </script>
+
+    <!-- Language & Currency Modal -->
+    <div class="settings-modal" id="settingsModal">
+        <div class="settings-modal__overlay" id="closeSettingsModal"></div>
+        <div class="settings-modal__content">
+            <div class="settings-modal__header">
+                <h3><i class="fas fa-globe"></i> Preferences</h3>
+                <button class="close-btn" id="closeSettingsModalBtn" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="settings-modal__body">
+                <!-- Language Selection -->
+                <div class="settings-section">
+                    <h4><i class="fas fa-language"></i> Language</h4>
+                    <div class="settings-options">
+                        <label class="settings-option active">
+                            <input type="radio" name="language" value="en" checked>
+                            <span class="option-content">
+                                <span class="option-flag">🇬🇧</span>
+                                <span class="option-label">English</span>
+                                <i class="fas fa-check-circle"></i>
+                            </span>
+                        </label>
+                        <label class="settings-option">
+                            <input type="radio" name="language" value="ne">
+                            <span class="option-content">
+                                <span class="option-flag">🇳🇵</span>
+                                <span class="option-label">नेपाली</span>
+                                <i class="fas fa-check-circle"></i>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Currency Selection -->
+                <div class="settings-section">
+                    <h4><i class="fas fa-coins"></i> Currency</h4>
+                    <div class="settings-options">
+                        <label class="settings-option active">
+                            <input type="radio" name="currency" value="npr" checked>
+                            <span class="option-content">
+                                <span class="option-currency">रु</span>
+                                <span class="option-label">NPR</span>
+                                <i class="fas fa-check-circle"></i>
+                            </span>
+                        </label>
+                        <label class="settings-option">
+                            <input type="radio" name="currency" value="usd">
+                            <span class="option-content">
+                                <span class="option-currency">$</span>
+                                <span class="option-label">USD</span>
+                                <i class="fas fa-check-circle"></i>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="settings-modal__footer">
+                <button class="btn-secondary" id="cancelSettings">Cancel</button>
+                <button class="btn-apply"><i class="fas fa-check"></i> Apply</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Settings Modal
+        const settingsModal = document.getElementById('settingsModal');
+        const openSettingsBtn = document.getElementById('openSettingsModal');
+        const closeSettingsOverlay = document.getElementById('closeSettingsModal');
+        const closeSettingsBtn = document.getElementById('closeSettingsModalBtn');
+        const cancelSettingsBtn = document.getElementById('cancelSettings');
+
+        if (openSettingsBtn) {
+            openSettingsBtn.addEventListener('click', () => {
+                settingsModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        }
+
+        [closeSettingsOverlay, closeSettingsBtn, cancelSettingsBtn].forEach(el => {
+            if (el) {
+                el.addEventListener('click', () => {
+                    settingsModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            }
+        });
+
+        // Settings option selection
+        document.querySelectorAll('.settings-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const radio = this.querySelector('input[type="radio"]');
+                const group = radio.name;
+
+                // Remove active from all options in this group
+                document.querySelectorAll(`input[name="${group}"]`).forEach(r => {
+                    r.closest('.settings-option').classList.remove('active');
+                });
+
+                // Add active to clicked option
+                this.classList.add('active');
+                radio.checked = true;
+            });
+        });
+
+        // Apply settings
+        const applyBtn = document.querySelector('.btn-apply');
+        if (applyBtn) {
+            applyBtn.addEventListener('click', () => {
+                const language = document.querySelector('input[name="language"]:checked').value;
+                const currency = document.querySelector('input[name="currency"]:checked').value;
+
+                // Update button text
+                const langMap = { en: 'EN', ne: 'NE', hi: 'HI' };
+                const currencyMap = { npr: 'NPR', usd: 'USD', inr: 'INR' };
+                const settingsBtnText = openSettingsBtn.querySelector('span');
+                if (settingsBtnText) {
+                    settingsBtnText.textContent = `${langMap[language]} / ${currencyMap[currency]}`;
+                }
+
+                // Close modal
+                settingsModal.classList.remove('active');
+                document.body.style.overflow = '';
+
+                // Show success message (optional)
+                console.log('Settings applied:', { language, currency });
+            });
+        }
+    </script>
+
+    <!-- Search Overlay JS -->
+    <script src="js/search-overlay.js"></script>
 </body>
 </html>

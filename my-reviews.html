@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Reviews | Akku Electronics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/my-reviews.css">
+</head>
+<body class="dark-theme">
+    <!-- Header -->
+    <header class="header">
+        <!-- Main Header (Sticky) -->
+        <div class="header__main">
+            <div class="container">
+                <a href="index.html" class="header__logo">
+                    <img src="assets/images/logo.png" alt="AKKU Electronics">
+                </a>
+
+                <!-- Search Bar -->
+                <form class="header__search" action="search-results.html" method="GET">
+                    <input type="text" name="q" id="searchInput" placeholder="Search for products, brands and more...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+
+                <!-- Header Actions -->
+                <div class="header__actions">
+                    <!-- Language & Currency Button -->
+                    <button class="header__settings-btn" id="openSettingsModal">
+                        <i class="fas fa-globe"></i>
+                        <span>EN / NPR</span>
+                    </button>
+
+                    <!-- Wishlist -->
+                    <a href="wishlist.html" class="header__action-item" aria-label="Wishlist" title="Wishlist">
+                        <i class="fas fa-heart"></i>
+                    </a>
+
+                    <!-- Cart -->
+                    <a href="cart.html" class="header__action-item" aria-label="Shopping Cart (5 items)" title="Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge">5</span>
+                    </a>
+
+                    <!-- User Menu (Logged In) -->
+                    <div class="dropdown">
+                        <button class="header__user-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="user-avatar">RM</div>
+                            <span class="user-name">Rajesh</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li class="dropdown-header">
+                                <div class="user-avatar">RM</div>
+                                <div>
+                                    <div>Rajesh Maharjan</div>
+                                    <div>rajesh@example.com</div>
+                                </div>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="my-profile.html"><i class="fas fa-user"></i> My Profile</a></li>
+                            <li><a class="dropdown-item" href="my-orders.html"><i class="fas fa-shopping-bag"></i> My Orders</a></li>
+                            <li><a class="dropdown-item" href="wishlist.html"><i class="fas fa-heart"></i> Wishlist</a></li>
+                            <li><a class="dropdown-item" href="my-reviews.html"><i class="fas fa-star"></i> My Reviews</a></li>
+                            <li><a class="dropdown-item" href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="product-detail.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="header__menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation (Not Sticky) -->
+        <nav class="header__nav" id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="#">Laptops</a></li>
+                <li><a href="#">Mobiles</a></li>
+                <li><a href="#">Accessories</a></li>
+                <li><a href="#">Deals</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <i class="fas fa-home"></i>
+            <a href="index.html">Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <span class="current">My Reviews</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="my-reviews">
+        <div class="container">
+            <div class="my-reviews__wrapper">
+                <!-- Sidebar -->
+                <aside class="my-reviews__sidebar">
+                    <div class="profile-card">
+                        <div class="profile-card__avatar">
+                            <div class="avatar-circle">RM</div>
+                            <button class="avatar-edit"><i class="fas fa-camera"></i></button>
+                        </div>
+                        <h3 class="profile-card__name">Rajesh Maharjan</h3>
+                        <p class="profile-card__email">rajesh@example.com</p>
+                        <div class="profile-card__stats">
+                            <div class="stat-item">
+                                <span class="stat-value">12</span>
+                                <span class="stat-label">Orders</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">8</span>
+                                <span class="stat-label">Reviews</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">15</span>
+                                <span class="stat-label">Wishlist</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <nav class="profile-nav">
+                        <a href="my-profile.html" class="profile-nav__item">
+                            <i class="fas fa-user"></i>
+                            <span>My Profile</span>
+                        </a>
+                        <a href="my-orders.html" class="profile-nav__item">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span>My Orders</span>
+                        </a>
+                        <a href="wishlist.html" class="profile-nav__item">
+                            <i class="fas fa-heart"></i>
+                            <span>Wishlist</span>
+                        </a>
+                        <a href="my-reviews.html" class="profile-nav__item active">
+                            <i class="fas fa-star"></i>
+                            <span>My Reviews</span>
+                        </a>
+                        <a href="settings.html" class="profile-nav__item">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                        <a href="product-detail.html" class="profile-nav__item profile-nav__item--logout">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </a>
+                    </nav>
+                </aside>
+
+                <!-- Main Content -->
+                <div class="my-reviews__content">
+                    <div class="content-header">
+                        <div>
+                            <h1>My Reviews</h1>
+                            <p>Share your product experiences</p>
+                        </div>
+                        <button class="btn-action btn-action--primary" id="writeReviewBtn">
+                            <i class="fas fa-plus"></i> Write Review
+                        </button>
+                    </div>
+
+                    <!-- Reviews Stats -->
+                    <section class="reviews-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 id="totalReviews">8</h3>
+                                <p>Total Reviews</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 id="avgRating">4.6</h3>
+                                <p>Average Rating</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-thumbs-up"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 id="helpfulVotes">42</h3>
+                                <p>Helpful Votes</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 id="pendingReviews">2</h3>
+                                <p>Pending Reviews</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Filter Section -->
+                    <section class="profile-section">
+                        <div class="profile-section__header">
+                            <h2><i class="fas fa-filter"></i> Filter Reviews</h2>
+                        </div>
+                        <div class="profile-section__content">
+                            <div class="filter-buttons">
+                                <button class="filter-btn active" data-filter="all">
+                                    <i class="fas fa-list"></i> All Reviews
+                                    <span class="filter-count">8</span>
+                                </button>
+                                <button class="filter-btn" data-filter="published">
+                                    <i class="fas fa-check-circle"></i> Published
+                                    <span class="filter-count">5</span>
+                                </button>
+                                <button class="filter-btn" data-filter="pending">
+                                    <i class="fas fa-clock"></i> Pending
+                                    <span class="filter-count">2</span>
+                                </button>
+                                <button class="filter-btn" data-filter="drafts">
+                                    <i class="fas fa-file-alt"></i> Drafts
+                                    <span class="filter-count">1</span>
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Reviews Section -->
+                    <section class="profile-section">
+                        <div class="profile-section__header">
+                            <h2><i class="fas fa-comments"></i> Your Reviews</h2>
+                            <div class="sort-options">
+                                <label>Sort by:</label>
+                                <select id="sortReviews">
+                                    <option value="recent">Most Recent</option>
+                                    <option value="oldest">Oldest First</option>
+                                    <option value="rating-high">Highest Rating</option>
+                                    <option value="rating-low">Lowest Rating</option>
+                                    <option value="helpful">Most Helpful</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="profile-section__content">
+                            <div class="reviews-grid" id="reviewsGrid">
+                                <!-- Review Card 1 - Published -->
+                                <div class="review-card" data-status="published" data-rating="5" data-helpful="15" data-date="2024-03-10">
+                                    <div class="review-card__header">
+                                        <div class="product-info">
+                                            <img src="assets/images/products/laptop1.jpg" alt="Dell XPS 15">
+                                            <div>
+                                                <h4>Dell XPS 15 9530 Laptop</h4>
+                                                <span class="review-date">Reviewed on March 10, 2024</span>
+                                            </div>
+                                        </div>
+                                        <span class="status-badge status-published">Published</span>
+                                    </div>
+                                    <div class="review-card__rating">
+                                        <div class="stars" data-rating="5">
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star active"></i>
+                                        </div>
+                                        <span class="rating-text">Excellent</span>
+                                    </div>
+                                    <div class="review-card__content">
+                                        <h3 class="review-title">Outstanding Performance!</h3>
+                                        <p class="review-text">This laptop exceeded all my expectations. The build quality is exceptional, and the performance is incredible. Perfect for video editing and programming. The display is stunning with accurate colors. Battery life is impressive for such a powerful machine. Highly recommended!</p>
+                                    </div>
+                                    <div class="review-card__footer">
+                                        <div class="helpful-section">
+                                            <button class="btn-helpful" onclick="markHelpful(this)">
+                                                <i class="fas fa-thumbs-up"></i>
+                                                <span class="helpful-count">15</span>
+                                            </button>
+                                            <span class="helpful-label">people found this helpful</span>
+                                        </div>
+                                        <div class="review-actions">
+                                            <button class="btn-action-icon" onclick="editReview(this)">
+                                                <i class="fas fa-edit"></i> Edit
+                                            </button>
+                                            <button class="btn-action-icon btn-delete" onclick="deleteReview(this)">
+                                                <i class="fas fa-trash"></i> Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Review Card 2 - Published -->
+                                <div class="review-card" data-status="published" data-rating="4" data-helpful="8" data-date="2024-03-08">
+                                    <div class="review-card__header">
+                                        <div class="product-info">
+                                            <img src="assets/images/products/phone1.jpg" alt="iPhone 15 Pro">
+                                            <div>
+                                                <h4>Apple iPhone 15 Pro Max</h4>
+                                                <span class="review-date">Reviewed on March 8, 2024</span>
+                                            </div>
+                                        </div>
+                                        <span class="status-badge status-published">Published</span>
+                                    </div>
+                                    <div class="review-card__rating">
+                                        <div class="stars" data-rating="4">
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star active"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <span class="rating-text">Very Good</span>
+                                    </div>
+                                    <div class="review-card__content">
+                                        <h3 class="review-title">Great phone, minor issues</h3>
+                                        <p class="review-text">Amazing camera quality and the titanium build feels premium. The Action button is a useful addition. Battery life could be better for heavy usage. The price is steep but the quality justifies it. Face ID works flawlessly even in low light.</p>
+                                    </div>
+                                    <div class="review-card__footer">
+                                        <div class="helpful-section">
+                                            <button class="btn-helpful" onclick="markHelpful(this)">
+                                                <i class="fas fa-thumbs-up"></i>
+                                                <span class="helpful-count">8</span>
+                                            </button>
+                                            <span class="helpful-label">people found this helpful</span>
+                                        </div>
+                                        <div class="review-actions">
+                                            <button class="btn-action-icon" onclick="editReview(this)">
+                                                <i class="fas fa-edit"></i> Edit
+                                            </button>
+                                            <button class="btn-action-icon btn-delete" onclick="deleteReview(this)">
+                                                <i class="fas fa-trash"></i> Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Review Card 3 - Pending -->
+                                <div class="review-card" data-status="pending" data-rating="5" data-helpful="0" data-date="2024-03-12">
+                                    <div class="review-card__header">
+                                        <div class="product-info">
+                                            <img src="assets/images/products/keyboard1.jpg" alt="Keychron K8 Pro">
+                                            <div>
+                                                <h4>Keychron K8 Pro Mechanical Keyboard</h4>
+                                                <span class="review-date">Submitted on March 12, 2024</span>
+                                            </div>
+                                        </div>
+                                        <span class="status-badge status-pending">Pending</span>
+                                    </div>
+                                    <div class="review-card__rating">
+                                        <div class="stars" data-rating="5">
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star active"></i>
+                                        </div>
+                                        <span class="rating-text">Excellent</span>
+                                    </div>
+                                    <div class="review-card__content">
+                                        <h3 class="review-title">Best mechanical keyboard!</h3>
+                                        <p class="review-text">The typing experience is phenomenal. Brown switches are perfect for both typing and gaming. Hot-swappable switches are a great feature. RGB lighting is customizable and looks amazing. Wireless connectivity works perfectly with multiple devices.</p>
+                                    </div>
+                                    <div class="review-card__footer">
+                                        <div class="pending-info">
+                                            <i class="fas fa-info-circle"></i>
+                                            <span>Your review is awaiting approval by our moderation team</span>
+                                        </div>
+                                        <div class="review-actions">
+                                            <button class="btn-action-icon" onclick="editReview(this)">
+                                                <i class="fas fa-edit"></i> Edit
+                                            </button>
+                                            <button class="btn-action-icon btn-delete" onclick="deleteReview(this)">
+                                                <i class="fas fa-trash"></i> Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Review Card 4 - Draft -->
+                                <div class="review-card review-card--draft" data-status="drafts" data-rating="0" data-helpful="0" data-date="2024-03-13">
+                                    <div class="review-card__header">
+                                        <div class="product-info">
+                                            <img src="assets/images/products/mouse1.jpg" alt="Logitech MX Master 3S">
+                                            <div>
+                                                <h4>Logitech MX Master 3S Wireless Mouse</h4>
+                                                <span class="review-date">Draft saved on March 13, 2024</span>
+                                            </div>
+                                        </div>
+                                        <span class="status-badge status-draft">Draft</span>
+                                    </div>
+                                    <div class="review-card__rating">
+                                        <div class="stars editable" data-rating="0">
+                                            <i class="far fa-star" data-value="1"></i>
+                                            <i class="far fa-star" data-value="2"></i>
+                                            <i class="far fa-star" data-value="3"></i>
+                                            <i class="far fa-star" data-value="4"></i>
+                                            <i class="far fa-star" data-value="5"></i>
+                                        </div>
+                                        <span class="rating-text">Not rated</span>
+                                    </div>
+                                    <div class="review-card__content">
+                                        <h3 class="review-title">Untitled Review</h3>
+                                        <p class="review-text review-text--placeholder">Start writing your review...</p>
+                                    </div>
+                                    <div class="review-card__footer">
+                                        <div class="draft-info">
+                                            <i class="fas fa-file-alt"></i>
+                                            <span>Complete your review to publish it</span>
+                                        </div>
+                                        <div class="review-actions">
+                                            <button class="btn-action-icon btn-primary" onclick="editReview(this)">
+                                                <i class="fas fa-edit"></i> Continue Writing
+                                            </button>
+                                            <button class="btn-action-icon btn-delete" onclick="deleteReview(this)">
+                                                <i class="fas fa-trash"></i> Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Review Card 5 - Published -->
+                                <div class="review-card" data-status="published" data-rating="5" data-helpful="12" data-date="2024-03-05">
+                                    <div class="review-card__header">
+                                        <div class="product-info">
+                                            <img src="assets/images/products/laptop2.jpg" alt="MacBook Air M2">
+                                            <div>
+                                                <h4>Apple MacBook Air 13" M2</h4>
+                                                <span class="review-date">Reviewed on March 5, 2024</span>
+                                            </div>
+                                        </div>
+                                        <span class="status-badge status-published">Published</span>
+                                    </div>
+                                    <div class="review-card__rating">
+                                        <div class="stars" data-rating="5">
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star active"></i>
+                                        </div>
+                                        <span class="rating-text">Excellent</span>
+                                    </div>
+                                    <div class="review-card__content">
+                                        <h3 class="review-title">Perfect for everyday use</h3>
+                                        <p class="review-text">Silent operation, incredible battery life, and the M2 chip handles everything I throw at it. The Midnight color looks gorgeous. Screen quality is top-notch. Best laptop for students and professionals alike.</p>
+                                    </div>
+                                    <div class="review-card__footer">
+                                        <div class="helpful-section">
+                                            <button class="btn-helpful" onclick="markHelpful(this)">
+                                                <i class="fas fa-thumbs-up"></i>
+                                                <span class="helpful-count">12</span>
+                                            </button>
+                                            <span class="helpful-label">people found this helpful</span>
+                                        </div>
+                                        <div class="review-actions">
+                                            <button class="btn-action-icon" onclick="editReview(this)">
+                                                <i class="fas fa-edit"></i> Edit
+                                            </button>
+                                            <button class="btn-action-icon btn-delete" onclick="deleteReview(this)">
+                                                <i class="fas fa-trash"></i> Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Review Card 6 - Published -->
+                                <div class="review-card" data-status="published" data-rating="3" data-helpful="4" data-date="2024-03-02">
+                                    <div class="review-card__header">
+                                        <div class="product-info">
+                                            <img src="assets/images/products/accessory1.jpg" alt="AirPods Pro">
+                                            <div>
+                                                <h4>Apple AirPods Pro (2nd Gen)</h4>
+                                                <span class="review-date">Reviewed on March 2, 2024</span>
+                                            </div>
+                                        </div>
+                                        <span class="status-badge status-published">Published</span>
+                                    </div>
+                                    <div class="review-card__rating">
+                                        <div class="stars" data-rating="3">
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star active"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <span class="rating-text">Good</span>
+                                    </div>
+                                    <div class="review-card__content">
+                                        <h3 class="review-title">Good but overpriced</h3>
+                                        <p class="review-text">ANC is impressive and sound quality is good. Fit is comfortable for long listening sessions. However, at this price point, I expected better battery life. The spatial audio feature is gimmicky. Overall decent earbuds but there are better value options available.</p>
+                                    </div>
+                                    <div class="review-card__footer">
+                                        <div class="helpful-section">
+                                            <button class="btn-helpful" onclick="markHelpful(this)">
+                                                <i class="fas fa-thumbs-up"></i>
+                                                <span class="helpful-count">4</span>
+                                            </button>
+                                            <span class="helpful-label">people found this helpful</span>
+                                        </div>
+                                        <div class="review-actions">
+                                            <button class="btn-action-icon" onclick="editReview(this)">
+                                                <i class="fas fa-edit"></i> Edit
+                                            </button>
+                                            <button class="btn-action-icon btn-delete" onclick="deleteReview(this)">
+                                                <i class="fas fa-trash"></i> Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Review Card 7 - Pending -->
+                                <div class="review-card" data-status="pending" data-rating="4" data-helpful="0" data-date="2024-03-11">
+                                    <div class="review-card__header">
+                                        <div class="product-info">
+                                            <img src="assets/images/products/monitor1.jpg" alt="LG UltraWide">
+                                            <div>
+                                                <h4>LG 34" UltraWide Monitor</h4>
+                                                <span class="review-date">Submitted on March 11, 2024</span>
+                                            </div>
+                                        </div>
+                                        <span class="status-badge status-pending">Pending</span>
+                                    </div>
+                                    <div class="review-card__rating">
+                                        <div class="stars" data-rating="4">
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star active"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <span class="rating-text">Very Good</span>
+                                    </div>
+                                    <div class="review-card__content">
+                                        <h3 class="review-title">Great for productivity</h3>
+                                        <p class="review-text">The ultrawide format is perfect for multitasking. Colors are accurate and viewing angles are excellent. USB-C connectivity with power delivery is very convenient. Slight backlight bleed in the corners but not noticeable during regular use.</p>
+                                    </div>
+                                    <div class="review-card__footer">
+                                        <div class="pending-info">
+                                            <i class="fas fa-info-circle"></i>
+                                            <span>Your review is awaiting approval by our moderation team</span>
+                                        </div>
+                                        <div class="review-actions">
+                                            <button class="btn-action-icon" onclick="editReview(this)">
+                                                <i class="fas fa-edit"></i> Edit
+                                            </button>
+                                            <button class="btn-action-icon btn-delete" onclick="deleteReview(this)">
+                                                <i class="fas fa-trash"></i> Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Review Card 8 - Published -->
+                                <div class="review-card" data-status="published" data-rating="5" data-helpful="3" data-date="2024-02-28">
+                                    <div class="review-card__header">
+                                        <div class="product-info">
+                                            <img src="assets/images/products/tablet1.jpg" alt="iPad Pro">
+                                            <div>
+                                                <h4>Apple iPad Pro 12.9" M2</h4>
+                                                <span class="review-date">Reviewed on February 28, 2024</span>
+                                            </div>
+                                        </div>
+                                        <span class="status-badge status-published">Published</span>
+                                    </div>
+                                    <div class="review-card__rating">
+                                        <div class="stars" data-rating="5">
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star active"></i>
+                                        </div>
+                                        <span class="rating-text">Excellent</span>
+                                    </div>
+                                    <div class="review-card__content">
+                                        <h3 class="review-title">Laptop replacement!</h3>
+                                        <p class="review-text">With the Magic Keyboard, this is a true laptop replacement. ProMotion display is buttery smooth. Apple Pencil integration is flawless for note-taking and drawing. The M2 chip is overkill for most tasks but ensures future-proofing.</p>
+                                    </div>
+                                    <div class="review-card__footer">
+                                        <div class="helpful-section">
+                                            <button class="btn-helpful" onclick="markHelpful(this)">
+                                                <i class="fas fa-thumbs-up"></i>
+                                                <span class="helpful-count">3</span>
+                                            </button>
+                                            <span class="helpful-label">people found this helpful</span>
+                                        </div>
+                                        <div class="review-actions">
+                                            <button class="btn-action-icon" onclick="editReview(this)">
+                                                <i class="fas fa-edit"></i> Edit
+                                            </button>
+                                            <button class="btn-action-icon btn-delete" onclick="deleteReview(this)">
+                                                <i class="fas fa-trash"></i> Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // My Reviews Page - Complete UX Flow
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toast Notification System
+            function showToast(title, message, type = 'success') {
+                const toastHTML = `
+                    <div class="message-box message-box--${type}">
+                        <i class="fas ${type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle'}"></i>
+                        <div>
+                            <strong>${title}</strong>
+                            <p style="margin: 0; font-size: 0.85rem;">${message}</p>
+                        </div>
+                    </div>
+                `;
+
+                const container = document.querySelector('.my-reviews__content');
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = toastHTML;
+                const toast = tempDiv.firstElementChild;
+
+                container.insertBefore(toast, container.firstChild);
+
+                setTimeout(() => {
+                    toast.style.opacity = '0';
+                    toast.style.transform = 'translateY(-20px)';
+                    setTimeout(() => toast.remove(), 300);
+                }, 3000);
+            }
+
+            // Filter Reviews
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const filter = this.dataset.filter;
+                    const reviews = document.querySelectorAll('.review-card');
+
+                    reviews.forEach(review => {
+                        if (filter === 'all' || review.dataset.status === filter) {
+                            review.style.display = 'block';
+                            setTimeout(() => {
+                                review.style.opacity = '1';
+                                review.style.transform = 'scale(1)';
+                            }, 10);
+                        } else {
+                            review.style.opacity = '0';
+                            review.style.transform = 'scale(0.95)';
+                            setTimeout(() => {
+                                review.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+
+                    const filterText = this.textContent.trim().split('\n')[0];
+                    showToast('Filter Applied', `Showing ${filterText}`, 'info');
+                });
+            });
+
+            // Sort Reviews
+            document.getElementById('sortReviews').addEventListener('change', function() {
+                const sortBy = this.value;
+                const grid = document.getElementById('reviewsGrid');
+                const reviews = Array.from(grid.querySelectorAll('.review-card'));
+
+                reviews.sort((a, b) => {
+                    switch(sortBy) {
+                        case 'recent':
+                            return new Date(b.dataset.date) - new Date(a.dataset.date);
+                        case 'oldest':
+                            return new Date(a.dataset.date) - new Date(b.dataset.date);
+                        case 'rating-high':
+                            return parseInt(b.dataset.rating) - parseInt(a.dataset.rating);
+                        case 'rating-low':
+                            return parseInt(a.dataset.rating) - parseInt(b.dataset.rating);
+                        case 'helpful':
+                            return parseInt(b.dataset.helpful) - parseInt(a.dataset.helpful);
+                        default:
+                            return 0;
+                    }
+                });
+
+                reviews.forEach(review => grid.appendChild(review));
+                showToast('Sorted', `Sorted by ${this.options[this.selectedIndex].text}`, 'info');
+            });
+
+            // Mark as Helpful
+            window.markHelpful = function(btn) {
+                const countSpan = btn.querySelector('.helpful-count');
+                let count = parseInt(countSpan.textContent);
+
+                if (btn.classList.contains('marked')) {
+                    btn.classList.remove('marked');
+                    count--;
+                    showToast('Unmarked', 'Removed helpful vote', 'info');
+                } else {
+                    btn.classList.add('marked');
+                    count++;
+                    showToast('Thank You', 'Marked as helpful!', 'success');
+                }
+
+                countSpan.textContent = count;
+
+                // Update stats
+                const totalHelpful = Array.from(document.querySelectorAll('.helpful-count'))
+                    .reduce((sum, span) => sum + parseInt(span.textContent), 0);
+                document.getElementById('helpfulVotes').textContent = totalHelpful;
+            };
+
+            // Delete Review
+            window.deleteReview = function(btn) {
+                const card = btn.closest('.review-card');
+                const productName = card.querySelector('.product-info h4').textContent;
+
+                if (confirm(`Are you sure you want to delete your review for "${productName}"?`)) {
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.95)';
+
+                    setTimeout(() => {
+                        card.remove();
+                        updateStats();
+                        showToast('Review Deleted', 'Your review has been removed', 'success');
+                    }, 300);
+                }
+            };
+
+            // Edit Review
+            window.editReview = function(btn) {
+                const card = btn.closest('.review-card');
+                const productName = card.querySelector('.product-info h4').textContent;
+                const productImg = card.querySelector('.product-info img').src;
+                const currentRating = parseInt(card.querySelector('.stars').dataset.rating) || 0;
+                const currentTitle = card.querySelector('.review-title').textContent;
+                const currentText = card.querySelector('.review-text').textContent;
+                const isDraft = card.classList.contains('review-card--draft');
+
+                openReviewModal(productName, productImg, currentRating, currentTitle, currentText, card, isDraft);
+            };
+
+            // Write Review Button
+            document.getElementById('writeReviewBtn').addEventListener('click', function() {
+                openReviewModal();
+            });
+
+            // Open Review Modal
+            function openReviewModal(productName = '', productImg = '', rating = 0, title = '', text = '', existingCard = null, isDraft = false) {
+                const isEdit = existingCard !== null;
+                const modalTitle = isEdit ? 'Edit Review' : 'Write a Review';
+
+                const modal = createModal(modalTitle, `
+                    <form id="reviewForm" style="display: flex; flex-direction: column; gap: 20px;">
+                        ${!isEdit ? `
+                        <!-- Product Selection -->
+                        <div>
+                            <label style="color: #888; font-size: 0.85rem; display: block; margin-bottom: 8px;">
+                                Select Product <span style="color: #ED3237;">*</span>
+                            </label>
+                            <select id="productSelect" required
+                                style="background: #140506; border: 1px solid #333; color: #fff; padding: 12px 14px; border-radius: 6px; width: 100%; transition: border-color 0.3s;"
+                                onfocus="this.style.borderColor='#ED3237'" onblur="this.style.borderColor='#333'">
+                                <option value="">Choose a product to review...</option>
+                                <option value="Dell XPS 15">Dell XPS 15 9530 Laptop</option>
+                                <option value="iPhone 15 Pro Max">Apple iPhone 15 Pro Max</option>
+                                <option value="MacBook Air M2">Apple MacBook Air 13" M2</option>
+                                <option value="AirPods Pro">Apple AirPods Pro (2nd Gen)</option>
+                                <option value="iPad Pro">Apple iPad Pro 12.9" M2</option>
+                            </select>
+                        </div>
+                        ` : `
+                        <!-- Product Info (Read-only for edit) -->
+                        <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: rgba(237, 50, 55, 0.05); border: 1px solid rgba(237, 50, 55, 0.2); border-radius: 8px;">
+                            <img src="${productImg}" alt="${productName}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 6px;">
+                            <div>
+                                <h4 style="color: #fff; font-size: 0.95rem; margin: 0 0 4px 0;">${productName}</h4>
+                                <span style="color: #888; font-size: 0.8rem;">Editing your review</span>
+                            </div>
+                        </div>
+                        `}
+
+                        <!-- Star Rating -->
+                        <div>
+                            <label style="color: #888; font-size: 0.85rem; display: block; margin-bottom: 8px;">
+                                Your Rating <span style="color: #ED3237;">*</span>
+                            </label>
+                            <div class="star-rating-input" id="starRatingInput" data-rating="${rating}">
+                                <i class="far fa-star ${rating >= 1 ? 'fas active' : ''}" data-value="1"></i>
+                                <i class="far fa-star ${rating >= 2 ? 'fas active' : ''}" data-value="2"></i>
+                                <i class="far fa-star ${rating >= 3 ? 'fas active' : ''}" data-value="3"></i>
+                                <i class="far fa-star ${rating >= 4 ? 'fas active' : ''}" data-value="4"></i>
+                                <i class="far fa-star ${rating >= 5 ? 'fas active' : ''}" data-value="5"></i>
+                            </div>
+                            <input type="hidden" id="ratingValue" value="${rating}" required>
+                        </div>
+
+                        <!-- Review Title -->
+                        <div>
+                            <label style="color: #888; font-size: 0.85rem; display: block; margin-bottom: 8px;">
+                                Review Title <span style="color: #ED3237;">*</span>
+                            </label>
+                            <input type="text" id="reviewTitle" value="${isDraft ? '' : title}" placeholder="Summarize your experience" required maxlength="100"
+                                style="background: #140506; border: 1px solid #333; color: #fff; padding: 12px 14px; border-radius: 6px; width: 100%; transition: border-color 0.3s;"
+                                onfocus="this.style.borderColor='#ED3237'" onblur="this.style.borderColor='#333'">
+                            <div style="text-align: right; margin-top: 4px;">
+                                <span id="titleCounter" style="color: #666; font-size: 0.75rem;">0/100</span>
+                            </div>
+                        </div>
+
+                        <!-- Review Description -->
+                        <div>
+                            <label style="color: #888; font-size: 0.85rem; display: block; margin-bottom: 8px;">
+                                Your Review <span style="color: #ED3237;">*</span>
+                            </label>
+                            <textarea id="reviewText" placeholder="Share your experience with this product..." required maxlength="1000" rows="6"
+                                style="background: #140506; border: 1px solid #333; color: #fff; padding: 12px 14px; border-radius: 6px; width: 100%; transition: border-color 0.3s; resize: vertical; font-family: inherit;"
+                                onfocus="this.style.borderColor='#ED3237'" onblur="this.style.borderColor='#333'">${isDraft ? '' : text}</textarea>
+                            <div style="text-align: right; margin-top: 4px;">
+                                <span id="textCounter" style="color: #666; font-size: 0.75rem;">0/1000</span>
+                            </div>
+                        </div>
+
+                        <!-- Image Upload -->
+                        <div>
+                            <label style="color: #888; font-size: 0.85rem; display: block; margin-bottom: 8px;">
+                                Add Photos (Optional)
+                            </label>
+                            <div id="imageUploadArea" style="border: 2px dashed #333; border-radius: 8px; padding: 24px; text-align: center; cursor: pointer; transition: all 0.3s;"
+                                onmouseover="this.style.borderColor='#ED3237'; this.style.background='rgba(237, 50, 55, 0.05)'"
+                                onmouseout="this.style.borderColor='#333'; this.style.background='transparent'">
+                                <i class="fas fa-cloud-upload-alt" style="font-size: 2rem; color: #666; margin-bottom: 8px;"></i>
+                                <p style="color: #888; margin: 0; font-size: 0.9rem;">Click to upload or drag and drop</p>
+                                <p style="color: #666; margin: 4px 0 0 0; font-size: 0.75rem;">PNG, JPG up to 5MB</p>
+                                <input type="file" id="imageInput" accept="image/*" multiple style="display: none;">
+                            </div>
+                            <div id="imagePreview" style="display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap;"></div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div style="display: flex; gap: 12px; margin-top: 8px;">
+                            ${isEdit ? `
+                            <button type="button" id="saveDraftBtn"
+                                style="flex: 1; padding: 12px; background: #1a1a1a; color: #ccc; border: 1px solid #333; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.3s;"
+                                onmouseover="this.style.borderColor='#555'" onmouseout="this.style.borderColor='#333'">
+                                <i class="fas fa-save"></i> Save as Draft
+                            </button>
+                            ` : ''}
+                            <button type="button" onclick="document.querySelector('.modal-overlay').remove()"
+                                style="flex: 1; padding: 12px; background: #1a1a1a; color: #ccc; border: 1px solid #333; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.3s;"
+                                onmouseover="this.style.borderColor='#555'" onmouseout="this.style.borderColor='#333'">
+                                <i class="fas fa-times"></i> Cancel
+                            </button>
+                            <button type="submit"
+                                style="flex: 2; padding: 12px; background: linear-gradient(135deg, #ED3237, #c82529); color: #fff; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.3s;"
+                                onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(237, 50, 55, 0.4)'"
+                                onmouseout="this.style.transform=''; this.style.boxShadow=''">
+                                <i class="fas fa-paper-plane"></i> ${isEdit ? 'Update Review' : 'Submit Review'}
+                            </button>
+                        </div>
+                    </form>
+                `, '600px');
+
+                document.body.appendChild(modal);
+
+                // Star Rating Interaction
+                const starInputs = modal.querySelectorAll('.star-rating-input i');
+                const ratingValue = modal.querySelector('#ratingValue');
+
+                starInputs.forEach(star => {
+                    star.addEventListener('click', function() {
+                        const value = parseInt(this.dataset.value);
+                        ratingValue.value = value;
+
+                        starInputs.forEach((s, idx) => {
+                            if (idx < value) {
+                                s.classList.remove('far');
+                                s.classList.add('fas', 'active');
+                            } else {
+                                s.classList.remove('fas', 'active');
+                                s.classList.add('far');
+                            }
+                        });
+                    });
+
+                    star.addEventListener('mouseenter', function() {
+                        const value = parseInt(this.dataset.value);
+                        starInputs.forEach((s, idx) => {
+                            if (idx < value) {
+                                s.style.color = '#ED3237';
+                            } else {
+                                s.style.color = '';
+                            }
+                        });
+                    });
+                });
+
+                modal.querySelector('.star-rating-input').addEventListener('mouseleave', function() {
+                    starInputs.forEach(s => s.style.color = '');
+                });
+
+                // Character Counters
+                const titleInput = modal.querySelector('#reviewTitle');
+                const textInput = modal.querySelector('#reviewText');
+                const titleCounter = modal.querySelector('#titleCounter');
+                const textCounter = modal.querySelector('#textCounter');
+
+                titleInput.addEventListener('input', function() {
+                    titleCounter.textContent = `${this.value.length}/100`;
+                    titleCounter.style.color = this.value.length > 90 ? '#ED3237' : '#666';
+                });
+                titleInput.dispatchEvent(new Event('input'));
+
+                textInput.addEventListener('input', function() {
+                    textCounter.textContent = `${this.value.length}/1000`;
+                    textCounter.style.color = this.value.length > 950 ? '#ED3237' : '#666';
+                });
+                textInput.dispatchEvent(new Event('input'));
+
+                // Image Upload
+                const uploadArea = modal.querySelector('#imageUploadArea');
+                const imageInput = modal.querySelector('#imageInput');
+                const imagePreview = modal.querySelector('#imagePreview');
+
+                uploadArea.addEventListener('click', () => imageInput.click());
+
+                imageInput.addEventListener('change', function() {
+                    const files = Array.from(this.files);
+                    files.forEach(file => {
+                        if (file.size > 5 * 1024 * 1024) {
+                            showToast('File Too Large', `${file.name} exceeds 5MB limit`, 'error');
+                            return;
+                        }
+
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            const imgContainer = document.createElement('div');
+                            imgContainer.style.cssText = 'position: relative; width: 80px; height: 80px;';
+                            imgContainer.innerHTML = `
+                                <img src="${e.target.result}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; border: 2px solid #333;">
+                                <button type="button" onclick="this.parentElement.remove()" style="position: absolute; top: -6px; right: -6px; width: 20px; height: 20px; border-radius: 50%; background: #ED3237; color: #fff; border: none; cursor: pointer; font-size: 0.7rem; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            `;
+                            imagePreview.appendChild(imgContainer);
+                        };
+                        reader.readAsDataURL(file);
+                    });
+                });
+
+                // Drag and Drop
+                uploadArea.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    uploadArea.style.borderColor = '#ED3237';
+                    uploadArea.style.background = 'rgba(237, 50, 55, 0.05)';
+                });
+
+                uploadArea.addEventListener('dragleave', () => {
+                    uploadArea.style.borderColor = '#333';
+                    uploadArea.style.background = 'transparent';
+                });
+
+                uploadArea.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    uploadArea.style.borderColor = '#333';
+                    uploadArea.style.background = 'transparent';
+                    imageInput.files = e.dataTransfer.files;
+                    imageInput.dispatchEvent(new Event('change'));
+                });
+
+                // Save as Draft (Edit mode)
+                if (isEdit) {
+                    modal.querySelector('#saveDraftBtn').addEventListener('click', function() {
+                        showToast('Draft Saved', 'Your changes have been saved as a draft', 'success');
+                        document.querySelector('.modal-overlay').remove();
+                    });
+                }
+
+                // Form Submit
+                modal.querySelector('#reviewForm').addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    const rating = parseInt(ratingValue.value);
+                    const title = titleInput.value.trim();
+                    const text = textInput.value.trim();
+
+                    if (rating === 0) {
+                        showToast('Rating Required', 'Please select a star rating', 'error');
+                        return;
+                    }
+
+                    if (!title || !text) {
+                        showToast('Required Fields', 'Please fill in all required fields', 'error');
+                        return;
+                    }
+
+                    if (isEdit) {
+                        updateReviewCard(existingCard, rating, title, text);
+                        showToast('Review Updated', 'Your review has been updated successfully', 'success');
+                    } else {
+                        const productSelect = modal.querySelector('#productSelect');
+                        if (!productSelect.value) {
+                            showToast('Product Required', 'Please select a product to review', 'error');
+                            return;
+                        }
+                        showToast('Review Submitted', 'Your review has been submitted for approval', 'success');
+                    }
+
+                    document.querySelector('.modal-overlay').remove();
+                    updateStats();
+                });
+            }
+
+            // Update Review Card
+            function updateReviewCard(card, rating, title, text) {
+                // Update rating
+                const starsContainer = card.querySelector('.stars');
+                starsContainer.dataset.rating = rating;
+                const stars = starsContainer.querySelectorAll('i');
+                stars.forEach((star, idx) => {
+                    if (idx < rating) {
+                        star.classList.remove('far');
+                        star.classList.add('fas', 'active');
+                    } else {
+                        star.classList.remove('fas', 'active');
+                        star.classList.add('far');
+                    }
+                });
+
+                // Update rating text
+                const ratingTexts = ['', 'Poor', 'Fair', 'Good', 'Very Good', 'Excellent'];
+                card.querySelector('.rating-text').textContent = ratingTexts[rating];
+
+                // Update title and text
+                card.querySelector('.review-title').textContent = title;
+                card.querySelector('.review-text').textContent = text;
+                card.querySelector('.review-text').classList.remove('review-text--placeholder');
+
+                // Update status if was draft
+                if (card.classList.contains('review-card--draft')) {
+                    card.classList.remove('review-card--draft');
+                    card.dataset.status = 'pending';
+                    const statusBadge = card.querySelector('.status-badge');
+                    statusBadge.textContent = 'Pending';
+                    statusBadge.className = 'status-badge status-pending';
+                }
+            }
+
+            // Update Stats
+            function updateStats() {
+                const reviews = document.querySelectorAll('.review-card');
+                const totalReviews = reviews.length;
+
+                let totalRating = 0;
+                let ratedCount = 0;
+                let helpfulVotes = 0;
+                let pending = 0;
+                let published = 0;
+                let drafts = 0;
+
+                reviews.forEach(review => {
+                    const rating = parseInt(review.dataset.rating);
+                    if (rating > 0) {
+                        totalRating += rating;
+                        ratedCount++;
+                    }
+
+                    const helpful = parseInt(review.dataset.helpful);
+                    helpfulVotes += helpful;
+
+                    const status = review.dataset.status;
+                    if (status === 'published') published++;
+                    else if (status === 'pending') pending++;
+                    else if (status === 'drafts') drafts++;
+                });
+
+                const avgRating = ratedCount > 0 ? (totalRating / ratedCount).toFixed(1) : '0.0';
+
+                document.getElementById('totalReviews').textContent = totalReviews;
+                document.getElementById('avgRating').textContent = avgRating;
+                document.getElementById('helpfulVotes').textContent = helpfulVotes;
+                document.getElementById('pendingReviews').textContent = pending;
+
+                // Update filter counts
+                document.querySelector('[data-filter="all"] .filter-count').textContent = totalReviews;
+                document.querySelector('[data-filter="published"] .filter-count').textContent = published;
+                document.querySelector('[data-filter="pending"] .filter-count').textContent = pending;
+                document.querySelector('[data-filter="drafts"] .filter-count').textContent = drafts;
+            }
+
+            // Modal Creator
+            function createModal(title, content, maxWidth = '500px') {
+                const modal = document.createElement('div');
+                modal.className = 'modal-overlay';
+                modal.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.8); display: flex; align-items: center; justify-content: center; z-index: 10000; backdrop-filter: blur(4px); animation: fadeIn 0.3s; overflow-y: auto; padding: 20px;';
+
+                modal.innerHTML = `
+                    <div class="modal-content" style="background: linear-gradient(180deg, #1a0506 0%, #0C0304 100%); border: 1px solid rgba(237, 50, 55, 0.2); border-radius: 12px; padding: 24px; max-width: ${maxWidth}; width: 100%; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6); animation: scaleIn 0.3s; margin: auto;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                            <h3 style="color: #fff; margin: 0; font-size: 1.25rem;">${title}</h3>
+                            <button onclick="this.closest('.modal-overlay').remove()" style="background: none; border: none; color: #888; font-size: 1.5rem; cursor: pointer; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 6px; transition: all 0.3s;" onmouseover="this.style.background='#2a2a2a'; this.style.color='#ED3237';" onmouseout="this.style.background='none'; this.style.color='#888';">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div>${content}</div>
+                    </div>
+                `;
+
+                modal.onclick = function(e) {
+                    if (e.target === modal) {
+                        modal.remove();
+                    }
+                };
+
+                return modal;
+            }
+
+            // Keyboard shortcuts
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    const modal = document.querySelector('.modal-overlay');
+                    if (modal) modal.remove();
+                }
+            });
+
+            console.log('✅ My Reviews UX Flow initialized successfully!');
+        });
+    </script>
+</body>
+</html>

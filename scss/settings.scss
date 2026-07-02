@@ -1,0 +1,5 @@
+// Settings SCSS Entry Point
+@import 'variables';
+@import '../node_modules/bootstrap/scss/bootstrap';
+@import 'common/common';
+@import 'pages/settings';

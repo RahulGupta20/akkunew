@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Guest | Akku Electronics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/checkout.css">
+</head>
+<body class="dark-theme">
+    <!-- Header -->
+    <header class="header">
+        <!-- Main Header (Sticky) -->
+        <div class="header__main">
+            <div class="container">
+                <a href="index.html" class="header__logo">
+                    <img src="assets/images/logo.png" alt="AKKU Electronics">
+                </a>
+
+                <!-- Search Bar -->
+                <form class="header__search" action="search-results.html" method="GET">
+                    <input type="text" name="q" id="searchInput" placeholder="Search for products, brands and more...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+
+                <!-- Header Actions -->
+                <div class="header__actions">
+                    <!-- Language & Currency Button -->
+                    <button class="header__settings-btn" id="openSettingsModal">
+                        <i class="fas fa-globe"></i>
+                        <span>EN / NPR</span>
+                    </button>
+
+                    <!-- Wishlist -->
+                    <a href="wishlist.html" class="header__action-item" aria-label="Wishlist" title="Wishlist">
+                        <i class="fas fa-heart"></i>
+                    </a>
+
+                    <!-- Cart -->
+                    <a href="cart.html" class="header__action-item" aria-label="Shopping Cart (5 items)" title="Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge" id="cartBadge">5</span>
+                    </a>
+
+                    <!-- Login Button (Not Logged In) -->
+                    <a href="login.html" class="header__login-btn">
+                        <i class="fas fa-user"></i>
+                        <span>Login</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="header__menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation (Not Sticky) -->
+        <nav class="header__nav" id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="#">Laptops</a></li>
+                <li><a href="#">Mobiles</a></li>
+                <li><a href="#">Accessories</a></li>
+                <li><a href="#">Deals</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <i class="fas fa-home"></i>
+            <a href="index.html">Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <a href="cart.html">Cart</a>
+            <i class="fas fa-chevron-right"></i>
+            <span class="current">Checkout</span>
+        </div>
+    </div>
+
+    <!-- Checkout Container -->
+    <div class="checkout-container">
+        <div class="container">
+            <!-- Account Section -->
+            <section class="account-section" id="accountSection">
+                <div class="account-header">
+                    <div class="account-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="account-title">
+                        <h2>Account</h2>
+                        <p>Sign in for faster checkout</p>
+                    </div>
+                </div>
+
+                <div class="account-options">
+                    <div class="account-option" id="guestOption">
+                        <div class="option-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3>Continue as Guest</h3>
+                    </div>
+
+                    <div class="account-option" id="signinOption">
+                        <div class="option-icon">
+                            <i class="fas fa-sign-in-alt"></i>
+                        </div>
+                        <h3>Sign In</h3>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Checkout Wrapper -->
+            <div class="checkout__wrapper" id="checkoutWrapper" style="display: none;">
+                <!-- Left: Checkout Form -->
+                <div class="checkout__main">
+                    <!-- Contact Information -->
+                    <section class="checkout-section">
+                        <div class="section-header-compact">
+                            <div class="step-number">1</div>
+                            <div class="section-title-compact">
+                                <h2>Contact Information</h2>
+                            </div>
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="form-group full-width">
+                                <label for="guestEmail">Email <span class="required">*</span></label>
+                                <input type="email" id="guestEmail" class="form-control" placeholder="your.email@example.com" required>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="guestPhone">Phone Number <span class="required">*</span></label>
+                                <input type="tel" id="guestPhone" class="form-control" placeholder="+977 9841234567" required>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Delivery Address -->
+                    <section class="checkout-section">
+                        <div class="section-header-compact">
+                            <div class="step-number">2</div>
+                            <div class="section-title-compact">
+                                <h2>Delivery Address</h2>
+                            </div>
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="form-group full-width">
+                                <label for="fullName">Full Name <span class="required">*</span></label>
+                                <input type="text" id="fullName" class="form-control" placeholder="Rajesh Maharjan" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="street">Street Address <span class="required">*</span></label>
+                                <input type="text" id="street" class="form-control" placeholder="Durbar Marg" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="ward">Ward No.</label>
+                                <input type="text" id="ward" class="form-control" placeholder="3">
+                            </div>
+                            <div class="form-group">
+                                <label for="city">City <span class="required">*</span></label>
+                                <input type="text" id="city" class="form-control" placeholder="Kathmandu" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="postalCode">Postal Code</label>
+                                <input type="text" id="postalCode" class="form-control" placeholder="44600">
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Delivery Method -->
+                    <section class="checkout-section">
+                        <div class="section-header-compact">
+                            <div class="step-number">3</div>
+                            <div class="section-title-compact">
+                                <h2>Delivery Method</h2>
+                            </div>
+                        </div>
+
+                        <div class="delivery-options-grid">
+                            <label class="delivery-option-card">
+                                <input type="radio" name="delivery" value="standard" checked>
+                                <div class="delivery-card-content">
+                                    <div class="delivery-card-icon">
+                                        <i class="fas fa-truck"></i>
+                                    </div>
+                                    <div class="delivery-card-info">
+                                        <h4>Standard Delivery <span class="delivery-badge-free">FREE</span></h4>
+                                        <p>3-5 business days</p>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="delivery-option-card">
+                                <input type="radio" name="delivery" value="express">
+                                <div class="delivery-card-content">
+                                    <div class="delivery-card-icon">
+                                        <i class="fas fa-shipping-fast"></i>
+                                    </div>
+                                    <div class="delivery-card-info">
+                                        <h4>Express <span class="delivery-price">NPR 200</span></h4>
+                                        <p>1-2 business days</p>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </section>
+
+                    <!-- Payment Method -->
+                    <section class="checkout-section">
+                        <div class="section-header-compact">
+                            <div class="step-number">4</div>
+                            <div class="section-title-compact">
+                                <h2>Payment Method</h2>
+                            </div>
+                        </div>
+
+                        <div class="payment-methods-compact">
+                            <label class="payment-option-compact">
+                                <input type="radio" name="payment" value="cod" checked>
+                                <div class="payment-icon">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                </div>
+                                <div class="payment-info">
+                                    <span class="payment-title">Cash on Delivery</span>
+                                    <span class="payment-desc">Pay with cash upon delivery</span>
+                                </div>
+                            </label>
+
+                            <label class="payment-option-compact">
+                                <input type="radio" name="payment" value="card">
+                                <div class="payment-icon">
+                                    <i class="fas fa-credit-card"></i>
+                                </div>
+                                <div class="payment-info">
+                                    <span class="payment-title">Credit/Debit Card</span>
+                                    <span class="payment-desc">Visa, Mastercard, or local cards</span>
+                                </div>
+                            </label>
+
+                            <label class="payment-option-compact">
+                                <input type="radio" name="payment" value="esewa">
+                                <div class="payment-icon esewa-icon">
+                                    <span>e</span>
+                                </div>
+                                <div class="payment-info">
+                                    <span class="payment-title">eSewa</span>
+                                    <span class="payment-desc">Pay using eSewa digital wallet</span>
+                                </div>
+                            </label>
+
+                            <label class="payment-option-compact">
+                                <input type="radio" name="payment" value="khalti">
+                                <div class="payment-icon khalti-icon">
+                                    <span>K</span>
+                                </div>
+                                <div class="payment-info">
+                                    <span class="payment-title">Khalti</span>
+                                    <span class="payment-desc">Pay using Khalti digital wallet</span>
+                                </div>
+                            </label>
+
+                            <label class="payment-option-compact">
+                                <input type="radio" name="payment" value="bank">
+                                <div class="payment-icon">
+                                    <i class="fas fa-university"></i>
+                                </div>
+                                <div class="payment-info">
+                                    <span class="payment-title">Online Banking</span>
+                                    <span class="payment-desc">Pay via internet banking</span>
+                                </div>
+                            </label>
+                        </div>
+                    </section>
+
+                    <!-- Place Order Button -->
+                    <button class="btn-place-order" id="placeOrderBtn">
+                        <i class="fas fa-lock"></i>
+                        <span>Place Order</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Right: Order Summary -->
+                <aside class="checkout__sidebar">
+                    <div class="order-summary glass-card">
+                        <h2><i class="fas fa-receipt"></i> Order Summary</h2>
+
+                        <!-- Items Preview -->
+                        <div class="summary-items">
+                            <div class="summary-item-header">
+                                <span>Items (5)</span>
+                            </div>
+
+                            <div class="summary-item-preview">
+                                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=80&h=80&fit=crop" alt="Product">
+                                <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=80&h=80&fit=crop" alt="Product">
+                                <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=80&h=80&fit=crop" alt="Product">
+                                <div class="more-items">+2</div>
+                            </div>
+                        </div>
+
+                        <div class="summary-divider"></div>
+
+                        <!-- Price Breakdown -->
+                        <div class="summary-breakdown">
+                            <div class="summary-row">
+                                <span>Subtotal</span>
+                                <span>NPR 4,84,650</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Shipping</span>
+                                <span class="free">FREE</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Tax (13%)</span>
+                                <span>NPR 63,005</span>
+                            </div>
+                        </div>
+
+                        <!-- Savings Badge -->
+                        <div class="savings-badge">
+                            <i class="fas fa-piggy-bank"></i>
+                            <div class="savings-info">
+                                <span class="savings-label">You're saving</span>
+                                <span class="savings-value">NPR 21,350</span>
+                            </div>
+                        </div>
+
+                        <!-- Total -->
+                        <div class="summary-total">
+                            <span>Total</span>
+                            <div class="total-price">
+                                <span class="currency">NPR</span>
+                                <span class="amount">5,47,655</span>
+                            </div>
+                        </div>
+
+                        <!-- Security Badge -->
+                        <div class="security-notice">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Secure Checkout - Your information is safe</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const accountSection = document.getElementById('accountSection');
+            const checkoutWrapper = document.getElementById('checkoutWrapper');
+            const guestOption = document.getElementById('guestOption');
+            const signinOption = document.getElementById('signinOption');
+
+            // Continue as Guest
+            guestOption?.addEventListener('click', () => {
+                accountSection.style.transition = 'all 0.5s ease';
+                accountSection.style.opacity = '0';
+                accountSection.style.transform = 'translateY(-20px)';
+
+                setTimeout(() => {
+                    accountSection.style.display = 'none';
+                    checkoutWrapper.style.display = 'grid';
+                    checkoutWrapper.style.opacity = '0';
+
+                    setTimeout(() => {
+                        checkoutWrapper.style.transition = 'opacity 0.5s ease';
+                        checkoutWrapper.style.opacity = '1';
+
+                        window.scrollTo({
+                            top: document.querySelector('.checkout-container').offsetTop - 20,
+                            behavior: 'smooth'
+                        });
+                    }, 50);
+                }, 500);
+            });
+
+            // Sign In
+            signinOption?.addEventListener('click', () => {
+                window.location.href = 'login.html?redirect=checkout-guest.html';
+            });
+
+            // Place Order Button
+            document.getElementById('placeOrderBtn')?.addEventListener('click', () => {
+                // Validate form
+                const email = document.getElementById('guestEmail').value;
+                const phone = document.getElementById('guestPhone').value;
+                const fullName = document.getElementById('fullName').value;
+                const street = document.getElementById('street').value;
+                const city = document.getElementById('city').value;
+
+                if (!email || !phone || !fullName || !street || !city) {
+                    alert('Please fill in all required fields');
+                    return;
+                }
+
+                // Redirect to order confirmation
+                window.location.href = 'order-confirmation.html';
+            });
+        });
+    </script>
+</body>
+</html>

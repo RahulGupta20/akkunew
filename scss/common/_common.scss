@@ -5,10 +5,17 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
 body {
   font-family: 'Bai Jamjuree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: $text-color;
   line-height: 1.6;
+  overflow-x: hidden;
+  max-width: 100vw;
 
   &.dark-theme {
     background: linear-gradient(135deg, #080203 0%, #100405 50%, #080203 100%);
@@ -23,5 +30,61 @@ body {
   padding: 0 20px;
 }
 
+// Breadcrumb (shared across pages) - Compact & Improved
+.breadcrumb {
+  background-color: #0C0304 !important;
+  padding: 6px 0 !important;
+  font-size: 0.75rem !important;
+  display: block !important;
+  margin-bottom: 0 !important;
+  list-style: none !important;
+  border-radius: 0 !important;
+  border-bottom: 1px solid rgba(#2a2a2a, 0.5) !important;
+
+  .container {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex-wrap: nowrap !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  a {
+    color: #888 !important;
+    text-decoration: none !important;
+    transition: all 0.3s !important;
+    padding: 2px 4px !important;
+    border-radius: 3px !important;
+
+    &:hover {
+      color: $primary-color !important;
+      background-color: rgba($primary-color, 0.08) !important;
+    }
+  }
+
+  i {
+    font-size: 0.65rem !important;
+    color: #555 !important;
+
+    &.fa-home {
+      color: $primary-color !important;
+      font-size: 0.7rem !important;
+    }
+  }
+
+  span {
+    color: #666 !important;
+  }
+
+  .current {
+    color: #fff !important;
+    font-weight: 500 !important;
+  }
+}
+
 // Import header
 @import 'header';
+
+// Import shared profile components
+@import 'profile-shared';

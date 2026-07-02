@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | Akku Electronics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/settings.css">
+</head>
+<body class="dark-theme">
+    <!-- Header -->
+    <header class="header">
+        <!-- Main Header (Sticky) -->
+        <div class="header__main">
+            <div class="container">
+                <a href="index.html" class="header__logo">
+                    <img src="assets/images/logo.png" alt="AKKU Electronics">
+                </a>
+
+                <!-- Search Bar -->
+                <form class="header__search" action="search-results.html" method="GET">
+                    <input type="text" name="q" id="searchInput" placeholder="Search for products, brands and more...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+
+                <!-- Header Actions -->
+                <div class="header__actions">
+                    <!-- Language & Currency Button -->
+                    <button class="header__settings-btn" id="openSettingsModal">
+                        <i class="fas fa-globe"></i>
+                        <span>EN / NPR</span>
+                    </button>
+
+                    <!-- Wishlist -->
+                    <a href="wishlist.html" class="header__action-item" aria-label="Wishlist" title="Wishlist">
+                        <i class="fas fa-heart"></i>
+                    </a>
+
+                    <!-- Cart -->
+                    <a href="cart.html" class="header__action-item" aria-label="Shopping Cart (5 items)" title="Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge">5</span>
+                    </a>
+
+                    <!-- User Menu (Logged In) -->
+                    <div class="dropdown">
+                        <button class="header__user-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="user-avatar">RM</div>
+                            <span class="user-name">Rajesh</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li class="dropdown-header">
+                                <div class="user-avatar">RM</div>
+                                <div>
+                                    <div>Rajesh Maharjan</div>
+                                    <div>rajesh@example.com</div>
+                                </div>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="my-profile.html"><i class="fas fa-user"></i> My Profile</a></li>
+                            <li><a class="dropdown-item" href="my-orders.html"><i class="fas fa-shopping-bag"></i> My Orders</a></li>
+                            <li><a class="dropdown-item" href="wishlist.html"><i class="fas fa-heart"></i> Wishlist</a></li>
+                            <li><a class="dropdown-item" href="my-reviews.html"><i class="fas fa-star"></i> My Reviews</a></li>
+                            <li><a class="dropdown-item" href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="product-detail.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="header__menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation (Not Sticky) -->
+        <nav class="header__nav" id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="#">Laptops</a></li>
+                <li><a href="#">Mobiles</a></li>
+                <li><a href="#">Accessories</a></li>
+                <li><a href="#">Deals</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <i class="fas fa-home"></i>
+            <a href="index.html">Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <span class="current">Settings</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="settings">
+        <div class="container">
+            <div class="settings__wrapper">
+                <!-- Sidebar -->
+                <aside class="settings__sidebar">
+                    <div class="profile-card">
+                        <div class="profile-card__avatar">
+                            <div class="avatar-circle">RM</div>
+                            <button class="avatar-edit"><i class="fas fa-camera"></i></button>
+                        </div>
+                        <h3 class="profile-card__name">Rajesh Maharjan</h3>
+                        <p class="profile-card__email">rajesh@example.com</p>
+                        <div class="profile-card__stats">
+                            <div class="stat-item">
+                                <span class="stat-value">12</span>
+                                <span class="stat-label">Orders</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">8</span>
+                                <span class="stat-label">Reviews</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">15</span>
+                                <span class="stat-label">Wishlist</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <nav class="profile-nav">
+                        <a href="my-profile.html" class="profile-nav__item">
+                            <i class="fas fa-user"></i>
+                            <span>My Profile</span>
+                        </a>
+                        <a href="my-orders.html" class="profile-nav__item">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span>My Orders</span>
+                        </a>
+                        <a href="wishlist.html" class="profile-nav__item">
+                            <i class="fas fa-heart"></i>
+                            <span>Wishlist</span>
+                        </a>
+                        <a href="my-reviews.html" class="profile-nav__item">
+                            <i class="fas fa-star"></i>
+                            <span>My Reviews</span>
+                        </a>
+                        <a href="settings.html" class="profile-nav__item active">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                        <a href="product-detail.html" class="profile-nav__item profile-nav__item--logout">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </a>
+                    </nav>
+                </aside>
+
+                <!-- Main Content -->
+                <div class="settings__content">
+                    <div class="content-header">
+                        <div>
+                            <h1>Settings</h1>
+                            <p>Manage your account preferences and settings</p>
+                        </div>
+                        <button class="btn-action btn-action--primary" id="saveAllBtn" style="display: none;">
+                            <i class="fas fa-save"></i> Save All Changes
+                        </button>
+                    </div>
+
+                    <!-- Account Settings Section -->
+                    <section class="profile-section" data-section="account">
+                        <div class="profile-section__header">
+                            <h2><i class="fas fa-user-cog"></i> Account Settings</h2>
+                            <div class="section-actions">
+                                <button class="btn-save" data-section="account"><i class="fas fa-save"></i> Save</button>
+                                <button class="btn-reset" data-section="account"><i class="fas fa-undo"></i> Reset</button>
+                            </div>
+                        </div>
+                        <div class="profile-section__content">
+                            <div class="settings-group">
+                                <h3>Email Preferences</h3>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <label>Marketing Emails</label>
+                                        <p>Receive promotional emails and special offers</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="marketingEmails" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <label>Order Updates</label>
+                                        <p>Get notified about order status and delivery</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="orderUpdates" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <label>Product Recommendations</label>
+                                        <p>Receive personalized product suggestions</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="productRecommendations" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="settings-group">
+                                <h3>Newsletter Subscription</h3>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <label>Newsletter Frequency</label>
+                                        <p>How often would you like to receive newsletters?</p>
+                                    </div>
+                                    <select class="setting-select" id="newsletterFrequency">
+                                        <option value="daily">Daily</option>
+                                        <option value="weekly" selected>Weekly</option>
+                                        <option value="monthly">Monthly</option>
+                                        <option value="never">Never</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="settings-group danger-zone">
+                                <h3><i class="fas fa-exclamation-triangle"></i> Danger Zone</h3>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <label>Delete Account</label>
+                                        <p>Permanently delete your account and all data</p>
+                                    </div>
+                                    <button class="btn-danger" id="deleteAccountBtn">
+                                        <i class="fas fa-trash-alt"></i> Delete Account
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Notification Preferences Section -->
+                    <section class="profile-section" data-section="notifications">
+                        <div class="profile-section__header">
+                            <h2><i class="fas fa-bell"></i> Notification Preferences</h2>
+                            <div class="section-actions">
+                                <button class="btn-save" data-section="notifications"><i class="fas fa-save"></i> Save</button>
+                                <button class="btn-reset" data-section="notifications"><i class="fas fa-undo"></i> Reset</button>
+                            </div>
+                        </div>
+                        <div class="profile-section__content">
+                            <div class="settings-group">
+                                <h3>Notification Channels</h3>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <label>Email Notifications</label>
+                                        <p>Receive notifications via email</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="emailNotifications" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <label>SMS Notifications</label>
+                                        <p>Receive notifications via text message</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="smsNotifications">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <label>Push Notifications</label>
+                                        <p>Receive browser push notifications</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="pushNotifications" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <label>In-App Notifications</label>
+                                        <p>Show notifications while browsing</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="inAppNotifications" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="settings-group">
+                                <h3>Notification Types</h3>
+                                <div class="notification-grid">
+                                    <div class="notification-type-card">
+                                        <div class="notification-type-icon orders">
+                                            <i class="fas fa-shopping-bag"></i>
+                                        </div>
+                                        <h4>Orders</h4>
+                                        <p>Order confirmations and shipping updates</p>
+                                        <label class="toggle-switch small">
+                                            <input type="checkbox" id="notifyOrders" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    <div class="notification-type-card">
+                                        <div class="notification-type-icon promotions">
+                                            <i class="fas fa-tag"></i>
+                                        </div>
+                                        <h4>Promotions</h4>
+                                        <p>Special offers and discounts</p>
+                                        <label class="toggle-switch small">
+                                            <input type="checkbox" id="notifyPromotions" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    <div class="notification-type-card">
+                                        <div class="notification-type-icon wishlist">
+                                            <i class="fas fa-heart"></i>
+                                        </div>
+                                        <h4>Wishlist</h4>
+                                        <p>Price drops and back in stock alerts</p>
+                                        <label class="toggle-switch small">
+                                            <input type="checkbox" id="notifyWishlist" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    <div class="notification-type-card">
+                                        <div class="notification-type-icon reviews">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <h4>Reviews</h4>
+                                        <p>Review reminders and responses</p>
+                                        <label class="toggle-switch small">
+                                            <input type="checkbox" id="notifyReviews">
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Privacy Settings Section -->
+                    <section class="profile-section" data-section="privacy">
+                        <div class="profile-section__header">
+                            <h2><i class="fas fa-shield-alt"></i> Privacy Settings</h2>
+                            <div class="section-actions">
+                                <button class="btn-save" data-section="privacy"><i class="fas fa-save"></i> Save</button>
+                                <button class="btn-reset" data-section="privacy"><i class="fas fa-undo"></i> Reset</button>
+                            </div>
+                        </div>
+                        <div class="profile-section__content">
+                            <div class="settings-group">
+                                <h3>Profile Privacy</h3>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <label>Profile Visibility</label>
+                                        <p>Control who can view your profile information</p>
+                                    </div>
+                                    <select class="setting-select" id="profileVisibility">
+                                        <option value="public">Public</option>
+                                        <option value="friends" selected>Friends</option>
+                                        <option value="private">Private</option>
+                                    </select>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <label>Show Purchase History</label>
+                                        <p>Allow others to see your purchase history</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="showPurchaseHistory">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="settings-group">
+                                <h3>Data & Personalization</h3>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <label>Personalized Recommendations</label>
+                                        <p>Use browsing history to suggest products</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="personalizedRecommendations" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <label>Data Sharing with Partners</label>
+                                        <p>Share anonymized data with trusted partners</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="dataSharing">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <label>Activity Tracking</label>
+                                        <p>Track browsing activity for analytics</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="activityTracking" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Language & Region Section -->
+                    <section class="profile-section" data-section="language">
+                        <div class="profile-section__header">
+                            <h2><i class="fas fa-globe"></i> Language & Region</h2>
+                            <div class="section-actions">
+                                <button class="btn-save" data-section="language"><i class="fas fa-save"></i> Save</button>
+                                <button class="btn-reset" data-section="language"><i class="fas fa-undo"></i> Reset</button>
+                            </div>
+                        </div>
+                        <div class="profile-section__content">
+                            <div class="settings-grid">
+                                <div class="setting-item vertical">
+                                    <div class="setting-info">
+                                        <label>Language</label>
+                                        <p>Choose your preferred language</p>
+                                    </div>
+                                    <select class="setting-select" id="language">
+                                        <option value="en" selected>English</option>
+                                        <option value="ne">Nepali (नेपाली)</option>
+                                        <option value="hi">Hindi (हिन्दी)</option>
+                                    </select>
+                                </div>
+
+                                <div class="setting-item vertical">
+                                    <div class="setting-info">
+                                        <label>Currency</label>
+                                        <p>Select your preferred currency</p>
+                                    </div>
+                                    <select class="setting-select" id="currency">
+                                        <option value="npr" selected>NPR (Nepalese Rupee)</option>
+                                        <option value="usd">USD (US Dollar)</option>
+                                        <option value="inr">INR (Indian Rupee)</option>
+                                    </select>
+                                </div>
+
+                                <div class="setting-item vertical">
+                                    <div class="setting-info">
+                                        <label>Timezone</label>
+                                        <p>Set your local timezone</p>
+                                    </div>
+                                    <select class="setting-select" id="timezone">
+                                        <option value="asia/kathmandu" selected>Asia/Kathmandu (NPT)</option>
+                                        <option value="asia/kolkata">Asia/Kolkata (IST)</option>
+                                        <option value="america/new_york">America/New York (EST)</option>
+                                        <option value="europe/london">Europe/London (GMT)</option>
+                                    </select>
+                                </div>
+
+                                <div class="setting-item vertical">
+                                    <div class="setting-info">
+                                        <label>Date Format</label>
+                                        <p>Choose date display format</p>
+                                    </div>
+                                    <select class="setting-select" id="dateFormat">
+                                        <option value="dd/mm/yyyy" selected>DD/MM/YYYY</option>
+                                        <option value="mm/dd/yyyy">MM/DD/YYYY</option>
+                                        <option value="yyyy-mm-dd">YYYY-MM-DD</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Display Preferences Section -->
+                    <section class="profile-section" data-section="display">
+                        <div class="profile-section__header">
+                            <h2><i class="fas fa-palette"></i> Display Preferences</h2>
+                            <div class="section-actions">
+                                <button class="btn-save" data-section="display"><i class="fas fa-save"></i> Save</button>
+                                <button class="btn-reset" data-section="display"><i class="fas fa-undo"></i> Reset</button>
+                            </div>
+                        </div>
+                        <div class="profile-section__content">
+                            <div class="settings-group">
+                                <h3>Theme</h3>
+                                <div class="theme-selector">
+                                    <div class="theme-option" data-theme="dark">
+                                        <div class="theme-preview dark">
+                                            <div class="preview-header"></div>
+                                            <div class="preview-content">
+                                                <div class="preview-box"></div>
+                                                <div class="preview-box"></div>
+                                            </div>
+                                        </div>
+                                        <label>
+                                            <input type="radio" name="theme" value="dark" checked>
+                                            <span>Dark</span>
+                                        </label>
+                                    </div>
+                                    <div class="theme-option" data-theme="light">
+                                        <div class="theme-preview light">
+                                            <div class="preview-header"></div>
+                                            <div class="preview-content">
+                                                <div class="preview-box"></div>
+                                                <div class="preview-box"></div>
+                                            </div>
+                                        </div>
+                                        <label>
+                                            <input type="radio" name="theme" value="light">
+                                            <span>Light</span>
+                                        </label>
+                                    </div>
+                                    <div class="theme-option" data-theme="auto">
+                                        <div class="theme-preview auto">
+                                            <div class="preview-header"></div>
+                                            <div class="preview-content">
+                                                <div class="preview-box"></div>
+                                                <div class="preview-box"></div>
+                                            </div>
+                                        </div>
+                                        <label>
+                                            <input type="radio" name="theme" value="auto">
+                                            <span>Auto</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="settings-group">
+                                <h3>Layout Options</h3>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <label>View Mode</label>
+                                        <p>Choose between compact or comfortable view</p>
+                                    </div>
+                                    <div class="view-toggle">
+                                        <button class="view-btn" data-view="compact">
+                                            <i class="fas fa-th"></i>
+                                            <span>Compact</span>
+                                        </button>
+                                        <button class="view-btn active" data-view="comfortable">
+                                            <i class="fas fa-th-large"></i>
+                                            <span>Comfortable</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <label>Items Per Page</label>
+                                        <p>Number of products to display per page</p>
+                                    </div>
+                                    <div class="slider-container">
+                                        <input type="range" class="setting-slider" id="itemsPerPage" min="12" max="60" step="12" value="24">
+                                        <div class="slider-labels">
+                                            <span>12</span>
+                                            <span class="slider-value">24</span>
+                                            <span>60</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Security Settings Section -->
+                    <section class="profile-section" data-section="security">
+                        <div class="profile-section__header">
+                            <h2><i class="fas fa-lock"></i> Security Settings</h2>
+                        </div>
+                        <div class="profile-section__content">
+                            <div class="settings-group">
+                                <h3>Password & Authentication</h3>
+                                <div class="security-item">
+                                    <div class="security-item__info">
+                                        <h4>Change Password</h4>
+                                        <p>Last changed 30 days ago</p>
+                                    </div>
+                                    <button class="btn-secondary" id="changePasswordBtn">
+                                        <i class="fas fa-key"></i> Change Password
+                                    </button>
+                                </div>
+                                <div class="security-item">
+                                    <div class="security-item__info">
+                                        <h4>Two-Factor Authentication</h4>
+                                        <p>Add an extra layer of security</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="twoFactorAuth">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="settings-group">
+                                <h3>Active Sessions</h3>
+                                <div class="sessions-list">
+                                    <div class="session-item current">
+                                        <div class="session-icon">
+                                            <i class="fas fa-laptop"></i>
+                                        </div>
+                                        <div class="session-info">
+                                            <h4>MacBook Pro <span class="current-badge">Current</span></h4>
+                                            <p>Chrome on macOS • Kathmandu, Nepal</p>
+                                            <span class="session-time">Active now</span>
+                                        </div>
+                                    </div>
+                                    <div class="session-item">
+                                        <div class="session-icon">
+                                            <i class="fas fa-mobile-alt"></i>
+                                        </div>
+                                        <div class="session-info">
+                                            <h4>iPhone 15 Pro</h4>
+                                            <p>Safari on iOS • Kathmandu, Nepal</p>
+                                            <span class="session-time">2 hours ago</span>
+                                        </div>
+                                        <button class="btn-revoke">Revoke</button>
+                                    </div>
+                                    <div class="session-item">
+                                        <div class="session-icon">
+                                            <i class="fas fa-tablet-alt"></i>
+                                        </div>
+                                        <div class="session-info">
+                                            <h4>iPad Pro</h4>
+                                            <p>Safari on iPadOS • Pokhara, Nepal</p>
+                                            <span class="session-time">1 day ago</span>
+                                        </div>
+                                        <button class="btn-revoke">Revoke</button>
+                                    </div>
+                                </div>
+                                <button class="btn-secondary btn-full" id="revokeAllBtn">
+                                    <i class="fas fa-sign-out-alt"></i> Revoke All Other Sessions
+                                </button>
+                            </div>
+
+                            <div class="settings-group">
+                                <h3>Login History</h3>
+                                <div class="login-history">
+                                    <div class="history-item">
+                                        <div class="history-icon success">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        <div class="history-info">
+                                            <h4>Successful Login</h4>
+                                            <p>Chrome on macOS • 192.168.1.1</p>
+                                            <span class="history-time">Today at 10:30 AM</span>
+                                        </div>
+                                    </div>
+                                    <div class="history-item">
+                                        <div class="history-icon success">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        <div class="history-info">
+                                            <h4>Successful Login</h4>
+                                            <p>Safari on iOS • 192.168.1.50</p>
+                                            <span class="history-time">Yesterday at 8:15 PM</span>
+                                        </div>
+                                    </div>
+                                    <div class="history-item">
+                                        <div class="history-icon failed">
+                                            <i class="fas fa-times"></i>
+                                        </div>
+                                        <div class="history-info">
+                                            <h4>Failed Login Attempt</h4>
+                                            <p>Unknown device • 103.x.x.x</p>
+                                            <span class="history-time">2 days ago at 3:45 AM</span>
+                                        </div>
+                                    </div>
+                                    <div class="history-item">
+                                        <div class="history-icon success">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        <div class="history-info">
+                                            <h4>Successful Login</h4>
+                                            <p>Safari on iPadOS • 192.168.1.25</p>
+                                            <span class="history-time">3 days ago at 6:00 PM</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Floating Save Button -->
+    <div class="floating-save" id="floatingSave" style="display: none;">
+        <button class="btn-floating-save">
+            <i class="fas fa-save"></i>
+            <span>Save All Changes</span>
+        </button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Settings Page - Complete UX Flow
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toast Notification System
+            function showToast(title, message, type = 'success') {
+                const toastHTML = `
+                    <div class="message-box message-box--${type}">
+                        <i class="fas ${type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle'}"></i>
+                        <div>
+                            <strong>${title}</strong>
+                            <p style="margin: 0; font-size: 0.85rem;">${message}</p>
+                        </div>
+                    </div>
+                `;
+
+                const container = document.querySelector('.settings__content');
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = toastHTML;
+                const toast = tempDiv.firstElementChild;
+
+                container.insertBefore(toast, container.firstChild);
+
+                setTimeout(() => {
+                    toast.style.opacity = '0';
+                    toast.style.transform = 'translateY(-20px)';
+                    setTimeout(() => toast.remove(), 300);
+                }, 3000);
+            }
+
+            // Track changes for floating save button
+            let hasChanges = false;
+            const changedSections = new Set();
+
+            function markSectionChanged(sectionName) {
+                changedSections.add(sectionName);
+                hasChanges = true;
+                updateFloatingSaveButton();
+            }
+
+            function updateFloatingSaveButton() {
+                const floatingSave = document.getElementById('floatingSave');
+                if (hasChanges) {
+                    floatingSave.style.display = 'block';
+                    setTimeout(() => floatingSave.classList.add('visible'), 10);
+                } else {
+                    floatingSave.classList.remove('visible');
+                    setTimeout(() => floatingSave.style.display = 'none', 300);
+                }
+            }
+
+            // Monitor all form inputs for changes
+            const allInputs = document.querySelectorAll('input[type="checkbox"], input[type="radio"], select, input[type="range"]');
+            allInputs.forEach(input => {
+                const section = input.closest('[data-section]')?.dataset.section;
+                input.addEventListener('change', function() {
+                    if (section) markSectionChanged(section);
+                });
+            });
+
+            // Toggle Switches
+            document.querySelectorAll('.toggle-switch input').forEach(toggle => {
+                toggle.addEventListener('change', function() {
+                    const label = this.closest('.setting-item').querySelector('label');
+                    const settingName = label ? label.textContent : 'Setting';
+                    const status = this.checked ? 'enabled' : 'disabled';
+
+                    this.closest('.toggle-slider').classList.add('animating');
+                    setTimeout(() => {
+                        this.closest('.toggle-slider').classList.remove('animating');
+                    }, 300);
+                });
+            });
+
+            // Theme Selector
+            const themeOptions = document.querySelectorAll('.theme-option');
+            themeOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const theme = this.dataset.theme;
+                    const radio = this.querySelector('input[type="radio"]');
+                    radio.checked = true;
+
+                    themeOptions.forEach(opt => opt.classList.remove('selected'));
+                    this.classList.add('selected');
+
+                    // Visual preview
+                    document.body.style.transition = 'background-color 0.5s, color 0.5s';
+                    if (theme === 'light') {
+                        showToast('Theme Preview', 'Light theme will be applied on save', 'info');
+                    } else if (theme === 'dark') {
+                        showToast('Theme Applied', 'Dark theme selected', 'success');
+                    } else {
+                        showToast('Auto Theme', 'Theme will match system preferences', 'info');
+                    }
+
+                    markSectionChanged('display');
+                });
+            });
+
+            // View Mode Toggle
+            const viewButtons = document.querySelectorAll('.view-btn');
+            viewButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    viewButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const view = this.dataset.view;
+                    showToast('View Mode', `${view.charAt(0).toUpperCase() + view.slice(1)} view selected`, 'info');
+                    markSectionChanged('display');
+                });
+            });
+
+            // Items Per Page Slider
+            const itemsSlider = document.getElementById('itemsPerPage');
+            const sliderValue = document.querySelector('.slider-value');
+
+            itemsSlider.addEventListener('input', function() {
+                sliderValue.textContent = this.value;
+                sliderValue.style.transform = 'scale(1.2)';
+                setTimeout(() => sliderValue.style.transform = 'scale(1)', 200);
+            });
+
+            itemsSlider.addEventListener('change', function() {
+                showToast('Items Per Page', `Display ${this.value} items per page`, 'info');
+            });
+
+            // Save Section
+            document.querySelectorAll('.btn-save').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const section = this.dataset.section;
+                    const sectionElement = document.querySelector(`[data-section="${section}"]`);
+
+                    // Animate save
+                    this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Saving...';
+                    this.disabled = true;
+
+                    setTimeout(() => {
+                        this.innerHTML = '<i class="fas fa-check"></i> Saved!';
+                        sectionElement.classList.add('saved');
+
+                        setTimeout(() => {
+                            this.innerHTML = '<i class="fas fa-save"></i> Save';
+                            this.disabled = false;
+                            sectionElement.classList.remove('saved');
+                        }, 1500);
+
+                        changedSections.delete(section);
+                        if (changedSections.size === 0) {
+                            hasChanges = false;
+                            updateFloatingSaveButton();
+                        }
+
+                        showToast('Settings Saved', `${section.charAt(0).toUpperCase() + section.slice(1)} settings have been updated`, 'success');
+                    }, 1000);
+                });
+            });
+
+            // Reset Section
+            document.querySelectorAll('.btn-reset').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const section = this.dataset.section;
+
+                    if (confirm('Are you sure you want to reset this section to defaults?')) {
+                        const sectionElement = document.querySelector(`[data-section="${section}"]`);
+
+                        // Reset all inputs in section
+                        const inputs = sectionElement.querySelectorAll('input, select');
+                        inputs.forEach(input => {
+                            if (input.type === 'checkbox') {
+                                input.checked = input.defaultChecked;
+                            } else if (input.type === 'radio') {
+                                input.checked = input.defaultChecked;
+                            } else {
+                                input.value = input.defaultValue;
+                            }
+                        });
+
+                        changedSections.delete(section);
+                        if (changedSections.size === 0) {
+                            hasChanges = false;
+                            updateFloatingSaveButton();
+                        }
+
+                        showToast('Settings Reset', `${section.charAt(0).toUpperCase() + section.slice(1)} settings have been reset to defaults`, 'info');
+                    }
+                });
+            });
+
+            // Floating Save All Button
+            document.querySelector('.btn-floating-save').addEventListener('click', function() {
+                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Saving All...';
+                this.disabled = true;
+
+                setTimeout(() => {
+                    changedSections.clear();
+                    hasChanges = false;
+                    updateFloatingSaveButton();
+
+                    this.innerHTML = '<i class="fas fa-save"></i> Save All Changes';
+                    this.disabled = false;
+
+                    showToast('All Settings Saved', 'All your changes have been saved successfully', 'success');
+                }, 1500);
+            });
+
+            // Delete Account
+            document.getElementById('deleteAccountBtn').addEventListener('click', function() {
+                const modal = createModal('Delete Account', `
+                    <div style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: rgba(237, 50, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                            <i class="fas fa-exclamation-triangle" style="font-size: 2.5rem; color: #ED3237;"></i>
+                        </div>
+                        <h3 style="color: #fff; margin-bottom: 12px;">Are you absolutely sure?</h3>
+                        <p style="color: #888; margin-bottom: 24px; line-height: 1.6;">
+                            This action cannot be undone. This will permanently delete your account and remove all your data from our servers.
+                        </p>
+
+                        <div style="background: rgba(237, 50, 55, 0.1); border: 1px solid rgba(237, 50, 55, 0.3); border-radius: 8px; padding: 16px; margin-bottom: 24px; text-align: left;">
+                            <p style="color: #ED3237; font-weight: 600; margin-bottom: 8px;"><i class="fas fa-info-circle"></i> This will delete:</p>
+                            <ul style="color: #ccc; font-size: 0.9rem; margin: 0; padding-left: 20px;">
+                                <li>Your profile and personal information</li>
+                                <li>Order history and saved addresses</li>
+                                <li>Wishlist and product reviews</li>
+                                <li>All account preferences and settings</li>
+                            </ul>
+                        </div>
+
+                        <div style="margin-bottom: 24px; text-align: left;">
+                            <label style="color: #888; font-size: 0.85rem; display: block; margin-bottom: 8px;">
+                                Type <strong style="color: #ED3237;">DELETE</strong> to confirm:
+                            </label>
+                            <input type="text" id="deleteConfirmation" placeholder="DELETE"
+                                style="background: #140506; border: 1px solid #333; color: #fff; padding: 12px 14px; border-radius: 6px; width: 100%; font-weight: 600; letter-spacing: 1px;"
+                                onfocus="this.style.borderColor='#ED3237'" onblur="this.style.borderColor='#333'">
+                        </div>
+
+                        <div style="display: flex; gap: 12px;">
+                            <button onclick="document.querySelector('.modal-overlay').remove()"
+                                style="flex: 1; padding: 12px; background: #1a1a1a; color: #ccc; border: 1px solid #333; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.3s;"
+                                onmouseover="this.style.borderColor='#555'" onmouseout="this.style.borderColor='#333'">
+                                Cancel
+                            </button>
+                            <button id="confirmDeleteBtn" disabled
+                                style="flex: 1; padding: 12px; background: #ED3237; color: #fff; border: none; border-radius: 6px; font-weight: 600; cursor: not-allowed; opacity: 0.5; transition: all 0.3s;">
+                                Delete Account
+                            </button>
+                        </div>
+                    </div>
+                `);
+
+                document.body.appendChild(modal);
+
+                const confirmInput = document.getElementById('deleteConfirmation');
+                const confirmBtn = document.getElementById('confirmDeleteBtn');
+
+                confirmInput.addEventListener('input', function() {
+                    if (this.value === 'DELETE') {
+                        confirmBtn.disabled = false;
+                        confirmBtn.style.cursor = 'pointer';
+                        confirmBtn.style.opacity = '1';
+                    } else {
+                        confirmBtn.disabled = true;
+                        confirmBtn.style.cursor = 'not-allowed';
+                        confirmBtn.style.opacity = '0.5';
+                    }
+                });
+
+                confirmBtn.addEventListener('click', function() {
+                    if (this.disabled) return;
+
+                    this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Deleting...';
+
+                    setTimeout(() => {
+                        document.querySelector('.modal-overlay').remove();
+                        showToast('Account Deleted', 'Your account has been permanently deleted', 'error');
+                        setTimeout(() => {
+                            window.location.href = 'index.html';
+                        }, 2000);
+                    }, 2000);
+                });
+            });
+
+            // Change Password
+            document.getElementById('changePasswordBtn').addEventListener('click', function() {
+                const modal = createModal('Change Password', `
+                    <form id="passwordForm" style="display: flex; flex-direction: column; gap: 16px;">
+                        <div>
+                            <label style="color: #888; font-size: 0.85rem; display: block; margin-bottom: 6px;">Current Password</label>
+                            <div style="position: relative;">
+                                <input type="password" id="currentPassword" class="password-input" placeholder="Enter current password" required
+                                    style="background: #140506; border: 1px solid #333; color: #fff; padding: 12px 44px 12px 14px; border-radius: 6px; width: 100%;">
+                                <button type="button" class="toggle-password" data-target="currentPassword" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #888; cursor: pointer;">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <label style="color: #888; font-size: 0.85rem; display: block; margin-bottom: 6px;">New Password</label>
+                            <div style="position: relative;">
+                                <input type="password" id="newPassword" class="password-input" placeholder="Enter new password" required
+                                    style="background: #140506; border: 1px solid #333; color: #fff; padding: 12px 44px 12px 14px; border-radius: 6px; width: 100%;">
+                                <button type="button" class="toggle-password" data-target="newPassword" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #888; cursor: pointer;">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div id="passwordStrength" style="margin-top: 8px; height: 4px; background: #2a2a2a; border-radius: 2px; overflow: hidden;">
+                                <div class="strength-bar" style="height: 100%; width: 0%; transition: all 0.3s;"></div>
+                            </div>
+                            <p id="strengthText" style="font-size: 0.75rem; color: #888; margin: 4px 0 0 0;"></p>
+                        </div>
+                        <div>
+                            <label style="color: #888; font-size: 0.85rem; display: block; margin-bottom: 6px;">Confirm New Password</label>
+                            <div style="position: relative;">
+                                <input type="password" id="confirmPassword" class="password-input" placeholder="Confirm new password" required
+                                    style="background: #140506; border: 1px solid #333; color: #fff; padding: 12px 44px 12px 14px; border-radius: 6px; width: 100%;">
+                                <button type="button" class="toggle-password" data-target="confirmPassword" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #888; cursor: pointer;">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 12px; margin-top: 8px;">
+                            <button type="button" onclick="document.querySelector('.modal-overlay').remove()"
+                                style="flex: 1; padding: 12px; background: #1a1a1a; color: #ccc; border: 1px solid #333; border-radius: 6px; font-weight: 600; cursor: pointer;">
+                                Cancel
+                            </button>
+                            <button type="submit"
+                                style="flex: 2; padding: 12px; background: linear-gradient(135deg, #ED3237, #c82529); color: #fff; border: none; border-radius: 6px; font-weight: 600; cursor: pointer;">
+                                Update Password
+                            </button>
+                        </div>
+                    </form>
+                `);
+
+                document.body.appendChild(modal);
+
+                // Password visibility toggles
+                modal.querySelectorAll('.toggle-password').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const targetId = this.dataset.target;
+                        const input = document.getElementById(targetId);
+                        const icon = this.querySelector('i');
+
+                        if (input.type === 'password') {
+                            input.type = 'text';
+                            icon.classList.remove('fa-eye');
+                            icon.classList.add('fa-eye-slash');
+                        } else {
+                            input.type = 'password';
+                            icon.classList.remove('fa-eye-slash');
+                            icon.classList.add('fa-eye');
+                        }
+                    });
+                });
+
+                // Password strength indicator
+                const newPasswordInput = document.getElementById('newPassword');
+                newPasswordInput.addEventListener('input', function() {
+                    const password = this.value;
+                    let strength = 0;
+                    let strengthText = '';
+                    let strengthColor = '';
+
+                    if (password.length >= 8) strength++;
+                    if (password.match(/[a-z]/) && password.match(/[A-Z]/)) strength++;
+                    if (password.match(/[0-9]/)) strength++;
+                    if (password.match(/[^a-zA-Z0-9]/)) strength++;
+
+                    const strengthBar = document.querySelector('.strength-bar');
+                    const strengthTextEl = document.getElementById('strengthText');
+
+                    switch(strength) {
+                        case 0:
+                        case 1:
+                            strengthText = 'Weak password';
+                            strengthColor = '#ED3237';
+                            strengthBar.style.width = '25%';
+                            break;
+                        case 2:
+                            strengthText = 'Fair password';
+                            strengthColor = '#FFA500';
+                            strengthBar.style.width = '50%';
+                            break;
+                        case 3:
+                            strengthText = 'Good password';
+                            strengthColor = '#FFEB3B';
+                            strengthBar.style.width = '75%';
+                            break;
+                        case 4:
+                            strengthText = 'Strong password';
+                            strengthColor = '#4CAF50';
+                            strengthBar.style.width = '100%';
+                            break;
+                    }
+
+                    strengthBar.style.background = strengthColor;
+                    strengthTextEl.textContent = strengthText;
+                    strengthTextEl.style.color = strengthColor;
+                });
+
+                // Form submission
+                document.getElementById('passwordForm').addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    const current = document.getElementById('currentPassword').value;
+                    const newPass = document.getElementById('newPassword').value;
+                    const confirm = document.getElementById('confirmPassword').value;
+
+                    if (newPass !== confirm) {
+                        showToast('Password Mismatch', 'New passwords do not match', 'error');
+                        return;
+                    }
+
+                    if (newPass.length < 8) {
+                        showToast('Weak Password', 'Password must be at least 8 characters', 'error');
+                        return;
+                    }
+
+                    document.querySelector('.modal-overlay').remove();
+                    showToast('Password Changed', 'Your password has been updated successfully', 'success');
+                });
+            });
+
+            // Two-Factor Authentication Toggle
+            document.getElementById('twoFactorAuth').addEventListener('change', function() {
+                if (this.checked) {
+                    const modal = createModal('Enable Two-Factor Authentication', `
+                        <div style="text-align: center;">
+                            <div style="background: #fff; padding: 20px; border-radius: 8px; display: inline-block; margin: 20px 0;">
+                                <p style="color: #333; margin-bottom: 10px; font-weight: 600;">Scan this QR code with your authenticator app</p>
+                                <div style="width: 200px; height: 200px; background: #f0f0f0; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+                                    <i class="fas fa-qrcode" style="font-size: 120px; color: #333;"></i>
+                                </div>
+                                <p style="color: #666; font-size: 0.8rem; margin-top: 10px;">Or enter this code manually:</p>
+                                <code style="background: #333; color: #fff; padding: 8px 16px; border-radius: 4px; font-size: 0.9rem; display: inline-block;">ABCD-EFGH-IJKL-MNOP</code>
+                            </div>
+                            <div>
+                                <label style="color: #888; font-size: 0.85rem; display: block; margin-bottom: 6px;">Enter verification code</label>
+                                <input type="text" id="2faCode" placeholder="000000" maxlength="6"
+                                    style="background: #140506; border: 1px solid #333; color: #fff; padding: 12px 14px; border-radius: 6px; width: 100%; text-align: center; font-size: 1.2rem; letter-spacing: 4px;">
+                            </div>
+                            <div style="display: flex; gap: 12px; margin-top: 20px;">
+                                <button type="button" onclick="document.querySelector('.modal-overlay').remove(); document.getElementById('twoFactorAuth').checked = false;"
+                                    style="flex: 1; padding: 12px; background: #1a1a1a; color: #ccc; border: 1px solid #333; border-radius: 6px; font-weight: 600; cursor: pointer;">
+                                    Cancel
+                                </button>
+                                <button id="enable2faBtn"
+                                    style="flex: 2; padding: 12px; background: linear-gradient(135deg, #ED3237, #c82529); color: #fff; border: none; border-radius: 6px; font-weight: 600; cursor: pointer;">
+                                    Enable 2FA
+                                </button>
+                            </div>
+                        </div>
+                    `);
+
+                    document.body.appendChild(modal);
+
+                    document.getElementById('enable2faBtn').addEventListener('click', function() {
+                        const code = document.getElementById('2faCode').value;
+                        if (code.length === 6) {
+                            document.querySelector('.modal-overlay').remove();
+                            showToast('2FA Enabled', 'Two-factor authentication has been enabled successfully', 'success');
+                        } else {
+                            showToast('Invalid Code', 'Please enter a valid 6-digit code', 'error');
+                        }
+                    });
+                } else {
+                    if (confirm('Are you sure you want to disable two-factor authentication?')) {
+                        showToast('2FA Disabled', 'Two-factor authentication has been disabled', 'info');
+                    } else {
+                        this.checked = true;
+                    }
+                }
+            });
+
+            // Revoke Session
+            document.querySelectorAll('.btn-revoke').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const sessionItem = this.closest('.session-item');
+                    const deviceName = sessionItem.querySelector('h4').textContent;
+
+                    if (confirm(`Revoke session for ${deviceName}?`)) {
+                        sessionItem.style.opacity = '0';
+                        sessionItem.style.transform = 'translateX(20px)';
+
+                        setTimeout(() => {
+                            sessionItem.remove();
+                            showToast('Session Revoked', `Session for ${deviceName} has been revoked`, 'success');
+                        }, 300);
+                    }
+                });
+            });
+
+            // Revoke All Sessions
+            document.getElementById('revokeAllBtn').addEventListener('click', function() {
+                if (confirm('Are you sure you want to revoke all other sessions? You will need to log in again on those devices.')) {
+                    const sessions = document.querySelectorAll('.session-item:not(.current)');
+                    sessions.forEach(session => {
+                        session.style.opacity = '0';
+                        session.style.transform = 'translateX(20px)';
+                    });
+
+                    setTimeout(() => {
+                        sessions.forEach(session => session.remove());
+                        showToast('All Sessions Revoked', 'All other sessions have been revoked', 'success');
+                    }, 300);
+                }
+            });
+
+            // Modal Creator
+            function createModal(title, content) {
+                const modal = document.createElement('div');
+                modal.className = 'modal-overlay';
+                modal.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.8); display: flex; align-items: center; justify-content: center; z-index: 10000; backdrop-filter: blur(4px); animation: fadeIn 0.3s; overflow-y: auto; padding: 20px;';
+
+                modal.innerHTML = `
+                    <div class="modal-content" style="background: linear-gradient(180deg, #1a0506 0%, #0C0304 100%); border: 1px solid rgba(237, 50, 55, 0.2); border-radius: 12px; padding: 24px; max-width: 500px; width: 100%; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6); animation: scaleIn 0.3s; margin: auto;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                            <h3 style="color: #fff; margin: 0; font-size: 1.25rem;">${title}</h3>
+                            <button onclick="this.closest('.modal-overlay').remove()" style="background: none; border: none; color: #888; font-size: 1.5rem; cursor: pointer; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 6px; transition: all 0.3s;" onmouseover="this.style.background='#2a2a2a'; this.style.color='#ED3237';" onmouseout="this.style.background='none'; this.style.color='#888';">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div>${content}</div>
+                    </div>
+                `;
+
+                modal.onclick = function(e) {
+                    if (e.target === modal) {
+                        modal.remove();
+                    }
+                };
+
+                return modal;
+            }
+
+            // Smooth Section Scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // Keyboard Shortcuts
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    const modal = document.querySelector('.modal-overlay');
+                    if (modal) modal.remove();
+                }
+
+                // Ctrl/Cmd + S to save
+                if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+                    e.preventDefault();
+                    if (hasChanges) {
+                        document.querySelector('.btn-floating-save').click();
+                    }
+                }
+            });
+
+            // Section collapse/expand (for mobile)
+            const sectionHeaders = document.querySelectorAll('.profile-section__header h2');
+            sectionHeaders.forEach(header => {
+                if (window.innerWidth <= 768) {
+                    header.style.cursor = 'pointer';
+                    header.addEventListener('click', function() {
+                        const section = this.closest('.profile-section');
+                        const content = section.querySelector('.profile-section__content');
+
+                        content.classList.toggle('collapsed');
+                        this.querySelector('i').style.transform =
+                            content.classList.contains('collapsed') ? 'rotate(180deg)' : 'rotate(0deg)';
+                    });
+                }
+            });
+
+            console.log('Settings UX Flow initialized successfully!');
+        });
+    </script>
+</body>
+</html>

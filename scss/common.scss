@@ -2,6 +2,18 @@
 @import 'variables';
 @import '../node_modules/bootstrap/scss/bootstrap';
 @import 'common/common';
+@import 'components/search-overlay';
+
+// Override Bootstrap Container Width - Global Setting
+.container,
+.container-fluid,
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm {
+  max-width: 1400px !important;
+}
 
 // Button Styles
 .btn {
@@ -47,22 +59,68 @@
 }
 
 .btn-secondary {
-  background-color: transparent;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, rgba(237, 50, 55, 0.1), rgba(237, 50, 55, 0.05));
   color: #fff;
-  border: 1px solid #333;
+  border: 2px solid rgba(237, 50, 55, 0.4);
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(237, 50, 55, 0.15), transparent);
+    transition: left 0.5s;
+  }
+
+  i {
+    font-size: 1rem;
+  }
 
   &:hover {
-    background-color: #100405;
-    border-color: #555;
+    background: linear-gradient(135deg, rgba(237, 50, 55, 0.2), rgba(237, 50, 55, 0.1));
+    border-color: rgba(237, 50, 55, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(237, 50, 55, 0.3);
+
+    &::before {
+      left: 100%;
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(237, 50, 55, 0.2);
   }
 
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+    background: rgba(50, 50, 50, 0.3);
+    border-color: #444;
 
     &:hover {
-      background-color: transparent;
-      border-color: #333;
+      background: rgba(50, 50, 50, 0.3);
+      border-color: #444;
+      transform: none;
+      box-shadow: none;
     }
   }
 }

@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment | Akku Electronics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/payment.css">
+</head>
+<body class="dark-theme">
+    <!-- Header -->
+    <header class="header">
+        <!-- Main Header (Sticky) -->
+        <div class="header__main">
+            <div class="container">
+                <a href="index.html" class="header__logo">
+                    <img src="assets/images/logo.png" alt="AKKU Electronics">
+                </a>
+
+                <!-- Search Bar -->
+                <form class="header__search" action="search-results.html" method="GET">
+                    <input type="text" name="q" id="searchInput" placeholder="Search for products, brands and more...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+
+                <!-- Header Actions -->
+                <div class="header__actions">
+                    <!-- Language & Currency Button -->
+                    <button class="header__settings-btn" id="openSettingsModal">
+                        <i class="fas fa-globe"></i>
+                        <span>EN / NPR</span>
+                    </button>
+
+                    <!-- Wishlist -->
+                    <a href="wishlist.html" class="header__action-item" aria-label="Wishlist" title="Wishlist">
+                        <i class="fas fa-heart"></i>
+                    </a>
+
+                    <!-- Cart -->
+                    <a href="cart.html" class="header__action-item" aria-label="Shopping Cart (5 items)" title="Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge" id="cartBadge">5</span>
+                    </a>
+
+                    <!-- User Menu (Logged In) -->
+                    <div class="dropdown">
+                        <button class="header__user-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="user-avatar">RM</div>
+                            <span class="user-name">Rajesh</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li class="dropdown-header">
+                                <div class="user-avatar">RM</div>
+                                <div>
+                                    <div>Rajesh Maharjan</div>
+                                    <div>rajesh@example.com</div>
+                                </div>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="my-profile.html"><i class="fas fa-user"></i> My Profile</a></li>
+                            <li><a class="dropdown-item" href="my-orders.html"><i class="fas fa-shopping-bag"></i> My Orders</a></li>
+                            <li><a class="dropdown-item" href="wishlist.html"><i class="fas fa-heart"></i> Wishlist</a></li>
+                            <li><a class="dropdown-item" href="my-reviews.html"><i class="fas fa-star"></i> My Reviews</a></li>
+                            <li><a class="dropdown-item" href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="product-detail.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="header__menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <i class="fas fa-home"></i>
+            <a href="index.html">Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <a href="cart.html">Cart</a>
+            <i class="fas fa-chevron-right"></i>
+            <a href="checkout.html">Checkout</a>
+            <i class="fas fa-chevron-right"></i>
+            <span class="current">Payment</span>
+        </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="checkout-progress" role="progressbar" aria-valuenow="3" aria-valuemin="1" aria-valuemax="4" aria-label="Checkout progress: Step 3 of 4">
+        <div class="container">
+            <ol class="progress-steps">
+                <li class="progress-step completed" tabindex="0">
+                    <div class="step-circle">
+                        <i class="fas fa-check" aria-hidden="true"></i>
+                    </div>
+                    <span>Cart</span>
+                    <span class="sr-only">Step 1: Cart - Completed</span>
+                </li>
+                <div class="progress-line active" aria-hidden="true"></div>
+                <li class="progress-step completed" tabindex="0">
+                    <div class="step-circle">
+                        <i class="fas fa-check" aria-hidden="true"></i>
+                    </div>
+                    <span>Delivery</span>
+                    <span class="sr-only">Step 2: Delivery - Completed</span>
+                </li>
+                <div class="progress-line active" aria-hidden="true"></div>
+                <li class="progress-step active completed" tabindex="0" aria-current="step">
+                    <div class="step-circle">
+                        <i class="fas fa-credit-card" aria-hidden="true"></i>
+                    </div>
+                    <span>Payment</span>
+                    <span class="sr-only">Step 3: Payment - Current step</span>
+                </li>
+                <div class="progress-line" aria-hidden="true"></div>
+                <li class="progress-step" tabindex="0">
+                    <div class="step-circle">
+                        <i class="fas fa-check" aria-hidden="true"></i>
+                    </div>
+                    <span>Complete</span>
+                    <span class="sr-only">Step 4: Complete - Not completed</span>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Payment Container -->
+    <div class="payment-container">
+        <div class="container">
+            <div class="payment__wrapper">
+                <!-- Left: Payment Methods -->
+                <div class="payment__main">
+                    <!-- Payment Methods Section -->
+                    <section class="payment-section">
+                        <div class="section-header">
+                            <div class="section-title">
+                                <i class="fas fa-credit-card"></i>
+                                <h2>Payment Method</h2>
+                            </div>
+                        </div>
+
+                        <div class="payment-methods">
+                            <!-- Credit/Debit Card -->
+                            <label class="payment-method-card selected">
+                                <input type="radio" name="payment-method" value="card" checked>
+                                <div class="method-content">
+                                    <div class="method-icon card">
+                                        <i class="fas fa-credit-card"></i>
+                                    </div>
+                                    <div class="method-info">
+                                        <h3>Credit/Debit Card</h3>
+                                        <p>Pay securely with your card</p>
+                                        <div class="card-types">
+                                            <i class="fab fa-cc-visa"></i>
+                                            <i class="fab fa-cc-mastercard"></i>
+                                            <i class="fab fa-cc-amex"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="checkmark">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                            </label>
+
+                            <!-- eSewa -->
+                            <label class="payment-method-card">
+                                <input type="radio" name="payment-method" value="esewa">
+                                <div class="method-content">
+                                    <div class="method-icon esewa">
+                                        <i class="fas fa-mobile-alt"></i>
+                                    </div>
+                                    <div class="method-info">
+                                        <h3>eSewa</h3>
+                                        <p>Pay with your eSewa wallet</p>
+                                        <div class="offer-badge">
+                                            <i class="fas fa-gift"></i> 2% Cashback
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="checkmark">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                            </label>
+
+                            <!-- Khalti -->
+                            <label class="payment-method-card">
+                                <input type="radio" name="payment-method" value="khalti">
+                                <div class="method-content">
+                                    <div class="method-icon khalti">
+                                        <i class="fas fa-wallet"></i>
+                                    </div>
+                                    <div class="method-info">
+                                        <h3>Khalti</h3>
+                                        <p>Pay with your Khalti wallet</p>
+                                        <div class="offer-badge">
+                                            <i class="fas fa-gift"></i> Get NPR 100 Cashback
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="checkmark">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                            </label>
+
+                            <!-- Cash on Delivery -->
+                            <label class="payment-method-card">
+                                <input type="radio" name="payment-method" value="cod">
+                                <div class="method-content">
+                                    <div class="method-icon cod">
+                                        <i class="fas fa-money-bill-wave"></i>
+                                    </div>
+                                    <div class="method-info">
+                                        <h3>Cash on Delivery</h3>
+                                        <p>Pay when you receive the order</p>
+                                    </div>
+                                </div>
+                                <div class="checkmark">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                            </label>
+
+                            <!-- Bank Transfer -->
+                            <label class="payment-method-card">
+                                <input type="radio" name="payment-method" value="bank">
+                                <div class="method-content">
+                                    <div class="method-icon bank">
+                                        <i class="fas fa-university"></i>
+                                    </div>
+                                    <div class="method-info">
+                                        <h3>Bank Transfer</h3>
+                                        <p>Direct bank account transfer</p>
+                                    </div>
+                                </div>
+                                <div class="checkmark">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                            </label>
+                        </div>
+                    </section>
+
+                    <!-- Card Details Form (Shown when card is selected) -->
+                    <section class="payment-section card-details-section">
+                        <div class="section-header">
+                            <div class="section-title">
+                                <i class="fas fa-lock"></i>
+                                <h2>Card Details</h2>
+                            </div>
+                            <div class="security-icons">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Secured by SSL</span>
+                            </div>
+                        </div>
+
+                        <div class="card-form-wrapper">
+                            <!-- Card Preview -->
+                            <div class="card-preview">
+                                <div class="credit-card">
+                                    <div class="card-chip">
+                                        <i class="fas fa-credit-card"></i>
+                                    </div>
+                                    <div class="card-number" id="previewCardNumber">•••• •••• •••• ••••</div>
+                                    <div class="card-details">
+                                        <div class="card-holder">
+                                            <div class="card-label">Card Holder</div>
+                                            <div class="card-value" id="previewCardHolder">YOUR NAME</div>
+                                        </div>
+                                        <div class="card-expiry">
+                                            <div class="card-label">Expires</div>
+                                            <div class="card-value" id="previewExpiry">MM/YY</div>
+                                        </div>
+                                    </div>
+                                    <div class="card-logo">
+                                        <i class="fab fa-cc-visa"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card Form -->
+                            <form class="card-form">
+                                <div class="form-group">
+                                    <label>Card Number <span class="required">*</span></label>
+                                    <div class="input-with-icon">
+                                        <input
+                                            type="text"
+                                            id="cardNumber"
+                                            placeholder="1234 5678 9012 3456"
+                                            maxlength="19"
+                                            required
+                                        >
+                                        <i class="fas fa-credit-card"></i>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Card Holder Name <span class="required">*</span></label>
+                                    <div class="input-with-icon">
+                                        <input
+                                            type="text"
+                                            id="cardHolder"
+                                            placeholder="RAJESH MAHARJAN"
+                                            required
+                                        >
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Expiry Date <span class="required">*</span></label>
+                                        <div class="input-with-icon">
+                                            <input
+                                                type="text"
+                                                id="expiryDate"
+                                                placeholder="MM/YY"
+                                                maxlength="5"
+                                                required
+                                            >
+                                            <i class="fas fa-calendar"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>CVV <span class="required">*</span></label>
+                                        <div class="input-with-icon">
+                                            <input
+                                                type="text"
+                                                id="cvv"
+                                                placeholder="123"
+                                                maxlength="3"
+                                                required
+                                            >
+                                            <i class="fas fa-lock"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group checkbox-group">
+                                    <label>
+                                        <input type="checkbox" id="saveCard">
+                                        <span>Save this card for future purchases</span>
+                                    </label>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+
+                    <!-- Billing Address -->
+                    <section class="payment-section">
+                        <div class="section-header">
+                            <div class="section-title">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <h2>Billing Address</h2>
+                            </div>
+                        </div>
+
+                        <div class="billing-options">
+                            <label class="billing-option selected">
+                                <input type="radio" name="billing" value="same" checked>
+                                <div class="option-content">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Same as delivery address</span>
+                                </div>
+                            </label>
+
+                            <label class="billing-option">
+                                <input type="radio" name="billing" value="different">
+                                <div class="option-content">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                    <span>Use a different billing address</span>
+                                </div>
+                            </label>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Right: Order Summary -->
+                <aside class="payment__sidebar">
+                    <div class="order-summary glass-card">
+                        <h2>Order Summary</h2>
+
+                        <!-- Delivery Info -->
+                        <div class="summary-delivery">
+                            <div class="delivery-header">
+                                <i class="fas fa-truck"></i>
+                                <span>Delivery Details</span>
+                            </div>
+                            <div class="delivery-info-box">
+                                <p><strong>Rajesh Maharjan</strong></p>
+                                <p>Durbar Marg, Ward No. 3, Kathmandu</p>
+                                <p>Standard Delivery (3-5 days)</p>
+                            </div>
+                            <button class="btn-link-small">Change</button>
+                        </div>
+
+                        <div class="summary-divider"></div>
+
+                        <!-- Items Preview -->
+                        <div class="summary-items">
+                            <div class="summary-item-header">
+                                <span>Items (5)</span>
+                                <button class="btn-link-small">View Details</button>
+                            </div>
+
+                            <div class="summary-item-preview">
+                                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=80&h=80&fit=crop" alt="Product">
+                                <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=80&h=80&fit=crop" alt="Product">
+                                <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=80&h=80&fit=crop" alt="Product">
+                                <div class="more-items">+2</div>
+                            </div>
+                        </div>
+
+                        <div class="summary-divider"></div>
+
+                        <!-- Price Breakdown -->
+                        <div class="summary-breakdown">
+                            <div class="summary-row">
+                                <span>Subtotal</span>
+                                <span>NPR 45,999</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Discount</span>
+                                <span class="discount">- NPR 5,000</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Delivery Charges</span>
+                                <span class="free">FREE</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Tax (13%)</span>
+                                <span>NPR 5,330</span>
+                            </div>
+                        </div>
+
+                        <div class="summary-divider"></div>
+
+                        <!-- Total -->
+                        <div class="summary-total">
+                            <span>Total Amount</span>
+                            <div class="total-price">
+                                <span class="currency">NPR</span>
+                                <span class="amount">46,329</span>
+                            </div>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="summary-actions">
+                            <button class="btn-primary btn-full" id="placeOrderBtn">
+                                <i class="fas fa-lock"></i>
+                                Place Order
+                            </button>
+                            <a href="checkout.html" class="btn-secondary btn-full">
+                                <i class="fas fa-arrow-left"></i>
+                                Back to Delivery
+                            </a>
+                        </div>
+
+                        <!-- Security Badges -->
+                        <div class="security-badges">
+                            <div class="security-item">
+                                <i class="fas fa-lock"></i>
+                                <span>Secure Payment</span>
+                            </div>
+                            <div class="security-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>SSL Encrypted</span>
+                            </div>
+                            <div class="security-item">
+                                <i class="fas fa-undo"></i>
+                                <span>Easy Returns</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="trust-card glass-card">
+                        <h3>Why Shop With Us?</h3>
+                        <div class="trust-items">
+                            <div class="trust-item">
+                                <i class="fas fa-certificate"></i>
+                                <span>100% Authentic Products</span>
+                            </div>
+                            <div class="trust-item">
+                                <i class="fas fa-headset"></i>
+                                <span>24/7 Customer Support</span>
+                            </div>
+                            <div class="trust-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Secure Transactions</span>
+                            </div>
+                            <div class="trust-item">
+                                <i class="fas fa-sync-alt"></i>
+                                <span>7-Day Return Policy</span>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Akku Electronics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Payment method selection
+        document.querySelectorAll('.payment-method-card input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                document.querySelectorAll('.payment-method-card').forEach(card => {
+                    card.classList.remove('selected');
+                });
+                this.closest('.payment-method-card').classList.add('selected');
+
+                // Show/hide card details section
+                const cardDetailsSection = document.querySelector('.card-details-section');
+                if (this.value === 'card') {
+                    cardDetailsSection.style.display = 'block';
+                } else {
+                    cardDetailsSection.style.display = 'none';
+                }
+            });
+        });
+
+        // Billing address selection
+        document.querySelectorAll('.billing-option input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                document.querySelectorAll('.billing-option').forEach(option => {
+                    option.classList.remove('selected');
+                });
+                this.closest('.billing-option').classList.add('selected');
+            });
+        });
+
+        // Card number formatting and preview
+        const cardNumberInput = document.getElementById('cardNumber');
+        const previewCardNumber = document.getElementById('previewCardNumber');
+
+        cardNumberInput?.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\s/g, '');
+            let formattedValue = value.match(/.{1,4}/g)?.join(' ') || value;
+            e.target.value = formattedValue;
+
+            // Update preview
+            if (value.length > 0) {
+                let preview = formattedValue.split('').map((char, i) => {
+                    if (i < formattedValue.length - 4) {
+                        return char === ' ' ? ' ' : '•';
+                    }
+                    return char;
+                }).join('');
+                previewCardNumber.textContent = preview;
+            } else {
+                previewCardNumber.textContent = '•••• •••• •••• ••••';
+            }
+        });
+
+        // Card holder preview
+        const cardHolderInput = document.getElementById('cardHolder');
+        const previewCardHolder = document.getElementById('previewCardHolder');
+
+        cardHolderInput?.addEventListener('input', function(e) {
+            const value = e.target.value.toUpperCase();
+            e.target.value = value;
+            previewCardHolder.textContent = value || 'YOUR NAME';
+        });
+
+        // Expiry date formatting and preview
+        const expiryDateInput = document.getElementById('expiryDate');
+        const previewExpiry = document.getElementById('previewExpiry');
+
+        expiryDateInput?.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 2) {
+                value = value.slice(0, 2) + '/' + value.slice(2, 4);
+            }
+            e.target.value = value;
+            previewExpiry.textContent = value || 'MM/YY';
+        });
+
+        // CVV - numbers only
+        const cvvInput = document.getElementById('cvv');
+        cvvInput?.addEventListener('input', function(e) {
+            e.target.value = e.target.value.replace(/\D/g, '');
+        });
+
+        // Place order button
+        const placeOrderBtn = document.getElementById('placeOrderBtn');
+        placeOrderBtn?.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const selectedMethod = document.querySelector('.payment-method-card input:checked')?.value;
+
+            if (selectedMethod === 'card') {
+                // Validate card form
+                const cardNumber = cardNumberInput.value.replace(/\s/g, '');
+                const cardHolder = cardHolderInput.value;
+                const expiry = expiryDateInput.value;
+                const cvv = cvvInput.value;
+
+                if (!cardNumber || cardNumber.length < 16) {
+                    alert('Please enter a valid card number');
+                    return;
+                }
+                if (!cardHolder) {
+                    alert('Please enter card holder name');
+                    return;
+                }
+                if (!expiry || expiry.length < 5) {
+                    alert('Please enter valid expiry date');
+                    return;
+                }
+                if (!cvv || cvv.length < 3) {
+                    alert('Please enter valid CVV');
+                    return;
+                }
+            }
+
+            // In production, this would process the payment
+            alert('Processing payment...\n\nIn production, this would redirect to the order confirmation page.');
+            // window.location.href = 'order-confirmation.html';
+        });
+    </script>
+</body>
+</html>

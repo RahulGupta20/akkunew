@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed | Akku Electronics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/order-confirmation.css">
+</head>
+<body class="dark-theme">
+    <!-- Header -->
+    <header class="header">
+        <!-- Main Header (Sticky) -->
+        <div class="header__main">
+            <div class="container">
+                <a href="index.html" class="header__logo">
+                    <img src="assets/images/logo.png" alt="AKKU Electronics">
+                </a>
+
+                <!-- Search Bar -->
+                <form class="header__search" action="search-results.html" method="GET">
+                    <input type="text" name="q" id="searchInput" placeholder="Search for products, brands and more...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+
+                <!-- Header Actions -->
+                <div class="header__actions">
+                    <!-- Language & Currency Button -->
+                    <button class="header__settings-btn" id="openSettingsModal">
+                        <i class="fas fa-globe"></i>
+                        <span>EN / NPR</span>
+                    </button>
+
+                    <!-- Wishlist -->
+                    <a href="wishlist.html" class="header__action-item" aria-label="Wishlist" title="Wishlist">
+                        <i class="fas fa-heart"></i>
+                    </a>
+
+                    <!-- Cart -->
+                    <a href="cart.html" class="header__action-item" aria-label="Shopping Cart (0 items)" title="Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge" id="cartBadge">0</span>
+                    </a>
+
+                    <!-- User Menu (Logged In) -->
+                    <div class="dropdown">
+                        <button class="header__user-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="user-avatar">RM</div>
+                            <span class="user-name">Rajesh</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li class="dropdown-header">
+                                <div class="user-avatar">RM</div>
+                                <div>
+                                    <div>Rajesh Maharjan</div>
+                                    <div>rajesh@example.com</div>
+                                </div>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="my-profile.html"><i class="fas fa-user"></i> My Profile</a></li>
+                            <li><a class="dropdown-item" href="my-orders.html"><i class="fas fa-shopping-bag"></i> My Orders</a></li>
+                            <li><a class="dropdown-item" href="wishlist.html"><i class="fas fa-heart"></i> Wishlist</a></li>
+                            <li><a class="dropdown-item" href="my-reviews.html"><i class="fas fa-star"></i> My Reviews</a></li>
+                            <li><a class="dropdown-item" href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="product-detail.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="header__menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Progress Bar -->
+    <div class="checkout-progress" role="progressbar" aria-valuenow="4" aria-valuemin="1" aria-valuemax="4" aria-label="Checkout progress: Step 4 of 4">
+        <div class="container">
+            <ol class="progress-steps">
+                <li class="progress-step completed" tabindex="0">
+                    <div class="step-circle">
+                        <i class="fas fa-check" aria-hidden="true"></i>
+                    </div>
+                    <span>Cart</span>
+                    <span class="sr-only">Step 1: Cart - Completed</span>
+                </li>
+                <div class="progress-line active" aria-hidden="true"></div>
+                <li class="progress-step completed" tabindex="0">
+                    <div class="step-circle">
+                        <i class="fas fa-check" aria-hidden="true"></i>
+                    </div>
+                    <span>Delivery</span>
+                    <span class="sr-only">Step 2: Delivery - Completed</span>
+                </li>
+                <div class="progress-line active" aria-hidden="true"></div>
+                <li class="progress-step completed" tabindex="0">
+                    <div class="step-circle">
+                        <i class="fas fa-check" aria-hidden="true"></i>
+                    </div>
+                    <span>Payment</span>
+                    <span class="sr-only">Step 3: Payment - Completed</span>
+                </li>
+                <div class="progress-line active" aria-hidden="true"></div>
+                <li class="progress-step active completed" tabindex="0" aria-current="step">
+                    <div class="step-circle">
+                        <i class="fas fa-check" aria-hidden="true"></i>
+                    </div>
+                    <span>Complete</span>
+                    <span class="sr-only">Step 4: Complete - Current step</span>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Confetti Background -->
+    <div class="confetti-container" id="confettiContainer"></div>
+
+    <!-- Order Confirmation Container -->
+    <div class="confirmation-container">
+        <div class="container">
+            <!-- Success Banner -->
+            <div class="success-banner">
+                <div class="success-icon">
+                    <div class="checkmark-circle">
+                        <i class="fas fa-check"></i>
+                    </div>
+                </div>
+                <h1>Order Placed Successfully!</h1>
+                <p>Thank you for your purchase, Rajesh! Your order has been confirmed.</p>
+                <div class="order-number">
+                    Order Number: <span>#AKE-2024-00123</span>
+                </div>
+            </div>
+
+            <div class="confirmation__wrapper">
+                <!-- Left: Order Details -->
+                <div class="confirmation__main">
+                    <!-- Order Timeline -->
+                    <section class="confirmation-section">
+                        <div class="section-header">
+                            <div class="section-title">
+                                <i class="fas fa-clock"></i>
+                                <h2>Order Timeline</h2>
+                            </div>
+                        </div>
+
+                        <div class="order-timeline">
+                            <div class="timeline-item completed">
+                                <div class="timeline-marker">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h3>Order Placed</h3>
+                                    <p>Your order has been received</p>
+                                    <span class="timeline-date">Dec 15, 2024 - 2:30 PM</span>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item active">
+                                <div class="timeline-marker">
+                                    <i class="fas fa-box"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h3>Processing</h3>
+                                    <p>We're preparing your items</p>
+                                    <span class="timeline-date">Expected: Dec 16, 2024</span>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker">
+                                    <i class="fas fa-truck"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h3>Shipped</h3>
+                                    <p>On the way to you</p>
+                                    <span class="timeline-date">Expected: Dec 17, 2024</span>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h3>Delivered</h3>
+                                    <p>Enjoy your purchase!</p>
+                                    <span class="timeline-date">Expected: Dec 20, 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Order Items -->
+                    <section class="confirmation-section">
+                        <div class="section-header">
+                            <div class="section-title">
+                                <i class="fas fa-shopping-bag"></i>
+                                <h2>Order Items (5)</h2>
+                            </div>
+                        </div>
+
+                        <div class="order-items">
+                            <!-- Item 1 -->
+                            <div class="order-item">
+                                <div class="item-image">
+                                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=120&h=120&fit=crop" alt="Premium Wireless Headphones">
+                                </div>
+                                <div class="item-details">
+                                    <h3>Premium Wireless Headphones</h3>
+                                    <p class="item-specs">Color: Black | Noise Cancellation</p>
+                                    <div class="item-meta">
+                                        <span class="item-qty">Qty: 1</span>
+                                        <span class="item-price">NPR 12,999</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div class="order-item">
+                                <div class="item-image">
+                                    <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=120&h=120&fit=crop" alt="Smart Watch Pro">
+                                </div>
+                                <div class="item-details">
+                                    <h3>Smart Watch Pro</h3>
+                                    <p class="item-specs">Size: 42mm | GPS + Cellular</p>
+                                    <div class="item-meta">
+                                        <span class="item-qty">Qty: 1</span>
+                                        <span class="item-price">NPR 18,500</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 3 -->
+                            <div class="order-item">
+                                <div class="item-image">
+                                    <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=120&h=120&fit=crop" alt="Mechanical Keyboard">
+                                </div>
+                                <div class="item-details">
+                                    <h3>Mechanical Gaming Keyboard RGB</h3>
+                                    <p class="item-specs">Switch: Cherry MX Red | RGB Backlight</p>
+                                    <div class="item-meta">
+                                        <span class="item-qty">Qty: 1</span>
+                                        <span class="item-price">NPR 8,500</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 4 -->
+                            <div class="order-item">
+                                <div class="item-image">
+                                    <img src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=120&h=120&fit=crop" alt="Wireless Mouse">
+                                </div>
+                                <div class="item-details">
+                                    <h3>Ergonomic Wireless Mouse</h3>
+                                    <p class="item-specs">DPI: 3200 | Rechargeable</p>
+                                    <div class="item-meta">
+                                        <span class="item-qty">Qty: 2</span>
+                                        <span class="item-price">NPR 3,500 each</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 5 -->
+                            <div class="order-item">
+                                <div class="item-image">
+                                    <img src="https://images.unsplash.com/photo-1585792180666-f7347c490ee2?w=120&h=120&fit=crop" alt="USB-C Hub">
+                                </div>
+                                <div class="item-details">
+                                    <h3>USB-C Hub 7-in-1</h3>
+                                    <p class="item-specs">HDMI, USB 3.0, SD Card Reader</p>
+                                    <div class="item-meta">
+                                        <span class="item-qty">Qty: 1</span>
+                                        <span class="item-price">NPR 2,500</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Delivery & Payment Info -->
+                    <div class="info-grid">
+                        <!-- Delivery Address -->
+                        <section class="confirmation-section">
+                            <div class="section-header">
+                                <div class="section-title">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <h2>Delivery Address</h2>
+                                </div>
+                            </div>
+
+                            <div class="info-box">
+                                <p><strong>Rajesh Maharjan</strong></p>
+                                <p>Durbar Marg, Ward No. 3</p>
+                                <p>Kathmandu, Bagmati Province</p>
+                                <p>Postal Code: 44600</p>
+                                <p class="info-phone"><i class="fas fa-phone"></i> +977 9841234567</p>
+                            </div>
+                        </section>
+
+                        <!-- Payment Method -->
+                        <section class="confirmation-section">
+                            <div class="section-header">
+                                <div class="section-title">
+                                    <i class="fas fa-credit-card"></i>
+                                    <h2>Payment Method</h2>
+                                </div>
+                            </div>
+
+                            <div class="info-box">
+                                <div class="payment-info">
+                                    <i class="fas fa-credit-card"></i>
+                                    <div>
+                                        <p><strong>Credit Card</strong></p>
+                                        <p>Visa ending in 3456</p>
+                                        <p class="payment-status success">
+                                            <i class="fas fa-check-circle"></i> Payment Successful
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <!-- Right: Order Summary & Actions -->
+                <aside class="confirmation__sidebar">
+                    <!-- Order Summary -->
+                    <div class="order-summary glass-card">
+                        <h2>Order Summary</h2>
+
+                        <div class="summary-breakdown">
+                            <div class="summary-row">
+                                <span>Subtotal (5 items)</span>
+                                <span>NPR 45,999</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Discount</span>
+                                <span class="discount">- NPR 5,000</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Delivery Charges</span>
+                                <span class="free">FREE</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Tax (13%)</span>
+                                <span>NPR 5,330</span>
+                            </div>
+                        </div>
+
+                        <div class="summary-divider"></div>
+
+                        <div class="summary-total">
+                            <span>Total Paid</span>
+                            <div class="total-price">
+                                <span class="currency">NPR</span>
+                                <span class="amount">46,329</span>
+                            </div>
+                        </div>
+
+                        <div class="savings-badge">
+                            <i class="fas fa-tags"></i>
+                            You saved NPR 5,150 on this order!
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="quick-actions glass-card">
+                        <h3>What's Next?</h3>
+
+                        <div class="action-buttons">
+                            <a href="my-orders.html" class="btn-primary btn-full">
+                                <i class="fas fa-shopping-bag"></i>
+                                Track Your Order
+                            </a>
+
+                            <button class="btn-secondary btn-full" id="downloadInvoice">
+                                <i class="fas fa-download"></i>
+                                Download Invoice
+                            </button>
+
+                            <a href="index.html" class="btn-link-action">
+                                <i class="fas fa-home"></i>
+                                Continue Shopping
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Email Confirmation -->
+                    <div class="email-confirmation glass-card">
+                        <div class="email-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Order Confirmation Sent</h3>
+                        <p>We've sent a confirmation email to:</p>
+                        <p class="email-address">rajesh@example.com</p>
+                        <button class="btn-link-small">Resend Email</button>
+                    </div>
+
+                    <!-- Support -->
+                    <div class="support-box glass-card">
+                        <h3>Need Help?</h3>
+                        <p>Contact our customer support</p>
+                        <div class="support-contacts">
+                            <a href="tel:+97714123456">
+                                <i class="fas fa-phone"></i>
+                                +977 01-4123456
+                            </a>
+                            <a href="mailto:support@akku.com.np">
+                                <i class="fas fa-envelope"></i>
+                                support@akku.com.np
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Akku Electronics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Confetti animation
+        function createConfetti() {
+            const container = document.getElementById('confettiContainer');
+            const colors = ['#ED3237', '#FF6B00', '#FFD700', '#28a745', '#03a9f4'];
+
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDelay = Math.random() * 3 + 's';
+                confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                container.appendChild(confetti);
+            }
+
+            // Remove confetti after animation
+            setTimeout(() => {
+                container.innerHTML = '';
+            }, 5000);
+        }
+
+        // Trigger confetti on page load
+        window.addEventListener('load', createConfetti);
+
+        // Download invoice
+        document.getElementById('downloadInvoice')?.addEventListener('click', function() {
+            alert('In production, this would download a PDF invoice for order #AKE-2024-00123');
+        });
+
+        // Resend email
+        document.querySelector('.btn-link-small')?.addEventListener('click', function() {
+            alert('Confirmation email has been resent to rajesh@example.com');
+        });
+    </script>
+</body>
+</html>

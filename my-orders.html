@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders | Akku Electronics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/my-orders.css">
+</head>
+<body class="dark-theme">
+    <!-- Header -->
+    <header class="header">
+        <!-- Main Header (Sticky) -->
+        <div class="header__main">
+            <div class="container">
+                <a href="index.html" class="header__logo">
+                    <img src="assets/images/logo.png" alt="AKKU Electronics">
+                </a>
+
+                <!-- Search Bar -->
+                <form class="header__search" action="search-results.html" method="GET">
+                    <input type="text" name="q" id="searchInput" placeholder="Search for products, brands and more...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+
+                <!-- Header Actions -->
+                <div class="header__actions">
+                    <!-- Language & Currency Button -->
+                    <button class="header__settings-btn" id="openSettingsModal">
+                        <i class="fas fa-globe"></i>
+                        <span>EN / NPR</span>
+                    </button>
+
+                    <!-- Wishlist -->
+                    <a href="wishlist.html" class="header__action-item" aria-label="Wishlist" title="Wishlist">
+                        <i class="fas fa-heart"></i>
+                    </a>
+
+                    <!-- Cart -->
+                    <a href="#" class="header__action-item" aria-label="Shopping Cart (5 items)" title="Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge">5</span>
+                    </a>
+
+                    <!-- User Menu (Logged In) -->
+                    <div class="dropdown">
+                        <button class="header__user-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="user-avatar">RM</div>
+                            <span class="user-name">Rajesh</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li class="dropdown-header">
+                                <div class="user-avatar">RM</div>
+                                <div>
+                                    <div>Rajesh Maharjan</div>
+                                    <div>rajesh@example.com</div>
+                                </div>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="my-profile.html"><i class="fas fa-user"></i> My Profile</a></li>
+                            <li><a class="dropdown-item" href="my-orders.html"><i class="fas fa-shopping-bag"></i> My Orders</a></li>
+                            <li><a class="dropdown-item" href="wishlist.html"><i class="fas fa-heart"></i> Wishlist</a></li>
+                            <li><a class="dropdown-item" href="my-reviews.html"><i class="fas fa-star"></i> My Reviews</a></li>
+                            <li><a class="dropdown-item" href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="product-detail.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="header__menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation (Not Sticky) -->
+        <nav class="header__nav" id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="#">Laptops</a></li>
+                <li><a href="#">Mobiles</a></li>
+                <li><a href="#">Accessories</a></li>
+                <li><a href="#">Deals</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <i class="fas fa-home"></i>
+            <a href="index.html">Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <span class="current">My Orders</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="my-orders">
+        <div class="container">
+            <div class="my-orders__wrapper">
+                <!-- Sidebar -->
+                <aside class="my-orders__sidebar">
+                    <div class="profile-card">
+                        <div class="profile-card__avatar">
+                            <div class="avatar-circle">RM</div>
+                            <button class="avatar-edit"><i class="fas fa-camera"></i></button>
+                        </div>
+                        <h3 class="profile-card__name">Rajesh Maharjan</h3>
+                        <p class="profile-card__email">rajesh@example.com</p>
+                        <div class="profile-card__stats">
+                            <div class="stat-item">
+                                <span class="stat-value">12</span>
+                                <span class="stat-label">Orders</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">8</span>
+                                <span class="stat-label">Reviews</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">15</span>
+                                <span class="stat-label">Wishlist</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <nav class="profile-nav">
+                        <a href="my-profile.html" class="profile-nav__item">
+                            <i class="fas fa-user"></i>
+                            <span>My Profile</span>
+                        </a>
+                        <a href="my-orders.html" class="profile-nav__item active">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span>My Orders</span>
+                        </a>
+                        <a href="wishlist.html" class="profile-nav__item">
+                            <i class="fas fa-heart"></i>
+                            <span>Wishlist</span>
+                        </a>
+                        <a href="my-reviews.html" class="profile-nav__item">
+                            <i class="fas fa-star"></i>
+                            <span>My Reviews</span>
+                        </a>
+                        <a href="settings.html" class="profile-nav__item">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                        <a href="product-detail.html" class="profile-nav__item profile-nav__item--logout">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </a>
+                    </nav>
+                </aside>
+
+                <!-- Main Content -->
+                <div class="my-orders__content">
+                    <div class="content-header">
+                        <h1>My Orders</h1>
+                        <p>Track and manage all your orders in one place</p>
+                    </div>
+
+                    <!-- Order Filters -->
+                    <section class="profile-section">
+                        <div class="profile-section__header">
+                            <h2><i class="fas fa-filter"></i> Filter Orders</h2>
+                        </div>
+                        <div class="profile-section__content">
+                            <div class="order-filters">
+                                <button class="filter-btn active" data-filter="all">
+                                    <i class="fas fa-list"></i> All Orders <span class="count">12</span>
+                                </button>
+                                <button class="filter-btn" data-filter="delivered">
+                                    <i class="fas fa-check-circle"></i> Delivered <span class="count">8</span>
+                                </button>
+                                <button class="filter-btn" data-filter="processing">
+                                    <i class="fas fa-box"></i> Processing <span class="count">2</span>
+                                </button>
+                                <button class="filter-btn" data-filter="shipped">
+                                    <i class="fas fa-shipping-fast"></i> Shipped <span class="count">1</span>
+                                </button>
+                                <button class="filter-btn" data-filter="cancelled">
+                                    <i class="fas fa-times-circle"></i> Cancelled <span class="count">1</span>
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Orders List -->
+                    <section class="profile-section">
+                        <div class="profile-section__header">
+                            <h2><i class="fas fa-shopping-bag"></i> Order History</h2>
+                        </div>
+                        <div class="profile-section__content">
+                            <div class="orders-list">
+                                <!-- Order Card 1 - Delivered -->
+                                <div class="order-card" data-status="delivered">
+                            <div class="order-card__header">
+                                <div class="order-info">
+                                    <h3>Order #ORD-2024-0012</h3>
+                                    <p class="order-date"><i class="fas fa-calendar"></i> Placed on June 8, 2026</p>
+                                </div>
+                                <div class="order-status">
+                                    <span class="badge-status badge-status--delivered">
+                                        <i class="fas fa-check-circle"></i> Delivered
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="order-card__items">
+                                <div class="order-item">
+                                    <img src="assets/images/products/laptop1.jpg" alt="Dell XPS 15">
+                                    <div class="order-item__details">
+                                        <h4>Dell XPS 15 9530 Laptop</h4>
+                                        <p>Intel Core i7-13700H | 16GB RAM | 512GB SSD</p>
+                                        <div class="order-item__meta">
+                                            <span class="quantity">Qty: 1</span>
+                                            <span class="price">NPR 2,45,000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="order-card__footer">
+                                <div class="order-total">
+                                    <span>Total Amount:</span>
+                                    <strong>NPR 2,45,000</strong>
+                                </div>
+                                <div class="order-actions">
+                                    <button class="btn-action btn-action--primary" onclick="viewOrderDetails('ORD-2024-0012')">
+                                        <i class="fas fa-eye"></i> View Details
+                                    </button>
+                                    <button class="btn-action" onclick="downloadInvoice('ORD-2024-0012')">
+                                        <i class="fas fa-download"></i> Invoice
+                                    </button>
+                                    <button class="btn-action" onclick="rateOrder('ORD-2024-0012')">
+                                        <i class="fas fa-star"></i> Rate
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Order Card 2 - Processing -->
+                        <div class="order-card" data-status="processing">
+                            <div class="order-card__header">
+                                <div class="order-info">
+                                    <h3>Order #ORD-2024-0013</h3>
+                                    <p class="order-date"><i class="fas fa-calendar"></i> Placed on June 10, 2026</p>
+                                </div>
+                                <div class="order-status">
+                                    <span class="badge-status badge-status--processing">
+                                        <i class="fas fa-box"></i> Processing
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="order-card__items">
+                                <div class="order-item">
+                                    <img src="assets/images/products/phone1.jpg" alt="iPhone 15 Pro">
+                                    <div class="order-item__details">
+                                        <h4>Apple iPhone 15 Pro Max</h4>
+                                        <p>256GB | Natural Titanium</p>
+                                        <div class="order-item__meta">
+                                            <span class="quantity">Qty: 1</span>
+                                            <span class="price">NPR 1,95,000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="order-item">
+                                    <img src="assets/images/products/accessory1.jpg" alt="AirPods Pro">
+                                    <div class="order-item__details">
+                                        <h4>Apple AirPods Pro (2nd Gen)</h4>
+                                        <p>Active Noise Cancellation | MagSafe Case</p>
+                                        <div class="order-item__meta">
+                                            <span class="quantity">Qty: 1</span>
+                                            <span class="price">NPR 35,000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="order-card__footer">
+                                <div class="order-total">
+                                    <span>Total Amount:</span>
+                                    <strong>NPR 2,30,000</strong>
+                                </div>
+                                <div class="order-actions">
+                                    <button class="btn-action btn-action--primary" onclick="viewOrderDetails('ORD-2024-0013')">
+                                        <i class="fas fa-eye"></i> View Details
+                                    </button>
+                                    <button class="btn-action btn-action--danger" onclick="cancelOrder('ORD-2024-0013')">
+                                        <i class="fas fa-times"></i> Cancel
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Order Card 3 - Shipped -->
+                        <div class="order-card" data-status="shipped">
+                            <div class="order-card__header">
+                                <div class="order-info">
+                                    <h3>Order #ORD-2024-0011</h3>
+                                    <p class="order-date"><i class="fas fa-calendar"></i> Placed on June 7, 2026</p>
+                                </div>
+                                <div class="order-status">
+                                    <span class="badge-status badge-status--shipped">
+                                        <i class="fas fa-shipping-fast"></i> Shipped
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="order-card__items">
+                                <div class="order-item">
+                                    <img src="assets/images/products/mouse1.jpg" alt="Logitech MX Master 3S">
+                                    <div class="order-item__details">
+                                        <h4>Logitech MX Master 3S Wireless Mouse</h4>
+                                        <p>Quiet Clicks | 8K DPI | Multi-Device</p>
+                                        <div class="order-item__meta">
+                                            <span class="quantity">Qty: 1</span>
+                                            <span class="price">NPR 12,500</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="order-card__footer">
+                                <div class="order-total">
+                                    <span>Total Amount:</span>
+                                    <strong>NPR 12,500</strong>
+                                </div>
+                                <div class="order-actions">
+                                    <button class="btn-action btn-action--primary" onclick="trackOrder('ORD-2024-0011')">
+                                        <i class="fas fa-truck"></i> Track Order
+                                    </button>
+                                    <button class="btn-action" onclick="viewOrderDetails('ORD-2024-0011')">
+                                        <i class="fas fa-eye"></i> View Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Order Card 4 - Cancelled -->
+                        <div class="order-card" data-status="cancelled">
+                            <div class="order-card__header">
+                                <div class="order-info">
+                                    <h3>Order #ORD-2024-0010</h3>
+                                    <p class="order-date"><i class="fas fa-calendar"></i> Placed on June 5, 2026</p>
+                                </div>
+                                <div class="order-status">
+                                    <span class="badge-status badge-status--cancelled">
+                                        <i class="fas fa-times-circle"></i> Cancelled
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="order-card__items">
+                                <div class="order-item">
+                                    <img src="assets/images/products/keyboard1.jpg" alt="Keychron K8 Pro">
+                                    <div class="order-item__details">
+                                        <h4>Keychron K8 Pro Mechanical Keyboard</h4>
+                                        <p>Wireless | RGB | Brown Switch</p>
+                                        <div class="order-item__meta">
+                                            <span class="quantity">Qty: 1</span>
+                                            <span class="price">NPR 18,500</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="order-card__footer">
+                                <div class="order-total">
+                                    <span>Total Amount:</span>
+                                    <strong>NPR 18,500</strong>
+                                </div>
+                                <div class="order-actions">
+                                    <button class="btn-action" onclick="viewOrderDetails('ORD-2024-0010')">
+                                        <i class="fas fa-eye"></i> View Details
+                                    </button>
+                                    <button class="btn-action" onclick="reorder('ORD-2024-0010')">
+                                        <i class="fas fa-redo"></i> Reorder
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // My Orders Page - Complete UX Flow
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toast Notification System (matching my-profile.html pattern)
+            function showToast(title, message, type = 'success') {
+                const toastHTML = `
+                    <div class="message-box message-box--${type}">
+                        <i class="fas ${type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle'}"></i>
+                        <div>
+                            <strong>${title}</strong>
+                            <p style="margin: 0; font-size: 0.85rem;">${message}</p>
+                        </div>
+                    </div>
+                `;
+
+                const container = document.querySelector('.my-orders__content');
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = toastHTML;
+                const toast = tempDiv.firstElementChild;
+
+                container.insertBefore(toast, container.firstChild);
+
+                setTimeout(() => {
+                    toast.style.opacity = '0';
+                    toast.style.transform = 'translateY(-20px)';
+                    setTimeout(() => toast.remove(), 300);
+                }, 3000);
+            }
+
+            // Order Filters
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const orderCards = document.querySelectorAll('.order-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const filter = this.dataset.filter;
+
+                    // Update active state
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Filter orders
+                    orderCards.forEach(card => {
+                        if (filter === 'all' || card.dataset.status === filter) {
+                            card.style.display = 'block';
+                            card.style.animation = 'fadeIn 0.4s ease-out';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+
+                    showToast('Filter Applied', `Showing ${filter === 'all' ? 'all' : filter} orders`, 'info');
+                });
+            });
+
+            // View Order Details
+            window.viewOrderDetails = function(orderId) {
+                const modal = createModal(`Order Details - ${orderId}`, `
+                    <div class="order-details">
+                        <div class="order-timeline">
+                            <div class="timeline-item completed">
+                                <div class="timeline-icon"><i class="fas fa-check"></i></div>
+                                <div class="timeline-content">
+                                    <h4>Order Placed</h4>
+                                    <p>June 8, 2026 - 10:30 AM</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item completed">
+                                <div class="timeline-icon"><i class="fas fa-check"></i></div>
+                                <div class="timeline-content">
+                                    <h4>Payment Confirmed</h4>
+                                    <p>June 8, 2026 - 10:32 AM</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item completed">
+                                <div class="timeline-icon"><i class="fas fa-check"></i></div>
+                                <div class="timeline-content">
+                                    <h4>Processing</h4>
+                                    <p>June 8, 2026 - 11:00 AM</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item completed">
+                                <div class="timeline-icon"><i class="fas fa-check"></i></div>
+                                <div class="timeline-content">
+                                    <h4>Shipped</h4>
+                                    <p>June 9, 2026 - 2:00 PM</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item completed">
+                                <div class="timeline-icon"><i class="fas fa-check"></i></div>
+                                <div class="timeline-content">
+                                    <h4>Delivered</h4>
+                                    <p>June 10, 2026 - 4:30 PM</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="delivery-info" style="margin-top: 24px; padding: 16px; background: rgba(237, 50, 55, 0.05); border: 1px solid rgba(237, 50, 55, 0.2); border-radius: 8px;">
+                            <h4 style="color: #fff; margin-bottom: 12px;"><i class="fas fa-map-marker-alt"></i> Delivery Address</h4>
+                            <p style="color: #ccc; margin: 0; line-height: 1.6;">
+                                Rajesh Maharjan<br>
+                                Kathmandu Metropolitan City,<br>
+                                Ward No. 10, Thamel<br>
+                                Kathmandu, Nepal - 44600<br>
+                                Phone: +977 98XXXXXXXX
+                            </p>
+                        </div>
+                    </div>
+                `);
+                document.body.appendChild(modal);
+            };
+
+            // Track Order
+            window.trackOrder = function(orderId) {
+                const modal = createModal(`Track Order - ${orderId}`, `
+                    <div class="tracking-info">
+                        <div class="tracking-header" style="text-align: center; padding: 20px; background: rgba(237, 50, 55, 0.05); border-radius: 8px; margin-bottom: 20px;">
+                            <i class="fas fa-shipping-fast" style="font-size: 3rem; color: #ED3237; margin-bottom: 12px;"></i>
+                            <h3 style="color: #fff; margin: 0;">Your package is on the way!</h3>
+                            <p style="color: #888; margin: 8px 0 0 0;">Estimated Delivery: Tomorrow, June 12</p>
+                        </div>
+
+                        <div class="tracking-timeline">
+                            <div class="timeline-item completed">
+                                <div class="timeline-icon"><i class="fas fa-check"></i></div>
+                                <div class="timeline-content">
+                                    <h4>Package Picked Up</h4>
+                                    <p>June 10, 2026 - 9:00 AM</p>
+                                    <small>Warehouse, Kathmandu</small>
+                                </div>
+                            </div>
+                            <div class="timeline-item completed">
+                                <div class="timeline-icon"><i class="fas fa-check"></i></div>
+                                <div class="timeline-content">
+                                    <h4>In Transit</h4>
+                                    <p>June 10, 2026 - 2:00 PM</p>
+                                    <small>Distribution Hub, Kathmandu</small>
+                                </div>
+                            </div>
+                            <div class="timeline-item active">
+                                <div class="timeline-icon"><i class="fas fa-truck"></i></div>
+                                <div class="timeline-content">
+                                    <h4>Out for Delivery</h4>
+                                    <p>June 11, 2026 - 8:00 AM</p>
+                                    <small>Local Delivery Center</small>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon"><i class="fas fa-home"></i></div>
+                                <div class="timeline-content">
+                                    <h4>Delivered</h4>
+                                    <p>Expected Tomorrow</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `);
+                document.body.appendChild(modal);
+            };
+
+            // Download Invoice
+            window.downloadInvoice = function(orderId) {
+                showToast('Download Started', `Invoice for ${orderId} is being downloaded`, 'success');
+            };
+
+            // Rate Order
+            window.rateOrder = function(orderId) {
+                const modal = createModal('Rate Your Purchase', `
+                    <div style="text-align: center;">
+                        <p style="color: #888; margin-bottom: 20px;">How would you rate your overall experience?</p>
+                        <div class="rating-stars" style="font-size: 2.5rem; margin-bottom: 20px;">
+                            <i class="far fa-star" data-rating="1"></i>
+                            <i class="far fa-star" data-rating="2"></i>
+                            <i class="far fa-star" data-rating="3"></i>
+                            <i class="far fa-star" data-rating="4"></i>
+                            <i class="far fa-star" data-rating="5"></i>
+                        </div>
+                        <textarea placeholder="Share your experience (optional)"
+                            style="width: 100%; min-height: 100px; background: #140506; border: 1px solid #333; color: #fff; padding: 12px; border-radius: 6px; margin-bottom: 16px; resize: vertical;"></textarea>
+                        <button class="btn-primary" onclick="submitRating('${orderId}');" style="padding: 12px 32px; background: linear-gradient(135deg, #ED3237, #c82529); color: #fff; border: none; border-radius: 6px; font-weight: 600; cursor: pointer;">
+                            <i class="fas fa-paper-plane"></i> Submit Review
+                        </button>
+                    </div>
+                `);
+
+                document.body.appendChild(modal);
+
+                // Star Rating Interaction
+                const stars = modal.querySelectorAll('.rating-stars i');
+                stars.forEach(star => {
+                    star.style.cursor = 'pointer';
+                    star.style.color = '#666';
+                    star.style.transition = 'all 0.2s';
+
+                    star.addEventListener('mouseenter', function() {
+                        const rating = this.dataset.rating;
+                        stars.forEach((s, i) => {
+                            if (i < rating) {
+                                s.classList.remove('far');
+                                s.classList.add('fas');
+                                s.style.color = '#ED3237';
+                            }
+                        });
+                    });
+
+                    star.addEventListener('click', function() {
+                        const rating = this.dataset.rating;
+                        stars.forEach((s, i) => {
+                            s.classList.remove('fas', 'far');
+                            if (i < rating) {
+                                s.classList.add('fas');
+                                s.style.color = '#ED3237';
+                            } else {
+                                s.classList.add('far');
+                                s.style.color = '#666';
+                            }
+                        });
+                    });
+                });
+
+                modal.querySelector('.rating-stars').addEventListener('mouseleave', function() {
+                    const selectedStars = modal.querySelectorAll('.rating-stars .fas');
+                    if (selectedStars.length === 0) {
+                        stars.forEach(s => {
+                            s.classList.remove('fas');
+                            s.classList.add('far');
+                            s.style.color = '#666';
+                        });
+                    }
+                });
+            };
+
+            window.submitRating = function(orderId) {
+                document.querySelector('.modal-overlay').remove();
+                showToast('Review Submitted', 'Thank you for your feedback!', 'success');
+            };
+
+            // Cancel Order
+            window.cancelOrder = function(orderId) {
+                const confirmCancel = confirm(`Are you sure you want to cancel order ${orderId}?`);
+                if (confirmCancel) {
+                    const orderCard = document.querySelector(`[data-status="processing"]`);
+                    if (orderCard) {
+                        orderCard.dataset.status = 'cancelled';
+                        const badge = orderCard.querySelector('.badge-status');
+                        badge.className = 'badge-status badge-status--cancelled';
+                        badge.innerHTML = '<i class="fas fa-times-circle"></i> Cancelled';
+
+                        // Update actions
+                        const actionsDiv = orderCard.querySelector('.order-actions');
+                        actionsDiv.innerHTML = `
+                            <button class="btn-action" onclick="viewOrderDetails('${orderId}')">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                            <button class="btn-action" onclick="reorder('${orderId}')">
+                                <i class="fas fa-redo"></i> Reorder
+                            </button>
+                        `;
+                    }
+                    showToast('Order Cancelled', `Order ${orderId} has been cancelled successfully`, 'success');
+                }
+            };
+
+            // Reorder
+            window.reorder = function(orderId) {
+                showToast('Added to Cart', 'Items have been added to your cart', 'success');
+                setTimeout(() => {
+                    window.location.href = 'cart.html';
+                }, 1500);
+            };
+
+            // Modal Creator
+            function createModal(title, content) {
+                const modal = document.createElement('div');
+                modal.className = 'modal-overlay';
+                modal.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.8); display: flex; align-items: center; justify-content: center; z-index: 10000; backdrop-filter: blur(4px); animation: fadeIn 0.3s;';
+
+                modal.innerHTML = `
+                    <div class="modal-content" style="background: linear-gradient(180deg, #1a0506 0%, #0C0304 100%); border: 1px solid rgba(237, 50, 55, 0.2); border-radius: 12px; padding: 24px; max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6); animation: scaleIn 0.3s;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                            <h3 style="color: #fff; margin: 0; font-size: 1.25rem;">${title}</h3>
+                            <button onclick="this.closest('.modal-overlay').remove()" style="background: none; border: none; color: #888; font-size: 1.5rem; cursor: pointer; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 6px; transition: all 0.3s;" onmouseover="this.style.background='#2a2a2a'; this.style.color='#ED3237';" onmouseout="this.style.background='none'; this.style.color='#888';">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div>${content}</div>
+                    </div>
+                `;
+
+                modal.onclick = function(e) {
+                    if (e.target === modal) {
+                        modal.remove();
+                    }
+                };
+
+                return modal;
+            }
+
+            // Keyboard shortcuts
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    const modal = document.querySelector('.modal-overlay');
+                    if (modal) modal.remove();
+                }
+            });
+
+            console.log('✅ My Orders UX Flow initialized successfully!');
+        });
+    </script>
+</body>
+</html>

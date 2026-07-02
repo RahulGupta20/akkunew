@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | Akku Electronics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+<body class="dark-theme">
+    <!-- Header -->
+    <header class="header">
+        <!-- Main Header (Sticky) -->
+        <div class="header__main">
+            <div class="container">
+                <a href="index.html" class="header__logo">
+                    <img src="assets/images/logo.png" alt="AKKU Electronics">
+                </a>
+
+                <!-- Search Bar -->
+                <form class="header__search" action="search-results.html" method="GET">
+                    <input type="text" name="q" id="searchInput" placeholder="Search for products, brands and more...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+
+                <!-- Header Actions -->
+                <div class="header__actions">
+                    <!-- Language & Currency Button -->
+                    <button class="header__settings-btn" id="openSettingsModal">
+                        <i class="fas fa-globe"></i>
+                        <span>EN / NPR</span>
+                    </button>
+
+                    <!-- Wishlist -->
+                    <a href="wishlist.html" class="header__action-item" aria-label="Wishlist" title="Wishlist">
+                        <i class="fas fa-heart"></i>
+                    </a>
+
+                    <!-- Cart -->
+                    <a href="cart.html" class="header__action-item" aria-label="Shopping Cart (5 items)" title="Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge" id="cartBadge">5</span>
+                    </a>
+
+                    <!-- User Menu (Logged In) -->
+                    <div class="dropdown">
+                        <button class="header__user-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="user-avatar">RM</div>
+                            <span class="user-name">Rajesh</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li class="dropdown-header">
+                                <div class="user-avatar">RM</div>
+                                <div>
+                                    <div>Rajesh Maharjan</div>
+                                    <div>rajesh@example.com</div>
+                                </div>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="my-profile.html"><i class="fas fa-user"></i> My Profile</a></li>
+                            <li><a class="dropdown-item" href="my-orders.html"><i class="fas fa-shopping-bag"></i> My Orders</a></li>
+                            <li><a class="dropdown-item" href="wishlist.html"><i class="fas fa-heart"></i> Wishlist</a></li>
+                            <li><a class="dropdown-item" href="my-reviews.html"><i class="fas fa-star"></i> My Reviews</a></li>
+                            <li><a class="dropdown-item" href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="product-detail.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="header__menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation (Not Sticky) -->
+        <nav class="header__nav" id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="#">Laptops</a></li>
+                <li><a href="#">Mobiles</a></li>
+                <li><a href="#">Accessories</a></li>
+                <li><a href="#">Deals</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <i class="fas fa-home"></i>
+            <a href="index.html">Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <span class="current">Shopping Cart</span>
+        </div>
+    </div>
+
+    <!-- Floating Particles Background -->
+    <div class="floating-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="cart">
+        <div class="container">
+            <!-- Cart with Items -->
+            <div class="cart__wrapper" id="cartWithItems">
+                <!-- Left Column: Cart Items -->
+                <div class="cart__items">
+                    <!-- Cart Header -->
+                    <div class="cart-header">
+                        <h1>Shopping Cart (<span id="itemCount">5</span> Items)</h1>
+                        <div class="cart-header-actions">
+                            <button class="btn-secondary" id="clearCartBtn">
+                                <i class="fas fa-trash-alt"></i> Clear Cart
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Cart Items List -->
+                    <div class="cart-items-list" id="cartItemsList">
+                        <!-- Cart Item 1 -->
+                        <div class="cart-item glass-card" data-id="1" data-price="245000">
+                            <div class="animated-border"></div>
+                            <div class="cart-item__image">
+                                <a href="product-detail.html">
+                                    <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400&h=400&fit=crop" alt="Dell XPS 15" class="lazy-img" loading="lazy">
+                                </a>
+                            </div>
+                            <div class="cart-item__details">
+                                <a href="product-detail.html" class="cart-item__name">Dell XPS 15 9530 Laptop</a>
+                                <!-- Product Rating -->
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="rating-count">(4.5)</span>
+                                </div>
+                                <p class="cart-item__specs">Intel Core i7-13700H | 16GB RAM | 512GB SSD</p>
+                                <!-- Variant Selector -->
+                                <div class="variant-selector">
+                                    <div class="variant-group">
+                                        <label>Color:</label>
+                                        <div class="color-swatches">
+                                            <span class="color-swatch active" style="background: #C0C0C0;" title="Silver"></span>
+                                            <span class="color-swatch" style="background: #2C3E50;" title="Space Gray"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cart-item__meta">
+                                    <span class="stock-status in-stock">
+                                        <i class="fas fa-check-circle"></i> In Stock
+                                    </span>
+                                    <span class="delivery-info animated-calendar">
+                                        <i class="fas fa-calendar-check"></i> Delivery by Thu, Jun 20
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="cart-item__sidebar">
+                                <div class="cart-item__actions">
+                                    <button class="action-btn ripple-btn" onclick="moveToWishlist(1)" title="Move to Wishlist">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <button class="action-btn ripple-btn" onclick="removeItem(1)" title="Remove">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                                <div class="cart-item__quantity">
+                                    <label>Qty:</label>
+                                    <div class="quantity-selector glow-effect">
+                                        <button class="qty-btn glow-btn" onclick="decreaseQuantity(1)">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <input type="number" value="1" min="1" max="10" id="qty-1" onchange="updateQuantity(1, this.value)">
+                                        <button class="qty-btn glow-btn" onclick="increaseQuantity(1)">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="cart-item__price">
+                                    <div class="price-info">
+                                        <p class="item-price">NPR 2,45,000</p>
+                                        <p class="item-total animated-price">NPR <span class="total-amount counter-animation">2,45,000</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart-item__extras">
+                                <label class="gift-wrap-checkbox">
+                                    <input type="checkbox" onchange="toggleGiftWrap(1, this.checked)">
+                                    <span>
+                                        <i class="fas fa-gift"></i> Add Gift Wrap
+                                        <strong>(+NPR 100)</strong>
+                                    </span>
+                                </label>
+                                <!-- Product Protection Option -->
+                                <label class="protection-checkbox">
+                                    <input type="checkbox" onchange="toggleProtection(1, this.checked)">
+                                    <span>
+                                        <i class="fas fa-shield-alt"></i> Add 2-Year Protection Plan
+                                        <strong>(+NPR 5,000)</strong>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Cart Item 2 - With Discount -->
+                        <div class="cart-item glass-card" data-id="2" data-price="175500" data-original-price="195000">
+                            <div class="animated-border"></div>
+                            <div class="cart-item__image">
+                                <a href="product-detail.html">
+                                    <img src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&h=400&fit=crop" alt="iPhone 15 Pro Max" class="lazy-img" loading="lazy">
+                                </a>
+                            </div>
+                            <div class="cart-item__details">
+                                <a href="product-detail.html" class="cart-item__name">Apple iPhone 15 Pro Max</a>
+                                <!-- Product Rating -->
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="rating-count">(5.0)</span>
+                                </div>
+                                <p class="cart-item__specs">256GB | Natural Titanium</p>
+                                <!-- Variant Selector -->
+                                <div class="variant-selector">
+                                    <div class="variant-group">
+                                        <label>Storage:</label>
+                                        <div class="size-swatches">
+                                            <span class="size-swatch">128GB</span>
+                                            <span class="size-swatch active">256GB</span>
+                                            <span class="size-swatch">512GB</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cart-item__meta">
+                                    <span class="stock-status low-stock">
+                                        <i class="fas fa-exclamation-triangle"></i> Only 3 left!
+                                    </span>
+                                    <span class="delivery-info animated-calendar">
+                                        <i class="fas fa-calendar-check"></i> Delivery by Fri, Jun 21
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="cart-item__sidebar">
+                                <div class="cart-item__actions">
+                                    <button class="action-btn ripple-btn" onclick="moveToWishlist(2)" title="Move to Wishlist">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <button class="action-btn ripple-btn" onclick="removeItem(2)" title="Remove">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                                <div class="cart-item__quantity">
+                                    <label>Qty:</label>
+                                    <div class="quantity-selector glow-effect">
+                                        <button class="qty-btn glow-btn" onclick="decreaseQuantity(2)">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <input type="number" value="1" min="1" max="10" id="qty-2" onchange="updateQuantity(2, this.value)">
+                                        <button class="qty-btn glow-btn" onclick="increaseQuantity(2)">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="cart-item__price">
+                                    <div class="price-info">
+                                        <p class="original-price">NPR 1,95,000</p>
+                                        <p class="item-price">NPR 1,75,500</p>
+                                        <p class="item-total animated-price">NPR <span class="total-amount counter-animation">1,75,500</span></p>
+                                        <p class="savings pulse-save">You save: NPR 19,500</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart-item__extras">
+                                <label class="gift-wrap-checkbox">
+                                    <input type="checkbox" onchange="toggleGiftWrap(2, this.checked)">
+                                    <span>
+                                        <i class="fas fa-gift"></i> Add Gift Wrap
+                                        <strong>(+NPR 100)</strong>
+                                    </span>
+                                </label>
+                                <label class="protection-checkbox">
+                                    <input type="checkbox" onchange="toggleProtection(2, this.checked)">
+                                    <span>
+                                        <i class="fas fa-shield-alt"></i> Add 2-Year Protection Plan
+                                        <strong>(+NPR 3,500)</strong>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Cart Item 3 -->
+                        <div class="cart-item" data-id="3" data-price="35000">
+                            <div class="cart-item__image">
+                                <a href="product-detail.html">
+                                    <img src="https://images.unsplash.com/photo-1606841837239-c5a1a4a07af7?w=400&h=400&fit=crop" alt="AirPods Pro">
+                                </a>
+                            </div>
+                            <div class="cart-item__details">
+                                <a href="product-detail.html" class="cart-item__name">Apple AirPods Pro (2nd Gen)</a>
+                                <p class="cart-item__specs">Active Noise Cancellation | MagSafe Case</p>
+                                <div class="cart-item__meta">
+                                    <span class="stock-status in-stock">
+                                        <i class="fas fa-check-circle"></i> In Stock
+                                    </span>
+                                    <span class="delivery-info">Delivery by Thu, Jun 20</span>
+                                </div>
+                            </div>
+                            <div class="cart-item__sidebar">
+                                <div class="cart-item__actions">
+                                    <button class="action-btn" onclick="moveToWishlist(3)" title="Move to Wishlist">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <button class="action-btn" onclick="removeItem(3)" title="Remove">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                                <div class="cart-item__quantity">
+                                    <label>Qty:</label>
+                                    <div class="quantity-selector">
+                                        <button class="qty-btn" onclick="decreaseQuantity(3)">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <input type="number" value="1" min="1" max="10" id="qty-3" onchange="updateQuantity(3, this.value)">
+                                        <button class="qty-btn" onclick="increaseQuantity(3)">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="cart-item__price">
+                                    <div class="price-info">
+                                        <p class="item-price">NPR 35,000</p>
+                                        <p class="item-total">NPR <span class="total-amount">35,000</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart-item__extras">
+                                <label class="gift-wrap-checkbox">
+                                    <input type="checkbox" onchange="toggleGiftWrap(3, this.checked)">
+                                    <span>
+                                        <i class="fas fa-gift"></i> Add Gift Wrap
+                                        <strong>(+NPR 100)</strong>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Cart Item 4 -->
+                        <div class="cart-item" data-id="4" data-price="12500">
+                            <div class="cart-item__image">
+                                <a href="product-detail.html">
+                                    <img src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400&h=400&fit=crop" alt="Logitech Mouse">
+                                </a>
+                            </div>
+                            <div class="cart-item__details">
+                                <a href="product-detail.html" class="cart-item__name">Logitech MX Master 3S Wireless Mouse</a>
+                                <p class="cart-item__specs">Quiet Clicks | 8K DPI | Multi-Device</p>
+                                <div class="cart-item__meta">
+                                    <span class="stock-status in-stock">
+                                        <i class="fas fa-check-circle"></i> In Stock
+                                    </span>
+                                    <span class="delivery-info">Delivery by Thu, Jun 20</span>
+                                </div>
+                            </div>
+                            <div class="cart-item__sidebar">
+                                <div class="cart-item__actions">
+                                    <button class="action-btn ripple-btn" onclick="moveToWishlist(4)" title="Move to Wishlist">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <button class="action-btn ripple-btn" onclick="removeItem(4)" title="Remove">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                                <div class="cart-item__quantity">
+                                    <label>Qty:</label>
+                                    <div class="quantity-selector">
+                                        <button class="qty-btn" onclick="decreaseQuantity(4)">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <input type="number" value="1" min="1" max="10" id="qty-4" onchange="updateQuantity(4, this.value)">
+                                        <button class="qty-btn" onclick="increaseQuantity(4)">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="cart-item__price">
+                                    <div class="price-info">
+                                        <p class="item-price">NPR 12,500</p>
+                                        <p class="item-total">NPR <span class="total-amount">12,500</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart-item__extras">
+                                <label class="gift-wrap-checkbox">
+                                    <input type="checkbox" onchange="toggleGiftWrap(4, this.checked)">
+                                    <span>
+                                        <i class="fas fa-gift"></i> Add Gift Wrap
+                                        <strong>(+NPR 100)</strong>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Cart Item 5 - With Discount -->
+                        <div class="cart-item" data-id="5" data-price="16650" data-original-price="18500">
+                            <div class="cart-item__image">
+                                <a href="product-detail.html">
+                                    <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=400&h=400&fit=crop" alt="Keychron Keyboard">
+                                </a>
+                            </div>
+                            <div class="cart-item__details">
+                                <a href="product-detail.html" class="cart-item__name">Keychron K8 Pro Mechanical Keyboard</a>
+                                <p class="cart-item__specs">Wireless | RGB | Brown Switch</p>
+                                <div class="cart-item__meta">
+                                    <span class="stock-status in-stock">
+                                        <i class="fas fa-check-circle"></i> In Stock
+                                    </span>
+                                    <span class="delivery-info">Delivery by Fri, Jun 21</span>
+                                </div>
+                            </div>
+                            <div class="cart-item__sidebar">
+                                <div class="cart-item__actions">
+                                    <button class="action-btn ripple-btn" onclick="moveToWishlist(5)" title="Move to Wishlist">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <button class="action-btn ripple-btn" onclick="removeItem(5)" title="Remove">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                                <div class="cart-item__quantity">
+                                    <label>Qty:</label>
+                                    <div class="quantity-selector">
+                                        <button class="qty-btn" onclick="decreaseQuantity(5)">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <input type="number" value="1" min="1" max="10" id="qty-5" onchange="updateQuantity(5, this.value)">
+                                        <button class="qty-btn" onclick="increaseQuantity(5)">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="cart-item__price">
+                                    <div class="price-info">
+                                        <p class="original-price">NPR 18,500</p>
+                                        <p class="item-price">NPR 16,650</p>
+                                        <p class="item-total">NPR <span class="total-amount">16,650</span></p>
+                                        <p class="savings">You save: NPR 1,850</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart-item__extras">
+                                <label class="gift-wrap-checkbox">
+                                    <input type="checkbox" onchange="toggleGiftWrap(5, this.checked)">
+                                    <span>
+                                        <i class="fas fa-gift"></i> Add Gift Wrap
+                                        <strong>(+NPR 100)</strong>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Continue Shopping Button -->
+                    <div class="cart-footer-actions">
+                        <a href="products.html" class="btn-continue-shopping">
+                            <i class="fas fa-arrow-left"></i> Continue Shopping
+                        </a>
+                    </div>
+
+                    <!-- Recommended Products -->
+                    <section class="recommended-products">
+                        <h2><i class="fas fa-star"></i> You May Also Like</h2>
+                        <div class="recommended-grid">
+                            <div class="recommended-item">
+                                <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&h=400&fit=crop" alt="MacBook Air">
+                                <h4>MacBook Air M2</h4>
+                                <p class="price">NPR 1,45,000</p>
+                                <button class="btn-add-small" onclick="quickAdd('MacBook Air M2')">
+                                    <i class="fas fa-plus"></i> Add
+                                </button>
+                            </div>
+                            <div class="recommended-item">
+                                <img src="https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=400&h=400&fit=crop" alt="Samsung Galaxy">
+                                <h4>Samsung Galaxy S24</h4>
+                                <p class="price">NPR 1,35,000</p>
+                                <button class="btn-add-small" onclick="quickAdd('Samsung Galaxy S24')">
+                                    <i class="fas fa-plus"></i> Add
+                                </button>
+                            </div>
+                            <div class="recommended-item">
+                                <img src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=400&h=400&fit=crop" alt="Smart Watch">
+                                <h4>Apple Watch Series 9</h4>
+                                <p class="price">NPR 55,000</p>
+                                <button class="btn-add-small" onclick="quickAdd('Apple Watch Series 9')">
+                                    <i class="fas fa-plus"></i> Add
+                                </button>
+                            </div>
+                            <div class="recommended-item">
+                                <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?w=400&h=400&fit=crop" alt="Tablet">
+                                <h4>iPad Pro 11"</h4>
+                                <p class="price">NPR 95,000</p>
+                                <button class="btn-add-small" onclick="quickAdd('iPad Pro 11')">
+                                    <i class="fas fa-plus"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Right Column: Order Summary -->
+                <aside class="cart__summary">
+                    <div class="summary-card glass-card">
+                        <div class="animated-border"></div>
+                        <h2><i class="fas fa-receipt"></i> Order Summary</h2>
+
+                        <!-- Price Breakdown -->
+                        <div class="price-breakdown">
+                            <div class="price-row">
+                                <span class="price-label">Subtotal (<span id="summaryItemCount">5</span> items)</span>
+                                <span id="subtotalAmount" class="price-value">NPR 4,84,650</span>
+                            </div>
+                            <div class="price-row discount-row" id="discountRow" style="display: none;">
+                                <span class="price-label">
+                                    <i class="fas fa-tag"></i> Discount (<span id="discountPercent">10%</span>)
+                                </span>
+                                <span class="price-value discount-value" id="discountAmount">- NPR 0</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-label">Shipping</span>
+                                <span id="shippingAmount" class="price-value free-badge">FREE</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-label">Tax (13%)</span>
+                                <span id="taxAmount" class="price-value">NPR 63,005</span>
+                            </div>
+                        </div>
+
+                        <!-- Savings Badge -->
+                        <div class="savings-badge" id="savingsRow">
+                            <i class="fas fa-piggy-bank"></i>
+                            <div class="savings-info">
+                                <span class="savings-label">You're saving</span>
+                                <span class="savings-value" id="totalSavings">NPR 21,350</span>
+                            </div>
+                        </div>
+
+                        <!-- Total Section -->
+                        <div class="total-section">
+                            <span class="total-label">Total Amount</span>
+                            <span class="total-value" id="totalAmount">NPR 5,47,655</span>
+                        </div>
+
+                        <!-- Coupon Section Accordion -->
+                        <div class="coupon-accordion">
+                            <button class="coupon-accordion-header" id="couponAccordionBtn">
+                                <i class="fas fa-ticket-alt"></i>
+                                <span>Have a promo code?</span>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </button>
+                            <div class="coupon-accordion-content" id="couponAccordionContent">
+                                <div class="coupon-input-group animated-input">
+                                    <i class="fas fa-tag coupon-icon"></i>
+                                    <input type="text" id="couponInput" placeholder="Enter promo code">
+                                    <button id="applyCouponBtn" class="ripple-btn">
+                                        <span>Apply</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+
+                                <!-- Available Offers -->
+                                <div class="coupon-carousel">
+                                    <div class="coupon-carousel-header">
+                                        <i class="fas fa-fire"></i> Available Offers
+                                    </div>
+                                    <div class="coupon-suggestions">
+                                        <div class="coupon-tag scratch-card" onclick="applySuggestedCoupon('SAVE10')">
+                                            <div class="scratch-overlay"></div>
+                                            <i class="fas fa-tag"></i>
+                                            <div class="coupon-info">
+                                                <span class="coupon-code">SAVE10</span>
+                                                <span class="coupon-desc">Get 10% OFF</span>
+                                            </div>
+                                        </div>
+                                        <div class="coupon-tag scratch-card" onclick="applySuggestedCoupon('FIRST20')">
+                                            <div class="scratch-overlay"></div>
+                                            <i class="fas fa-tag"></i>
+                                            <div class="coupon-info">
+                                                <span class="coupon-code">FIRST20</span>
+                                                <span class="coupon-desc">First Order 20% OFF</span>
+                                            </div>
+                                        </div>
+                                        <div class="coupon-tag scratch-card" onclick="applySuggestedCoupon('FLAT500')">
+                                            <div class="scratch-overlay"></div>
+                                            <i class="fas fa-tag"></i>
+                                            <div class="coupon-info">
+                                                <span class="coupon-code">FLAT500</span>
+                                                <span class="coupon-desc">Flat NPR 500 OFF</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Delivery Address Selector -->
+                        <div class="delivery-section">
+                            <label><i class="fas fa-map-marker-alt"></i> Deliver to:</label>
+                            <select id="deliveryAddress" class="address-select animated-select">
+                                <option value="home">Home - Kathmandu, Lazimpat</option>
+                                <option value="office">Office - Lalitpur, Pulchowk</option>
+                                <option value="other">Other Address</option>
+                            </select>
+                            <div class="expected-delivery">
+                                <i class="fas fa-calendar-check animated-icon"></i>
+                                <span>Expected by <strong>Fri, Jun 21</strong></span>
+                            </div>
+                        </div>
+
+                        <!-- Payment Method Accordion -->
+                        <div class="payment-accordion">
+                            <button class="payment-accordion-header" id="paymentAccordionBtn">
+                                <i class="fas fa-wallet"></i>
+                                <span>Select Payment Method</span>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </button>
+                            <div class="payment-accordion-content" id="paymentAccordionContent">
+                                <!-- Payment Options List -->
+                                <div class="payment-options-list">
+                                    <label class="payment-method-option">
+                                        <input type="radio" name="payment" value="card" checked>
+                                        <div class="payment-method-card">
+                                            <div class="payment-icon-box">
+                                                <i class="fas fa-credit-card"></i>
+                                            </div>
+                                            <div class="payment-method-info">
+                                                <span class="payment-method-title">Credit/Debit Card</span>
+                                                <span class="payment-method-desc">Visa, Mastercard, or local cards</span>
+                                            </div>
+                                        </div>
+                                    </label>
+
+                                    <label class="payment-method-option">
+                                        <input type="radio" name="payment" value="esewa">
+                                        <div class="payment-method-card">
+                                            <div class="payment-icon-box esewa-icon">
+                                                <span class="esewa-text">e</span>
+                                            </div>
+                                            <div class="payment-method-info">
+                                                <span class="payment-method-title">eSewa</span>
+                                                <span class="payment-method-desc">Pay using eSewa digital wallet</span>
+                                            </div>
+                                        </div>
+                                    </label>
+
+                                    <label class="payment-method-option">
+                                        <input type="radio" name="payment" value="khalti">
+                                        <div class="payment-method-card">
+                                            <div class="payment-icon-box khalti-icon">
+                                                <span class="khalti-text">K</span>
+                                            </div>
+                                            <div class="payment-method-info">
+                                                <span class="payment-method-title">Khalti</span>
+                                                <span class="payment-method-desc">Pay using Khalti digital wallet</span>
+                                            </div>
+                                        </div>
+                                    </label>
+
+                                    <label class="payment-method-option">
+                                        <input type="radio" name="payment" value="ime">
+                                        <div class="payment-method-card">
+                                            <div class="payment-icon-box ime-icon">
+                                                <span class="ime-text">I</span>
+                                            </div>
+                                            <div class="payment-method-info">
+                                                <span class="payment-method-title">IME Pay</span>
+                                                <span class="payment-method-desc">Pay using IME Pay digital wallet</span>
+                                            </div>
+                                        </div>
+                                    </label>
+
+                                    <label class="payment-method-option">
+                                        <input type="radio" name="payment" value="banking">
+                                        <div class="payment-method-card">
+                                            <div class="payment-icon-box">
+                                                <i class="fas fa-university"></i>
+                                            </div>
+                                            <div class="payment-method-info">
+                                                <span class="payment-method-title">Online Banking</span>
+                                                <span class="payment-method-desc">Pay via internet banking</span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Checkout Button Enhanced -->
+                        <button class="btn-checkout ripple-btn glow-button" id="checkoutBtn">
+                            <span class="btn-content">
+                                <i class="fas fa-lock"></i>
+                                <span>Proceed to Secure Checkout</span>
+                            </span>
+                            <i class="fas fa-arrow-right btn-arrow"></i>
+                            <div class="btn-shimmer"></div>
+                        </button>
+
+                        <!-- Payment Methods Accepted -->
+                        <div class="payment-methods">
+                            <p>We Accept:</p>
+                            <div class="payment-icons">
+                                <i class="fab fa-cc-visa payment-icon-animate"></i>
+                                <i class="fab fa-cc-mastercard payment-icon-animate"></i>
+                                <i class="fab fa-cc-amex payment-icon-animate"></i>
+                                <i class="fas fa-mobile-alt payment-icon-animate"></i>
+                            </div>
+                        </div>
+
+                        <!-- Trust Badges Enhanced with Tooltips -->
+                        <div class="trust-badges">
+                            <div class="badge-item tooltip-trigger" data-tooltip="SSL encrypted secure payment">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Secure Checkout</span>
+                            </div>
+                            <div class="badge-item tooltip-trigger" data-tooltip="Easy returns within 30 days">
+                                <i class="fas fa-undo"></i>
+                                <span>30-Day Returns</span>
+                            </div>
+                            <div class="badge-item tooltip-trigger" data-tooltip="Round the clock customer support">
+                                <i class="fas fa-headset"></i>
+                                <span>24/7 Support</span>
+                            </div>
+                        </div>
+
+                        <!-- Price Match Guarantee -->
+                        <div class="price-match-badge">
+                            <i class="fas fa-badge-check"></i>
+                            <div>
+                                <strong>Price Match Guarantee</strong>
+                                <p>Found a better price? We'll match it!</p>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- Empty Cart State Enhanced -->
+            <div class="empty-cart" id="emptyCart" style="display: none;">
+                <div class="empty-cart__content">
+                    <div class="empty-cart__animation">
+                        <!-- Animated SVG Cart -->
+                        <svg class="empty-cart-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="cartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ED3237;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#FF6B00;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <path class="cart-body" d="M50 60 L70 60 L80 120 L150 120 L160 80 L70 80"
+                                  fill="none" stroke="url(#cartGradient)" stroke-width="4" stroke-linecap="round"/>
+                            <circle class="cart-wheel" cx="90" cy="140" r="8" fill="url(#cartGradient)"/>
+                            <circle class="cart-wheel" cx="140" cy="140" r="8" fill="url(#cartGradient)"/>
+                            <path class="cart-handle" d="M50 60 L45 40"
+                                  stroke="url(#cartGradient)" stroke-width="4" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h2 class="empty-title">Your Cart is Empty</h2>
+                    <p class="empty-subtitle">Looks like you haven't added anything to your cart yet.</p>
+
+                    <!-- Seasonal Promotion Banner -->
+                    <div class="seasonal-promo">
+                        <i class="fas fa-gift"></i>
+                        <div>
+                            <strong>Special Offer!</strong>
+                            <p>Get 20% off on your first order. Start shopping now!</p>
+                        </div>
+                    </div>
+
+                    <a href="products.html" class="btn-start-shopping glow-button ripple-btn">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span>Start Shopping</span>
+                        <div class="btn-shimmer"></div>
+                    </a>
+                </div>
+
+                <!-- Recommended Products for Empty Cart -->
+                <section class="recommended-products">
+                    <h2><i class="fas fa-fire"></i> Popular Products</h2>
+                    <div class="recommended-grid">
+                        <div class="recommended-item">
+                            <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400&h=400&fit=crop" alt="Dell XPS 15">
+                            <h4>Dell XPS 15</h4>
+                            <p class="price">NPR 2,45,000</p>
+                            <button class="btn-add-small" onclick="quickAdd('Dell XPS 15')">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                        <div class="recommended-item">
+                            <img src="https://images.unsplash.com/photo-1592286927505-50b21f852e7f?w=400&h=400&fit=crop" alt="iPhone 15 Pro">
+                            <h4>iPhone 15 Pro Max</h4>
+                            <p class="price">NPR 1,75,500</p>
+                            <button class="btn-add-small" onclick="quickAdd('iPhone 15 Pro Max')">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                        <div class="recommended-item">
+                            <img src="assets/images/products/laptop2.jpg" alt="MacBook Air">
+                            <h4>MacBook Air M2</h4>
+                            <p class="price">NPR 1,45,000</p>
+                            <button class="btn-add-small" onclick="quickAdd('MacBook Air M2')">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                        <div class="recommended-item">
+                            <img src="assets/images/products/accessory1.jpg" alt="AirPods Pro">
+                            <h4>AirPods Pro</h4>
+                            <p class="price">NPR 35,000</p>
+                            <button class="btn-add-small" onclick="quickAdd('AirPods Pro')">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Undo Toast -->
+    <div class="undo-toast" id="undoToast" style="display: none;">
+        <div class="undo-content">
+            <i class="fas fa-info-circle"></i>
+            <span id="undoMessage">Item removed from cart</span>
+            <button id="undoBtn">UNDO</button>
+        </div>
+        <div class="undo-timer" id="undoTimer"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Shopping Cart - Complete UX Flow
+        document.addEventListener('DOMContentLoaded', function() {
+            // Coupon Accordion Toggle
+            const couponAccordionBtn = document.getElementById('couponAccordionBtn');
+            const couponAccordionContent = document.getElementById('couponAccordionContent');
+
+            couponAccordionBtn?.addEventListener('click', function() {
+                const isExpanded = this.classList.contains('active');
+
+                if (isExpanded) {
+                    this.classList.remove('active');
+                    couponAccordionContent.style.maxHeight = '0';
+                } else {
+                    this.classList.add('active');
+                    couponAccordionContent.style.maxHeight = couponAccordionContent.scrollHeight + 'px';
+                }
+            });
+
+            // Payment Method Accordion Toggle
+            const paymentAccordionBtn = document.getElementById('paymentAccordionBtn');
+            const paymentAccordionContent = document.getElementById('paymentAccordionContent');
+
+            paymentAccordionBtn?.addEventListener('click', function() {
+                const isExpanded = this.classList.contains('active');
+
+                if (isExpanded) {
+                    this.classList.remove('active');
+                    paymentAccordionContent.style.maxHeight = '0';
+                } else {
+                    this.classList.add('active');
+                    paymentAccordionContent.style.maxHeight = paymentAccordionContent.scrollHeight + 'px';
+                }
+            });
+
+            // Initialize cart from localStorage
+            let cart = loadCart();
+            let removedItem = null;
+            let undoTimeout = null;
+            let quantityUpdateTimeout = null;
+
+            // Toast Notification System
+            function showToast(title, message, type = 'success') {
+                const toastHTML = `
+                    <div class="toast-notification toast--${type}">
+                        <i class="fas ${type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle'}"></i>
+                        <div>
+                            <strong>${title}</strong>
+                            <p>${message}</p>
+                        </div>
+                    </div>
+                `;
+
+                const container = document.querySelector('.cart') || document.body;
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = toastHTML;
+                const toast = tempDiv.firstElementChild;
+
+                container.appendChild(toast);
+
+                setTimeout(() => {
+                    toast.style.opacity = '0';
+                    toast.style.transform = 'translateY(-20px)';
+                    setTimeout(() => toast.remove(), 300);
+                }, 3000);
+            }
+
+            // Load cart from localStorage
+            function loadCart() {
+                const saved = localStorage.getItem('akkuCart');
+                return saved ? JSON.parse(saved) : {};
+            }
+
+            // Save cart to localStorage
+            function saveCart() {
+                localStorage.setItem('akkuCart', JSON.stringify(cart));
+            }
+
+            // Calculate totals
+            function calculateTotals() {
+                let subtotal = 0;
+                let savings = 0;
+                let itemCount = 0;
+
+                document.querySelectorAll('.cart-item').forEach(item => {
+                    const id = item.dataset.id;
+                    const price = parseFloat(item.dataset.price);
+                    const originalPrice = item.dataset.originalPrice ? parseFloat(item.dataset.originalPrice) : price;
+                    const qtyInput = item.querySelector('input[type="number"]');
+                    const quantity = qtyInput ? parseInt(qtyInput.value) : 1;
+                    const giftWrap = item.querySelector('.gift-wrap-checkbox input').checked ? 100 : 0;
+
+                    const itemTotal = (price * quantity) + (giftWrap * quantity);
+                    const itemSavings = (originalPrice - price) * quantity;
+
+                    subtotal += itemTotal;
+                    savings += itemSavings;
+                    itemCount += quantity;
+
+                    // Update item total display
+                    const totalAmountEl = item.querySelector('.total-amount');
+                    if (totalAmountEl) {
+                        totalAmountEl.textContent = (price * quantity + giftWrap * quantity).toLocaleString();
+                    }
+                });
+
+                // Apply coupon discount
+                const couponDiscount = parseFloat(document.getElementById('discountAmount')?.textContent.replace(/[^0-9.-]+/g, '') || 0);
+                subtotal -= couponDiscount;
+
+                // Calculate shipping
+                const shippingThreshold = 5000;
+                const shipping = subtotal >= shippingThreshold ? 0 : 200;
+
+                // Calculate tax (13%)
+                const tax = Math.round(subtotal * 0.13);
+
+                // Calculate total
+                const total = subtotal + shipping + tax;
+
+                // Update shipping progress
+                updateShippingProgress(subtotal, shippingThreshold);
+
+                // Update UI
+                document.getElementById('itemCount').textContent = itemCount;
+                document.getElementById('summaryItemCount').textContent = itemCount;
+                document.getElementById('cartBadge').textContent = itemCount;
+                document.getElementById('subtotalAmount').textContent = 'NPR ' + subtotal.toLocaleString();
+                document.getElementById('shippingAmount').innerHTML = shipping === 0 ? '<span class="free-shipping">FREE</span>' : 'NPR ' + shipping.toLocaleString();
+                document.getElementById('taxAmount').textContent = 'NPR ' + tax.toLocaleString();
+                document.getElementById('totalAmount').textContent = 'NPR ' + total.toLocaleString();
+
+                if (savings > 0) {
+                    document.getElementById('totalSavings').textContent = 'NPR ' + savings.toLocaleString();
+                    document.getElementById('savingsRow').style.display = 'flex';
+                } else {
+                    document.getElementById('savingsRow').style.display = 'none';
+                }
+
+                // Check if cart is empty
+                if (itemCount === 0) {
+                    showEmptyCart();
+                }
+            }
+
+            // Update shipping progress bar
+            function updateShippingProgress(subtotal, threshold) {
+                const progress = Math.min((subtotal / threshold) * 100, 100);
+                const remaining = Math.max(threshold - subtotal, 0);
+
+                const progressBar = document.getElementById('shippingProgress');
+                const message = document.getElementById('shippingMessage');
+
+                progressBar.style.width = progress + '%';
+
+                if (remaining > 0) {
+                    message.innerHTML = `Add <strong>NPR ${remaining.toLocaleString()}</strong> more for <strong>FREE SHIPPING</strong>`;
+                    progressBar.parentElement.parentElement.classList.remove('achieved');
+                } else {
+                    message.innerHTML = '<i class="fas fa-check-circle"></i> Congratulations! You qualify for <strong>FREE SHIPPING</strong>';
+                    progressBar.parentElement.parentElement.classList.add('achieved');
+                }
+            }
+
+            // Quantity control with debouncing
+            window.increaseQuantity = function(id) {
+                const input = document.getElementById('qty-' + id);
+                const currentQty = parseInt(input.value);
+                if (currentQty < 10) {
+                    input.value = currentQty + 1;
+                    debouncedUpdateQuantity(id, input.value);
+                }
+            };
+
+            window.decreaseQuantity = function(id) {
+                const input = document.getElementById('qty-' + id);
+                const currentQty = parseInt(input.value);
+                if (currentQty > 1) {
+                    input.value = currentQty - 1;
+                    debouncedUpdateQuantity(id, input.value);
+                }
+            };
+
+            window.updateQuantity = function(id, quantity) {
+                debouncedUpdateQuantity(id, quantity);
+            };
+
+            function debouncedUpdateQuantity(id, quantity) {
+                clearTimeout(quantityUpdateTimeout);
+
+                const input = document.getElementById('qty-' + id);
+                input.parentElement.classList.add('updating');
+
+                quantityUpdateTimeout = setTimeout(() => {
+                    cart[id] = { quantity: parseInt(quantity) };
+                    saveCart();
+                    calculateTotals();
+                    input.parentElement.classList.remove('updating');
+                    showToast('Cart Updated', 'Quantity updated successfully', 'success');
+                }, 500);
+            }
+
+            // Gift wrap toggle
+            window.toggleGiftWrap = function(id, checked) {
+                calculateTotals();
+                if (checked) {
+                    showToast('Gift Wrap Added', 'Gift wrapping service added', 'info');
+                } else {
+                    showToast('Gift Wrap Removed', 'Gift wrapping service removed', 'info');
+                }
+            };
+
+            // Remove item with undo
+            window.removeItem = function(id) {
+                const item = document.querySelector(`.cart-item[data-id="${id}"]`);
+                const itemName = item.querySelector('.cart-item__name').textContent;
+
+                // Store removed item for undo
+                removedItem = {
+                    id: id,
+                    element: item.cloneNode(true),
+                    name: itemName
+                };
+
+                // Animate removal
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(-20px)';
+
+                setTimeout(() => {
+                    item.remove();
+                    calculateTotals();
+                    showUndoToast(`${itemName} removed from cart`);
+                }, 300);
+            };
+
+            // Show undo toast
+            function showUndoToast(message) {
+                const undoToast = document.getElementById('undoToast');
+                const undoMessage = document.getElementById('undoMessage');
+                const undoTimer = document.getElementById('undoTimer');
+
+                undoMessage.textContent = message;
+                undoToast.style.display = 'block';
+                setTimeout(() => undoToast.classList.add('show'), 10);
+
+                // Animate timer
+                let timeLeft = 5000;
+                const timerInterval = setInterval(() => {
+                    timeLeft -= 10;
+                    const progress = (timeLeft / 5000) * 100;
+                    undoTimer.style.width = progress + '%';
+
+                    if (timeLeft <= 0) {
+                        clearInterval(timerInterval);
+                        hideUndoToast();
+                        removedItem = null;
+                    }
+                }, 10);
+
+                // Store timeout for undo
+                clearTimeout(undoTimeout);
+                undoTimeout = setTimeout(() => {
+                    hideUndoToast();
+                    removedItem = null;
+                }, 5000);
+            }
+
+            // Hide undo toast
+            function hideUndoToast() {
+                const undoToast = document.getElementById('undoToast');
+                undoToast.classList.remove('show');
+                setTimeout(() => {
+                    undoToast.style.display = 'none';
+                }, 300);
+            }
+
+            // Undo remove
+            document.getElementById('undoBtn').addEventListener('click', function() {
+                if (removedItem) {
+                    const cartList = document.getElementById('cartItemsList');
+                    cartList.insertBefore(removedItem.element, cartList.firstChild);
+
+                    // Re-animate
+                    removedItem.element.style.opacity = '0';
+                    removedItem.element.style.transform = 'translateX(-20px)';
+                    setTimeout(() => {
+                        removedItem.element.style.opacity = '1';
+                        removedItem.element.style.transform = 'translateX(0)';
+                    }, 10);
+
+                    calculateTotals();
+                    showToast('Item Restored', `${removedItem.name} added back to cart`, 'success');
+
+                    removedItem = null;
+                    clearTimeout(undoTimeout);
+                    hideUndoToast();
+                }
+            });
+
+            // Move to wishlist
+            window.moveToWishlist = function(id) {
+                const item = document.querySelector(`.cart-item[data-id="${id}"]`);
+                const itemName = item.querySelector('.cart-item__name').textContent;
+
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(20px)';
+
+                setTimeout(() => {
+                    item.remove();
+                    calculateTotals();
+                    showToast('Moved to Wishlist', `${itemName} moved to your wishlist`, 'success');
+                }, 300);
+            };
+
+            // Clear cart
+            document.getElementById('clearCartBtn').addEventListener('click', function() {
+                if (confirm('Are you sure you want to clear your cart? This action cannot be undone.')) {
+                    document.querySelectorAll('.cart-item').forEach(item => {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.9)';
+                    });
+
+                    setTimeout(() => {
+                        document.getElementById('cartItemsList').innerHTML = '';
+                        cart = {};
+                        saveCart();
+                        showEmptyCart();
+                        showToast('Cart Cleared', 'All items have been removed from your cart', 'info');
+                    }, 300);
+                }
+            });
+
+            // Apply coupon
+            function applyCoupon(code) {
+                const validCoupons = {
+                    'SAVE10': { discount: 10, type: 'percent' },
+                    'FIRST20': { discount: 20, type: 'percent' },
+                    'FLAT500': { discount: 500, type: 'fixed' }
+                };
+
+                const coupon = validCoupons[code.toUpperCase()];
+
+                if (coupon) {
+                    const subtotal = parseFloat(document.getElementById('subtotalAmount').textContent.replace(/[^0-9.-]+/g, ''));
+                    let discountAmount = 0;
+
+                    if (coupon.type === 'percent') {
+                        discountAmount = Math.round(subtotal * (coupon.discount / 100));
+                    } else {
+                        discountAmount = coupon.discount;
+                    }
+
+                    document.getElementById('discountPercent').textContent = coupon.type === 'percent' ? coupon.discount + '%' : 'Flat';
+                    document.getElementById('discountAmount').textContent = '- NPR ' + discountAmount.toLocaleString();
+                    document.getElementById('discountRow').style.display = 'flex';
+
+                    calculateTotals();
+                    showToast('Coupon Applied', `${code.toUpperCase()} applied successfully! You saved NPR ${discountAmount.toLocaleString()}`, 'success');
+                    document.getElementById('couponInput').value = '';
+                } else {
+                    showToast('Invalid Coupon', 'The coupon code you entered is not valid', 'error');
+                }
+            }
+
+            document.getElementById('applyCouponBtn').addEventListener('click', function() {
+                const code = document.getElementById('couponInput').value.trim();
+                if (code) {
+                    this.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                    setTimeout(() => {
+                        applyCoupon(code);
+                        this.textContent = 'Apply';
+                    }, 500);
+                }
+            });
+
+            window.applySuggestedCoupon = function(code) {
+                applyCoupon(code);
+            };
+
+            // Checkout
+            document.getElementById('checkoutBtn').addEventListener('click', function() {
+                const btn = this;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+                btn.disabled = true;
+
+                setTimeout(() => {
+                    showToast('Redirecting', 'Taking you to checkout...', 'success');
+                    setTimeout(() => {
+                        // window.location.href = 'checkout.html';
+                        btn.innerHTML = '<span>Proceed to Checkout</span><i class="fas fa-arrow-right"></i>';
+                        btn.disabled = false;
+                        showToast('Demo Mode', 'Checkout page coming soon!', 'info');
+                    }, 1500);
+                }, 1000);
+            });
+
+            // Show empty cart
+            function showEmptyCart() {
+                document.getElementById('cartWithItems').style.display = 'none';
+                document.getElementById('emptyCart').style.display = 'block';
+            }
+
+            // Quick add from recommendations
+            window.quickAdd = function(productName) {
+                showToast('Added to Cart', `${productName} added to your cart`, 'success');
+            };
+
+            // Keyboard shortcuts
+            document.addEventListener('keydown', function(e) {
+                // Up/Down arrows for quantity (when focused on quantity input)
+                if (e.target.matches('input[type="number"]')) {
+                    if (e.key === 'ArrowUp') {
+                        e.preventDefault();
+                        const id = e.target.id.split('-')[1];
+                        window.increaseQuantity(id);
+                    } else if (e.key === 'ArrowDown') {
+                        e.preventDefault();
+                        const id = e.target.id.split('-')[1];
+                        window.decreaseQuantity(id);
+                    }
+                }
+
+                // Ctrl/Cmd + Z for undo
+                if ((e.ctrlKey || e.metaKey) && e.key === 'z' && removedItem) {
+                    e.preventDefault();
+                    document.getElementById('undoBtn').click();
+                }
+            });
+
+            // Initialize
+            calculateTotals();
+
+            // Enhanced Features
+            initializeEnhancements();
+
+            console.log('Shopping Cart UX Flow initialized successfully!');
+        });
+
+        // Enhanced UI Features
+        function initializeEnhancements() {
+            // Ripple effect on buttons
+            document.querySelectorAll('.ripple-btn').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    const ripple = document.createElement('span');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+
+                    ripple.style.width = ripple.style.height = size + 'px';
+                    ripple.style.left = x + 'px';
+                    ripple.style.top = y + 'px';
+                    ripple.classList.add('ripple');
+
+                    this.appendChild(ripple);
+
+                    setTimeout(() => ripple.remove(), 600);
+                });
+            });
+
+            // Confetti animation for free shipping achievement
+            function createConfetti() {
+                const container = document.getElementById('confettiContainer');
+                const colors = ['#ED3237', '#FF6B00', '#FFD700', '#28a745', '#17a2b8'];
+
+                for (let i = 0; i < 50; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti-piece';
+                    confetti.style.left = Math.random() * 100 + '%';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.animationDelay = Math.random() * 3 + 's';
+                    confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                    container.appendChild(confetti);
+                }
+
+                setTimeout(() => {
+                    container.innerHTML = '';
+                }, 5000);
+            }
+
+            // Glow effect on quantity buttons
+            document.querySelectorAll('.glow-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    this.classList.add('glow-active');
+                    setTimeout(() => this.classList.remove('glow-active'), 300);
+                });
+            });
+
+            // Scratch card effect for coupons
+            document.querySelectorAll('.scratch-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    const overlay = this.querySelector('.scratch-overlay');
+                    if (overlay) {
+                        overlay.style.transform = 'translateX(-100%)';
+                        overlay.style.opacity = '0';
+                    }
+                });
+
+                card.addEventListener('mouseleave', function() {
+                    const overlay = this.querySelector('.scratch-overlay');
+                    if (overlay) {
+                        overlay.style.transform = 'translateX(0)';
+                        overlay.style.opacity = '1';
+                    }
+                });
+            });
+
+            // Tooltip functionality
+            document.querySelectorAll('.tooltip-trigger').forEach(trigger => {
+                trigger.addEventListener('mouseenter', function(e) {
+                    const tooltipText = this.getAttribute('data-tooltip');
+                    if (tooltipText) {
+                        const tooltip = document.createElement('div');
+                        tooltip.className = 'tooltip';
+                        tooltip.textContent = tooltipText;
+                        document.body.appendChild(tooltip);
+
+                        const rect = this.getBoundingClientRect();
+                        tooltip.style.top = (rect.top - tooltip.offsetHeight - 10) + 'px';
+                        tooltip.style.left = (rect.left + rect.width / 2 - tooltip.offsetWidth / 2) + 'px';
+
+                        this._tooltip = tooltip;
+                        setTimeout(() => tooltip.classList.add('show'), 10);
+                    }
+                });
+
+                trigger.addEventListener('mouseleave', function() {
+                    if (this._tooltip) {
+                        this._tooltip.classList.remove('show');
+                        setTimeout(() => this._tooltip.remove(), 300);
+                    }
+                });
+            });
+
+            // Payment option selection animation
+            document.querySelectorAll('.payment-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    document.querySelectorAll('.payment-option').forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    this.classList.add('selected');
+                    this.querySelector('input').checked = true;
+                });
+            });
+
+            // Lazy loading fade-in effect
+            const lazyImages = document.querySelectorAll('.lazy-img');
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+
+            lazyImages.forEach(img => imageObserver.observe(img));
+
+            // Animated truck position update
+            function updateTruckPosition(progress) {
+                const truck = document.getElementById('progressTruck');
+                if (truck) {
+                    truck.style.left = progress + '%';
+
+                    // Trigger confetti at 100%
+                    if (progress >= 100 && !truck.dataset.confettiShown) {
+                        createConfetti();
+                        truck.dataset.confettiShown = 'true';
+                    }
+                }
+            }
+
+            // Color swatch selection
+            document.querySelectorAll('.color-swatch').forEach(swatch => {
+                swatch.addEventListener('click', function() {
+                    this.closest('.color-swatches').querySelectorAll('.color-swatch').forEach(s => {
+                        s.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                });
+            });
+
+            // Size swatch selection
+            document.querySelectorAll('.size-swatch').forEach(swatch => {
+                swatch.addEventListener('click', function() {
+                    this.closest('.size-swatches').querySelectorAll('.size-swatch').forEach(s => {
+                        s.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                });
+            });
+
+            // Skeleton loading simulation
+            function showSkeletonLoading() {
+                document.querySelectorAll('.cart-item').forEach(item => {
+                    item.classList.add('skeleton-loading');
+                });
+
+                setTimeout(() => {
+                    document.querySelectorAll('.cart-item').forEach(item => {
+                        item.classList.remove('skeleton-loading');
+                    });
+                }, 800);
+            }
+        }
+
+        // Product protection toggle
+        window.toggleProtection = function(id, checked) {
+            calculateTotals();
+            if (checked) {
+                showToast('Protection Added', 'Product protection plan added', 'info');
+            } else {
+                showToast('Protection Removed', 'Product protection plan removed', 'info');
+            }
+        };
+    </script>
+</body>
+</html>
