@@ -401,3 +401,21 @@
     box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
   }
 }
+
+// Minimal Footer (for order pages, confirmation pages, etc.)
+.footer-minimal {
+  background: linear-gradient(180deg, rgba(12, 3, 4, 0.6), rgba(8, 2, 3, 0.8));
+  border-top: 1px solid rgba(237, 50, 55, 0.2);
+  padding: 24px 0;
+  margin-top: 40px;
+
+  .footer-content {
+    text-align: center;
+
+    p {
+      color: #888;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+  }
+}

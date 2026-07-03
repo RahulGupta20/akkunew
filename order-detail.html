@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Confirmed | Akku Electronics</title>
+    <title>Order Details - #AKE-2024-00123 | Akku Electronics</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/order-confirmation.css">
+    <link rel="stylesheet" href="css/order-detail.css">
 </head>
 <body class="dark-theme">
     <!-- Header -->
@@ -94,46 +94,71 @@
         </nav>
     </header>
 
-    <!-- Confetti Background -->
-    <div class="confetti-container" id="confettiContainer"></div>
-
-    <!-- Order Confirmation Container -->
-    <div class="confirmation-container">
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
         <div class="container">
-            <!-- Success Banner -->
-            <div class="success-banner">
-                <div class="success-icon">
-                    <div class="checkmark-circle">
-                        <i class="fas fa-check"></i>
+            <i class="fas fa-home"></i>
+            <a href="index.html">Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <a href="my-orders.html">My Orders</a>
+            <i class="fas fa-chevron-right"></i>
+            <span class="current">Order #AKE-2024-00123</span>
+        </div>
+    </div>
+
+    <!-- Order Detail Container -->
+    <div class="order-detail-container">
+        <div class="container">
+            <!-- Order Header -->
+            <div class="order-header">
+                <div class="order-header__left">
+                    <h1>Order Details</h1>
+                    <div class="order-number">
+                        <span class="label">Order ID:</span>
+                        <span class="value">#AKE-2024-00123</span>
+                    </div>
+                    <div class="order-date">
+                        <i class="fas fa-calendar"></i>
+                        Placed on December 15, 2024 at 2:30 PM
                     </div>
                 </div>
-                <h1>Order Placed Successfully!</h1>
-                <p>Thank you for your purchase, Rajesh! Your order has been confirmed.</p>
-                <div class="order-number">
-                    Order Number: <span>#AKE-2024-00123</span>
+                <div class="order-header__right">
+                    <div class="order-status-badge badge-processing">
+                        <div class="status-icon">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <div class="status-info">
+                            <span class="status-label">Status</span>
+                            <span class="status-value">Processing</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="confirmation__wrapper">
-                <!-- Left: Order Details -->
-                <div class="confirmation__main">
-                    <!-- Order Timeline -->
-                    <section class="confirmation-section">
+            <div class="order-detail__wrapper">
+                <!-- Left: Order Tracking -->
+                <div class="order-detail__main">
+                    <!-- Live Tracking Timeline -->
+                    <section class="detail-section">
                         <div class="section-header">
                             <div class="section-title">
-                                <i class="fas fa-clock"></i>
-                                <h2>Order Timeline</h2>
+                                <i class="fas fa-shipping-fast"></i>
+                                <h2>Order Tracking</h2>
                             </div>
+                            <button class="btn-refresh" id="refreshTracking">
+                                <i class="fas fa-sync-alt"></i>
+                                Refresh
+                            </button>
                         </div>
 
-                        <div class="order-timeline">
+                        <div class="tracking-timeline">
                             <div class="timeline-item completed">
                                 <div class="timeline-marker">
                                     <i class="fas fa-check"></i>
                                 </div>
                                 <div class="timeline-content">
                                     <h3>Order Placed</h3>
-                                    <p>Your order has been received</p>
+                                    <p>Your order has been received and confirmed</p>
                                     <span class="timeline-date">Dec 15, 2024 - 2:30 PM</span>
                                 </div>
                             </div>
@@ -144,8 +169,14 @@
                                 </div>
                                 <div class="timeline-content">
                                     <h3>Processing</h3>
-                                    <p>We're preparing your items</p>
+                                    <p>We're preparing your items for shipment</p>
                                     <span class="timeline-date">Expected: Dec 16, 2024</span>
+                                    <div class="timeline-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 60%"></div>
+                                        </div>
+                                        <span class="progress-text">60% Complete</span>
+                                    </div>
                                 </div>
                             </div>
 
@@ -155,8 +186,19 @@
                                 </div>
                                 <div class="timeline-content">
                                     <h3>Shipped</h3>
-                                    <p>On the way to you</p>
+                                    <p>Your order is on the way</p>
                                     <span class="timeline-date">Expected: Dec 17, 2024</span>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h3>Out for Delivery</h3>
+                                    <p>Package is with delivery partner</p>
+                                    <span class="timeline-date">Expected: Dec 20, 2024</span>
                                 </div>
                             </div>
 
@@ -174,7 +216,7 @@
                     </section>
 
                     <!-- Order Items -->
-                    <section class="confirmation-section">
+                    <section class="detail-section">
                         <div class="section-header">
                             <div class="section-title">
                                 <i class="fas fa-shopping-bag"></i>
@@ -196,6 +238,12 @@
                                         <span class="item-price">NPR 12,999</span>
                                     </div>
                                 </div>
+                                <div class="item-actions">
+                                    <a href="#" class="btn-link-small">
+                                        <i class="fas fa-redo"></i>
+                                        Buy Again
+                                    </a>
+                                </div>
                             </div>
 
                             <!-- Item 2 -->
@@ -210,6 +258,12 @@
                                         <span class="item-qty">Qty: 1</span>
                                         <span class="item-price">NPR 18,500</span>
                                     </div>
+                                </div>
+                                <div class="item-actions">
+                                    <a href="#" class="btn-link-small">
+                                        <i class="fas fa-redo"></i>
+                                        Buy Again
+                                    </a>
                                 </div>
                             </div>
 
@@ -226,6 +280,12 @@
                                         <span class="item-price">NPR 8,500</span>
                                     </div>
                                 </div>
+                                <div class="item-actions">
+                                    <a href="#" class="btn-link-small">
+                                        <i class="fas fa-redo"></i>
+                                        Buy Again
+                                    </a>
+                                </div>
                             </div>
 
                             <!-- Item 4 -->
@@ -240,6 +300,12 @@
                                         <span class="item-qty">Qty: 2</span>
                                         <span class="item-price">NPR 3,500 each</span>
                                     </div>
+                                </div>
+                                <div class="item-actions">
+                                    <a href="#" class="btn-link-small">
+                                        <i class="fas fa-redo"></i>
+                                        Buy Again
+                                    </a>
                                 </div>
                             </div>
 
@@ -256,14 +322,20 @@
                                         <span class="item-price">NPR 2,500</span>
                                     </div>
                                 </div>
+                                <div class="item-actions">
+                                    <a href="#" class="btn-link-small">
+                                        <i class="fas fa-redo"></i>
+                                        Buy Again
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </section>
 
-                    <!-- Delivery & Payment Info -->
+                    <!-- Delivery & Payment Info Grid -->
                     <div class="info-grid">
                         <!-- Delivery Address -->
-                        <section class="confirmation-section">
+                        <section class="detail-section">
                             <div class="section-header">
                                 <div class="section-title">
                                     <i class="fas fa-map-marker-alt"></i>
@@ -281,7 +353,7 @@
                         </section>
 
                         <!-- Payment Method -->
-                        <section class="confirmation-section">
+                        <section class="detail-section">
                             <div class="section-header">
                                 <div class="section-title">
                                     <i class="fas fa-credit-card"></i>
@@ -306,7 +378,7 @@
                 </div>
 
                 <!-- Right: Order Summary & Actions -->
-                <aside class="confirmation__sidebar">
+                <aside class="order-detail__sidebar">
                     <!-- Order Summary -->
                     <div class="order-summary glass-card">
                         <h2>Order Summary</h2>
@@ -342,46 +414,45 @@
 
                         <div class="savings-badge">
                             <i class="fas fa-tags"></i>
-                            You saved NPR 5,150 on this order!
+                            You saved NPR 5,150!
                         </div>
                     </div>
 
                     <!-- Quick Actions -->
                     <div class="quick-actions glass-card">
-                        <h3>What's Next?</h3>
+                        <h3>Order Actions</h3>
 
                         <div class="action-buttons">
-                            <a href="order-detail.html?id=AKE-2024-00123" class="btn-primary btn-full">
-                                <i class="fas fa-shipping-fast"></i>
-                                Track Your Order
-                            </a>
-
-                            <button class="btn-secondary btn-full" id="downloadInvoice">
+                            <button class="btn-primary btn-full" id="downloadInvoice">
                                 <i class="fas fa-download"></i>
                                 Download Invoice
                             </button>
 
-                            <a href="index.html" class="btn-link-action">
-                                <i class="fas fa-home"></i>
-                                Continue Shopping
+                            <button class="btn-secondary btn-full" id="needHelp">
+                                <i class="fas fa-headset"></i>
+                                Need Help?
+                            </button>
+
+                            <a href="my-orders.html" class="btn-link-action">
+                                <i class="fas fa-arrow-left"></i>
+                                Back to All Orders
                             </a>
                         </div>
                     </div>
 
-                    <!-- Email Confirmation -->
-                    <div class="email-confirmation glass-card">
-                        <div class="email-icon">
-                            <i class="fas fa-envelope"></i>
+                    <!-- Delivery Estimate -->
+                    <div class="delivery-estimate glass-card">
+                        <div class="estimate-icon">
+                            <i class="fas fa-truck"></i>
                         </div>
-                        <h3>Order Confirmation Sent</h3>
-                        <p>We've sent a confirmation email to:</p>
-                        <p class="email-address">rajesh@example.com</p>
-                        <button class="btn-link-small">Resend Email</button>
+                        <h3>Estimated Delivery</h3>
+                        <div class="estimate-date">Dec 20, 2024</div>
+                        <p>Your order will arrive in 5-7 business days</p>
                     </div>
 
                     <!-- Support -->
                     <div class="support-box glass-card">
-                        <h3>Need Help?</h3>
+                        <h3>Need Assistance?</h3>
                         <p>Contact our customer support</p>
                         <div class="support-contacts">
                             <a href="tel:+97714123456">
@@ -409,38 +480,26 @@
     </footer>
 
     <script>
-        // Confetti animation
-        function createConfetti() {
-            const container = document.getElementById('confettiContainer');
-            const colors = ['#ED3237', '#FF6B00', '#FFD700', '#28a745', '#03a9f4'];
+        // Refresh tracking
+        document.getElementById('refreshTracking')?.addEventListener('click', function() {
+            const icon = this.querySelector('i');
+            icon.classList.add('fa-spin');
 
-            for (let i = 0; i < 50; i++) {
-                const confetti = document.createElement('div');
-                confetti.className = 'confetti';
-                confetti.style.left = Math.random() * 100 + '%';
-                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                confetti.style.animationDelay = Math.random() * 3 + 's';
-                confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
-                container.appendChild(confetti);
-            }
-
-            // Remove confetti after animation
             setTimeout(() => {
-                container.innerHTML = '';
-            }, 5000);
-        }
-
-        // Trigger confetti on page load
-        window.addEventListener('load', createConfetti);
+                icon.classList.remove('fa-spin');
+                // In production, this would fetch updated tracking info
+                console.log('Tracking info refreshed');
+            }, 1000);
+        });
 
         // Download invoice
         document.getElementById('downloadInvoice')?.addEventListener('click', function() {
             alert('In production, this would download a PDF invoice for order #AKE-2024-00123');
         });
 
-        // Resend email
-        document.querySelector('.btn-link-small')?.addEventListener('click', function() {
-            alert('Confirmation email has been resent to rajesh@example.com');
+        // Need help
+        document.getElementById('needHelp')?.addEventListener('click', function() {
+            alert('Opening customer support chat...');
         });
     </script>
 </body>
