@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom PC Builder - Akku Electronics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/pc-builder.css">
+</head>
+<body class="dark-theme">
+    <!-- Header -->
+    <header class="header">
+        <div class="header__main">
+            <div class="container">
+                <a href="index.html" class="header__logo">
+                    <img src="assets/images/logo.png" alt="AKKU Electronics">
+                </a>
+
+                <form class="header__search" action="search-results.html" method="GET">
+                    <input type="text" name="q" id="searchInput" placeholder="Search for products, brands and more...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+
+                <div class="header__actions">
+                    <button class="header__settings-btn" id="openSettingsModal">
+                        <i class="fas fa-globe"></i>
+                        <span>EN / NPR</span>
+                    </button>
+                    <a href="wishlist.html" class="header__action-item">
+                        <i class="fas fa-heart"></i>
+                    </a>
+                    <a href="cart.html" class="header__action-item">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge">0</span>
+                    </a>
+                    <a href="login.html" class="header__login-btn">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Login</span>
+                    </a>
+                </div>
+
+                <button class="header__menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <nav class="header__nav" id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="category.html">Laptops</a></li>
+                <li><a href="category.html">Desktop PCs</a></li>
+                <li><a href="pc-builder.html" class="active">Custom PC Build</a></li>
+                <li><a href="category.html">Mobile Phones</a></li>
+                <li><a href="#">Peripherals</a></li>
+                <li><a href="#">Deals</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- PC Builder Main Content -->
+    <main class="pc-builder">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="pc-builder__header">
+                <div class="pc-builder__header-content">
+                    <h1 class="pc-builder__title">
+                        <i class="fas fa-microchip"></i>
+                        Custom PC Builder
+                    </h1>
+                    <p class="pc-builder__subtitle">Build your dream PC with AI-powered recommendations and compatibility checking</p>
+                </div>
+                <div class="pc-builder__header-actions">
+                    <button class="btn-secondary" id="loadBuildBtn">
+                        <i class="fas fa-folder-open"></i>
+                        Load Saved Build
+                    </button>
+                    <button class="btn-primary" id="startFreshBtn">
+                        <i class="fas fa-plus"></i>
+                        Start Fresh
+                    </button>
+                </div>
+            </div>
+
+            <!-- AI Quick Start Section -->
+            <div class="ai-quick-start">
+                <div class="ai-quick-start__header">
+                    <div class="ai-icon-pulse">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div>
+                        <h2>AI Quick Start</h2>
+                        <p>Let our AI help you build the perfect PC based on your needs</p>
+                    </div>
+                </div>
+
+                <div class="ai-quick-start__options">
+                    <div class="quick-start-card" data-usecase="gaming">
+                        <div class="quick-start-card__icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <h3>Gaming PC</h3>
+                        <p>High-performance builds for gaming</p>
+                        <div class="quick-start-card__price">Starting at NPR 80,000</div>
+                        <button class="btn-outline-primary btn-sm">
+                            <i class="fas fa-robot"></i>
+                            AI Build
+                        </button>
+                    </div>
+
+                    <div class="quick-start-card" data-usecase="content-creation">
+                        <div class="quick-start-card__icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3>Content Creation</h3>
+                        <p>Powerful workstation for creators</p>
+                        <div class="quick-start-card__price">Starting at NPR 120,000</div>
+                        <button class="btn-outline-primary btn-sm">
+                            <i class="fas fa-robot"></i>
+                            AI Build
+                        </button>
+                    </div>
+
+                    <div class="quick-start-card" data-usecase="workstation">
+                        <div class="quick-start-card__icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3>Workstation</h3>
+                        <p>Professional builds for productivity</p>
+                        <div class="quick-start-card__price">Starting at NPR 100,000</div>
+                        <button class="btn-outline-primary btn-sm">
+                            <i class="fas fa-robot"></i>
+                            AI Build
+                        </button>
+                    </div>
+
+                    <div class="quick-start-card" data-usecase="budget">
+                        <div class="quick-start-card__icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <h3>Budget Build</h3>
+                        <p>Best value for money builds</p>
+                        <div class="quick-start-card__price">Starting at NPR 50,000</div>
+                        <button class="btn-outline-primary btn-sm">
+                            <i class="fas fa-robot"></i>
+                            AI Build
+                        </button>
+                    </div>
+                </div>
+
+                <div class="ai-custom-query">
+                    <div class="ai-custom-query__input">
+                        <i class="fas fa-magic"></i>
+                        <input type="text" placeholder='Ask AI: "Build me a gaming PC for 1440p under NPR 150,000"'>
+                        <button class="btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Builder Layout -->
+            <div class="pc-builder__layout">
+                <!-- Left Side: Component Selection -->
+                <div class="pc-builder__main">
+                    <!-- Component Categories -->
+                    <div class="component-categories">
+                        <!-- CPU Section -->
+                        <div class="component-category" id="cpu-section">
+                            <div class="component-category__header">
+                                <div class="component-category__title">
+                                    <i class="fas fa-microchip"></i>
+                                    <div>
+                                        <h3>Processor (CPU)</h3>
+                                        <span class="component-category__subtitle">Required - The brain of your PC</span>
+                                    </div>
+                                </div>
+                                <div class="component-category__status">
+                                    <span class="status-badge status-badge--required">Required</span>
+                                </div>
+                            </div>
+
+                            <div class="component-category__content">
+                                <!-- Selected Component (if any) -->
+                                <div class="selected-component" style="display: none;" id="selected-cpu">
+                                    <div class="selected-component__image">
+                                        <img src="https://images.unsplash.com/photo-1555680202-c5f0eb1a778c?w=150&h=150&fit=crop" alt="CPU">
+                                    </div>
+                                    <div class="selected-component__info">
+                                        <h4>Intel Core i7-13700K</h4>
+                                        <div class="selected-component__specs">
+                                            <span class="spec-tag">16 Cores</span>
+                                            <span class="spec-tag">24 Threads</span>
+                                            <span class="spec-tag">5.4 GHz</span>
+                                            <span class="spec-tag">LGA1700</span>
+                                        </div>
+                                        <div class="ai-recommendation-inline">
+                                            <i class="fas fa-robot"></i>
+                                            <span>Great choice! Perfect for gaming and content creation</span>
+                                        </div>
+                                    </div>
+                                    <div class="selected-component__price">
+                                        <span class="price">NPR 42,000</span>
+                                    </div>
+                                    <div class="selected-component__actions">
+                                        <button class="btn-icon" title="Change">
+                                            <i class="fas fa-exchange-alt"></i>
+                                        </button>
+                                        <button class="btn-icon btn-icon--danger" title="Remove">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Component Selection Button -->
+                                <button class="component-select-btn" id="select-cpu-btn">
+                                    <i class="fas fa-plus-circle"></i>
+                                    <span>Select Processor</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+
+                                <!-- AI Suggestion for this category -->
+                                <div class="ai-suggestion-box">
+                                    <div class="ai-suggestion-box__icon">
+                                        <i class="fas fa-lightbulb"></i>
+                                    </div>
+                                    <div class="ai-suggestion-box__content">
+                                        <strong>AI Suggests:</strong> For gaming at 1440p, we recommend Intel i5-13600K or AMD Ryzen 5 7600X for best value
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Motherboard Section -->
+                        <div class="component-category" id="motherboard-section">
+                            <div class="component-category__header">
+                                <div class="component-category__title">
+                                    <i class="fas fa-th"></i>
+                                    <div>
+                                        <h3>Motherboard</h3>
+                                        <span class="component-category__subtitle">Required - Connects all components</span>
+                                    </div>
+                                </div>
+                                <div class="component-category__status">
+                                    <span class="status-badge status-badge--required">Required</span>
+                                </div>
+                            </div>
+
+                            <div class="component-category__content">
+                                <button class="component-select-btn">
+                                    <i class="fas fa-plus-circle"></i>
+                                    <span>Select Motherboard</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- GPU Section -->
+                        <div class="component-category" id="gpu-section">
+                            <div class="component-category__header">
+                                <div class="component-category__title">
+                                    <i class="fas fa-tv"></i>
+                                    <div>
+                                        <h3>Graphics Card (GPU)</h3>
+                                        <span class="component-category__subtitle">Required - Powers your visuals</span>
+                                    </div>
+                                </div>
+                                <div class="component-category__status">
+                                    <span class="status-badge status-badge--required">Required</span>
+                                </div>
+                            </div>
+
+                            <div class="component-category__content">
+                                <button class="component-select-btn">
+                                    <i class="fas fa-plus-circle"></i>
+                                    <span>Select Graphics Card</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- RAM Section -->
+                        <div class="component-category" id="ram-section">
+                            <div class="component-category__header">
+                                <div class="component-category__title">
+                                    <i class="fas fa-memory"></i>
+                                    <div>
+                                        <h3>RAM (Memory)</h3>
+                                        <span class="component-category__subtitle">Required - System memory</span>
+                                    </div>
+                                </div>
+                                <div class="component-category__status">
+                                    <span class="status-badge status-badge--required">Required</span>
+                                </div>
+                            </div>
+
+                            <div class="component-category__content">
+                                <button class="component-select-btn">
+                                    <i class="fas fa-plus-circle"></i>
+                                    <span>Select RAM</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Storage Section -->
+                        <div class="component-category" id="storage-section">
+                            <div class="component-category__header">
+                                <div class="component-category__title">
+                                    <i class="fas fa-hdd"></i>
+                                    <div>
+                                        <h3>Storage (SSD/HDD)</h3>
+                                        <span class="component-category__subtitle">Required - Store your files</span>
+                                    </div>
+                                </div>
+                                <div class="component-category__status">
+                                    <span class="status-badge status-badge--required">Required</span>
+                                </div>
+                            </div>
+
+                            <div class="component-category__content">
+                                <button class="component-select-btn">
+                                    <i class="fas fa-plus-circle"></i>
+                                    <span>Select Storage</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Power Supply Section -->
+                        <div class="component-category" id="psu-section">
+                            <div class="component-category__header">
+                                <div class="component-category__title">
+                                    <i class="fas fa-plug"></i>
+                                    <div>
+                                        <h3>Power Supply (PSU)</h3>
+                                        <span class="component-category__subtitle">Required - Powers everything</span>
+                                    </div>
+                                </div>
+                                <div class="component-category__status">
+                                    <span class="status-badge status-badge--required">Required</span>
+                                </div>
+                            </div>
+
+                            <div class="component-category__content">
+                                <button class="component-select-btn">
+                                    <i class="fas fa-plus-circle"></i>
+                                    <span>Select Power Supply</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+
+                                <div class="ai-suggestion-box">
+                                    <div class="ai-suggestion-box__icon">
+                                        <i class="fas fa-bolt"></i>
+                                    </div>
+                                    <div class="ai-suggestion-box__content">
+                                        <strong>Power Requirement:</strong> Your current build needs minimum 650W. We recommend 750W for headroom.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Case Section -->
+                        <div class="component-category" id="case-section">
+                            <div class="component-category__header">
+                                <div class="component-category__title">
+                                    <i class="fas fa-box"></i>
+                                    <div>
+                                        <h3>PC Case</h3>
+                                        <span class="component-category__subtitle">Required - Houses your build</span>
+                                    </div>
+                                </div>
+                                <div class="component-category__status">
+                                    <span class="status-badge status-badge--required">Required</span>
+                                </div>
+                            </div>
+
+                            <div class="component-category__content">
+                                <button class="component-select-btn">
+                                    <i class="fas fa-plus-circle"></i>
+                                    <span>Select Case</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Cooling Section -->
+                        <div class="component-category" id="cooling-section">
+                            <div class="component-category__header">
+                                <div class="component-category__title">
+                                    <i class="fas fa-fan"></i>
+                                    <div>
+                                        <h3>CPU Cooler</h3>
+                                        <span class="component-category__subtitle">Optional - Better cooling performance</span>
+                                    </div>
+                                </div>
+                                <div class="component-category__status">
+                                    <span class="status-badge status-badge--optional">Optional</span>
+                                </div>
+                            </div>
+
+                            <div class="component-category__content">
+                                <button class="component-select-btn">
+                                    <i class="fas fa-plus-circle"></i>
+                                    <span>Select CPU Cooler</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Build Summary & AI Assistant -->
+                <div class="pc-builder__sidebar">
+                    <!-- Build Summary Card (Sticky) -->
+                    <div class="build-summary">
+                        <div class="build-summary__header">
+                            <h3><i class="fas fa-list-check"></i> Build Summary</h3>
+                            <span class="build-progress">0/7 Components</span>
+                        </div>
+
+                        <div class="build-summary__compatibility">
+                            <div class="compatibility-status compatibility-status--incomplete">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <div>
+                                    <strong>Build Incomplete</strong>
+                                    <p>Select required components to continue</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="build-summary__price">
+                            <div class="price-breakdown">
+                                <div class="price-row">
+                                    <span>Components Total</span>
+                                    <span class="price-value">NPR 0</span>
+                                </div>
+                                <div class="price-row">
+                                    <span>Assembly Service (Optional)</span>
+                                    <span class="price-value">NPR 5,000</span>
+                                </div>
+                                <div class="price-row price-row--total">
+                                    <span>Total Price</span>
+                                    <span class="price-total">NPR 0</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="build-summary__actions">
+                            <button class="btn-primary btn-block" disabled>
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                            <div class="build-summary__secondary-actions">
+                                <button class="btn-secondary btn-sm">
+                                    <i class="fas fa-save"></i>
+                                    Save Build
+                                </button>
+                                <button class="btn-secondary btn-sm">
+                                    <i class="fas fa-share"></i>
+                                    Share
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI Assistant Card -->
+                    <div class="ai-assistant-card">
+                        <div class="ai-assistant-card__header">
+                            <div class="ai-icon-pulse">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div>
+                                <h3>AI Assistant</h3>
+                                <span class="ai-status">Online & Ready</span>
+                            </div>
+                        </div>
+
+                        <div class="ai-chat-preview">
+                            <div class="ai-message">
+                                <div class="ai-message__icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="ai-message__content">
+                                    <p>Hi! I'm here to help you build the perfect PC. What will you use it for?</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ai-quick-questions">
+                            <p class="ai-quick-questions__title">Quick Questions:</p>
+                            <button class="ai-question-btn">
+                                <i class="fas fa-gamepad"></i>
+                                Will this run games?
+                            </button>
+                            <button class="ai-question-btn">
+                                <i class="fas fa-piggy-bank"></i>
+                                How can I save money?
+                            </button>
+                            <button class="ai-question-btn">
+                                <i class="fas fa-chart-line"></i>
+                                Is this future-proof?
+                            </button>
+                        </div>
+
+                        <button class="btn-outline-primary btn-block">
+                            <i class="fas fa-comments"></i>
+                            Open AI Chat
+                        </button>
+                    </div>
+
+                    <!-- Performance Prediction Card -->
+                    <div class="performance-card">
+                        <div class="performance-card__header">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <h3>Expected Performance</h3>
+                        </div>
+                        <div class="performance-card__content">
+                            <p class="performance-card__empty">
+                                <i class="fas fa-info-circle"></i>
+                                Select components to see performance estimates
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Component Selection Modal (Hidden by default) -->
+    <div class="component-modal" id="componentModal" style="display: none;">
+        <div class="component-modal__overlay"></div>
+        <div class="component-modal__container">
+            <div class="component-modal__header">
+                <div>
+                    <h2><i class="fas fa-microchip"></i> Select Processor (CPU)</h2>
+                    <p>Choose compatible processors for your build</p>
+                </div>
+                <button class="component-modal__close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="component-modal__filters">
+                <div class="filter-group">
+                    <label>Brand</label>
+                    <div class="filter-chips">
+                        <button class="filter-chip filter-chip--active">All</button>
+                        <button class="filter-chip">Intel</button>
+                        <button class="filter-chip">AMD</button>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <label>Price Range</label>
+                    <input type="range" min="0" max="100000" class="price-range-slider">
+                    <div class="price-range-values">
+                        <span>NPR 0</span>
+                        <span>NPR 100,000</span>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <label>Performance Tier</label>
+                    <div class="filter-chips">
+                        <button class="filter-chip">Budget</button>
+                        <button class="filter-chip filter-chip--active">Mid-Range</button>
+                        <button class="filter-chip">High-End</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component-modal__content">
+                <div class="component-grid">
+                    <!-- AI Recommended Component -->
+                    <div class="component-item component-item--ai-recommended">
+                        <div class="component-item__badge">
+                            <i class="fas fa-robot"></i>
+                            AI Pick
+                        </div>
+                        <div class="component-item__image">
+                            <img src="https://images.unsplash.com/photo-1555680202-c5f0eb1a778c?w=200&h=200&fit=crop" alt="Intel i7">
+                        </div>
+                        <div class="component-item__info">
+                            <h4>Intel Core i7-13700K</h4>
+                            <div class="component-item__specs">
+                                <span class="spec-tag">16 Cores</span>
+                                <span class="spec-tag">5.4 GHz</span>
+                                <span class="spec-tag">LGA1700</span>
+                            </div>
+                            <div class="component-item__ai-reason">
+                                <i class="fas fa-lightbulb"></i>
+                                Best balance of price & performance for gaming
+                            </div>
+                            <div class="component-item__compatibility">
+                                <span class="compatibility-check">
+                                    <i class="fas fa-check-circle"></i>
+                                    All compatible
+                                </span>
+                            </div>
+                        </div>
+                        <div class="component-item__footer">
+                            <div class="component-item__price">
+                                <span class="price-current">NPR 42,000</span>
+                            </div>
+                            <button class="btn-primary btn-sm">
+                                <i class="fas fa-check"></i>
+                                Select
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Regular Component -->
+                    <div class="component-item">
+                        <div class="component-item__image">
+                            <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=200&h=200&fit=crop" alt="AMD Ryzen">
+                        </div>
+                        <div class="component-item__info">
+                            <h4>AMD Ryzen 7 7800X3D</h4>
+                            <div class="component-item__specs">
+                                <span class="spec-tag">8 Cores</span>
+                                <span class="spec-tag">5.0 GHz</span>
+                                <span class="spec-tag">AM5</span>
+                            </div>
+                            <div class="component-item__compatibility">
+                                <span class="compatibility-check">
+                                    <i class="fas fa-check-circle"></i>
+                                    All compatible
+                                </span>
+                            </div>
+                        </div>
+                        <div class="component-item__footer">
+                            <div class="component-item__price">
+                                <span class="price-current">NPR 48,000</span>
+                            </div>
+                            <button class="btn-primary btn-sm">
+                                <i class="fas fa-check"></i>
+                                Select
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Incompatible Component -->
+                    <div class="component-item component-item--incompatible">
+                        <div class="component-item__badge component-item__badge--warning">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            Incompatible
+                        </div>
+                        <div class="component-item__image">
+                            <img src="https://images.unsplash.com/photo-1555680202-c5f0eb1a778c?w=200&h=200&fit=crop" alt="Intel i5">
+                        </div>
+                        <div class="component-item__info">
+                            <h4>Intel Core i5-12400F</h4>
+                            <div class="component-item__specs">
+                                <span class="spec-tag">6 Cores</span>
+                                <span class="spec-tag">4.4 GHz</span>
+                                <span class="spec-tag">LGA1700</span>
+                            </div>
+                            <div class="component-item__compatibility">
+                                <span class="compatibility-warning">
+                                    <i class="fas fa-times-circle"></i>
+                                    Motherboard socket mismatch
+                                </span>
+                            </div>
+                        </div>
+                        <div class="component-item__footer">
+                            <div class="component-item__price">
+                                <span class="price-current">NPR 28,000</span>
+                            </div>
+                            <button class="btn-primary btn-sm" disabled>
+                                <i class="fas fa-ban"></i>
+                                Incompatible
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__col">
+                    <h3 class="footer__title">About Akku Electronics</h3>
+                    <p class="footer__text">Your trusted electronics store in Nepal. We provide genuine products with warranty and excellent customer service.</p>
+                    <div class="footer__social">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer__col">
+                    <h3 class="footer__title">Quick Links</h3>
+                    <ul class="footer__links">
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="#">Deals</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h3 class="footer__title">Customer Service</h3>
+                    <ul class="footer__links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h3 class="footer__title">Contact Info</h3>
+                    <ul class="footer__contact">
+                        <li><i class="fas fa-phone"></i> +977-1234567890</li>
+                        <li><i class="fas fa-envelope"></i> info@akkuelectronics.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2024 Akku Electronics. All rights reserved.</p>
+                <div class="footer__payment">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fas fa-credit-card"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/pc-builder.js"></script>
+</body>
+</html>

@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom PC Builder V3 - Real-Time Preview | Akku Electronics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/pc-builder-v3.css?v=72">
+</head>
+<body class="dark-theme">
+    <!-- Header -->
+    <header class="header">
+        <div class="header__main">
+            <div class="container">
+                <a href="index.html" class="header__logo">
+                    <img src="assets/images/logo.png" alt="AKKU Electronics">
+                </a>
+                <form class="header__search" action="search-results.html" method="GET">
+                    <input type="text" name="q" placeholder="Search for products, brands and more...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+                <div class="header__actions">
+                    <button class="header__settings-btn">
+                        <i class="fas fa-globe"></i>
+                        <span>EN / NPR</span>
+                    </button>
+                    <a href="wishlist.html" class="header__action-item">
+                        <i class="fas fa-heart"></i>
+                    </a>
+                    <a href="cart.html" class="header__action-item">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge">0</span>
+                    </a>
+                    <a href="login.html" class="header__login-btn">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Login</span>
+                    </a>
+                </div>
+                <button class="header__menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <nav class="header__nav" id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="category.html">Laptops</a></li>
+                <li><a href="category.html">Desktop PCs</a></li>
+                <li><a href="pc-builder-v2.html" class="active">Custom PC Build</a></li>
+                <li><a href="category.html">Mobile Phones</a></li>
+                <li><a href="#">Peripherals</a></li>
+                <li><a href="#">Deals</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- PC Builder V2 Main Content -->
+    <main class="pc-builder-v2">
+        <div class="container-fluid">
+            <!-- Hero Section with 3D Background -->
+            <div class="builder-hero">
+                <div class="builder-hero__background">
+                    <div class="floating-element" style="--delay: 0s; --x: 10%; --y: 20%;"></div>
+                    <div class="floating-element" style="--delay: 1s; --x: 80%; --y: 30%;"></div>
+                    <div class="floating-element" style="--delay: 2s; --x: 50%; --y: 70%;"></div>
+                    <div class="floating-element" style="--delay: 1.5s; --x: 20%; --y: 80%;"></div>
+                </div>
+
+                <div class="builder-hero__content">
+                    <div class="hero-badge">
+                        <i class="fas fa-sparkles"></i>
+                        <span>AI-Powered Builder</span>
+                    </div>
+                    <h1 class="builder-hero__title">
+                        Build Your Dream PC
+                        <span class="gradient-text">With AI Assistant</span>
+                    </h1>
+                    <p class="builder-hero__subtitle">
+                        Experience the future of PC building with real-time 3D preview,
+                        intelligent compatibility checking, and AI-powered recommendations
+                    </p>
+
+                    <!-- Quick Stats -->
+                    <div class="hero-stats" style="display: none;">
+                        <div class="stat-item">
+                            <div class="stat-number">1000+</div>
+                            <div class="stat-label">Components</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Compatibility Rate</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">AI Support</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Builder Mode Tabs -->
+            <div class="builder-mode-tabs">
+                <button class="builder-tab active" data-tab="custom-build">
+                    <i class="fas fa-sliders-h"></i>
+                    <span>Custom Build</span>
+                    <div class="tab-indicator"></div>
+                </button>
+                <button class="builder-tab" data-tab="ai-suggestions">
+                    <i class="fas fa-robot"></i>
+                    <span>AI Suggested Builds</span>
+                    <div class="tab-indicator"></div>
+                </button>
+                <button class="builder-tab" data-tab="discount-offers">
+                    <i class="fas fa-tags"></i>
+                    <span>Discount Offers</span>
+                    <div class="tab-indicator"></div>
+                </button>
+            </div>
+
+            <!-- Tab Content Container -->
+            <div class="builder-tabs-content">
+                <!-- AI Suggestions Tab Content -->
+                <div class="tab-content" data-content="ai-suggestions">
+                    <!-- AI Quick Start - Bento Grid Layout -->
+                    <section class="ai-quick-start-v2">
+                <div class="section-header">
+                    <div class="ai-pulse-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div>
+                        <h2>AI Quick Start</h2>
+                        <p>Let AI build your perfect PC in seconds based on your needs</p>
+                    </div>
+                </div>
+
+                <div class="bento-grid">
+                    <!-- Large Card - Gaming -->
+                    <div class="bento-card bento-card--large gaming-card" data-build="gaming">
+                        <div class="bento-card__glow"></div>
+                        <div class="bento-card__content">
+                            <div class="bento-card__icon">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <h3>Gaming Beast</h3>
+                            <p>Maximum FPS, Ultra settings</p>
+                            <div class="bento-card__specs">
+                                <span>RTX 4080</span>
+                                <span>i9-13900K</span>
+                                <span>32GB DDR5</span>
+                            </div>
+                            <div class="bento-card__price">
+                                <span class="label">Starting at</span>
+                                <span class="amount">NPR 250,000</span>
+                            </div>
+                            <button class="btn-glass">
+                                <i class="fas fa-magic"></i>
+                                AI Build
+                            </button>
+                        </div>
+                        <div class="bento-card__image"></div>
+                    </div>
+
+                    <!-- Medium Cards -->
+                    <div class="bento-card bento-card--medium creator-card" data-build="creator">
+                        <div class="bento-card__glow"></div>
+                        <div class="bento-card__content">
+                            <div class="bento-card__icon">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <h3>Content Creator</h3>
+                            <p>Video editing & 3D rendering</p>
+                            <div class="bento-card__specs">
+                                <span>64GB RAM</span>
+                                <span>Ryzen 9</span>
+                            </div>
+                            <div class="bento-card__price">
+                                <span class="amount">NPR 200,000</span>
+                            </div>
+                            <button class="btn-glass btn-glass--small">
+                                <i class="fas fa-robot"></i>
+                                Build
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bento-card bento-card--medium workstation-card" data-build="workstation">
+                        <div class="bento-card__glow"></div>
+                        <div class="bento-card__content">
+                            <div class="bento-card__icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h3>Workstation Pro</h3>
+                            <p>Professional productivity</p>
+                            <div class="bento-card__specs">
+                                <span>Xeon CPU</span>
+                                <span>ECC RAM</span>
+                            </div>
+                            <div class="bento-card__price">
+                                <span class="amount">NPR 180,000</span>
+                            </div>
+                            <button class="btn-glass btn-glass--small">
+                                <i class="fas fa-robot"></i>
+                                Build
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Small Cards -->
+                    <div class="bento-card bento-card--small budget-card" data-build="budget">
+                        <div class="bento-card__glow"></div>
+                        <div class="bento-card__content">
+                            <div class="bento-card__icon">
+                                <i class="fas fa-coins"></i>
+                            </div>
+                            <h3>Budget Build</h3>
+                            <p>Best value</p>
+                            <div class="bento-card__price">
+                                <span class="amount">NPR 60,000</span>
+                            </div>
+                            <button class="btn-glass btn-glass--small">Build</button>
+                        </div>
+                    </div>
+
+                    <div class="bento-card bento-card--small custom-card" data-build="custom">
+                        <div class="bento-card__glow"></div>
+                        <div class="bento-card__content">
+                            <div class="bento-card__icon">
+                                <i class="fas fa-sliders-h"></i>
+                            </div>
+                            <h3>Custom Build</h3>
+                            <p>Start from scratch</p>
+                            <button class="btn-glass btn-glass--small">
+                                <i class="fas fa-plus"></i>
+                                Start
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Chat Bar -->
+                <div class="ai-chat-bar">
+                    <div class="ai-chat-bar__avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <input
+                        type="text"
+                        class="ai-chat-bar__input"
+                        placeholder='Ask AI: "Build me a 1440p gaming PC under NPR 150,000"'
+                    >
+                    <button class="ai-chat-bar__send">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                    </section>
+                </div>
+
+                <!-- Discount Offers Tab Content -->
+                <div class="tab-content" data-content="discount-offers">
+                    <section class="discount-offers-section">
+                        <div class="section-header">
+                            <h2>Special Discount Offers</h2>
+                            <p>Get amazing deals on pre-built PC bundles</p>
+                        </div>
+                        <div class="offers-grid">
+                            <div class="offer-card">
+                                <div class="offer-badge">20% OFF</div>
+                                <h3>Gaming Bundle</h3>
+                                <p>RTX 4070 + Ryzen 7 7800X3D</p>
+                                <div class="offer-price">
+                                    <span class="original-price">NPR 150,000</span>
+                                    <span class="discount-price">NPR 120,000</span>
+                                </div>
+                                <button class="btn-primary">Claim Offer</button>
+                            </div>
+                            <div class="offer-card">
+                                <div class="offer-badge">15% OFF</div>
+                                <h3>Workstation Bundle</h3>
+                                <p>RTX 4060 Ti + Intel i7-13700K</p>
+                                <div class="offer-price">
+                                    <span class="original-price">NPR 110,000</span>
+                                    <span class="discount-price">NPR 93,500</span>
+                                </div>
+                                <button class="btn-primary">Claim Offer</button>
+                            </div>
+                            <div class="offer-card">
+                                <div class="offer-badge">25% OFF</div>
+                                <h3>Budget Gaming</h3>
+                                <p>RTX 4060 + Ryzen 5 7600X</p>
+                                <div class="offer-price">
+                                    <span class="original-price">NPR 80,000</span>
+                                    <span class="discount-price">NPR 60,000</span>
+                                </div>
+                                <button class="btn-primary">Claim Offer</button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Custom Build Tab Content (Default Active) -->
+                <div class="tab-content active" data-content="custom-build">
+                    <!-- Main Builder Interface - Split View -->
+                    <section class="builder-interface">
+                <div class="builder-interface__grid">
+                    <!-- Left: 3D Preview -->
+                    <div class="builder-preview">
+                        <div class="preview-header">
+                            <h3>
+                                <i class="fas fa-desktop"></i>
+                                Your PC Build
+                            </h3>
+                        </div>
+
+                        <!-- Real-Time Component Preview -->
+                        <div class="realtime-preview">
+                            <!-- PC Case Background -->
+                            <div class="pc-case-container">
+                                <img src="assets/images/Adobe-Express-file-9-scaled-1.webp" alt="PC Case" class="pc-case-bg" id="pcCaseBg">
+                            </div>
+                        </div>
+
+                        <!-- Build Summary -->
+                        <div class="performance-prediction">
+                            <div class="prediction-header">
+                                <i class="fas fa-list-check"></i>
+                                <span>Build Summary</span>
+                            </div>
+                            <div class="floating-summary__content">
+                                <!-- Compatibility Check -->
+                                <div class="compatibility-checker">
+                                    <div class="compatibility-icon">
+                                        <i class="fas fa-shield-check"></i>
+                                    </div>
+                                    <div class="compatibility-text">
+                                        <strong>Compatibility</strong>
+                                        <span>Checking components...</span>
+                                    </div>
+                                    <div class="compatibility-status pending">
+                                        <i class="fas fa-circle"></i>
+                                    </div>
+                                </div>
+
+                                <!-- Price Breakdown -->
+                                <div class="price-summary">
+                                    <div class="price-row">
+                                        <span>Components Cost</span>
+                                        <span class="price">NPR 0</span>
+                                    </div>
+                                    <div class="price-row">
+                                        <span>Assembly (Optional)</span>
+                                        <span class="price">NPR 5,000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Component Selection -->
+                    <div class="builder-components">
+                        <div class="components-header">
+                            <h3>Select Components</h3>
+                            <div class="view-toggle">
+                                <button class="view-btn active" data-view="grid">
+                                    <i class="fas fa-th-large"></i>
+                                </button>
+                                <button class="view-btn" data-view="list">
+                                    <i class="fas fa-list"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Progress Tracker -->
+                        <div class="build-progress-tracker">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <div class="progress-stats">
+                                <span class="progress-count">0/8 Components</span>
+                                <span class="progress-percentage">0%</span>
+                            </div>
+                        </div>
+
+                        <!-- Component Cards Grid -->
+                        <div class="component-cards-grid">
+                            <!-- CPU Card -->
+                            <div class="component-card" data-component="cpu">
+                                <div class="component-card__header">
+                                    <div class="component-icon">
+                                        <i class="fas fa-microchip"></i>
+                                    </div>
+                                    <div class="component-info">
+                                        <h4>Processor</h4>
+                                        <span class="component-status">Not selected</span>
+                                    </div>
+                                    <span class="required-badge">Required</span>
+                                </div>
+                                <div class="component-card__body">
+                                    <button class="component-select-action">
+                                        <i class="fas fa-plus"></i>
+                                        <span>Select CPU</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Motherboard Card -->
+                            <div class="component-card" data-component="motherboard">
+                                <div class="component-card__header">
+                                    <div class="component-icon">
+                                        <i class="fas fa-th"></i>
+                                    </div>
+                                    <div class="component-info">
+                                        <h4>Motherboard</h4>
+                                        <span class="component-status">Not selected</span>
+                                    </div>
+                                    <span class="required-badge">Required</span>
+                                </div>
+                                <div class="component-card__body">
+                                    <button class="component-select-action">
+                                        <i class="fas fa-plus"></i>
+                                        <span>Select Motherboard</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- GPU Card -->
+                            <div class="component-card" data-component="gpu">
+                                <div class="component-card__header">
+                                    <div class="component-icon">
+                                        <i class="fas fa-tv"></i>
+                                    </div>
+                                    <div class="component-info">
+                                        <h4>Graphics Card</h4>
+                                        <span class="component-status">Not selected</span>
+                                    </div>
+                                    <span class="required-badge">Required</span>
+                                </div>
+                                <div class="component-card__body">
+                                    <button class="component-select-action">
+                                        <i class="fas fa-plus"></i>
+                                        <span>Select GPU</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- RAM Card -->
+                            <div class="component-card" data-component="ram">
+                                <div class="component-card__header">
+                                    <div class="component-icon">
+                                        <i class="fas fa-memory"></i>
+                                    </div>
+                                    <div class="component-info">
+                                        <h4>Memory (RAM)</h4>
+                                        <span class="component-status">Not selected</span>
+                                    </div>
+                                    <span class="required-badge">Required</span>
+                                </div>
+                                <div class="component-card__body">
+                                    <button class="component-select-action">
+                                        <i class="fas fa-plus"></i>
+                                        <span>Select RAM</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Storage Card -->
+                            <div class="component-card" data-component="storage">
+                                <div class="component-card__header">
+                                    <div class="component-icon">
+                                        <i class="fas fa-hdd"></i>
+                                    </div>
+                                    <div class="component-info">
+                                        <h4>Storage</h4>
+                                        <span class="component-status">Not selected</span>
+                                    </div>
+                                    <span class="required-badge">Required</span>
+                                </div>
+                                <div class="component-card__body">
+                                    <button class="component-select-action">
+                                        <i class="fas fa-plus"></i>
+                                        <span>Select Storage</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- PSU Card -->
+                            <div class="component-card" data-component="psu">
+                                <div class="component-card__header">
+                                    <div class="component-icon">
+                                        <i class="fas fa-plug"></i>
+                                    </div>
+                                    <div class="component-info">
+                                        <h4>Power Supply</h4>
+                                        <span class="component-status">Not selected</span>
+                                    </div>
+                                    <span class="required-badge">Required</span>
+                                </div>
+                                <div class="component-card__body">
+                                    <button class="component-select-action">
+                                        <i class="fas fa-plus"></i>
+                                        <span>Select PSU</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Case Card -->
+                            <div class="component-card" data-component="case">
+                                <div class="component-card__header">
+                                    <div class="component-icon">
+                                        <i class="fas fa-box"></i>
+                                    </div>
+                                    <div class="component-info">
+                                        <h4>PC Case</h4>
+                                        <span class="component-status">Not selected</span>
+                                    </div>
+                                    <span class="required-badge">Required</span>
+                                </div>
+                                <div class="component-card__body">
+                                    <button class="component-select-action">
+                                        <i class="fas fa-plus"></i>
+                                        <span>Select Case</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Cooling Card -->
+                            <div class="component-card" data-component="cooling">
+                                <div class="component-card__header">
+                                    <div class="component-icon">
+                                        <i class="fas fa-fan"></i>
+                                    </div>
+                                    <div class="component-info">
+                                        <h4>CPU Cooler</h4>
+                                        <span class="component-status">Not selected</span>
+                                    </div>
+                                    <span class="optional-badge">Optional</span>
+                                </div>
+                                <div class="component-card__body">
+                                    <button class="component-select-action">
+                                        <i class="fas fa-plus"></i>
+                                        <span>Select Cooler</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Build Actions - Moved from Summary -->
+                        <div class="build-final-actions">
+                            <div class="final-actions-summary">
+                                <div class="compatibility-status-inline">
+                                    <i class="fas fa-shield-check"></i>
+                                    <span>All components compatible</span>
+                                </div>
+                                <div class="total-price-inline">
+                                    <span class="label">Total Build Cost:</span>
+                                    <span class="price">NPR 0</span>
+                                </div>
+                            </div>
+                            <div class="final-actions-buttons">
+                                <button class="btn-add-to-cart" disabled>
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Add Complete Build to Cart
+                                </button>
+                                <div class="secondary-actions-inline">
+                                    <button class="btn-outline">
+                                        <i class="fas fa-save"></i>
+                                        Save Build
+                                    </button>
+                                    <button class="btn-outline">
+                                        <i class="fas fa-share"></i>
+                                        Share
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Component Selection Modal -->
+    <div class="component-modal-v2" id="componentModalV2" style="display: none;">
+        <div class="component-modal-v2__overlay"></div>
+        <div class="component-modal-v2__container">
+            <div class="component-modal-v2__header">
+                <div>
+                    <h2><i class="fas fa-microchip"></i> Select Component</h2>
+                    <p>Choose from our curated selection</p>
+                </div>
+                <button class="component-modal-v2__close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="component-modal-v2__filters">
+                <div class="filter-group">
+                    <label>Brand</label>
+                    <div class="filter-chips">
+                        <label class="filter-chip filter-chip--active">
+                            <input type="radio" name="brand" value="all" checked>
+                            <span>All</span>
+                        </label>
+                        <label class="filter-chip">
+                            <input type="radio" name="brand" value="intel">
+                            <span>Intel</span>
+                        </label>
+                        <label class="filter-chip">
+                            <input type="radio" name="brand" value="amd">
+                            <span>AMD</span>
+                        </label>
+                        <label class="filter-chip">
+                            <input type="radio" name="brand" value="nvidia">
+                            <span>NVIDIA</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="filter-group filter-group--price">
+                    <label>Price Range</label>
+                    <div class="price-range-container">
+                        <div class="input-group input-group-sm price-input-group">
+                            <span class="input-group-text">Min</span>
+                            <input type="number" id="minPriceInput" class="form-control price-number-input" min="0" max="150000" value="0">
+                        </div>
+                        <div class="dual-range-slider">
+                            <div class="slider-track"></div>
+                            <div class="slider-range" id="sliderRange"></div>
+                            <input type="range" id="minSlider" min="0" max="150000" value="0" step="1000" class="range-input range-min">
+                            <input type="range" id="maxSlider" min="0" max="150000" value="150000" step="1000" class="range-input range-max">
+                        </div>
+                        <div class="input-group input-group-sm price-input-group">
+                            <span class="input-group-text">Max</span>
+                            <input type="number" id="maxPriceInput" class="form-control price-number-input" min="0" max="150000" value="150000">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component-modal-v2__content">
+                <div class="component-options-grid" id="componentOptionsGrid">
+                    <!-- Component options will be dynamically populated -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer V2 -->
+    <footer class="footer-v2">
+        <!-- Footer Main -->
+        <div class="footer-v2__main">
+            <div class="container">
+                <div class="footer-v2__grid">
+                    <!-- Column 1: Customer Service -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">CUSTOMER SERVICE</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Track Order</a></li>
+                            <li><a href="#">Return Order</a></li>
+                            <li><a href="#">Cancel Order</a></li>
+                            <li><a href="#">Warranty Info</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 2: Help & Support -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">HELP & SUPPORT</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="#">Shipping Info</a></li>
+                            <li><a href="#">Refund Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 3: Company Info -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">COMPANY INFO</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Our Blog</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Store Locations</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 4: Our Shop -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">Our Shop</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="#">Gaming Gears</a></li>
+                            <li><a href="#">Electronics</a></li>
+                            <li><a href="#">Laptop</a></li>
+                            <li><a href="#">Smartphone</a></li>
+                            <li><a href="#">Audio</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 5: My Account -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">MY ACCOUNT</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="login.html">Register</a></li>
+                            <li><a href="wishlist.html">Wishlist</a></li>
+                            <li><a href="my-orders.html">Track Your Orders</a></li>
+                            <li><a href="checkout.html">Checkout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-v2__bottom">
+            <div class="container">
+                <div class="footer-v2__bottom-grid">
+                    <!-- Social & Copyright -->
+                    <div class="footer-v2__social-section">
+                        <h4 class="footer-v2__bottom-title">Follow Us:</h4>
+                        <div class="footer-v2__social-links">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Payment Methods -->
+                    <div class="footer-v2__payment-section">
+                        <h4 class="footer-v2__bottom-title">We Accept:</h4>
+                        <div class="footer-v2__payment-methods">
+                            <img src="assets/images/esewa-logo.png" alt="eSewa" class="payment-logo">
+                            <img src="assets/images/khalti-logo.png" alt="Khalti" class="payment-logo">
+                            <img src="assets/images/connectIPS-logo.png" alt="ConnectIPS" class="payment-logo">
+                            <img src="assets/images/fonepay.png" alt="FonePay" class="payment-logo">
+                        </div>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="footer-v2__newsletter-section">
+                        <h4 class="footer-v2__bottom-title">Get the Latest Deals:</h4>
+                        <form class="footer-v2__newsletter-form">
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+
+                    <!-- Store Location -->
+                    <div class="footer-v2__store-location d-none">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Store Location:</strong>
+                            <span>Putalisadak - Kathmandu, Nepal</span>
+                        </div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="footer-v2__phone d-none">
+                        <i class="fas fa-headset"></i>
+                        <div>
+                            <strong>Call Us Now:</strong>
+                            <span>+977 98123412345</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="footer-v2__contact-info">
+                    <div class="footer-v2__copyright">
+                        <i class="far fa-copyright"></i>
+                        <span>2026 Akku.gg, Nepal.</span>
+                        <span>All rights reserved.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/pc-builder-v3.js?v=29"></script>
+</body>
+</html>
