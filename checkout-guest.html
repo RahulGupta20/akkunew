@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout - Guest | Akku Electronics</title>
+    <title>Guest Checkout | Akku Electronics</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -46,8 +46,8 @@
                         <span class="badge" id="cartBadge">5</span>
                     </a>
 
-                    <!-- Login Button (Not Logged In) -->
-                    <a href="login.html" class="header__login-btn">
+                    <!-- Login Button (Guest User) -->
+                    <a href="login.html?redirect=checkout.html" class="header__login-btn">
                         <i class="fas fa-user"></i>
                         <span>Login</span>
                     </a>
@@ -82,45 +82,15 @@
             <i class="fas fa-chevron-right"></i>
             <a href="cart.html">Cart</a>
             <i class="fas fa-chevron-right"></i>
-            <span class="current">Checkout</span>
+            <span class="current">Guest Checkout</span>
         </div>
     </div>
 
     <!-- Checkout Container -->
     <div class="checkout-container">
         <div class="container">
-            <!-- Account Section -->
-            <section class="account-section" id="accountSection">
-                <div class="account-header">
-                    <div class="account-icon">
-                        <i class="fas fa-user-circle"></i>
-                    </div>
-                    <div class="account-title">
-                        <h2>Account</h2>
-                        <p>Sign in for faster checkout</p>
-                    </div>
-                </div>
-
-                <div class="account-options">
-                    <div class="account-option" id="guestOption">
-                        <div class="option-icon">
-                            <i class="fas fa-shopping-cart"></i>
-                        </div>
-                        <h3>Continue as Guest</h3>
-                    </div>
-
-                    <div class="account-option" id="signinOption">
-                        <div class="option-icon">
-                            <i class="fas fa-sign-in-alt"></i>
-                        </div>
-                        <h3>Sign In</h3>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Checkout Wrapper -->
-            <div class="checkout__wrapper" id="checkoutWrapper" style="display: none;">
-                <!-- Left: Checkout Form -->
+            <div class="checkout__wrapper">
+                <!-- Left: Guest Checkout Form -->
                 <div class="checkout__main">
                     <!-- Contact Information -->
                     <section class="checkout-section">
@@ -128,17 +98,29 @@
                             <div class="step-number">1</div>
                             <div class="section-title-compact">
                                 <h2>Contact Information</h2>
+                                <p>We'll use this to send order updates</p>
                             </div>
                         </div>
 
                         <div class="form-grid">
                             <div class="form-group full-width">
-                                <label for="guestEmail">Email <span class="required">*</span></label>
+                                <label for="guestEmail">Email Address <span class="required">*</span></label>
                                 <input type="email" id="guestEmail" class="form-control" placeholder="your.email@example.com" required>
+                                <small class="form-hint">Order confirmation will be sent to this email</small>
                             </div>
                             <div class="form-group full-width">
                                 <label for="guestPhone">Phone Number <span class="required">*</span></label>
                                 <input type="tel" id="guestPhone" class="form-control" placeholder="+977 9841234567" required>
+                                <small class="form-hint">We'll call if there are any delivery issues</small>
+                            </div>
+                        </div>
+
+                        <!-- Account Creation Notice -->
+                        <div class="guest-notice">
+                            <i class="fas fa-info-circle"></i>
+                            <div>
+                                <p><strong>Checking out as a guest?</strong></p>
+                                <p>You can <a href="login.html?redirect=checkout.html">sign in</a> or <a href="register.html?redirect=checkout.html">create an account</a> after checkout to track your order.</p>
                             </div>
                         </div>
                     </section>
@@ -155,23 +137,40 @@
                         <div class="form-grid">
                             <div class="form-group full-width">
                                 <label for="fullName">Full Name <span class="required">*</span></label>
-                                <input type="text" id="fullName" class="form-control" placeholder="Rajesh Maharjan" required>
+                                <input type="text" id="fullName" class="form-control" placeholder="Enter full name" required>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group full-width">
                                 <label for="street">Street Address <span class="required">*</span></label>
-                                <input type="text" id="street" class="form-control" placeholder="Durbar Marg" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="ward">Ward No.</label>
-                                <input type="text" id="ward" class="form-control" placeholder="3">
+                                <input type="text" id="street" class="form-control" placeholder="House number, street name" required>
                             </div>
                             <div class="form-group">
                                 <label for="city">City <span class="required">*</span></label>
                                 <input type="text" id="city" class="form-control" placeholder="Kathmandu" required>
                             </div>
                             <div class="form-group">
+                                <label for="ward">Ward No.</label>
+                                <input type="text" id="ward" class="form-control" placeholder="Ward number">
+                            </div>
+                            <div class="form-group">
+                                <label for="province">Province <span class="required">*</span></label>
+                                <select id="province" class="form-control" required>
+                                    <option value="">Select Province</option>
+                                    <option value="bagmati">Bagmati</option>
+                                    <option value="gandaki">Gandaki</option>
+                                    <option value="lumbini">Lumbini</option>
+                                    <option value="koshi">Koshi</option>
+                                    <option value="madhesh">Madhesh</option>
+                                    <option value="sudurpashchim">Sudurpashchim</option>
+                                    <option value="karnali">Karnali</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <label for="postalCode">Postal Code</label>
                                 <input type="text" id="postalCode" class="form-control" placeholder="44600">
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="landmark">Landmark (Optional)</label>
+                                <input type="text" id="landmark" class="form-control" placeholder="Near famous location">
                             </div>
                         </div>
                     </section>
@@ -186,30 +185,46 @@
                         </div>
 
                         <div class="delivery-options-grid">
-                            <label class="delivery-option-card">
-                                <input type="radio" name="delivery" value="standard" checked>
-                                <div class="delivery-card-content">
-                                    <div class="delivery-card-icon">
-                                        <i class="fas fa-truck"></i>
-                                    </div>
-                                    <div class="delivery-card-info">
-                                        <h4>Standard Delivery <span class="delivery-badge-free">FREE</span></h4>
-                                        <p>3-5 business days</p>
-                                    </div>
+                            <!-- Standard Delivery -->
+                            <label class="delivery-option-card selected">
+                                <input type="radio" name="delivery" value="standard" id="delivery1" checked>
+                                <div class="delivery-icon">
+                                    <i class="fas fa-truck"></i>
                                 </div>
+                                <div class="delivery-details">
+                                    <h4>Standard Delivery</h4>
+                                    <p class="delivery-time">3-5 business days</p>
+                                    <p class="delivery-desc">Free delivery on orders above NPR 5,000</p>
+                                </div>
+                                <div class="delivery-price free">FREE</div>
                             </label>
 
+                            <!-- Express Delivery -->
                             <label class="delivery-option-card">
-                                <input type="radio" name="delivery" value="express">
-                                <div class="delivery-card-content">
-                                    <div class="delivery-card-icon">
-                                        <i class="fas fa-shipping-fast"></i>
-                                    </div>
-                                    <div class="delivery-card-info">
-                                        <h4>Express <span class="delivery-price">NPR 200</span></h4>
-                                        <p>1-2 business days</p>
-                                    </div>
+                                <input type="radio" name="delivery" value="express" id="delivery2">
+                                <div class="delivery-icon">
+                                    <i class="fas fa-shipping-fast"></i>
                                 </div>
+                                <div class="delivery-details">
+                                    <h4>Express Delivery</h4>
+                                    <p class="delivery-time">1-2 business days</p>
+                                    <p class="delivery-desc">Get your order delivered faster</p>
+                                </div>
+                                <div class="delivery-price">NPR 500</div>
+                            </label>
+
+                            <!-- Same Day Delivery -->
+                            <label class="delivery-option-card">
+                                <input type="radio" name="delivery" value="sameday" id="delivery3">
+                                <div class="delivery-icon">
+                                    <i class="fas fa-motorcycle"></i>
+                                </div>
+                                <div class="delivery-details">
+                                    <h4>Same Day Delivery</h4>
+                                    <p class="delivery-time">Within 6 hours</p>
+                                    <p class="delivery-desc">Order before 2 PM (Kathmandu Valley only)</p>
+                                </div>
+                                <div class="delivery-price">NPR 800</div>
                             </label>
                         </div>
                     </section>
@@ -280,24 +295,18 @@
                             </label>
                         </div>
                     </section>
-
-                    <!-- Place Order Button -->
-                    <button class="btn-place-order" id="placeOrderBtn">
-                        <i class="fas fa-lock"></i>
-                        <span>Place Order</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
                 </div>
 
                 <!-- Right: Order Summary -->
                 <aside class="checkout__sidebar">
                     <div class="order-summary glass-card">
-                        <h2><i class="fas fa-receipt"></i> Order Summary</h2>
+                        <h2>Order Summary</h2>
 
                         <!-- Items Preview -->
                         <div class="summary-items">
                             <div class="summary-item-header">
                                 <span>Items (5)</span>
+                                <button class="btn-link" id="viewDetailsBtn">View Details</button>
                             </div>
 
                             <div class="summary-item-preview">
@@ -305,6 +314,50 @@
                                 <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=80&h=80&fit=crop" alt="Product">
                                 <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=80&h=80&fit=crop" alt="Product">
                                 <div class="more-items">+2</div>
+                            </div>
+
+                            <!-- Detailed Items List (Hidden by default) -->
+                            <div class="summary-items-detail" id="itemsDetail" style="display: none;">
+                                <div class="summary-item">
+                                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=60&h=60&fit=crop" alt="Product">
+                                    <div class="item-info">
+                                        <p class="item-name">Premium Wireless Headphones</p>
+                                        <p class="item-qty">Qty: 1</p>
+                                    </div>
+                                    <p class="item-price">NPR 12,999</p>
+                                </div>
+                                <div class="summary-item">
+                                    <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=60&h=60&fit=crop" alt="Product">
+                                    <div class="item-info">
+                                        <p class="item-name">Smartwatch Pro Series 5</p>
+                                        <p class="item-qty">Qty: 1</p>
+                                    </div>
+                                    <p class="item-price">NPR 18,500</p>
+                                </div>
+                                <div class="summary-item">
+                                    <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=60&h=60&fit=crop" alt="Product">
+                                    <div class="item-info">
+                                        <p class="item-name">Mechanical Gaming Keyboard</p>
+                                        <p class="item-qty">Qty: 1</p>
+                                    </div>
+                                    <p class="item-price">NPR 8,500</p>
+                                </div>
+                                <div class="summary-item">
+                                    <img src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=60&h=60&fit=crop" alt="Product">
+                                    <div class="item-info">
+                                        <p class="item-name">Wireless Mouse</p>
+                                        <p class="item-qty">Qty: 2</p>
+                                    </div>
+                                    <p class="item-price">NPR 3,000</p>
+                                </div>
+                                <div class="summary-item">
+                                    <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=60&h=60&fit=crop" alt="Product">
+                                    <div class="item-info">
+                                        <p class="item-name">USB-C Cable Set</p>
+                                        <p class="item-qty">Qty: 3</p>
+                                    </div>
+                                    <p class="item-price">NPR 3,000</p>
+                                </div>
                             </div>
                         </div>
 
@@ -314,154 +367,526 @@
                         <div class="summary-breakdown">
                             <div class="summary-row">
                                 <span>Subtotal</span>
-                                <span>NPR 4,84,650</span>
+                                <span>NPR 45,999</span>
                             </div>
                             <div class="summary-row">
-                                <span>Shipping</span>
+                                <span>Discount</span>
+                                <span class="discount">- NPR 5,000</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Delivery Charges</span>
                                 <span class="free">FREE</span>
                             </div>
                             <div class="summary-row">
                                 <span>Tax (13%)</span>
-                                <span>NPR 63,005</span>
+                                <span>NPR 5,330</span>
+                            </div>
+                        </div>
+
+                        <div class="summary-divider"></div>
+
+                        <!-- Total -->
+                        <div class="summary-total">
+                            <span>Total Amount</span>
+                            <div class="total-price">
+                                <span class="currency">NPR</span>
+                                <span class="amount">46,329</span>
                             </div>
                         </div>
 
                         <!-- Savings Badge -->
                         <div class="savings-badge">
-                            <i class="fas fa-piggy-bank"></i>
-                            <div class="savings-info">
-                                <span class="savings-label">You're saving</span>
-                                <span class="savings-value">NPR 21,350</span>
-                            </div>
+                            <i class="fas fa-tags"></i>
+                            You saved NPR 5,150 on this order!
                         </div>
 
-                        <!-- Total -->
-                        <div class="summary-total">
-                            <span>Total</span>
-                            <div class="total-price">
-                                <span class="currency">NPR</span>
-                                <span class="amount">5,47,655</span>
-                            </div>
+                        <!-- Actions -->
+                        <div class="summary-actions">
+                            <button class="btn-primary btn-full" id="placeOrderBtn">
+                                <i class="fas fa-lock"></i>
+                                Place Order
+                            </button>
+                            <a href="cart.html" class="btn-secondary btn-full">
+                                <i class="fas fa-arrow-left"></i>
+                                Back to Cart
+                            </a>
                         </div>
 
                         <!-- Security Badge -->
-                        <div class="security-notice">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>Secure Checkout - Your information is safe</span>
+                        <div class="security-badge">
+                            <i class="fas fa-lock"></i>
+                            <span>Secure Checkout</span>
                         </div>
+
+                        <!-- Policy Links -->
+                        <div class="policy-links">
+                            <a href="#" class="policy-link" id="returnPolicyLink"><i class="fas fa-undo"></i> Return Policy</a>
+                            <a href="#" class="policy-link" id="refundPolicyLink"><i class="fas fa-shield-alt"></i> Refund Policy</a>
+                        </div>
+                    </div>
+
+                    <!-- Support Card -->
+                    <div class="support-card glass-card">
+                        <div class="support-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Need Help?</h3>
+                        <p>Our support team is available 24/7</p>
+                        <a href="tel:+97714123456" class="support-link">
+                            <i class="fas fa-phone"></i>
+                            +977 01-4123456
+                        </a>
+                        <a href="mailto:support@akku.com.np" class="support-link">
+                            <i class="fas fa-envelope"></i>
+                            support@akku.com.np
+                        </a>
                     </div>
                 </aside>
             </div>
         </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const accountSection = document.getElementById('accountSection');
-            const checkoutWrapper = document.getElementById('checkoutWrapper');
-            const guestOption = document.getElementById('guestOption');
-            const signinOption = document.getElementById('signinOption');
-
-            // Continue as Guest
-            guestOption?.addEventListener('click', () => {
-                accountSection.style.transition = 'all 0.5s ease';
-                accountSection.style.opacity = '0';
-                accountSection.style.transform = 'translateY(-20px)';
-
-                setTimeout(() => {
-                    accountSection.style.display = 'none';
-                    checkoutWrapper.style.display = 'grid';
-                    checkoutWrapper.style.opacity = '0';
-
-                    setTimeout(() => {
-                        checkoutWrapper.style.transition = 'opacity 0.5s ease';
-                        checkoutWrapper.style.opacity = '1';
-
-                        window.scrollTo({
-                            top: document.querySelector('.checkout-container').offsetTop - 20,
-                            behavior: 'smooth'
-                        });
-                    }, 50);
-                }, 500);
-            });
-
-            // Sign In
-            signinOption?.addEventListener('click', () => {
-                window.location.href = 'login.html?redirect=checkout-guest.html';
-            });
-
-            // Place Order Button
-            document.getElementById('placeOrderBtn')?.addEventListener('click', () => {
-                // Validate form
-                const email = document.getElementById('guestEmail').value;
-                const phone = document.getElementById('guestPhone').value;
-                const fullName = document.getElementById('fullName').value;
-                const street = document.getElementById('street').value;
-                const city = document.getElementById('city').value;
-
-                if (!email || !phone || !fullName || !street || !city) {
-                    alert('Please fill in all required fields');
-                    return;
-                }
-
-                // Redirect to order confirmation
-                window.location.href = 'order-confirmation.html';
-            });
-        });
-    </script>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__top">
-                <div class="footer__col">
-                    <h3 class="footer__title">About Akku Electronics</h3>
-                    <p class="footer__text">Your trusted electronics store in Nepal. We provide genuine products with warranty and excellent customer service.</p>
-                    <div class="footer__social">
-                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer__col">
-                    <h3 class="footer__title">Quick Links</h3>
-                    <ul class="footer__links">
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="#">Deals</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer__col">
-                    <h3 class="footer__title">Customer Service</h3>
-                    <ul class="footer__links">
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Track Order</a></li>
-                        <li><a href="#">Returns</a></li>
-                        <li><a href="#">Shipping Info</a></li>
-                    </ul>
-                </div>
-                <div class="footer__col">
-                    <h3 class="footer__title">Contact Info</h3>
-                    <ul class="footer__contact">
-                        <li><i class="fas fa-phone"></i> +977-1234567890</li>
-                        <li><i class="fas fa-envelope"></i> info@akkuelectronics.com</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</li>
-                    </ul>
-                </div>
+    <!-- Card Payment Modal -->
+    <div class="modal" id="cardPaymentModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-credit-card"></i> Card Payment Details</h2>
+                <button class="modal-close" id="closeCardModal">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
-            <div class="footer__bottom">
-                <p>&copy; 2024 Akku Electronics. All rights reserved.</p>
-                <div class="footer__payment">
-                    <i class="fab fa-cc-visa"></i>
-                    <i class="fab fa-cc-mastercard"></i>
-                    <i class="fas fa-credit-card"></i>
+            <div class="modal-body">
+                <div class="payment-form">
+                    <div class="form-group">
+                        <label>Card Number</label>
+                        <input type="text" placeholder="1234 5678 9012 3456" maxlength="19">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Expiry Date</label>
+                            <input type="text" placeholder="MM/YY" maxlength="5">
+                        </div>
+                        <div class="form-group">
+                            <label>CVV</label>
+                            <input type="text" placeholder="123" maxlength="3">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Cardholder Name</label>
+                        <input type="text" placeholder="Name on card">
+                    </div>
+                    <div class="modal-footer-actions">
+                        <button class="btn-primary" id="confirmCard">Confirm Payment</button>
+                        <button class="btn-secondary" id="cancelCard">Cancel</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+
+    <!-- eSewa Payment Modal -->
+    <div class="modal" id="esewaPaymentModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-wallet"></i> eSewa Payment</h2>
+                <button class="modal-close" id="closeEsewaModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="payment-form">
+                    <div class="form-group">
+                        <label>eSewa ID / Mobile Number</label>
+                        <input type="text" placeholder="98XXXXXXXX">
+                    </div>
+                    <p class="payment-note">
+                        <i class="fas fa-info-circle"></i>
+                        You will be redirected to eSewa to complete the payment
+                    </p>
+                    <div class="modal-footer-actions">
+                        <button class="btn-primary" id="confirmEsewa">Proceed to eSewa</button>
+                        <button class="btn-secondary" id="cancelEsewa">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Khalti Payment Modal -->
+    <div class="modal" id="khaltiPaymentModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-mobile-alt"></i> Khalti Payment</h2>
+                <button class="modal-close" id="closeKhaltiModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="payment-form">
+                    <div class="form-group">
+                        <label>Khalti ID / Mobile Number</label>
+                        <input type="text" placeholder="98XXXXXXXX">
+                    </div>
+                    <p class="payment-note">
+                        <i class="fas fa-info-circle"></i>
+                        You will be redirected to Khalti to complete the payment
+                    </p>
+                    <div class="modal-footer-actions">
+                        <button class="btn-primary" id="confirmKhalti">Proceed to Khalti</button>
+                        <button class="btn-secondary" id="cancelKhalti">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bank Transfer Modal -->
+    <div class="modal" id="bankPaymentModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-university"></i> Bank Transfer Details</h2>
+                <button class="modal-close" id="closeBankModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="payment-form">
+                    <div class="bank-details-info">
+                        <h4>Bank Account Details</h4>
+                        <div class="bank-info-row">
+                            <span>Bank Name:</span>
+                            <strong>Nepal Bank Limited</strong>
+                        </div>
+                        <div class="bank-info-row">
+                            <span>Account Name:</span>
+                            <strong>Akku Electronics Pvt. Ltd.</strong>
+                        </div>
+                        <div class="bank-info-row">
+                            <span>Account Number:</span>
+                            <strong>0123456789012345</strong>
+                        </div>
+                        <div class="bank-info-row">
+                            <span>SWIFT Code:</span>
+                            <strong>NEBLNPKA</strong>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Bank Name</label>
+                        <input type="text" placeholder="Enter your bank name">
+                    </div>
+                    <div class="form-group">
+                        <label>Transaction Reference Number</label>
+                        <input type="text" placeholder="Enter transaction reference">
+                    </div>
+                    <div class="form-group">
+                        <label>Upload Payment Proof (Optional)</label>
+                        <input type="file" accept="image/*,.pdf">
+                    </div>
+                    <p class="payment-note">
+                        <i class="fas fa-info-circle"></i>
+                        Please transfer the total amount to the above account and provide the transaction details
+                    </p>
+                    <div class="modal-footer-actions">
+                        <button class="btn-primary" id="confirmBank">Confirm Transfer</button>
+                        <button class="btn-secondary" id="cancelBank">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Return Policy Modal -->
+    <div class="modal" id="returnPolicyModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content modal-policy">
+            <div class="modal-header">
+                <h2><i class="fas fa-undo"></i> Return Policy</h2>
+                <button class="modal-close" id="closeReturnPolicyModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="policy-content">
+                    <h3>Our 7-Day Return Guarantee</h3>
+                    <p>We want you to be completely satisfied with your purchase. If you're not happy with your order, we offer a hassle-free return process.</p>
+
+                    <h4><i class="fas fa-clock"></i> Return Window</h4>
+                    <ul>
+                        <li>You have <strong>7 days</strong> from the date of delivery to initiate a return</li>
+                        <li>Items must be in original, unused condition with all tags and packaging intact</li>
+                        <li>Proof of purchase required (order number or receipt)</li>
+                    </ul>
+
+                    <h4><i class="fas fa-box"></i> Eligible Items</h4>
+                    <ul>
+                        <li>Electronics in unopened, sealed packaging</li>
+                        <li>Accessories with original packaging and tags</li>
+                        <li>Defective or damaged items (warranty applies)</li>
+                    </ul>
+
+                    <h4><i class="fas fa-ban"></i> Non-Returnable Items</h4>
+                    <ul>
+                        <li>Software, games, or downloadable products (once activated)</li>
+                        <li>Opened personal care items or headphones (hygiene reasons)</li>
+                        <li>Custom-built or personalized items</li>
+                        <li>Sale or clearance items (unless defective)</li>
+                    </ul>
+
+                    <div class="policy-note">
+                        <i class="fas fa-info-circle"></i>
+                        <p>Refunds are processed within 5-7 business days after we receive and inspect the returned item.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Refund Policy Modal -->
+    <div class="modal" id="refundPolicyModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content modal-policy">
+            <div class="modal-header">
+                <h2><i class="fas fa-shield-alt"></i> Refund Policy</h2>
+                <button class="modal-close" id="closeRefundPolicyModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="policy-content">
+                    <h3>Our Refund Process</h3>
+                    <p>We process refunds promptly once your return has been received and inspected. Here's what you need to know:</p>
+
+                    <h4><i class="fas fa-clock"></i> Processing Time</h4>
+                    <ul>
+                        <li>Refunds are processed within <strong>5-7 business days</strong> of receiving your return</li>
+                        <li>Inspection takes 1-2 business days to verify item condition</li>
+                        <li>Bank processing may take additional 3-5 business days</li>
+                    </ul>
+
+                    <h4><i class="fas fa-credit-card"></i> Refund Method</h4>
+                    <ul>
+                        <li>Refunds issued to <strong>original payment method</strong></li>
+                        <li>Credit/Debit card refunds: 5-10 business days</li>
+                        <li>Digital wallet refunds (eSewa/Khalti): 2-3 business days</li>
+                        <li>Cash on Delivery: Bank transfer or store credit</li>
+                    </ul>
+
+                    <div class="policy-note">
+                        <i class="fas fa-headset"></i>
+                        <p>Questions about your refund? Contact us at <a href="mailto:support@akku.com.np">support@akku.com.np</a> or call <a href="tel:+97714123456">+977 01-4123456</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Delivery option selection
+        document.querySelectorAll('.delivery-option-card input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                document.querySelectorAll('.delivery-option-card').forEach(card => {
+                    card.classList.remove('selected');
+                });
+                this.closest('.delivery-option-card').classList.add('selected');
+            });
+        });
+
+        // Payment method selection - open modal immediately
+        document.querySelectorAll('.payment-option-compact input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const paymentValue = this.value;
+
+                // Open corresponding modal based on payment method
+                if (paymentValue === 'card') {
+                    const cardModal = document.getElementById('cardPaymentModal');
+                    cardModal.style.display = 'flex';
+                    setTimeout(() => cardModal.classList.add('active'), 10);
+                    document.body.style.overflow = 'hidden';
+                } else if (paymentValue === 'esewa') {
+                    const esewaModal = document.getElementById('esewaPaymentModal');
+                    esewaModal.style.display = 'flex';
+                    setTimeout(() => esewaModal.classList.add('active'), 10);
+                    document.body.style.overflow = 'hidden';
+                } else if (paymentValue === 'khalti') {
+                    const khaltiModal = document.getElementById('khaltiPaymentModal');
+                    khaltiModal.style.display = 'flex';
+                    setTimeout(() => khaltiModal.classList.add('active'), 10);
+                    document.body.style.overflow = 'hidden';
+                } else if (paymentValue === 'bank') {
+                    const bankModal = document.getElementById('bankPaymentModal');
+                    bankModal.style.display = 'flex';
+                    setTimeout(() => bankModal.classList.add('active'), 10);
+                    document.body.style.overflow = 'hidden';
+                }
+                // COD doesn't need a modal
+            });
+        });
+
+        // Card Payment Modal Handlers
+        const closeCardModal = () => {
+            const modal = document.getElementById('cardPaymentModal');
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 300);
+        };
+        document.getElementById('closeCardModal')?.addEventListener('click', closeCardModal);
+        document.getElementById('cancelCard')?.addEventListener('click', closeCardModal);
+        document.getElementById('confirmCard')?.addEventListener('click', closeCardModal);
+        document.getElementById('cardPaymentModal')?.querySelector('.modal-overlay')?.addEventListener('click', closeCardModal);
+
+        // eSewa Payment Modal Handlers
+        const closeEsewaModal = () => {
+            const modal = document.getElementById('esewaPaymentModal');
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 300);
+        };
+        document.getElementById('closeEsewaModal')?.addEventListener('click', closeEsewaModal);
+        document.getElementById('cancelEsewa')?.addEventListener('click', closeEsewaModal);
+        document.getElementById('confirmEsewa')?.addEventListener('click', closeEsewaModal);
+        document.getElementById('esewaPaymentModal')?.querySelector('.modal-overlay')?.addEventListener('click', closeEsewaModal);
+
+        // Khalti Payment Modal Handlers
+        const closeKhaltiModal = () => {
+            const modal = document.getElementById('khaltiPaymentModal');
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 300);
+        };
+        document.getElementById('closeKhaltiModal')?.addEventListener('click', closeKhaltiModal);
+        document.getElementById('cancelKhalti')?.addEventListener('click', closeKhaltiModal);
+        document.getElementById('confirmKhalti')?.addEventListener('click', closeKhaltiModal);
+        document.getElementById('khaltiPaymentModal')?.querySelector('.modal-overlay')?.addEventListener('click', closeKhaltiModal);
+
+        // Bank Transfer Modal Handlers
+        const closeBankModal = () => {
+            const modal = document.getElementById('bankPaymentModal');
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 300);
+        };
+        document.getElementById('closeBankModal')?.addEventListener('click', closeBankModal);
+        document.getElementById('cancelBank')?.addEventListener('click', closeBankModal);
+        document.getElementById('confirmBank')?.addEventListener('click', closeBankModal);
+        document.getElementById('bankPaymentModal')?.querySelector('.modal-overlay')?.addEventListener('click', closeBankModal);
+
+        // View Details Toggle
+        const viewDetailsBtn = document.getElementById('viewDetailsBtn');
+        const itemsDetail = document.getElementById('itemsDetail');
+        let detailsVisible = false;
+
+        viewDetailsBtn?.addEventListener('click', () => {
+            detailsVisible = !detailsVisible;
+
+            if (detailsVisible) {
+                itemsDetail.style.display = 'block';
+                viewDetailsBtn.textContent = 'Hide Details';
+            } else {
+                itemsDetail.style.display = 'none';
+                viewDetailsBtn.textContent = 'View Details';
+            }
+        });
+
+        // Place Order Button
+        const placeOrderBtn = document.getElementById('placeOrderBtn');
+
+        placeOrderBtn?.addEventListener('click', () => {
+            // Validate required fields
+            const email = document.getElementById('guestEmail').value;
+            const phone = document.getElementById('guestPhone').value;
+            const fullName = document.getElementById('fullName').value;
+            const street = document.getElementById('street').value;
+            const city = document.getElementById('city').value;
+            const province = document.getElementById('province').value;
+
+            if (!email || !phone || !fullName || !street || !city || !province) {
+                alert('Please fill in all required fields');
+                return;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address');
+                return;
+            }
+
+            // Show loading state
+            placeOrderBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            placeOrderBtn.disabled = true;
+
+            // Simulate order processing
+            setTimeout(() => {
+                // Redirect to order confirmation page
+                window.location.href = 'order-confirmation.html';
+            }, 1500);
+        });
+
+        // Return Policy Modal
+        const returnPolicyModal = document.getElementById('returnPolicyModal');
+        const closeReturnPolicyModal = document.getElementById('closeReturnPolicyModal');
+
+        document.getElementById('returnPolicyLink')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            returnPolicyModal.style.display = 'flex';
+            setTimeout(() => returnPolicyModal.classList.add('active'), 10);
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeReturnPolicyModal?.addEventListener('click', () => {
+            returnPolicyModal.classList.remove('active');
+            setTimeout(() => {
+                returnPolicyModal.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 300);
+        });
+
+        returnPolicyModal?.querySelector('.modal-overlay').addEventListener('click', () => {
+            returnPolicyModal.classList.remove('active');
+            setTimeout(() => {
+                returnPolicyModal.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 300);
+        });
+
+        // Refund Policy Modal
+        const refundPolicyModal = document.getElementById('refundPolicyModal');
+        const closeRefundPolicyModal = document.getElementById('closeRefundPolicyModal');
+
+        document.getElementById('refundPolicyLink')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            refundPolicyModal.style.display = 'flex';
+            setTimeout(() => refundPolicyModal.classList.add('active'), 10);
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeRefundPolicyModal?.addEventListener('click', () => {
+            refundPolicyModal.classList.remove('active');
+            setTimeout(() => {
+                refundPolicyModal.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 300);
+        });
+
+        refundPolicyModal?.querySelector('.modal-overlay').addEventListener('click', () => {
+            refundPolicyModal.classList.remove('active');
+            setTimeout(() => {
+                refundPolicyModal.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 300);
+        });
+    </script>
 </body>
 </html>

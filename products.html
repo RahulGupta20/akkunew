@@ -3,56 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products - Akku Electronics</title>
+    <title>All Products | Akku Electronics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/products.css">
 </head>
-<body>
-    <!-- Header (Same as home page) -->
+<body class="dark-theme">
+    <!-- Header -->
     <header class="header">
-        <!-- Top Bar -->
-        <div class="header__topbar">
-            <div class="container">
-                <div class="header__topbar-left">
-                    <span><i class="fas fa-phone"></i> +977-1234567890</span>
-                    <span><i class="fas fa-envelope"></i> info@akkuelectronics.com</span>
-                </div>
-                <div class="header__topbar-right">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Main Header -->
+        <!-- Main Header (Sticky) -->
         <div class="header__main">
             <div class="container">
                 <a href="index.html" class="header__logo">
-                    <i class="fas fa-bolt"></i> AKKU
+                    <img src="assets/images/logo.png" alt="AKKU Electronics">
                 </a>
 
                 <!-- Search Bar -->
                 <form class="header__search" action="search-results.html" method="GET">
-                    <input type="text" name="q" id="searchInput" placeholder="Search for products...">
+                    <input type="text" name="q" id="searchInput" placeholder="Search for products, brands and more...">
                     <button type="submit"><i class="fas fa-search"></i></button>
                 </form>
 
                 <!-- Header Actions -->
                 <div class="header__actions">
-                    <a href="#" class="header__action-item">
-                        <i class="fas fa-user"></i>
-                        <span>Account</span>
-                    </a>
-                    <a href="#" class="header__action-item">
+                    <!-- Language & Currency Button -->
+                    <button class="header__settings-btn" id="openSettingsModal">
+                        <i class="fas fa-globe"></i>
+                        <span>EN / NPR</span>
+                    </button>
+
+                    <!-- Wishlist -->
+                    <a href="wishlist.html" class="header__action-item" aria-label="Wishlist" title="Wishlist">
                         <i class="fas fa-heart"></i>
-                        <span>Wishlist</span>
-                        <span class="badge">3</span>
                     </a>
-                    <a href="#" class="header__action-item">
+
+                    <!-- Cart -->
+                    <a href="cart.html" class="header__action-item" aria-label="Shopping Cart" title="Cart">
                         <i class="fas fa-shopping-cart"></i>
-                        <span>Cart</span>
-                        <span class="badge">5</span>
+                        <span class="badge">0</span>
+                    </a>
+
+                    <!-- Login Button -->
+                    <a href="login.html" class="header__login-btn">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Login</span>
                     </a>
                 </div>
 
@@ -63,345 +60,889 @@
             </div>
         </div>
 
-        <!-- Mobile Search -->
-        <div class="header__mobile-search">
-            <input type="text" placeholder="Search for products...">
-        </div>
-
-        <!-- Navigation -->
+        <!-- Navigation (Not Sticky) -->
         <nav class="header__nav" id="mainNav">
-            <div class="container">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="#">Categories</a></li>
-                    <li><a href="#">Deals</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="has-dropdown">
+                    <a href="category.html">Laptops</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Laptops dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="category.html" class="dropdown-item">Gaming Laptops</a>
+                        <a href="category.html" class="dropdown-item">Business Laptops</a>
+                        <a href="category.html" class="dropdown-item">Student Laptops</a>
+                        <a href="category.html" class="dropdown-item">Ultrabooks</a>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    <a href="category.html">Desktop PCs</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Desktop PCs dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="category.html" class="dropdown-item">Gaming PCs</a>
+                        <a href="category.html" class="dropdown-item">Workstations</a>
+                        <a href="category.html" class="dropdown-item">All-in-One PCs</a>
+                        <a href="category.html" class="dropdown-item">Mini PCs</a>
+                    </div>
+                </li>
+                <li><a href="pc-builder-v3.html">Custom PC Build</a></li>
+                <li class="has-dropdown">
+                    <a href="category.html">Mobile Phones</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Mobile Phones dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="category.html" class="dropdown-item">Smartphones</a>
+                        <a href="category.html" class="dropdown-item">Feature Phones</a>
+                        <a href="category.html" class="dropdown-item">Accessories</a>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    <a href="category.html">Peripherals</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Peripherals dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="category.html" class="dropdown-item">Keyboards</a>
+                        <a href="category.html" class="dropdown-item">Mice</a>
+                        <a href="category.html" class="dropdown-item">Headphones</a>
+                        <a href="category.html" class="dropdown-item">Monitors</a>
+                        <a href="category.html" class="dropdown-item">Webcams</a>
+                    </div>
+                </li>
+                <li><a href="products.html">Deals</a></li>
+                <li class="has-dropdown">
+                    <a href="contact-us.html">Support</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Support dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="contact-us.html" class="dropdown-item">Contact Us</a>
+                        <a href="faq.html" class="dropdown-item">FAQs</a>
+                        <a href="terms-conditions.html" class="dropdown-item">Warranty</a>
+                        <a href="track-order.html" class="dropdown-item">Track Order</a>
+                    </div>
+                </li>
+            </ul>
         </nav>
     </header>
 
     <!-- Main Content -->
     <main class="products-page">
-        <div class="container">
-            <div class="products-page__header">
-                <h1>Our Products</h1>
-                <p>Browse through our wide range of electronic products</p>
+        <!-- Breadcrumb -->
+        <section class="breadcrumb">
+            <div class="container">
+                <nav aria-label="Breadcrumb">
+                    <ol class="breadcrumb__list">
+                        <li class="breadcrumb__item">
+                            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                        </li>
+                        <li class="breadcrumb__separator"><i class="fas fa-chevron-right"></i></li>
+                        <li class="breadcrumb__item breadcrumb__item--active">All Products</li>
+                    </ol>
+                </nav>
             </div>
+        </section>
 
-            <div class="products-page__filters">
-                <h3>Filter Products</h3>
-                <div class="filter-group">
-                    <label for="category">Category</label>
-                    <select id="category">
-                        <option>All Categories</option>
-                        <option>Laptops</option>
-                        <option>Smartphones</option>
-                        <option>Accessories</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label for="price">Price Range</label>
-                    <input type="range" id="price" min="0" max="100000">
-                </div>
-            </div>
-
-            <div class="products-page__grid">
-                <!-- Laptops -->
-                <div class="product-card">
-                    <div class="product-card__image">
-                        <img src="https://via.placeholder.com/280x200/4CAF50/ffffff?text=Dell+XPS+15" alt="Dell XPS 15">
-                        <span class="product-card__badge">New</span>
-                    </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title">Dell XPS 15</h3>
-                        <p class="product-card__category">Laptop</p>
-                        <div class="product-card__rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                            <span>(4.5)</span>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="page-header__content">
+                    <div class="page-header__text">
+                        <h1 class="page-header__title">All Products</h1>
+                        <p class="page-header__description">Browse through our complete collection of electronics</p>
+                        <div class="page-header__stats">
+                            <span><i class="fas fa-box"></i> 1,234 Products</span>
+                            <span><i class="fas fa-tags"></i> 50+ Brands</span>
+                            <span><i class="fas fa-truck"></i> Fast Delivery</span>
                         </div>
-                        <div class="product-card__price">
-                            <span class="product-card__price--current">Rs. 185,000</span>
-                            <span class="product-card__price--original">Rs. 200,000</span>
-                        </div>
-                        <button class="product-card__btn">Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-card__image">
-                        <img src="https://via.placeholder.com/280x200/2196F3/ffffff?text=MacBook+Pro" alt="MacBook Pro">
-                        <span class="product-card__badge product-card__badge--hot">Hot</span>
-                    </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title">MacBook Pro M3</h3>
-                        <p class="product-card__category">Laptop</p>
-                        <div class="product-card__rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <span>(5.0)</span>
-                        </div>
-                        <div class="product-card__price">
-                            <span class="product-card__price--current">Rs. 285,000</span>
-                        </div>
-                        <button class="product-card__btn">Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-card__image">
-                        <img src="https://via.placeholder.com/280x200/9C27B0/ffffff?text=HP+Pavilion" alt="HP Pavilion">
-                    </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title">HP Pavilion Gaming</h3>
-                        <p class="product-card__category">Laptop</p>
-                        <div class="product-card__rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <span>(4.0)</span>
-                        </div>
-                        <div class="product-card__price">
-                            <span class="product-card__price--current">Rs. 125,000</span>
-                        </div>
-                        <button class="product-card__btn">Add to Cart</button>
-                    </div>
-                </div>
-
-                <!-- Mobiles -->
-                <div class="product-card">
-                    <div class="product-card__image">
-                        <img src="https://via.placeholder.com/280x200/FF5722/ffffff?text=iPhone+15+Pro" alt="iPhone 15 Pro">
-                        <span class="product-card__badge product-card__badge--hot">Hot</span>
-                    </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title">iPhone 15 Pro Max</h3>
-                        <p class="product-card__category">Mobile</p>
-                        <div class="product-card__rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <span>(5.0)</span>
-                        </div>
-                        <div class="product-card__price">
-                            <span class="product-card__price--current">Rs. 189,000</span>
-                            <span class="product-card__price--original">Rs. 199,000</span>
-                        </div>
-                        <button class="product-card__btn">Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-card__image">
-                        <img src="https://via.placeholder.com/280x200/607D8B/ffffff?text=Samsung+S24" alt="Samsung Galaxy S24">
-                        <span class="product-card__badge">New</span>
-                    </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title">Samsung Galaxy S24 Ultra</h3>
-                        <p class="product-card__category">Mobile</p>
-                        <div class="product-card__rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                            <span>(4.5)</span>
-                        </div>
-                        <div class="product-card__price">
-                            <span class="product-card__price--current">Rs. 159,000</span>
-                        </div>
-                        <button class="product-card__btn">Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-card__image">
-                        <img src="https://via.placeholder.com/280x200/FF9800/ffffff?text=OnePlus+12" alt="OnePlus 12">
-                    </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title">OnePlus 12</h3>
-                        <p class="product-card__category">Mobile</p>
-                        <div class="product-card__rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <span>(4.0)</span>
-                        </div>
-                        <div class="product-card__price">
-                            <span class="product-card__price--current">Rs. 89,000</span>
-                            <span class="product-card__price--original">Rs. 95,000</span>
-                        </div>
-                        <button class="product-card__btn">Add to Cart</button>
-                    </div>
-                </div>
-
-                <!-- Tablets -->
-                <div class="product-card">
-                    <div class="product-card__image">
-                        <img src="https://via.placeholder.com/280x200/3F51B5/ffffff?text=iPad+Pro" alt="iPad Pro">
-                        <span class="product-card__badge">New</span>
-                    </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title">iPad Pro 12.9"</h3>
-                        <p class="product-card__category">Tablet</p>
-                        <div class="product-card__rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                            <span>(4.5)</span>
-                        </div>
-                        <div class="product-card__price">
-                            <span class="product-card__price--current">Rs. 145,000</span>
-                        </div>
-                        <button class="product-card__btn">Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-card__image">
-                        <img src="https://via.placeholder.com/280x200/009688/ffffff?text=Galaxy+Tab" alt="Galaxy Tab S9">
-                    </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title">Galaxy Tab S9</h3>
-                        <p class="product-card__category">Tablet</p>
-                        <div class="product-card__rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <span>(4.0)</span>
-                        </div>
-                        <div class="product-card__price">
-                            <span class="product-card__price--current">Rs. 95,000</span>
-                        </div>
-                        <button class="product-card__btn">Add to Cart</button>
-                    </div>
-                </div>
-
-                <!-- Accessories -->
-                <div class="product-card">
-                    <div class="product-card__image">
-                        <img src="https://via.placeholder.com/280x200/E91E63/ffffff?text=AirPods+Pro" alt="AirPods Pro">
-                        <span class="product-card__badge product-card__badge--hot">Hot</span>
-                    </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title">AirPods Pro (2nd Gen)</h3>
-                        <p class="product-card__category">Accessory</p>
-                        <div class="product-card__rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <span>(5.0)</span>
-                        </div>
-                        <div class="product-card__price">
-                            <span class="product-card__price--current">Rs. 35,000</span>
-                        </div>
-                        <button class="product-card__btn">Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-card__image">
-                        <img src="https://via.placeholder.com/280x200/795548/ffffff?text=Magic+Mouse" alt="Magic Mouse">
-                    </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title">Apple Magic Mouse</h3>
-                        <p class="product-card__category">Accessory</p>
-                        <div class="product-card__rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <span>(4.0)</span>
-                        </div>
-                        <div class="product-card__price">
-                            <span class="product-card__price--current">Rs. 12,500</span>
-                            <span class="product-card__price--original">Rs. 15,000</span>
-                        </div>
-                        <button class="product-card__btn">Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-card__image">
-                        <img src="https://via.placeholder.com/280x200/00BCD4/ffffff?text=USB-C+Hub" alt="USB-C Hub">
-                    </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title">Anker USB-C Hub 7-in-1</h3>
-                        <p class="product-card__category">Accessory</p>
-                        <div class="product-card__rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                            <span>(4.5)</span>
-                        </div>
-                        <div class="product-card__price">
-                            <span class="product-card__price--current">Rs. 8,500</span>
-                        </div>
-                        <button class="product-card__btn">Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-card__image">
-                        <img src="https://via.placeholder.com/280x200/CDDC39/333333?text=Wireless+Charger" alt="Wireless Charger">
-                        <span class="product-card__badge">New</span>
-                    </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title">Belkin 3-in-1 Wireless Charger</h3>
-                        <p class="product-card__category">Accessory</p>
-                        <div class="product-card__rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <span>(4.0)</span>
-                        </div>
-                        <div class="product-card__price">
-                            <span class="product-card__price--current">Rs. 18,500</span>
-                        </div>
-                        <button class="product-card__btn">Add to Cart</button>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Products Section -->
+        <section class="products-section">
+            <div class="container">
+                <div class="products-layout">
+                    <!-- Filters Sidebar -->
+                    <aside class="filters-sidebar">
+                        <div class="filters-header">
+                            <h3><i class="fas fa-filter"></i> Filters</h3>
+                            <button type="button" class="btn-clear-all">Clear All</button>
+                        </div>
+
+                        <!-- Price Range Filter -->
+                        <div class="filter-group">
+                            <h4 class="filter-title">
+                                <span>Price Range</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </h4>
+                            <div class="filter-content">
+                                <div class="price-range">
+                                    <input type="range" id="priceRange" min="0" max="500000" value="250000" step="1000">
+                                    <div class="price-labels">
+                                        <span>NPR 0</span>
+                                        <span id="priceValue">NPR 250,000</span>
+                                        <span>NPR 500,000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Category Filter -->
+                        <div class="filter-group">
+                            <h4 class="filter-title">
+                                <span>Category</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </h4>
+                            <div class="filter-content">
+                                <div class="filter-options">
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="label">Laptops</span>
+                                        <span class="count">(342)</span>
+                                    </label>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="label">Smartphones</span>
+                                        <span class="count">(256)</span>
+                                    </label>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="label">Components</span>
+                                        <span class="count">(189)</span>
+                                    </label>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="label">Tablets</span>
+                                        <span class="count">(124)</span>
+                                    </label>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="label">Accessories</span>
+                                        <span class="count">(323)</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Brand Filter -->
+                        <div class="filter-group">
+                            <h4 class="filter-title">
+                                <span>Brand</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </h4>
+                            <div class="filter-content">
+                                <div class="filter-search">
+                                    <input type="text" placeholder="Search brands...">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div class="filter-options">
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="label">Apple</span>
+                                        <span class="count">(85)</span>
+                                    </label>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="label">Dell</span>
+                                        <span class="count">(124)</span>
+                                    </label>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="label">HP</span>
+                                        <span class="count">(98)</span>
+                                    </label>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="label">Lenovo</span>
+                                        <span class="count">(156)</span>
+                                    </label>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="label">ASUS</span>
+                                        <span class="count">(142)</span>
+                                    </label>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="label">Samsung</span>
+                                        <span class="count">(167)</span>
+                                    </label>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="label">Acer</span>
+                                        <span class="count">(89)</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Rating Filter -->
+                        <div class="filter-group">
+                            <h4 class="filter-title">
+                                <span>Customer Rating</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </h4>
+                            <div class="filter-content">
+                                <div class="filter-options rating-options">
+                                    <label class="filter-radio">
+                                        <input type="radio" name="rating">
+                                        <span class="radio-mark"></span>
+                                        <span class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </span>
+                                        <span class="rating-text">& Up</span>
+                                    </label>
+                                    <label class="filter-radio">
+                                        <input type="radio" name="rating">
+                                        <span class="radio-mark"></span>
+                                        <span class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </span>
+                                        <span class="rating-text">& Up</span>
+                                    </label>
+                                    <label class="filter-radio">
+                                        <input type="radio" name="rating">
+                                        <span class="radio-mark"></span>
+                                        <span class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </span>
+                                        <span class="rating-text">& Up</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Availability Filter -->
+                        <div class="filter-group">
+                            <h4 class="filter-title">
+                                <span>Availability</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </h4>
+                            <div class="filter-content">
+                                <div class="filter-options">
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox" checked>
+                                        <span class="checkmark"></span>
+                                        <span class="label">In Stock</span>
+                                    </label>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="label">Out of Stock</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Discount Filter -->
+                        <div class="filter-group">
+                            <h4 class="filter-title">
+                                <span>Discount</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </h4>
+                            <div class="filter-content">
+                                <div class="filter-options">
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="label">50% or more</span>
+                                    </label>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="label">40% or more</span>
+                                    </label>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="label">30% or more</span>
+                                    </label>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="label">20% or more</span>
+                                    </label>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="label">10% or more</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <!-- Products Main Content -->
+                    <div class="products-main">
+                        <!-- Toolbar -->
+                        <div class="products-toolbar">
+                            <div class="toolbar-left">
+                                <span class="results-count">Showing <strong>1,234</strong> products</span>
+                            </div>
+                            <div class="toolbar-right">
+                                <!-- View Toggle -->
+                                <div class="view-toggle">
+                                    <button type="button" class="view-btn active" data-view="grid" title="Grid View">
+                                        <i class="fas fa-th"></i>
+                                    </button>
+                                    <button type="button" class="view-btn" data-view="list" title="List View">
+                                        <i class="fas fa-list"></i>
+                                    </button>
+                                </div>
+
+                                <!-- Sort Dropdown -->
+                                <div class="sort-dropdown">
+                                    <label for="sortSelect">Sort by:</label>
+                                    <select id="sortSelect">
+                                        <option value="featured">Featured</option>
+                                        <option value="price-low">Price: Low to High</option>
+                                        <option value="price-high">Price: High to Low</option>
+                                        <option value="newest">Newest First</option>
+                                        <option value="rating">Highest Rated</option>
+                                        <option value="popular">Most Popular</option>
+                                    </select>
+                                </div>
+
+                                <!-- Mobile Filter Toggle -->
+                                <button type="button" class="btn-mobile-filter">
+                                    <i class="fas fa-filter"></i> Filters
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Active Filters -->
+                        <div class="active-filters">
+                            <span class="filter-tag">
+                                Dell
+                                <button type="button"><i class="fas fa-times"></i></button>
+                            </span>
+                            <span class="filter-tag">
+                                In Stock
+                                <button type="button"><i class="fas fa-times"></i></button>
+                            </span>
+                        </div>
+
+                        <!-- Product Grid -->
+                        <div class="product-grid">
+                            <!-- Product 1 -->
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=400&h=300&fit=crop" alt="Dell XPS 15">
+                                    <div class="product-badges">
+                                        <span class="badge badge-new">New</span>
+                                        <span class="badge badge-discount">-15%</span>
+                                    </div>
+                                    <div class="product-actions">
+                                        <button type="button" class="action-btn" title="Add to Wishlist">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                        <button type="button" class="action-btn" title="Quick View">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button type="button" class="action-btn" title="Compare">
+                                            <i class="fas fa-exchange-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <div class="product-category">Dell</div>
+                                    <h3 class="product-title">
+                                        <a href="product-detail.html">Dell XPS 15 (2024) - Intel Core i7, 16GB RAM, 512GB SSD</a>
+                                    </h3>
+                                    <div class="product-rating">
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                        <span class="rating-count">(248)</span>
+                                    </div>
+                                    <div class="product-specs">
+                                        <span><i class="fas fa-microchip"></i> i7-13700H</span>
+                                        <span><i class="fas fa-memory"></i> 16GB</span>
+                                        <span><i class="fas fa-hdd"></i> 512GB</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="price-current">NPR 185,000</span>
+                                        <span class="price-original">NPR 215,000</span>
+                                    </div>
+                                    <button type="button" class="btn-primary btn-add-cart">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Product 2 -->
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&h=300&fit=crop" alt="MacBook Pro">
+                                    <div class="product-badges">
+                                        <span class="badge badge-hot">Hot</span>
+                                    </div>
+                                    <div class="product-actions">
+                                        <button type="button" class="action-btn active" title="Remove from Wishlist">
+                                            <i class="fas fa-heart"></i>
+                                        </button>
+                                        <button type="button" class="action-btn" title="Quick View">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button type="button" class="action-btn" title="Compare">
+                                            <i class="fas fa-exchange-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <div class="product-category">Apple</div>
+                                    <h3 class="product-title">
+                                        <a href="product-detail.html">MacBook Pro 14" M3 Pro - 18GB RAM, 512GB SSD</a>
+                                    </h3>
+                                    <div class="product-rating">
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span class="rating-count">(412)</span>
+                                    </div>
+                                    <div class="product-specs">
+                                        <span><i class="fas fa-microchip"></i> M3 Pro</span>
+                                        <span><i class="fas fa-memory"></i> 18GB</span>
+                                        <span><i class="fas fa-hdd"></i> 512GB</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="price-current">NPR 285,000</span>
+                                    </div>
+                                    <button type="button" class="btn-primary btn-add-cart">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Product 3 -->
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400&h=300&fit=crop" alt="HP Pavilion">
+                                    <div class="product-badges">
+                                        <span class="badge badge-discount">-20%</span>
+                                    </div>
+                                    <div class="product-actions">
+                                        <button type="button" class="action-btn" title="Add to Wishlist">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                        <button type="button" class="action-btn" title="Quick View">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button type="button" class="action-btn" title="Compare">
+                                            <i class="fas fa-exchange-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <div class="product-category">HP</div>
+                                    <h3 class="product-title">
+                                        <a href="product-detail.html">HP Pavilion 15 - AMD Ryzen 7, 16GB RAM, 1TB SSD</a>
+                                    </h3>
+                                    <div class="product-rating">
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <span class="rating-count">(186)</span>
+                                    </div>
+                                    <div class="product-specs">
+                                        <span><i class="fas fa-microchip"></i> Ryzen 7</span>
+                                        <span><i class="fas fa-memory"></i> 16GB</span>
+                                        <span><i class="fas fa-hdd"></i> 1TB</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="price-current">NPR 95,000</span>
+                                        <span class="price-original">NPR 118,000</span>
+                                    </div>
+                                    <button type="button" class="btn-primary btn-add-cart">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Product 4 -->
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=400&h=300&fit=crop" alt="iPhone 15 Pro">
+                                    <div class="product-badges">
+                                        <span class="badge badge-hot">Hot</span>
+                                    </div>
+                                    <div class="product-actions">
+                                        <button type="button" class="action-btn" title="Add to Wishlist">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                        <button type="button" class="action-btn" title="Quick View">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button type="button" class="action-btn" title="Compare">
+                                            <i class="fas fa-exchange-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <div class="product-category">Apple</div>
+                                    <h3 class="product-title">
+                                        <a href="product-detail.html">iPhone 15 Pro Max - 256GB, Titanium Blue</a>
+                                    </h3>
+                                    <div class="product-rating">
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span class="rating-count">(892)</span>
+                                    </div>
+                                    <div class="product-specs">
+                                        <span><i class="fas fa-microchip"></i> A17 Pro</span>
+                                        <span><i class="fas fa-hdd"></i> 256GB</span>
+                                        <span><i class="fas fa-mobile-alt"></i> 6.7"</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="price-current">NPR 189,000</span>
+                                        <span class="price-original">NPR 199,000</span>
+                                    </div>
+                                    <button type="button" class="btn-primary btn-add-cart">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Product 5 -->
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1610792516307-ea5acd9c3b00?w=400&h=300&fit=crop" alt="Samsung Galaxy S24">
+                                    <div class="product-badges">
+                                        <span class="badge badge-new">New</span>
+                                    </div>
+                                    <div class="product-actions">
+                                        <button type="button" class="action-btn" title="Add to Wishlist">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                        <button type="button" class="action-btn" title="Quick View">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button type="button" class="action-btn" title="Compare">
+                                            <i class="fas fa-exchange-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <div class="product-category">Samsung</div>
+                                    <h3 class="product-title">
+                                        <a href="product-detail.html">Samsung Galaxy S24 Ultra - 512GB, Phantom Black</a>
+                                    </h3>
+                                    <div class="product-rating">
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                        <span class="rating-count">(634)</span>
+                                    </div>
+                                    <div class="product-specs">
+                                        <span><i class="fas fa-microchip"></i> Snapdragon 8</span>
+                                        <span><i class="fas fa-hdd"></i> 512GB</span>
+                                        <span><i class="fas fa-mobile-alt"></i> 6.8"</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="price-current">NPR 159,000</span>
+                                    </div>
+                                    <button type="button" class="btn-primary btn-add-cart">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Product 6 -->
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1544117519-31a4b719223d?w=400&h=300&fit=crop" alt="iPad Pro">
+                                    <div class="product-badges">
+                                        <span class="badge badge-new">New</span>
+                                    </div>
+                                    <div class="product-actions">
+                                        <button type="button" class="action-btn" title="Add to Wishlist">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                        <button type="button" class="action-btn" title="Quick View">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button type="button" class="action-btn" title="Compare">
+                                            <i class="fas fa-exchange-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <div class="product-category">Apple</div>
+                                    <h3 class="product-title">
+                                        <a href="product-detail.html">iPad Pro 12.9" M3 - 256GB, Space Gray</a>
+                                    </h3>
+                                    <div class="product-rating">
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                        <span class="rating-count">(324)</span>
+                                    </div>
+                                    <div class="product-specs">
+                                        <span><i class="fas fa-microchip"></i> M3</span>
+                                        <span><i class="fas fa-hdd"></i> 256GB</span>
+                                        <span><i class="fas fa-tablet-alt"></i> 12.9"</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="price-current">NPR 145,000</span>
+                                    </div>
+                                    <button type="button" class="btn-primary btn-add-cart">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Product 7 -->
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1589003077984-894e133dabab?w=400&h=300&fit=crop" alt="AirPods Pro">
+                                    <div class="product-badges">
+                                        <span class="badge badge-hot">Hot</span>
+                                    </div>
+                                    <div class="product-actions">
+                                        <button type="button" class="action-btn" title="Add to Wishlist">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                        <button type="button" class="action-btn" title="Quick View">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button type="button" class="action-btn" title="Compare">
+                                            <i class="fas fa-exchange-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <div class="product-category">Apple</div>
+                                    <h3 class="product-title">
+                                        <a href="product-detail.html">AirPods Pro (2nd Gen) - USB-C, Active Noise Cancellation</a>
+                                    </h3>
+                                    <div class="product-rating">
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span class="rating-count">(1,245)</span>
+                                    </div>
+                                    <div class="product-specs">
+                                        <span><i class="fas fa-headphones"></i> ANC</span>
+                                        <span><i class="fas fa-battery-full"></i> 30h</span>
+                                        <span><i class="fas fa-charging-station"></i> USB-C</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="price-current">NPR 35,000</span>
+                                    </div>
+                                    <button type="button" class="btn-primary btn-add-cart">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Product 8 -->
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400&h=300&fit=crop" alt="Logitech MX Master">
+                                    <div class="product-badges">
+                                        <span class="badge badge-discount">-25%</span>
+                                    </div>
+                                    <div class="product-actions">
+                                        <button type="button" class="action-btn" title="Add to Wishlist">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                        <button type="button" class="action-btn" title="Quick View">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button type="button" class="action-btn" title="Compare">
+                                            <i class="fas fa-exchange-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <div class="product-category">Logitech</div>
+                                    <h3 class="product-title">
+                                        <a href="product-detail.html">Logitech MX Master 3S - Wireless Performance Mouse</a>
+                                    </h3>
+                                    <div class="product-rating">
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span class="rating-count">(567)</span>
+                                    </div>
+                                    <div class="product-specs">
+                                        <span><i class="fas fa-mouse"></i> Wireless</span>
+                                        <span><i class="fas fa-battery-full"></i> 70 Days</span>
+                                        <span><i class="fas fa-hand-pointer"></i> 8K DPI</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="price-current">NPR 12,000</span>
+                                        <span class="price-original">NPR 16,000</span>
+                                    </div>
+                                    <button type="button" class="btn-primary btn-add-cart">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Product 9 -->
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1625948515291-69613efd103f?w=400&h=300&fit=crop" alt="ASUS ROG">
+                                    <div class="product-badges">
+                                        <span class="badge badge-new">New</span>
+                                        <span class="badge badge-discount">-10%</span>
+                                    </div>
+                                    <div class="product-actions">
+                                        <button type="button" class="action-btn" title="Add to Wishlist">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                        <button type="button" class="action-btn" title="Quick View">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button type="button" class="action-btn" title="Compare">
+                                            <i class="fas fa-exchange-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <div class="product-category">ASUS</div>
+                                    <h3 class="product-title">
+                                        <a href="product-detail.html">ASUS ROG Strix G16 - RTX 4060, i7-13650HX, 16GB</a>
+                                    </h3>
+                                    <div class="product-rating">
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <span class="rating-count">(234)</span>
+                                    </div>
+                                    <div class="product-specs">
+                                        <span><i class="fas fa-microchip"></i> i7-13650HX</span>
+                                        <span><i class="fas fa-memory"></i> 16GB</span>
+                                        <span><i class="fas fa-desktop"></i> RTX 4060</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="price-current">NPR 162,000</span>
+                                        <span class="price-original">NPR 180,000</span>
+                                    </div>
+                                    <button type="button" class="btn-primary btn-add-cart">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pagination -->
+                        <nav class="pagination" aria-label="Product pages">
+                            <ul class="pagination__list">
+                                <li class="pagination__item pagination__item--prev disabled">
+                                    <button type="button" disabled>
+                                        <i class="fas fa-chevron-left"></i>
+                                        Previous
+                                    </button>
+                                </li>
+                                <li class="pagination__item active">
+                                    <button type="button">1</button>
+                                </li>
+                                <li class="pagination__item">
+                                    <button type="button">2</button>
+                                </li>
+                                <li class="pagination__item">
+                                    <button type="button">3</button>
+                                </li>
+                                <li class="pagination__item">
+                                    <button type="button">4</button>
+                                </li>
+                                <li class="pagination__item pagination__item--ellipsis">
+                                    <span>...</span>
+                                </li>
+                                <li class="pagination__item">
+                                    <button type="button">42</button>
+                                </li>
+                                <li class="pagination__item pagination__item--next">
+                                    <button type="button">
+                                        Next
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <script>
-        // Mobile menu toggle
-        document.getElementById('menuToggle').addEventListener('click', function() {
-            document.getElementById('mainNav').classList.toggle('active');
-            const icon = this.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
-        });
-    </script>
-
-    <!-- Footer -->
     <!-- Footer -->
     <footer class="footer-v2">
         <div class="footer-v2__main">
@@ -411,10 +952,10 @@
                     <div class="footer-v2__column">
                         <h3 class="footer-v2__title">CUSTOMER SERVICE</h3>
                         <ul class="footer-v2__links">
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">FAQs</a></li>
+                            <li><a href="contact-us.html">Contact Us</a></li>
+                            <li><a href="faq.html">FAQs</a></li>
                             <li><a href="#">Help & Advice</a></li>
-                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="terms-conditions.html">Terms & Conditions</a></li>
                             <li><a href="#">Refund Policy</a></li>
                         </ul>
                     </div>
@@ -432,7 +973,7 @@
                     <div class="footer-v2__column">
                         <h3 class="footer-v2__title">COMPANY INFO</h3>
                         <ul class="footer-v2__links">
-                            <li><a href="#">About Us</a></li>
+                            <li><a href="about-us.html">About Us</a></li>
                             <li><a href="#">Our Blog</a></li>
                             <li><a href="#">Careers</a></li>
                             <li><a href="#">Store Locations</a></li>
@@ -444,11 +985,11 @@
                     <div class="footer-v2__column">
                         <h3 class="footer-v2__title">Our Shop</h3>
                         <ul class="footer-v2__links">
-                            <li><a href="#">Gaming Gears</a></li>
-                            <li><a href="#">Electronics</a></li>
-                            <li><a href="#">Laptop</a></li>
-                            <li><a href="#">Smartphone</a></li>
-                            <li><a href="#">Audio</a></li>
+                            <li><a href="category.html">Gaming Gears</a></li>
+                            <li><a href="category.html">Electronics</a></li>
+                            <li><a href="category.html">Laptop</a></li>
+                            <li><a href="category.html">Smartphone</a></li>
+                            <li><a href="category.html">Audio</a></li>
                         </ul>
                     </div>
 
@@ -457,7 +998,7 @@
                         <h3 class="footer-v2__title">MY ACCOUNT</h3>
                         <ul class="footer-v2__links">
                             <li><a href="login.html">Login</a></li>
-                            <li><a href="login.html">Register</a></li>
+                            <li><a href="register.html">Register</a></li>
                             <li><a href="wishlist.html">Wishlist</a></li>
                             <li><a href="my-orders.html">Track Your Orders</a></li>
                             <li><a href="checkout.html">Checkout</a></li>
@@ -502,24 +1043,6 @@
                             <button type="submit">Subscribe</button>
                         </form>
                     </div>
-
-                    <!-- Store Location -->
-                    <div class="footer-v2__store-location d-none">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <strong>Store Location:</strong>
-                            <span>Putalisadak - Kathmandu, Nepal</span>
-                        </div>
-                    </div>
-
-                    <!-- Phone -->
-                    <div class="footer-v2__phone d-none">
-                        <i class="fas fa-headset"></i>
-                        <div>
-                            <strong>Call Us Now:</strong>
-                            <span>+977 98123412345</span>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- Copyright -->
@@ -533,5 +1056,94 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menuToggle')?.addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+            const icon = this.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Filter accordion toggle
+        document.querySelectorAll('.filter-title').forEach(title => {
+            title.addEventListener('click', function() {
+                const filterGroup = this.parentElement;
+                const isOpen = filterGroup.classList.contains('open');
+
+                // Close all other filter groups
+                document.querySelectorAll('.filter-group').forEach(group => {
+                    group.classList.remove('open');
+                });
+
+                // Toggle current filter group
+                if (!isOpen) {
+                    filterGroup.classList.add('open');
+                }
+            });
+        });
+
+        // Price range slider
+        const priceRange = document.getElementById('priceRange');
+        const priceValue = document.getElementById('priceValue');
+
+        priceRange?.addEventListener('input', function() {
+            const value = parseInt(this.value).toLocaleString('en-NP');
+            priceValue.textContent = `NPR ${value}`;
+        });
+
+        // View toggle
+        document.querySelectorAll('.view-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const view = this.dataset.view;
+                const productGrid = document.querySelector('.product-grid');
+
+                if (view === 'list') {
+                    productGrid.classList.add('list-view');
+                } else {
+                    productGrid.classList.remove('list-view');
+                }
+            });
+        });
+
+        // Wishlist toggle
+        document.querySelectorAll('.product-actions .action-btn').forEach(btn => {
+            if (btn.querySelector('.fa-heart')) {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    this.classList.toggle('active');
+                    const icon = this.querySelector('i');
+                    icon.classList.toggle('far');
+                    icon.classList.toggle('fas');
+                });
+            }
+        });
+
+        // Remove active filter tags
+        document.querySelectorAll('.filter-tag button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.parentElement.remove();
+            });
+        });
+
+        // Clear all filters
+        document.querySelector('.btn-clear-all')?.addEventListener('click', function() {
+            document.querySelectorAll('.filter-checkbox input:checked').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            document.querySelectorAll('.filter-tag').forEach(tag => {
+                tag.remove();
+            });
+        });
+
+        // Mobile filter toggle
+        document.querySelector('.btn-mobile-filter')?.addEventListener('click', function() {
+            document.querySelector('.filters-sidebar').classList.toggle('mobile-active');
+        });
+    </script>
 </body>
 </html>

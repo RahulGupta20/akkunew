@@ -3,3 +3,35 @@
 @import '../node_modules/bootstrap/scss/bootstrap';
 @import 'common/common';
 @import 'pages/home';
+
+// Body Background
+body.dark-theme {
+    background-image: url(../assets/images/bg-img.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    &::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(12, 3, 4, 0.7);
+        z-index: 0;
+    }
+
+    // Ensure all content appears above the overlay
+    .header {
+        position: relative;
+        z-index: 1000;
+    }
+
+    section,
+    footer {
+        position: relative;
+        z-index: 1;
+    }
+}

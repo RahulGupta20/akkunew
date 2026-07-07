@@ -85,11 +85,68 @@
         <nav class="header__nav" id="mainNav">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="category.html" class="active">Categories</a></li>
+                <li class="has-dropdown">
+                    <a href="category.html">Laptops</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Laptops dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="category.html" class="dropdown-item">Gaming Laptops</a>
+                        <a href="category.html" class="dropdown-item">Business Laptops</a>
+                        <a href="category.html" class="dropdown-item">Student Laptops</a>
+                        <a href="category.html" class="dropdown-item">Ultrabooks</a>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    <a href="category.html">Desktop PCs</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Desktop PCs dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="category.html" class="dropdown-item">Gaming PCs</a>
+                        <a href="category.html" class="dropdown-item">Workstations</a>
+                        <a href="category.html" class="dropdown-item">All-in-One PCs</a>
+                        <a href="category.html" class="dropdown-item">Mini PCs</a>
+                    </div>
+                </li>
+                <li><a href="#">Custom PC Build</a></li>
+                <li class="has-dropdown">
+                    <a href="category.html">Mobile Phones</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Mobile Phones dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="category.html" class="dropdown-item">Smartphones</a>
+                        <a href="category.html" class="dropdown-item">Feature Phones</a>
+                        <a href="category.html" class="dropdown-item">Accessories</a>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    <a href="#">Peripherals</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Peripherals dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="category.html" class="dropdown-item">Keyboards</a>
+                        <a href="category.html" class="dropdown-item">Mice</a>
+                        <a href="category.html" class="dropdown-item">Headphones</a>
+                        <a href="category.html" class="dropdown-item">Monitors</a>
+                        <a href="category.html" class="dropdown-item">Webcams</a>
+                    </div>
+                </li>
                 <li><a href="#">Deals</a></li>
-                <li><a href="#">New Arrivals</a></li>
-                <li><a href="#">Support</a></li>
+                <li class="has-dropdown">
+                    <a href="#">Support</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Support dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Contact Us</a>
+                        <a href="#" class="dropdown-item">FAQs</a>
+                        <a href="#" class="dropdown-item">Warranty</a>
+                        <a href="#" class="dropdown-item">Track Order</a>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
@@ -124,42 +181,93 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Subcategories Inside Header -->
+                <div class="category-subcategories d-none">
+                    <div class="subcategory-grid">
+                        <a href="#" class="subcategory-card">
+                            <div class="subcategory-icon">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <h3>Gaming Laptops</h3>
+                            <span class="product-count">48 items</span>
+                        </a>
+                        <a href="#" class="subcategory-card">
+                            <div class="subcategory-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h3>Business Laptops</h3>
+                            <span class="product-count">62 items</span>
+                        </a>
+                        <a href="#" class="subcategory-card">
+                            <div class="subcategory-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3>Student Laptops</h3>
+                            <span class="product-count">45 items</span>
+                        </a>
+                        <a href="#" class="subcategory-card">
+                            <div class="subcategory-icon">
+                                <i class="fas fa-feather-alt"></i>
+                            </div>
+                            <h3>Ultrabooks</h3>
+                            <span class="product-count">35 items</span>
+                        </a>
+                        <a href="#" class="subcategory-card">
+                            <div class="subcategory-icon">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <h3>2-in-1 Convertibles</h3>
+                            <span class="product-count">28 items</span>
+                        </a>
+                        <a href="#" class="subcategory-card">
+                            <div class="subcategory-icon">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <h3>Creator Laptops</h3>
+                            <span class="product-count">16 items</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Subcategories -->
-        <section class="subcategories">
+        <!-- Brand Carousel -->
+        <section class="brand-carousel">
             <div class="container">
-                <h2>Browse by Type</h2>
-                <div class="subcategory-grid">
-                    <a href="#" class="subcategory-card active">
-                        <div class="subcategory-icon">
-                            <i class="fas fa-laptop"></i>
-                        </div>
-                        <h3>Laptops</h3>
-                        <span class="product-count">125 items</span>
-                    </a>
-                    <a href="#" class="subcategory-card">
-                        <div class="subcategory-icon">
-                            <i class="fas fa-desktop"></i>
-                        </div>
-                        <h3>Desktops</h3>
-                        <span class="product-count">45 items</span>
-                    </a>
-                    <a href="#" class="subcategory-card">
-                        <div class="subcategory-icon">
-                            <i class="fas fa-tablet-alt"></i>
-                        </div>
-                        <h3>Tablets</h3>
-                        <span class="product-count">38 items</span>
-                    </a>
-                    <a href="#" class="subcategory-card">
-                        <div class="subcategory-icon">
-                            <i class="fas fa-keyboard"></i>
-                        </div>
-                        <h3>Accessories</h3>
-                        <span class="product-count">26 items</span>
-                    </a>
+                <div class="brand-carousel__wrapper">
+                    <button class="carousel-nav prev" aria-label="Previous brands">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="brand-carousel__track">
+                        <a href="#" class="brand-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Lenovo_logo_2015.svg/200px-Lenovo_logo_2015.svg.png" alt="Lenovo">
+                        </a>
+                        <a href="#" class="brand-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Acer_2011.svg/200px-Acer_2011.svg.png" alt="Acer">
+                        </a>
+                        <a href="#" class="brand-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/ASUS_Logo.svg/200px-ASUS_Logo.svg.png" alt="ASUS">
+                        </a>
+                        <a href="#" class="brand-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Dell_Logo.svg/200px-Dell_Logo.svg.png" alt="Dell">
+                        </a>
+                        <a href="#" class="brand-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/HP_logo_2012.svg/200px-HP_logo_2012.svg.png" alt="HP">
+                        </a>
+                        <a href="#" class="brand-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/200px-Apple_logo_black.svg.png" alt="Apple">
+                        </a>
+                        <a href="#" class="brand-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Toshiba_logo.svg/200px-Toshiba_logo.svg.png" alt="Toshiba">
+                        </a>
+                        <a href="#" class="brand-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/MSI_Logo.svg/200px-MSI_Logo.svg.png" alt="MSI">
+                        </a>
+                    </div>
+                    <button class="carousel-nav next" aria-label="Next brands">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
         </section>
@@ -173,6 +281,54 @@
                         <div class="filter-header">
                             <h3>Filters</h3>
                             <button type="button" class="btn-text" id="clearFilters">Clear All</button>
+                        </div>
+
+                        <!-- Laptop Type Filter -->
+                        <div class="filter-group">
+                            <h4 class="filter-title">
+                                <span>Laptop Type</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </h4>
+                            <div class="filter-content">
+                                <div class="filter-options">
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="label">Gaming Laptops</span>
+                                        <span class="count">(48)</span>
+                                    </label>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="label">Business Laptops</span>
+                                        <span class="count">(62)</span>
+                                    </label>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="label">Student Laptops</span>
+                                        <span class="count">(45)</span>
+                                    </label>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="label">Ultrabooks</span>
+                                        <span class="count">(35)</span>
+                                    </label>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="label">2-in-1 Convertibles</span>
+                                        <span class="count">(28)</span>
+                                    </label>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="label">Creator Laptops</span>
+                                        <span class="count">(16)</span>
+                                    </label>
+                                </div>
+                            </div>
                         </div>
 
                         <!-- Price Filter -->
@@ -767,52 +923,313 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>About AKKU</h3>
-                    <p>Your trusted partner for premium electronics and gadgets in Nepal.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+    <!-- Language & Currency Modal -->
+    <div class="settings-modal" id="settingsModal">
+        <div class="settings-modal__overlay" id="closeSettingsModal"></div>
+        <div class="settings-modal__content">
+            <div class="settings-modal__header">
+                <h3><i class="fas fa-globe"></i> Preferences</h3>
+                <button class="close-btn" id="closeSettingsModalBtn" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="settings-modal__body">
+                <!-- Language Selection -->
+                <div class="settings-section">
+                    <h4><i class="fas fa-language"></i> Language</h4>
+                    <div class="settings-options">
+                        <label class="settings-option active">
+                            <input type="radio" name="language" value="en" checked>
+                            <span class="option-content">
+                                <span class="option-flag">🇬🇧</span>
+                                <span class="option-label">English</span>
+                                <i class="fas fa-check-circle"></i>
+                            </span>
+                        </label>
+                        <label class="settings-option">
+                            <input type="radio" name="language" value="ne">
+                            <span class="option-content">
+                                <span class="option-flag">🇳🇵</span>
+                                <span class="option-label">नेपाली</span>
+                                <i class="fas fa-check-circle"></i>
+                            </span>
+                        </label>
                     </div>
                 </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Track Order</a></li>
-                        <li><a href="#">Return Policy</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Categories</h3>
-                    <ul>
-                        <li><a href="#">Laptops</a></li>
-                        <li><a href="#">Smartphones</a></li>
-                        <li><a href="#">Accessories</a></li>
-                        <li><a href="#">Smart Devices</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <ul>
-                        <li><i class="fas fa-phone"></i> +977-1-5970100</li>
-                        <li><i class="fas fa-envelope"></i> support@akkuelectronics.com</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</li>
-                    </ul>
+
+                <!-- Currency Selection -->
+                <div class="settings-section">
+                    <h4><i class="fas fa-coins"></i> Currency</h4>
+                    <div class="settings-options">
+                        <label class="settings-option active">
+                            <input type="radio" name="currency" value="npr" checked>
+                            <span class="option-content">
+                                <span class="option-currency">रु</span>
+                                <span class="option-label">NPR</span>
+                                <i class="fas fa-check-circle"></i>
+                            </span>
+                        </label>
+                        <label class="settings-option">
+                            <input type="radio" name="currency" value="usd">
+                            <span class="option-content">
+                                <span class="option-currency">$</span>
+                                <span class="option-label">USD</span>
+                                <i class="fas fa-check-circle"></i>
+                            </span>
+                        </label>
+                    </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 AKKU Electronics. All rights reserved.</p>
+            <div class="settings-modal__footer">
+                <button class="btn-secondary" id="cancelSettings">Cancel</button>
+                <button class="btn-apply"><i class="fas fa-check"></i> Apply</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Settings Modal
+        const settingsModal = document.getElementById('settingsModal');
+        const openSettingsBtn = document.getElementById('openSettingsModal');
+        const closeSettingsOverlay = document.getElementById('closeSettingsModal');
+        const closeSettingsBtn = document.getElementById('closeSettingsModalBtn');
+        const cancelSettingsBtn = document.getElementById('cancelSettings');
+
+        if (openSettingsBtn) {
+            openSettingsBtn.addEventListener('click', () => {
+                settingsModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        }
+
+        [closeSettingsOverlay, closeSettingsBtn, cancelSettingsBtn].forEach(el => {
+            if (el) {
+                el.addEventListener('click', () => {
+                    settingsModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            }
+        });
+
+        // Settings option selection
+        document.querySelectorAll('.settings-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const radio = this.querySelector('input[type="radio"]');
+                const group = radio.name;
+
+                // Remove active from all options in this group
+                document.querySelectorAll(`input[name="${group}"]`).forEach(r => {
+                    r.closest('.settings-option').classList.remove('active');
+                });
+
+                // Add active to clicked option
+                this.classList.add('active');
+                radio.checked = true;
+            });
+        });
+
+        // Apply settings
+        const applyBtn = document.querySelector('.btn-apply');
+        if (applyBtn) {
+            applyBtn.addEventListener('click', () => {
+                const language = document.querySelector('input[name="language"]:checked').value;
+                const currency = document.querySelector('input[name="currency"]:checked').value;
+
+                // Update button text
+                const langMap = { en: 'EN', ne: 'NE', hi: 'HI' };
+                const currencyMap = { npr: 'NPR', usd: 'USD', inr: 'INR' };
+                const settingsBtnText = openSettingsBtn.querySelector('span');
+                if (settingsBtnText) {
+                    settingsBtnText.textContent = `${langMap[language]} / ${currencyMap[currency]}`;
+                }
+
+                // Close modal
+                settingsModal.classList.remove('active');
+                document.body.style.overflow = '';
+
+                // Show success message (optional)
+                console.log('Settings applied:', { language, currency });
+            });
+        }
+    </script>
+
+    <!-- Search Overlay JS -->
+    <script src="js/search-overlay.js"></script>
+
+    <!-- Footer -->
+    <footer class="footer-v2">
+        <div class="footer-v2__main">
+            <div class="container">
+                <div class="footer-v2__grid">
+                    <!-- Column 1: Customer Service -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">CUSTOMER SERVICE</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Help & Advice</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Refund Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 2: Help & Support -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">HELP & SUPPORT</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="#">Shipping Info</a></li>
+                            <li><a href="#">Refund Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 3: Company Info -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">COMPANY INFO</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Our Blog</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Store Locations</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 4: Our Shop -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">Our Shop</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="#">Gaming Gears</a></li>
+                            <li><a href="#">Electronics</a></li>
+                            <li><a href="#">Laptop</a></li>
+                            <li><a href="#">Smartphone</a></li>
+                            <li><a href="#">Audio</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 5: My Account -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">MY ACCOUNT</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="login.html">Register</a></li>
+                            <li><a href="wishlist.html">Wishlist</a></li>
+                            <li><a href="my-orders.html">Track Your Orders</a></li>
+                            <li><a href="checkout.html">Checkout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-v2__bottom">
+            <div class="container">
+                <div class="footer-v2__bottom-grid">
+                    <!-- Social & Copyright -->
+                    <div class="footer-v2__social-section">
+                        <h4 class="footer-v2__bottom-title">Follow Us:</h4>
+                        <div class="footer-v2__social-links">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Payment Methods -->
+                    <div class="footer-v2__payment-section">
+                        <h4 class="footer-v2__bottom-title">We Accept:</h4>
+                        <div class="footer-v2__payment-methods">
+                            <img src="assets/images/esewa-logo.png" alt="eSewa" class="payment-logo">
+                            <img src="assets/images/khalti-logo.png" alt="Khalti" class="payment-logo">
+                            <img src="assets/images/connectIPS-logo.png" alt="ConnectIPS" class="payment-logo">
+                            <img src="assets/images/fonepay.png" alt="FonePay" class="payment-logo">
+                        </div>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="footer-v2__newsletter-section">
+                        <h4 class="footer-v2__bottom-title">Get the Latest Deals:</h4>
+                        <form class="footer-v2__newsletter-form">
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+
+                    <!-- Store Location -->
+                    <div class="footer-v2__store-location d-none">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Store Location:</strong>
+                            <span>Putalisadak - Kathmandu, Nepal</span>
+                        </div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="footer-v2__phone d-none">
+                        <i class="fas fa-headset"></i>
+                        <div>
+                            <strong>Call Us Now:</strong>
+                            <span>+977 98123412345</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="footer-v2__contact-info">
+                    <div class="footer-v2__copyright">
+                        <i class="far fa-copyright"></i>
+                        <span>2026 Akku.gg, Nepal.</span>
+                        <span>All rights reserved.</span>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+            const icon = this.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Dropdown menu functionality
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const parentLi = this.closest('.has-dropdown');
+                const dropdownMenu = parentLi.querySelector('.dropdown-menu');
+
+                // Close all other dropdowns
+                document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+                    if (menu !== dropdownMenu) {
+                        menu.classList.remove('show');
+                        menu.closest('.has-dropdown').querySelector('.dropdown-toggle').classList.remove('active');
+                    }
+                });
+
+                // Toggle current dropdown
+                dropdownMenu.classList.toggle('show');
+                this.classList.toggle('active');
+            });
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.has-dropdown')) {
+                document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+                    menu.classList.remove('show');
+                    menu.closest('.has-dropdown').querySelector('.dropdown-toggle').classList.remove('active');
+                });
+            }
+        });
+    </script>
 
     <script>
         // Filter Toggle
@@ -902,6 +1319,23 @@
                 }, 2000);
             });
         });
+
+        // Brand Carousel Navigation
+        const brandTrack = document.querySelector('.brand-carousel__track');
+        const prevBtn = document.querySelector('.carousel-nav.prev');
+        const nextBtn = document.querySelector('.carousel-nav.next');
+
+        if (brandTrack && prevBtn && nextBtn) {
+            const scrollAmount = 300;
+
+            prevBtn.addEventListener('click', () => {
+                brandTrack.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+
+            nextBtn.addEventListener('click', () => {
+                brandTrack.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
+        }
     </script>
 </body>
 </html>

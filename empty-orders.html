@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Orders Yet | Akku Electronics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/empty-orders.css">
+</head>
+<body class="dark-theme">
+    <!-- Header -->
+    <header class="header">
+        <!-- Main Header (Sticky) -->
+        <div class="header__main">
+            <div class="container">
+                <a href="index.html" class="header__logo">
+                    <img src="assets/images/logo.png" alt="AKKU Electronics">
+                </a>
+
+                <!-- Search Bar -->
+                <form class="header__search" action="search-results.html" method="GET">
+                    <input type="text" name="q" id="searchInput" placeholder="Search for products, brands and more...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+
+                <!-- Header Actions -->
+                <div class="header__actions">
+                    <button class="header__settings-btn" id="openSettingsModal">
+                        <i class="fas fa-globe"></i>
+                        <span>EN / NPR</span>
+                    </button>
+
+                    <a href="wishlist.html" class="header__action-item" aria-label="Wishlist" title="Wishlist">
+                        <i class="fas fa-heart"></i>
+                    </a>
+
+                    <a href="cart.html" class="header__action-item" aria-label="Shopping Cart" title="Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge">0</span>
+                    </a>
+
+                    <!-- User Menu (Logged In) -->
+                    <div class="dropdown">
+                        <button class="header__user-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="user-avatar">JD</div>
+                            <span class="user-name">John</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li class="dropdown-header">
+                                <div class="user-avatar">JD</div>
+                                <div>
+                                    <div>John Doe</div>
+                                    <div>john@example.com</div>
+                                </div>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="my-profile.html"><i class="fas fa-user"></i> My Profile</a></li>
+                            <li><a class="dropdown-item" href="my-orders.html"><i class="fas fa-shopping-bag"></i> My Orders</a></li>
+                            <li><a class="dropdown-item" href="wishlist.html"><i class="fas fa-heart"></i> Wishlist</a></li>
+                            <li><a class="dropdown-item" href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="header__menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="header__nav" id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="category.html">Laptops</a></li>
+                <li><a href="category.html">Desktop PCs</a></li>
+                <li><a href="#">Custom PC Build</a></li>
+                <li><a href="#">Deals</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <i class="fas fa-home"></i>
+            <a href="index.html">Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <a href="my-profile.html">My Account</a>
+            <i class="fas fa-chevron-right"></i>
+            <span class="current">My Orders</span>
+        </div>
+    </div>
+
+    <!-- Floating Particles Background -->
+    <div class="floating-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="empty-orders-page">
+        <div class="container">
+            <!-- Empty Orders State -->
+            <div class="empty-orders">
+                <div class="empty-orders__content">
+                    <div class="empty-orders__animation">
+                        <!-- Animated SVG Package -->
+                        <svg class="empty-orders-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="packageGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ED3237;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#FF6B00;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <!-- Package Box -->
+                            <rect class="package-box" x="60" y="80" width="80" height="70"
+                                  fill="none" stroke="url(#packageGradient)" stroke-width="3" rx="5"/>
+                            <!-- Package Top -->
+                            <path class="package-top" d="M60,80 L100,50 L140,80"
+                                  fill="none" stroke="url(#packageGradient)" stroke-width="3" stroke-linejoin="round"/>
+                            <line class="package-line" x1="100" y1="50" x2="100" y2="80"
+                                  stroke="url(#packageGradient)" stroke-width="3"/>
+                            <!-- Tape -->
+                            <line class="package-tape" x1="60" y1="115" x2="140" y2="115"
+                                  stroke="url(#packageGradient)" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h1 class="empty-title">No Orders Yet</h1>
+                    <p class="empty-subtitle">You haven't placed any orders yet. Start shopping to see your orders here!</p>
+
+                    <!-- Order Journey Steps -->
+                    <div class="order-journey">
+                        <div class="journey-step">
+                            <div class="journey-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <h3>Shop</h3>
+                            <p>Browse products</p>
+                        </div>
+                        <div class="journey-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="journey-step">
+                            <div class="journey-icon">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <h3>Order</h3>
+                            <p>Place your order</p>
+                        </div>
+                        <div class="journey-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="journey-step">
+                            <div class="journey-icon">
+                                <i class="fas fa-box"></i>
+                            </div>
+                            <h3>Track</h3>
+                            <p>Monitor delivery</p>
+                        </div>
+                        <div class="journey-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="journey-step">
+                            <div class="journey-icon">
+                                <i class="fas fa-smile"></i>
+                            </div>
+                            <h3>Enjoy</h3>
+                            <p>Receive & enjoy</p>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="quick-actions">
+                        <a href="products.html" class="btn-start-shopping glow-button ripple-btn">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span>Start Shopping</span>
+                            <div class="btn-shimmer"></div>
+                        </a>
+                        <a href="category.html" class="btn-explore">
+                            <i class="fas fa-compass"></i>
+                            <span>Explore Deals</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Benefits Section -->
+                <section class="benefits-section">
+                    <h2><i class="fas fa-gift"></i> Why Order With Us?</h2>
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <div class="benefit-icon">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <h3>Fast Delivery</h3>
+                            <p>Same-day delivery available in Kathmandu Valley</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">
+                                <i class="fas fa-shield-check"></i>
+                            </div>
+                            <h3>Secure Payment</h3>
+                            <p>Multiple payment options with 100% security</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">
+                                <i class="fas fa-undo"></i>
+                            </div>
+                            <h3>Easy Returns</h3>
+                            <p>30-day hassle-free return & exchange policy</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h3>24/7 Support</h3>
+                            <p>Round-the-clock customer support team</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Popular Products Section -->
+                <section class="popular-products">
+                    <h2><i class="fas fa-star"></i> Best Sellers</h2>
+                    <p class="section-subtitle">Check out our most popular products</p>
+                    <div class="products-grid">
+                        <a href="product-detail.html" class="product-card">
+                            <div class="deal__image">
+                                <span class="deal__badge">Best Seller</span>
+                                <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400&h=400&fit=crop" alt="Dell XPS 15">
+                            </div>
+                            <div class="deal__info">
+                                <p class="deal__category">Laptops</p>
+                                <h3 class="deal__title">Dell XPS 15 9530</h3>
+                                <div class="deal__price">
+                                    <span class="price__current">NPR 2,45,000</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="product-detail.html" class="product-card">
+                            <div class="deal__image">
+                                <span class="deal__badge deal__badge--hot">Hot Deal</span>
+                                <img src="https://images.unsplash.com/photo-1592286927505-4fd3e937ff37?w=400&h=400&fit=crop" alt="iPhone 15 Pro">
+                            </div>
+                            <div class="deal__info">
+                                <p class="deal__category">Smartphones</p>
+                                <h3 class="deal__title">iPhone 15 Pro Max</h3>
+                                <div class="deal__price">
+                                    <span class="price__current">NPR 1,75,500</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="product-detail.html" class="product-card">
+                            <div class="deal__image">
+                                <span class="deal__badge deal__badge--sale">-8%</span>
+                                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop" alt="Sony Headphones">
+                            </div>
+                            <div class="deal__info">
+                                <p class="deal__category">Audio</p>
+                                <h3 class="deal__title">Sony WH-1000XM5</h3>
+                                <div class="deal__price">
+                                    <span class="price__current">NPR 48,000</span>
+                                    <span class="price__old">NPR 52,000</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="product-detail.html" class="product-card">
+                            <div class="deal__image">
+                                <span class="deal__badge">New</span>
+                                <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400&h=400&fit=crop" alt="Apple Watch">
+                            </div>
+                            <div class="deal__info">
+                                <p class="deal__category">Wearables</p>
+                                <h3 class="deal__title">Apple Watch Ultra 2</h3>
+                                <div class="deal__price">
+                                    <span class="price__current">NPR 1,25,000</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Help Section -->
+                <section class="help-section">
+                    <div class="help-card">
+                        <i class="fas fa-question-circle"></i>
+                        <div>
+                            <h3>Need Help?</h3>
+                            <p>Our customer support team is here to assist you</p>
+                            <a href="#" class="help-link">Contact Support <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Language & Currency Settings Modal -->
+    <div id="settingsModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Settings</h2>
+            <div class="settings-group">
+                <label>Language</label>
+                <select id="languageSelect">
+                    <option value="en">English</option>
+                    <option value="ne">नेपाली (Nepali)</option>
+                </select>
+            </div>
+            <div class="settings-group">
+                <label>Currency</label>
+                <select id="currencySelect">
+                    <option value="NPR">NPR (Nepali Rupee)</option>
+                    <option value="USD">USD (US Dollar)</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+            const icon = this.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Settings Modal
+        const settingsModal = document.getElementById('settingsModal');
+        const settingsBtn = document.getElementById('openSettingsModal');
+        const closeBtn = settingsModal.querySelector('.close');
+
+        if (settingsBtn) {
+            settingsBtn.addEventListener('click', function() {
+                settingsModal.style.display = 'block';
+            });
+        }
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                settingsModal.style.display = 'none';
+            });
+        }
+
+        window.addEventListener('click', function(e) {
+            if (e.target === settingsModal) {
+                settingsModal.style.display = 'none';
+            }
+        });
+
+        // Ripple effect
+        document.querySelectorAll('.ripple-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.classList.add('ripple');
+
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+
+        // Add to cart notification
+        document.querySelectorAll('.btn-add-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const notification = document.createElement('div');
+                notification.textContent = 'Product added to cart!';
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 100px;
+                    right: 20px;
+                    background: linear-gradient(135deg, #ED3237, #FF6B00);
+                    color: white;
+                    padding: 16px 24px;
+                    border-radius: 12px;
+                    box-shadow: 0 10px 30px rgba(237, 50, 55, 0.4);
+                    z-index: 10000;
+                    font-weight: 600;
+                    animation: slideIn 0.3s ease;
+                `;
+                document.body.appendChild(notification);
+
+                setTimeout(() => {
+                    notification.style.animation = 'slideOut 0.3s ease';
+                    setTimeout(() => notification.remove(), 300);
+                }, 2000);
+            });
+        });
+
+        // Add slide animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(400px); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(400px); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer-v2">
+        <div class="footer-v2__main">
+            <div class="container">
+                <div class="footer-v2__grid">
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">CUSTOMER SERVICE</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">COMPANY INFO</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">MY ACCOUNT</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="my-profile.html">My Profile</a></li>
+                            <li><a href="my-orders.html">My Orders</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-v2__bottom">
+            <div class="container">
+                <div class="footer-v2__copyright">
+                    <i class="far fa-copyright"></i>
+                    <span>2026 Akku.gg, Nepal. All rights reserved.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Results Found | Akku Electronics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/no-search-results.css">
+</head>
+<body class="dark-theme">
+    <!-- Header -->
+    <header class="header">
+        <!-- Main Header (Sticky) -->
+        <div class="header__main">
+            <div class="container">
+                <a href="index.html" class="header__logo">
+                    <img src="assets/images/logo.png" alt="AKKU Electronics">
+                </a>
+
+                <!-- Search Bar -->
+                <form class="header__search" action="search-results.html" method="GET">
+                    <input type="text" name="q" id="searchInput" placeholder="Search for products, brands and more..." value="">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+
+                <!-- Header Actions -->
+                <div class="header__actions">
+                    <button class="header__settings-btn" id="openSettingsModal">
+                        <i class="fas fa-globe"></i>
+                        <span>EN / NPR</span>
+                    </button>
+
+                    <a href="wishlist.html" class="header__action-item" aria-label="Wishlist" title="Wishlist">
+                        <i class="fas fa-heart"></i>
+                    </a>
+
+                    <a href="cart.html" class="header__action-item" aria-label="Shopping Cart" title="Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge">0</span>
+                    </a>
+
+                    <a href="login.html" class="header__login-btn">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Login</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="header__menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="header__nav" id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="category.html">Laptops</a></li>
+                <li><a href="category.html">Desktop PCs</a></li>
+                <li><a href="#">Custom PC Build</a></li>
+                <li><a href="category.html">Mobile Phones</a></li>
+                <li><a href="#">Deals</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <i class="fas fa-home"></i>
+            <a href="index.html">Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <span class="current">Search Results</span>
+        </div>
+    </div>
+
+    <!-- Floating Particles Background -->
+    <div class="floating-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="no-results-page">
+        <div class="container">
+            <!-- No Results State -->
+            <div class="no-results">
+                <div class="no-results__content">
+                    <div class="no-results__animation">
+                        <!-- Animated SVG Search -->
+                        <svg class="no-results-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="searchGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ED3237;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#FF6B00;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <circle class="search-lens" cx="80" cy="80" r="35"
+                                    fill="none" stroke="url(#searchGradient)" stroke-width="4"/>
+                            <line class="search-handle" x1="105" y1="105" x2="130" y2="130"
+                                  stroke="url(#searchGradient)" stroke-width="4" stroke-linecap="round"/>
+                            <circle class="search-dot" cx="80" cy="80" r="3" fill="url(#searchGradient)"/>
+                        </svg>
+                    </div>
+                    <h1 class="no-results-title">No Results Found</h1>
+                    <p class="no-results-subtitle">We couldn't find what you're looking for. Try searching with different keywords.</p>
+
+                    <div class="search-query-display" id="searchQueryDisplay">
+                        <span>Your search:</span>
+                        <strong id="queryText">"gaming laptop"</strong>
+                    </div>
+
+                    <!-- Search Suggestions -->
+                    <div class="search-suggestions">
+                        <h3>Search Suggestions:</h3>
+                        <ul>
+                            <li><i class="fas fa-lightbulb"></i> Check your spelling for typos</li>
+                            <li><i class="fas fa-lightbulb"></i> Try more general keywords</li>
+                            <li><i class="fas fa-lightbulb"></i> Try different keyword combinations</li>
+                            <li><i class="fas fa-lightbulb"></i> Browse our categories below</li>
+                        </ul>
+                    </div>
+
+                    <!-- New Search -->
+                    <div class="new-search-box">
+                        <h3>Try Another Search</h3>
+                        <form class="search-form" action="search-results.html" method="GET">
+                            <div class="search-input-wrapper">
+                                <i class="fas fa-search"></i>
+                                <input type="text" name="q" placeholder="Search for products..." required>
+                                <button type="submit" class="btn-search">
+                                    <span>Search</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Popular Searches -->
+                    <div class="popular-searches">
+                        <h4>Popular Searches:</h4>
+                        <div class="search-tags">
+                            <a href="search-results.html?q=gaming+laptop" class="search-tag">Gaming Laptop</a>
+                            <a href="search-results.html?q=iphone" class="search-tag">iPhone</a>
+                            <a href="search-results.html?q=mechanical+keyboard" class="search-tag">Mechanical Keyboard</a>
+                            <a href="search-results.html?q=gaming+mouse" class="search-tag">Gaming Mouse</a>
+                            <a href="search-results.html?q=headphones" class="search-tag">Headphones</a>
+                            <a href="search-results.html?q=monitor" class="search-tag">Monitor</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categories Quick Access -->
+                <section class="categories-quick-access">
+                    <h2><i class="fas fa-th-large"></i> Browse by Category</h2>
+                    <div class="categories-grid">
+                        <a href="category.html" class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                            <h3>Laptops</h3>
+                            <p>500+ Products</p>
+                        </a>
+                        <a href="category.html" class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3>Smartphones</h3>
+                            <p>350+ Products</p>
+                        </a>
+                        <a href="category.html" class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-desktop"></i>
+                            </div>
+                            <h3>Desktop PCs</h3>
+                            <p>200+ Products</p>
+                        </a>
+                        <a href="category.html" class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-headphones"></i>
+                            </div>
+                            <h3>Audio</h3>
+                            <p>180+ Products</p>
+                        </a>
+                        <a href="category.html" class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-keyboard"></i>
+                            </div>
+                            <h3>Peripherals</h3>
+                            <p>420+ Products</p>
+                        </a>
+                        <a href="category.html" class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-tv"></i>
+                            </div>
+                            <h3>Monitors</h3>
+                            <p>150+ Products</p>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Trending Products -->
+                <section class="trending-products">
+                    <h2><i class="fas fa-fire"></i> Trending Products</h2>
+                    <p class="section-subtitle">Check out what's hot right now</p>
+                    <div class="trending-grid">
+                        <div class="product-card">
+                            <div class="product-badge">Hot</div>
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400&h=400&fit=crop" alt="Dell XPS 15">
+                            </div>
+                            <div class="product-info">
+                                <h4>Dell XPS 15 9530</h4>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>(4.5)</span>
+                                </div>
+                                <p class="price">NPR 2,45,000</p>
+                                <a href="product-detail.html" class="btn-view-product">View Product</a>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-badge sale">Sale</div>
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1592286927505-4fd3e937ff37?w=400&h=400&fit=crop" alt="iPhone 15 Pro">
+                            </div>
+                            <div class="product-info">
+                                <h4>iPhone 15 Pro Max</h4>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(5.0)</span>
+                                </div>
+                                <p class="price">NPR 1,75,500</p>
+                                <a href="product-detail.html" class="btn-view-product">View Product</a>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop" alt="Sony Headphones">
+                            </div>
+                            <div class="product-info">
+                                <h4>Sony WH-1000XM5</h4>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>(4.7)</span>
+                                </div>
+                                <p class="price">NPR 52,000</p>
+                                <a href="product-detail.html" class="btn-view-product">View Product</a>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-badge">New</div>
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400&h=400&fit=crop" alt="Apple Watch">
+                            </div>
+                            <div class="product-info">
+                                <h4>Apple Watch Ultra 2</h4>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(4.8)</span>
+                                </div>
+                                <p class="price">NPR 1,25,000</p>
+                                <a href="product-detail.html" class="btn-view-product">View Product</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+            const icon = this.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Get search query from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const query = urlParams.get('q');
+        if (query) {
+            document.getElementById('queryText').textContent = `"${query}"`;
+            document.getElementById('searchInput').value = query;
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer-v2">
+        <div class="footer-v2__main">
+            <div class="container">
+                <div class="footer-v2__grid">
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">CUSTOMER SERVICE</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">COMPANY INFO</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">MY ACCOUNT</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="my-orders.html">Orders</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-v2__bottom">
+            <div class="container">
+                <div class="footer-v2__copyright">
+                    <i class="far fa-copyright"></i>
+                    <span>2026 Akku.gg, Nepal. All rights reserved.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

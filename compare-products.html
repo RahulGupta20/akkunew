@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Products | Akku Electronics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css?v=3">
+    <link rel="stylesheet" href="css/compare-products.css?v=1">
+</head>
+<body class="dark-theme">
+    <!-- Header -->
+    <header class="header">
+        <div class="header__main">
+            <div class="container">
+                <a href="index.html" class="header__logo">
+                    <img src="assets/images/logo.png" alt="AKKU Electronics">
+                </a>
+                <form class="header__search" action="search-results.html" method="GET">
+                    <input type="text" name="q" placeholder="Search for products, brands and more...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+                <div class="header__actions">
+                    <a href="wishlist.html" class="header__action-item">
+                        <i class="fas fa-heart"></i>
+                    </a>
+                    <a href="cart.html" class="header__action-item">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge" id="cartBadge">0</span>
+                    </a>
+                    <a href="compare-products.html" class="header__action-item">
+                        <i class="fas fa-balance-scale"></i>
+                        <span class="badge" id="compareBadge">0</span>
+                    </a>
+                    <a href="login.html" class="header__login-btn">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Login</span>
+                    </a>
+                </div>
+                <button class="header__menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <nav class="header__nav" id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about-us.html">About</a></li>
+                <li><a href="contact-us.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <i class="fas fa-home"></i>
+            <a href="index.html">Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <span class="current">Compare Products</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="compare-page">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="compare-header">
+                <h1>Compare Products</h1>
+                <p>Make informed decisions by comparing product specifications side by side</p>
+            </div>
+
+            <!-- Empty State (shown when no products) -->
+            <div class="empty-compare-state" id="emptyState" style="display: none;">
+                <i class="fas fa-balance-scale"></i>
+                <h2>No Products to Compare</h2>
+                <p>Start adding products to compare their features and specifications</p>
+                <a href="products.html" class="btn-primary">
+                    <i class="fas fa-search"></i>
+                    <span>Browse Products</span>
+                </a>
+            </div>
+
+            <!-- Comparison Content (hidden when empty) -->
+            <div id="compareContent">
+                <!-- Comparison Tools -->
+                <div class="compare-tools">
+                    <div class="tools-left">
+                        <span class="compare-count">
+                            <i class="fas fa-layer-group"></i>
+                            Comparing <strong id="compareCount">0</strong> products
+                        </span>
+                    </div>
+                    <div class="tools-right">
+                        <button class="btn-tool" id="highlightDiff">
+                            <i class="fas fa-highlighter"></i>
+                            <span>Highlight Differences</span>
+                        </button>
+                        <button class="btn-export" id="printCompare">
+                            <i class="fas fa-print"></i>
+                            <span>Print</span>
+                        </button>
+                        <button class="btn-export" id="shareCompare">
+                            <i class="fas fa-share-alt"></i>
+                            <span>Share</span>
+                        </button>
+                        <button class="btn-tool" id="clearAll">
+                            <i class="fas fa-trash-alt"></i>
+                            <span>Clear All</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Comparison Table -->
+                <div class="compare-table-wrapper">
+                    <table class="compare-table" id="compareTable">
+                        <!-- Dynamically generated content -->
+                    </table>
+                </div>
+
+                <!-- Add More Products -->
+                <div class="add-products-section">
+                    <div class="add-card">
+                        <i class="fas fa-plus-circle"></i>
+                        <h3>Compare More Products</h3>
+                        <p>Add up to 4 products to compare</p>
+                        <button class="btn-add-product" id="addMoreProducts">
+                            <i class="fas fa-search"></i>
+                            <span>Browse Products</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Sticky Differences Toggle -->
+    <div class="sticky-toggle" id="stickyToggle">
+        <button id="stickyDiffBtn">
+            <i class="fas fa-highlighter"></i>
+            <span>Show Differences</span>
+        </button>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toastContainer"></div>
+
+    <!-- Footer -->
+    <footer class="footer-v2">
+        <div class="footer-v2__main">
+            <div class="container">
+                <div class="footer-v2__grid">
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">CUSTOMER SERVICE</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="contact-us.html">Contact Us</a></li>
+                            <li><a href="faq.html">FAQs</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">COMPANY INFO</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-v2__bottom">
+            <div class="container">
+                <div class="footer-v2__copyright">
+                    <i class="far fa-copyright"></i>
+                    <span>2026 Akku.gg, Nepal. All rights reserved.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enhanced JavaScript -->
+    <script src="js/compare-products.js"></script>
+</body>
+</html>

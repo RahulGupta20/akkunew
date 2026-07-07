@@ -655,15 +655,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function attachComponentSelectionHandlers(component) {
-        const selectButtons = document.querySelectorAll('.btn-select-component');
+        const componentCards = document.querySelectorAll('.component-option-card');
 
-        selectButtons.forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.stopPropagation();
-
-                const card = this.closest('.component-option-card');
-                const name = card.dataset.name;
-                const price = parseInt(card.dataset.price);
+        componentCards.forEach(card => {
+            card.addEventListener('click', function(e) {
+                const name = this.dataset.name;
+                const price = parseInt(this.dataset.price);
 
                 // Select component
                 selectComponent(component, { name, price });

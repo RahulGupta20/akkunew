@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500 - Server Error | Akku Electronics</title>
+    <meta name="description" content="We're experiencing technical difficulties. Our team is working to fix the issue.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/500.css">
+</head>
+<body class="dark-theme">
+    <!-- Header -->
+    <header class="header">
+        <!-- Main Header (Sticky) -->
+        <div class="header__main">
+            <div class="container">
+                <a href="index.html" class="header__logo">
+                    <img src="assets/images/logo.png" alt="AKKU Electronics">
+                </a>
+
+                <!-- Search Bar -->
+                <form class="header__search" action="search-results.html" method="GET">
+                    <input type="text" name="q" id="searchInput" placeholder="Search for products, brands and more...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+
+                <!-- Header Actions -->
+                <div class="header__actions">
+                    <!-- Language & Currency Button -->
+                    <button class="header__settings-btn" id="openSettingsModal">
+                        <i class="fas fa-globe"></i>
+                        <span>EN / NPR</span>
+                    </button>
+
+                    <!-- Wishlist -->
+                    <a href="wishlist.html" class="header__action-item" aria-label="Wishlist" title="Wishlist">
+                        <i class="fas fa-heart"></i>
+                    </a>
+
+                    <!-- Cart -->
+                    <a href="cart.html" class="header__action-item" aria-label="Shopping Cart" title="Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge">0</span>
+                    </a>
+
+                    <!-- Login Button -->
+                    <a href="login.html" class="header__login-btn">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Login</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="header__menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation (Not Sticky) -->
+        <nav class="header__nav" id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="has-dropdown">
+                    <a href="category.html">Laptops</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Laptops dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="category.html" class="dropdown-item">Gaming Laptops</a>
+                        <a href="category.html" class="dropdown-item">Business Laptops</a>
+                        <a href="category.html" class="dropdown-item">Student Laptops</a>
+                        <a href="category.html" class="dropdown-item">Ultrabooks</a>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    <a href="category.html">Desktop PCs</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Desktop PCs dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="category.html" class="dropdown-item">Gaming PCs</a>
+                        <a href="category.html" class="dropdown-item">Workstations</a>
+                        <a href="category.html" class="dropdown-item">All-in-One PCs</a>
+                        <a href="category.html" class="dropdown-item">Mini PCs</a>
+                    </div>
+                </li>
+                <li><a href="#">Custom PC Build</a></li>
+                <li class="has-dropdown">
+                    <a href="category.html">Mobile Phones</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Mobile Phones dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="category.html" class="dropdown-item">Smartphones</a>
+                        <a href="category.html" class="dropdown-item">Feature Phones</a>
+                        <a href="category.html" class="dropdown-item">Accessories</a>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    <a href="#">Peripherals</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Peripherals dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="category.html" class="dropdown-item">Keyboards</a>
+                        <a href="category.html" class="dropdown-item">Mice</a>
+                        <a href="category.html" class="dropdown-item">Headphones</a>
+                        <a href="category.html" class="dropdown-item">Monitors</a>
+                        <a href="category.html" class="dropdown-item">Webcams</a>
+                    </div>
+                </li>
+                <li><a href="#">Deals</a></li>
+                <li class="has-dropdown">
+                    <a href="#">Support</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Support dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Contact Us</a>
+                        <a href="#" class="dropdown-item">FAQs</a>
+                        <a href="#" class="dropdown-item">Warranty</a>
+                        <a href="#" class="dropdown-item">Track Order</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="error-500-page" role="main">
+        <!-- Skip to main content -->
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+
+        <!-- Background Pattern -->
+        <div class="error-bg-pattern" aria-hidden="true"></div>
+
+        <div class="container">
+            <div class="error-500" id="main-content">
+                <div class="error-500__content">
+                    <!-- 500 Number Display -->
+                    <div class="error-number" role="img" aria-label="Error 500">
+                        <div class="number-wrapper">
+                            <span class="digit" aria-hidden="true">5</span>
+                            <span class="digit" aria-hidden="true">0</span>
+                            <span class="digit" aria-hidden="true">0</span>
+                        </div>
+                        <div class="error-icon" aria-hidden="true">
+                            <i class="fas fa-server"></i>
+                        </div>
+                    </div>
+
+                    <!-- Error Message -->
+                    <div class="error-message">
+                        <h1>Something Went Wrong on Our End</h1>
+                        <p>We're experiencing technical difficulties. Our team has been notified and is working to fix the issue as quickly as possible.</p>
+                    </div>
+
+                    <!-- Status Banner -->
+                    <div class="status-banner">
+                        <div class="status-icon">
+                            <i class="fas fa-tools" aria-hidden="true"></i>
+                        </div>
+                        <div class="status-content">
+                            <h2>We're on it!</h2>
+                            <p>Our engineers are working to restore normal service. Please try again in a few moments.</p>
+                        </div>
+                    </div>
+
+                    <!-- Helpful Suggestions -->
+                    <div class="helpful-suggestions">
+                        <h2>What you can do while we fix this:</h2>
+                        <ul>
+                            <li>
+                                <i class="fas fa-sync" aria-hidden="true"></i>
+                                <span>Wait a moment and refresh the page</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-home" aria-hidden="true"></i>
+                                <span>Return to our homepage and continue browsing</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-clock" aria-hidden="true"></i>
+                                <span>Try your request again in a few minutes</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-bookmark" aria-hidden="true"></i>
+                                <span>Bookmark this page and come back later</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="error-actions">
+                        <button onclick="location.reload()" class="btn-primary" aria-label="Retry loading page">
+                            <i class="fas fa-redo" aria-hidden="true"></i>
+                            <span>Try Again</span>
+                        </button>
+                        <a href="index.html" class="btn-secondary" aria-label="Go to homepage">
+                            <i class="fas fa-home" aria-hidden="true"></i>
+                            <span>Go to Homepage</span>
+                        </a>
+                    </div>
+
+                    <!-- Popular Products -->
+                    <div class="popular-products">
+                        <h2>Deals of the Week</h2>
+                        <div class="products-grid">
+                            <a href="product-detail.html" class="deal__card">
+                                <div class="deal__badge">Hot</div>
+                                <div class="deal__image">
+                                    <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=300&h=300&fit=crop" alt="Dell XPS 15 Laptop">
+                                </div>
+                                <div class="deal__info">
+                                    <p class="deal__category">Laptops</p>
+                                    <h3 class="deal__title">Dell XPS 15</h3>
+                                    <div class="deal__price">
+                                        <span class="price__current">NPR 2,45,000</span>
+                                        <span class="price__old">NPR 2,89,000</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="product-detail.html" class="deal__card">
+                                <div class="deal__badge">Trending</div>
+                                <div class="deal__image">
+                                    <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=300&h=300&fit=crop" alt="Lenovo ThinkPad Laptop">
+                                </div>
+                                <div class="deal__info">
+                                    <p class="deal__category">Laptops</p>
+                                    <h3 class="deal__title">Lenovo ThinkPad X1</h3>
+                                    <div class="deal__price">
+                                        <span class="price__current">NPR 2,75,000</span>
+                                        <span class="price__old">NPR 3,25,000</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="product-detail.html" class="deal__card">
+                                <div class="deal__badge">Popular</div>
+                                <div class="deal__image">
+                                    <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=300&h=300&fit=crop" alt="HP Pavilion Laptop">
+                                </div>
+                                <div class="deal__info">
+                                    <p class="deal__category">Laptops</p>
+                                    <h3 class="deal__title">HP Pavilion 15</h3>
+                                    <div class="deal__price">
+                                        <span class="price__current">NPR 1,85,000</span>
+                                        <span class="price__old">NPR 2,15,000</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="product-detail.html" class="deal__card">
+                                <div class="deal__badge">New</div>
+                                <div class="deal__image">
+                                    <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=300&h=300&fit=crop" alt="MacBook Pro Laptop">
+                                </div>
+                                <div class="deal__info">
+                                    <p class="deal__category">Laptops</p>
+                                    <h3 class="deal__title">MacBook Pro 14"</h3>
+                                    <div class="deal__price">
+                                        <span class="price__current">NPR 3,25,000</span>
+                                        <span class="price__old">NPR 3,75,000</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="quick-links">
+                        <h2>Explore Our Store</h2>
+                        <div class="links-grid">
+                            <a href="products.html" class="link-item" aria-label="Browse all products">
+                                <div class="link-icon">
+                                    <i class="fas fa-laptop" aria-hidden="true"></i>
+                                </div>
+                                <span>Products</span>
+                            </a>
+                            <a href="category.html" class="link-item" aria-label="Browse categories">
+                                <div class="link-icon">
+                                    <i class="fas fa-th-large" aria-hidden="true"></i>
+                                </div>
+                                <span>Categories</span>
+                            </a>
+                            <a href="cart.html" class="link-item" aria-label="View shopping cart">
+                                <div class="link-icon">
+                                    <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                                </div>
+                                <span>Cart</span>
+                            </a>
+                            <a href="track-order.html" class="link-item" aria-label="Track your order">
+                                <div class="link-icon">
+                                    <i class="fas fa-shipping-fast" aria-hidden="true"></i>
+                                </div>
+                                <span>Track Order</span>
+                            </a>
+                            <a href="faq.html" class="link-item" aria-label="Frequently asked questions">
+                                <div class="link-icon">
+                                    <i class="fas fa-question-circle" aria-hidden="true"></i>
+                                </div>
+                                <span>FAQs</span>
+                            </a>
+                            <a href="contact-us.html" class="link-item" aria-label="Contact support">
+                                <div class="link-icon">
+                                    <i class="fas fa-headset" aria-hidden="true"></i>
+                                </div>
+                                <span>Contact</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Report Issue -->
+                    <div class="report-issue">
+                        <button class="btn-report" onclick="reportServerError()" aria-label="Report server error details">
+                            <i class="fas fa-bug" aria-hidden="true"></i>
+                            <span>Report Error Details</span>
+                        </button>
+                        <p class="help-text">Help us fix this faster by providing error details</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+            const icon = this.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Dropdown menu functionality
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const parentLi = this.closest('.has-dropdown');
+                const dropdownMenu = parentLi.querySelector('.dropdown-menu');
+
+                // Close all other dropdowns
+                document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+                    if (menu !== dropdownMenu) {
+                        menu.classList.remove('show');
+                        menu.closest('.has-dropdown').querySelector('.dropdown-toggle').classList.remove('active');
+                    }
+                });
+
+                // Toggle current dropdown
+                dropdownMenu.classList.toggle('show');
+                this.classList.toggle('active');
+            });
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.has-dropdown')) {
+                document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+                    menu.classList.remove('show');
+                    menu.closest('.has-dropdown').querySelector('.dropdown-toggle').classList.remove('active');
+                });
+            }
+        });
+
+        // Track 500 error for monitoring
+        (function() {
+            const currentURL = window.location.href;
+            const referrer = document.referrer || 'Direct';
+            const userAgent = navigator.userAgent;
+            const timestamp = new Date().toISOString();
+
+            // Log to console (replace with actual error monitoring service)
+            console.error('500 Server Error:', {
+                url: currentURL,
+                referrer: referrer,
+                userAgent: userAgent,
+                timestamp: timestamp
+            });
+
+            // Send to error monitoring service (Sentry, Rollbar, etc.)
+            if (typeof Sentry !== 'undefined') {
+                Sentry.captureException(new Error('500 Server Error'), {
+                    tags: {
+                        url: currentURL,
+                        error_type: '500'
+                    }
+                });
+            }
+
+            // Send to analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'exception', {
+                    'description': '500 Server Error: ' + currentURL,
+                    'fatal': true
+                });
+            }
+        })();
+
+        // Report server error functionality
+        function reportServerError() {
+            const currentURL = window.location.href;
+            const referrer = document.referrer || 'Unknown';
+            const timestamp = new Date().toISOString();
+
+            // Ask for user input
+            const userDetails = prompt(
+                'Thank you for helping us diagnose this issue!\n\n' +
+                'Please describe what you were doing when this error occurred:\n' +
+                '(This information will help our engineers fix the problem)'
+            );
+
+            if (userDetails) {
+                // Collect error context
+                const errorReport = {
+                    url: currentURL,
+                    referrer: referrer,
+                    timestamp: timestamp,
+                    userAgent: navigator.userAgent,
+                    screenResolution: `${window.screen.width}x${window.screen.height}`,
+                    userDescription: userDetails
+                };
+
+                console.log('Server Error Report:', errorReport);
+
+                // Show thank you message
+                alert('Thank you! Your report has been sent to our technical team. We\'ll investigate this issue right away.');
+
+                // In production, send to backend:
+                /*
+                fetch('/api/report-server-error', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(errorReport)
+                });
+                */
+            }
+        }
+
+        // Auto-retry after delay (optional - can be commented out)
+        let retryAttempts = 0;
+        const maxRetries = 2;
+        const retryDelay = 10000; // 10 seconds
+
+        /*
+        setTimeout(function() {
+            if (retryAttempts < maxRetries) {
+                retryAttempts++;
+                console.log(`Auto-retry attempt ${retryAttempts}/${maxRetries}`);
+                location.reload();
+            }
+        }, retryDelay);
+        */
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            // Press 'R' to retry
+            if (e.key === 'r' || e.key === 'R') {
+                if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+                    location.reload();
+                }
+            }
+
+            // Press 'H' to go home
+            if (e.key === 'h' || e.key === 'H') {
+                if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+                    window.location.href = 'index.html';
+                }
+            }
+        });
+    </script>
+
+    <!-- Language & Currency Modal -->
+    <div class="settings-modal" id="settingsModal">
+        <div class="settings-modal__overlay" id="closeSettingsModal"></div>
+        <div class="settings-modal__content">
+            <div class="settings-modal__header">
+                <h3><i class="fas fa-globe"></i> Preferences</h3>
+                <button class="close-btn" id="closeSettingsModalBtn" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="settings-modal__body">
+                <!-- Language Selection -->
+                <div class="settings-section">
+                    <h4><i class="fas fa-language"></i> Language</h4>
+                    <div class="settings-options">
+                        <label class="settings-option active">
+                            <input type="radio" name="language" value="en" checked>
+                            <span class="option-content">
+                                <span class="option-flag">🇬🇧</span>
+                                <span class="option-label">English</span>
+                                <i class="fas fa-check-circle"></i>
+                            </span>
+                        </label>
+                        <label class="settings-option">
+                            <input type="radio" name="language" value="ne">
+                            <span class="option-content">
+                                <span class="option-flag">🇳🇵</span>
+                                <span class="option-label">नेपाली</span>
+                                <i class="fas fa-check-circle"></i>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Currency Selection -->
+                <div class="settings-section">
+                    <h4><i class="fas fa-coins"></i> Currency</h4>
+                    <div class="settings-options">
+                        <label class="settings-option active">
+                            <input type="radio" name="currency" value="npr" checked>
+                            <span class="option-content">
+                                <span class="option-currency">रु</span>
+                                <span class="option-label">NPR</span>
+                                <i class="fas fa-check-circle"></i>
+                            </span>
+                        </label>
+                        <label class="settings-option">
+                            <input type="radio" name="currency" value="usd">
+                            <span class="option-content">
+                                <span class="option-currency">$</span>
+                                <span class="option-label">USD</span>
+                                <i class="fas fa-check-circle"></i>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="settings-modal__footer">
+                <button class="btn-secondary" id="cancelSettings">Cancel</button>
+                <button class="btn-apply"><i class="fas fa-check"></i> Apply</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Settings Modal
+        const settingsModal = document.getElementById('settingsModal');
+        const openSettingsBtn = document.getElementById('openSettingsModal');
+        const closeSettingsOverlay = document.getElementById('closeSettingsModal');
+        const closeSettingsBtn = document.getElementById('closeSettingsModalBtn');
+        const cancelSettingsBtn = document.getElementById('cancelSettings');
+
+        if (openSettingsBtn) {
+            openSettingsBtn.addEventListener('click', () => {
+                settingsModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        }
+
+        [closeSettingsOverlay, closeSettingsBtn, cancelSettingsBtn].forEach(el => {
+            if (el) {
+                el.addEventListener('click', () => {
+                    settingsModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            }
+        });
+
+        // Settings option selection
+        document.querySelectorAll('.settings-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const radio = this.querySelector('input[type="radio"]');
+                const group = radio.name;
+
+                // Remove active from all options in this group
+                document.querySelectorAll(`input[name="${group}"]`).forEach(r => {
+                    r.closest('.settings-option').classList.remove('active');
+                });
+
+                // Add active to clicked option
+                this.classList.add('active');
+                radio.checked = true;
+            });
+        });
+
+        // Apply settings
+        const applyBtn = document.querySelector('.btn-apply');
+        if (applyBtn) {
+            applyBtn.addEventListener('click', () => {
+                const language = document.querySelector('input[name="language"]:checked').value;
+                const currency = document.querySelector('input[name="currency"]:checked').value;
+
+                // Update button text
+                const langMap = { en: 'EN', ne: 'NE', hi: 'HI' };
+                const currencyMap = { npr: 'NPR', usd: 'USD', inr: 'INR' };
+                const settingsBtnText = openSettingsBtn.querySelector('span');
+                if (settingsBtnText) {
+                    settingsBtnText.textContent = `${langMap[language]} / ${currencyMap[currency]}`;
+                }
+
+                // Close modal
+                settingsModal.classList.remove('active');
+                document.body.style.overflow = '';
+
+                // Show success message (optional)
+                console.log('Settings applied:', { language, currency });
+            });
+        }
+    </script>
+
+    <!-- Search Overlay JS -->
+    <script src="js/search-overlay.js"></script>
+
+    <!-- Footer -->
+    <footer class="footer-v2">
+        <div class="footer-v2__main">
+            <div class="container">
+                <div class="footer-v2__grid">
+                    <!-- Column 1: Customer Service -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">CUSTOMER SERVICE</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Help & Advice</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Refund Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 2: Help & Support -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">HELP & SUPPORT</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="#">Shipping Info</a></li>
+                            <li><a href="#">Refund Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 3: Company Info -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">COMPANY INFO</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Our Blog</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Store Locations</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 4: Our Shop -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">Our Shop</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="#">Gaming Gears</a></li>
+                            <li><a href="#">Electronics</a></li>
+                            <li><a href="#">Laptop</a></li>
+                            <li><a href="#">Smartphone</a></li>
+                            <li><a href="#">Audio</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 5: My Account -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">MY ACCOUNT</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="login.html">Register</a></li>
+                            <li><a href="wishlist.html">Wishlist</a></li>
+                            <li><a href="my-orders.html">Track Your Orders</a></li>
+                            <li><a href="checkout.html">Checkout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-v2__bottom">
+            <div class="container">
+                <div class="footer-v2__bottom-grid">
+                    <!-- Social & Copyright -->
+                    <div class="footer-v2__social-section">
+                        <h4 class="footer-v2__bottom-title">Follow Us:</h4>
+                        <div class="footer-v2__social-links">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Payment Methods -->
+                    <div class="footer-v2__payment-section">
+                        <h4 class="footer-v2__bottom-title">We Accept:</h4>
+                        <div class="footer-v2__payment-methods">
+                            <img src="assets/images/esewa-logo.png" alt="eSewa" class="payment-logo">
+                            <img src="assets/images/khalti-logo.png" alt="Khalti" class="payment-logo">
+                            <img src="assets/images/connectIPS-logo.png" alt="ConnectIPS" class="payment-logo">
+                            <img src="assets/images/fonepay.png" alt="FonePay" class="payment-logo">
+                        </div>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="footer-v2__newsletter-section">
+                        <h4 class="footer-v2__bottom-title">Get the Latest Deals:</h4>
+                        <form class="footer-v2__newsletter-form">
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+
+                    <!-- Store Location -->
+                    <div class="footer-v2__store-location d-none">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Store Location:</strong>
+                            <span>Putalisadak - Kathmandu, Nepal</span>
+                        </div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="footer-v2__phone d-none">
+                        <i class="fas fa-headset"></i>
+                        <div>
+                            <strong>Call Us Now:</strong>
+                            <span>+977 98123412345</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="footer-v2__contact-info">
+                    <div class="footer-v2__copyright">
+                        <i class="far fa-copyright"></i>
+                        <span>2026 Akku.gg, Nepal.</span>
+                        <span>All rights reserved.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

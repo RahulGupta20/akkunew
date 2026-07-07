@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empty Wishlist | Akku Electronics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/empty-wishlist.css">
+</head>
+<body class="dark-theme">
+    <!-- Header -->
+    <header class="header">
+        <!-- Main Header (Sticky) -->
+        <div class="header__main">
+            <div class="container">
+                <a href="index.html" class="header__logo">
+                    <img src="assets/images/logo.png" alt="AKKU Electronics">
+                </a>
+
+                <!-- Search Bar -->
+                <form class="header__search" action="search-results.html" method="GET">
+                    <input type="text" name="q" id="searchInput" placeholder="Search for products, brands and more...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+
+                <!-- Header Actions -->
+                <div class="header__actions">
+                    <!-- Language & Currency Button -->
+                    <button class="header__settings-btn" id="openSettingsModal">
+                        <i class="fas fa-globe"></i>
+                        <span>EN / NPR</span>
+                    </button>
+
+                    <!-- Wishlist -->
+                    <a href="wishlist.html" class="header__action-item" aria-label="Wishlist" title="Wishlist">
+                        <i class="fas fa-heart"></i>
+                        <span class="badge">0</span>
+                    </a>
+
+                    <!-- Cart -->
+                    <a href="cart.html" class="header__action-item" aria-label="Shopping Cart" title="Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge">0</span>
+                    </a>
+
+                    <!-- Login Button -->
+                    <a href="login.html" class="header__login-btn">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Login</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="header__menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="header__nav" id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="has-dropdown">
+                    <a href="category.html">Laptops</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Laptops dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="category.html" class="dropdown-item">Gaming Laptops</a>
+                        <a href="category.html" class="dropdown-item">Business Laptops</a>
+                        <a href="category.html" class="dropdown-item">Student Laptops</a>
+                        <a href="category.html" class="dropdown-item">Ultrabooks</a>
+                    </div>
+                </li>
+                <li><a href="#">Custom PC Build</a></li>
+                <li><a href="#">Deals</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <i class="fas fa-home"></i>
+            <a href="index.html">Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <span class="current">Wishlist</span>
+        </div>
+    </div>
+
+    <!-- Floating Particles Background -->
+    <div class="floating-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="empty-wishlist-page">
+        <div class="container">
+            <!-- Empty Wishlist State -->
+            <div class="empty-wishlist">
+                <div class="empty-wishlist__content">
+                    <div class="empty-wishlist__animation">
+                        <!-- Animated SVG Heart -->
+                        <svg class="empty-heart-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ED3237;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#FF6B00;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <path class="heart-outline" d="M100,170 C100,170 30,120 30,80 C30,50 50,35 70,35 C85,35 95,45 100,55 C105,45 115,35 130,35 C150,35 170,50 170,80 C170,120 100,170 100,170 Z"
+                                  fill="none" stroke="url(#heartGradient)" stroke-width="3" stroke-linecap="round"/>
+                            <circle class="heart-pulse" cx="100" cy="100" r="3" fill="url(#heartGradient)" opacity="0.8"/>
+                        </svg>
+                    </div>
+                    <h1 class="empty-title">Your Wishlist is Empty</h1>
+                    <p class="empty-subtitle">Save items you love so you don't lose sight of them.</p>
+
+                    <!-- Info Cards -->
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <i class="fas fa-heart"></i>
+                            <div>
+                                <strong>Save Your Favorites</strong>
+                                <p>Click the heart icon on any product to add it here</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-bell"></i>
+                            <div>
+                                <strong>Get Price Alerts</strong>
+                                <p>We'll notify you when prices drop on wishlist items</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="quick-actions">
+                        <a href="products.html" class="btn-browse glow-button ripple-btn">
+                            <i class="fas fa-th"></i>
+                            <span>Browse Products</span>
+                            <div class="btn-shimmer"></div>
+                        </a>
+                        <a href="category.html" class="btn-categories">
+                            <i class="fas fa-tags"></i>
+                            <span>Shop by Category</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Trending Products Section -->
+                <section class="trending-products">
+                    <h2><i class="fas fa-trending-up"></i> Trending Now</h2>
+                    <p class="section-subtitle">Popular products others are loving</p>
+                    <div class="trending-grid">
+                        <div class="trending-item">
+                            <div class="product-badge">Trending</div>
+                            <button class="wishlist-btn" onclick="addToWishlist(this)">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400&h=400&fit=crop" alt="Dell XPS 15">
+                            </div>
+                            <div class="product-info">
+                                <h4>Dell XPS 15 9530</h4>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>(4.5)</span>
+                                </div>
+                                <p class="price">NPR 2,45,000</p>
+                                <div class="product-actions">
+                                    <button class="btn-add-cart">
+                                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                                    </button>
+                                    <a href="product-detail.html" class="btn-view">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="trending-item">
+                            <div class="product-badge hot">Hot Deal</div>
+                            <button class="wishlist-btn" onclick="addToWishlist(this)">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1592286927505-4fd3e937ff37?w=400&h=400&fit=crop" alt="iPhone 15 Pro">
+                            </div>
+                            <div class="product-info">
+                                <h4>iPhone 15 Pro Max</h4>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(5.0)</span>
+                                </div>
+                                <p class="price">NPR 1,75,500</p>
+                                <div class="product-actions">
+                                    <button class="btn-add-cart">
+                                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                                    </button>
+                                    <a href="product-detail.html" class="btn-view">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="trending-item">
+                            <div class="product-badge sale">Sale</div>
+                            <button class="wishlist-btn" onclick="addToWishlist(this)">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop" alt="Sony Headphones">
+                            </div>
+                            <div class="product-info">
+                                <h4>Sony WH-1000XM5</h4>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>(4.7)</span>
+                                </div>
+                                <p class="price">NPR 48,000 <span class="old-price">NPR 52,000</span></p>
+                                <div class="product-actions">
+                                    <button class="btn-add-cart">
+                                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                                    </button>
+                                    <a href="product-detail.html" class="btn-view">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="trending-item">
+                            <div class="product-badge">New</div>
+                            <button class="wishlist-btn" onclick="addToWishlist(this)">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400&h=400&fit=crop" alt="Apple Watch">
+                            </div>
+                            <div class="product-info">
+                                <h4>Apple Watch Ultra 2</h4>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(4.8)</span>
+                                </div>
+                                <p class="price">NPR 1,25,000</p>
+                                <div class="product-actions">
+                                    <button class="btn-add-cart">
+                                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                                    </button>
+                                    <a href="product-detail.html" class="btn-view">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Collections Section -->
+                <section class="collections-section">
+                    <h2><i class="fas fa-layer-group"></i> Curated Collections</h2>
+                    <div class="collections-grid">
+                        <a href="category.html" class="collection-card">
+                            <div class="collection-image">
+                                <img src="https://images.unsplash.com/photo-1587202372616-b43abea06c2a?w=600&h=400&fit=crop" alt="Gaming Setup">
+                            </div>
+                            <div class="collection-overlay">
+                                <h3>Ultimate Gaming Setup</h3>
+                                <p>Everything you need for the perfect gaming experience</p>
+                                <span class="collection-count">25+ Items</span>
+                            </div>
+                        </a>
+
+                        <a href="category.html" class="collection-card">
+                            <div class="collection-image">
+                                <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=600&h=400&fit=crop" alt="Work From Home">
+                            </div>
+                            <div class="collection-overlay">
+                                <h3>Work From Home Essentials</h3>
+                                <p>Boost your productivity with these must-haves</p>
+                                <span class="collection-count">18+ Items</span>
+                            </div>
+                        </a>
+
+                        <a href="category.html" class="collection-card">
+                            <div class="collection-image">
+                                <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600&h=400&fit=crop" alt="Mobile Accessories">
+                            </div>
+                            <div class="collection-overlay">
+                                <h3>Mobile Accessories</h3>
+                                <p>Enhance your smartphone experience</p>
+                                <span class="collection-count">30+ Items</span>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+            const icon = this.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Dropdown menu functionality
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const parentLi = this.closest('.has-dropdown');
+                const dropdownMenu = parentLi.querySelector('.dropdown-menu');
+
+                document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+                    if (menu !== dropdownMenu) {
+                        menu.classList.remove('show');
+                    }
+                });
+
+                dropdownMenu.classList.toggle('show');
+                this.classList.toggle('active');
+            });
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.has-dropdown')) {
+                document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+                    menu.classList.remove('show');
+                });
+            }
+        });
+
+        // Add to wishlist
+        function addToWishlist(btn) {
+            const icon = btn.querySelector('i');
+            if (icon.classList.contains('far')) {
+                icon.classList.remove('far');
+                icon.classList.add('fas');
+                btn.classList.add('active');
+                showToast('Added to wishlist!', 'success');
+            } else {
+                icon.classList.remove('fas');
+                icon.classList.add('far');
+                btn.classList.remove('active');
+                showToast('Removed from wishlist', 'info');
+            }
+        }
+
+        // Toast notification
+        function showToast(message, type) {
+            const toast = document.createElement('div');
+            toast.className = `toast-notification toast--${type}`;
+            toast.innerHTML = `
+                <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-info-circle'}"></i>
+                <span>${message}</span>
+            `;
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(-20px)';
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // Ripple effect
+        document.querySelectorAll('.ripple-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.classList.add('ripple');
+
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer-v2">
+        <div class="footer-v2__main">
+            <div class="container">
+                <div class="footer-v2__grid">
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">CUSTOMER SERVICE</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Refund Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">COMPANY INFO</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Store Locations</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">MY ACCOUNT</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="wishlist.html">Wishlist</a></li>
+                            <li><a href="my-orders.html">Track Orders</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-v2__bottom">
+            <div class="container">
+                <div class="footer-v2__copyright">
+                    <i class="far fa-copyright"></i>
+                    <span>2026 Akku.gg, Nepal. All rights reserved.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
