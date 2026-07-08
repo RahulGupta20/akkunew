@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/common.css?v=3">
-    <link rel="stylesheet" href="css/home.css?v=107">
+    <link rel="stylesheet" href="css/common.css?v=5">
+    <link rel="stylesheet" href="css/home.css?v=134">
 </head>
 <body class="dark-theme">
     <!-- Header -->
@@ -90,7 +90,7 @@
                         <a href="desktops.html" class="dropdown-item">Mini PCs</a>
                     </div>
                 </li>
-                <li><a href="#">Custom PC Build</a></li>
+                <li><a href="pc-builder-v3.html">Custom PC Build</a></li>
                 <li class="has-dropdown">
                     <a href="mobiles.html">Mobile Phones</a>
                     <button class="dropdown-toggle" aria-label="Toggle Mobile Phones dropdown">
@@ -1658,9 +1658,7 @@
                         <div class="component-card__content">
                             <h3 class="component-card__title">Motherboard</h3>
                             <p class="component-card__description">Powerful & feature-rich boards that serve as the backbone of your PC</p>
-                            <div class="component-card__image">
-                                <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=600&h=600&fit=crop&q=80" alt="Motherboard">
-                            </div>
+                            <img src="assets/images/gemini-motherboard.png" alt="Motherboard" class="component-card__full-image">
                         </div>
                     </a>
 
@@ -1669,9 +1667,7 @@
                         <div class="component-card__content">
                             <h3 class="component-card__title">RAM</h3>
                             <p class="component-card__description">Fast & reliable memory modules to enhance your PC's multitasking and performance</p>
-                            <div class="component-card__image">
-                                <img src="https://images.unsplash.com/photo-1541029071515-84cc54f84dc5?w=600&h=600&fit=crop&q=80" alt="RAM">
-                            </div>
+                            <img src="assets/images/gemini-ram.png" alt="RAM" class="component-card__full-image">
                         </div>
                     </a>
                 </div>
@@ -1681,10 +1677,20 @@
                     <!-- CPU Cooler Card -->
                     <a href="categories.html" class="component-card component-card--full-height component-card--dark-red">
                         <div class="component-card__content">
-                            <h3 class="component-card__title">CPU Cooler</h3>
-                            <p class="component-card__description">High-lorem to le Plus SGO on ad Hllnpls to keep your PC important cool and games.</p>
-                            <div class="component-card__image">
-                                <img src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=600&h=600&fit=crop&q=80" alt="CPU Cooler">
+                            <div class="component-card__split-top">
+                                <div class="component-card__text-block">
+                                    <span class="promo-tag">Best Deals</span>
+                                    <h3 class="component-card__title">PC Components</h3>
+                                    <p class="promo-subtitle">Processors • RAM • Storage • Graphics</p>
+                                    <div class="promo-price-box">
+                                        <span class="price-label">Starting from</span>
+                                        <span class="price-value">Rs. 99,999</span>
+                                    </div>
+                                    <span class="component-card__link">Shop Now <i class="fas fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                            <div class="component-card__split-bottom">
+                                <img src="assets/images/gemini-cpu-cooler.png" alt="CPU Cooler" class="component-card__full-image">
                             </div>
                         </div>
                     </a>
@@ -1697,9 +1703,7 @@
                         <div class="component-card__content">
                             <h3 class="component-card__title">Processors</h3>
                             <p class="component-card__description">High-performance CPUs delivering exceptional speed and multitasking capabilities</p>
-                            <div class="component-card__image">
-                                <img src="https://images.unsplash.com/photo-1555617981-dac3880eac6e?w=600&h=600&fit=crop&q=80" alt="Processor">
-                            </div>
+                            <img src="assets/images/gemini-processor.png" alt="Processor" class="component-card__full-image">
                         </div>
                     </a>
 
@@ -1708,9 +1712,7 @@
                         <div class="component-card__content">
                             <h3 class="component-card__title">Storage</h3>
                             <p class="component-card__description">High-capacity & fast SSMe SG and HDS for storing your important dara and games</p>
-                            <div class="component-card__image">
-                                <img src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=600&h=600&fit=crop&q=80" alt="Storage">
-                            </div>
+                            <img src="assets/images/gemini-storage.png" alt="Storage" class="component-card__full-image">
                         </div>
                     </a>
                 </div>
@@ -1718,32 +1720,61 @@
         </div>
     </section>
 
-    <!-- Deals Banner -->
-    <section class="deals-banner">
+    <!-- PC Parts Grid Section -->
+    <section class="pc-parts-grid">
         <div class="container">
-            <div class="deals-banner__content">
-                <span class="deals-banner__subtitle">Limited Time Offer</span>
-                <h2 class="deals-banner__title">Mega Sale - Up to 40% Off</h2>
-                <p class="deals-banner__description">Don't miss out on our biggest sale of the season. Shop now and save big on your favorite electronics!</p>
-                <div class="deals-banner__timer">
-                    <div class="timer__item">
-                        <span class="timer__value">02</span>
-                        <span class="timer__label">Days</span>
+            <div class="pc-parts-grid__container">
+                <!-- Motherboard Card -->
+                <a href="categories.html" class="pc-part-card pc-part-card--green">
+                    <div class="pc-part-card__content">
+                        <h3 class="pc-part-card__title">Motherboard</h3>
+                        <p class="pc-part-card__description">Powerful & feature-rich boards that serve as the backbone of your PC build</p>
+                        <img src="assets/images/gemini-motherboard.png" alt="Motherboard" class="pc-part-card__image">
                     </div>
-                    <div class="timer__item">
-                        <span class="timer__value">14</span>
-                        <span class="timer__label">Hours</span>
+                </a>
+
+                <!-- PC Parts Card -->
+                <a href="categories.html" class="pc-part-card pc-part-card--red">
+                    <div class="pc-part-card__content">
+                        <h3 class="pc-part-card__title">PC PARTS</h3>
                     </div>
-                    <div class="timer__item">
-                        <span class="timer__value">32</span>
-                        <span class="timer__label">Minutes</span>
+                </a>
+
+                <!-- Processors Card -->
+                <a href="categories.html" class="pc-part-card pc-part-card--red-gradient">
+                    <div class="pc-part-card__content">
+                        <h3 class="pc-part-card__title">Processors</h3>
+                        <p class="pc-part-card__description">High-performance CPUs delivering exceptional speed and multitasking</p>
+                        <img src="assets/images/gemini-processor.png" alt="Processor" class="pc-part-card__image">
                     </div>
-                    <div class="timer__item">
-                        <span class="timer__value">45</span>
-                        <span class="timer__label">Seconds</span>
+                </a>
+
+                <!-- RAM Card -->
+                <a href="categories.html" class="pc-part-card pc-part-card--purple">
+                    <div class="pc-part-card__content">
+                        <h3 class="pc-part-card__title">RAM</h3>
+                        <p class="pc-part-card__description">Fast & reliable memory modules to enhance multitasking</p>
+                        <img src="assets/images/gemini-ram.png" alt="RAM" class="pc-part-card__image">
                     </div>
-                </div>
-                <a href="categories.html" class="btn btn-primary">Shop Deals</a>
+                </a>
+
+                <!-- CPU Cooler Card -->
+                <a href="categories.html" class="pc-part-card pc-part-card--dark pc-part-card--tall">
+                    <div class="pc-part-card__content">
+                        <h3 class="pc-part-card__title">CPU Cooler</h3>
+                        <p class="pc-part-card__description">High-lorem to le Plus SGO on ad Hllnpls to keep your PC cool</p>
+                        <img src="assets/images/gemini-cpu-cooler.png" alt="CPU Cooler" class="pc-part-card__image">
+                    </div>
+                </a>
+
+                <!-- Storage Card -->
+                <a href="categories.html" class="pc-part-card pc-part-card--orange">
+                    <div class="pc-part-card__content">
+                        <h3 class="pc-part-card__title">Storage</h3>
+                        <p class="pc-part-card__description">High-capacity & fast SSD and HDD for storing data and games</p>
+                        <img src="assets/images/gemini-storage.png" alt="Storage" class="pc-part-card__image">
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -1751,7 +1782,9 @@
     <!-- Brands Section -->
     <section class="brands">
         <div class="container">
-            <h2 class="section__title">Top Brands</h2>
+            <div class="section__header">
+                <h2 class="section__title">Grab Deals by Brand</h2>
+            </div>
             <div class="brands__grid">
                 <div class="brand__item">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Dell_Logo.svg" alt="Dell">
@@ -1775,14 +1808,73 @@
         </div>
     </section>
 
+    <!-- Blog / Content Section -->
+    <section class="blog">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Latest Tech Insights</h2>
+                <a href="blog.html" class="section__link">View All Articles <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="blog__grid">
+                <!-- Blog Card 1 -->
+                <article class="blog__card">
+                    <div class="blog__image">
+                        <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=800&h=500&fit=crop&q=80" alt="Gaming PC Build Guide">
+                        <span class="blog__category">Guide</span>
+                    </div>
+                    <div class="blog__content">
+                        <div class="blog__meta">
+                            <span class="blog__date"><i class="far fa-calendar"></i> Dec 15, 2024</span>
+                            <span class="blog__read-time"><i class="far fa-clock"></i> 5 min read</span>
+                        </div>
+                        <h3 class="blog__title"><a href="blog-detail.html" style="color: inherit; text-decoration: none;">Ultimate Gaming PC Build Guide for 2024</a></h3>
+                        <p class="blog__excerpt">Learn how to build the perfect gaming PC with our comprehensive guide covering components, compatibility, and assembly tips.</p>
+                        <a href="blog-detail.html" class="blog__link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog Card 2 -->
+                <article class="blog__card">
+                    <div class="blog__image">
+                        <img src="https://images.unsplash.com/photo-1587202372616-b43abea06c2a?w=800&h=500&fit=crop&q=80" alt="Gaming Setup Guide">
+                        <span class="blog__category">Guide</span>
+                    </div>
+                    <div class="blog__content">
+                        <div class="blog__meta">
+                            <span class="blog__date"><i class="far fa-calendar"></i> Dec 12, 2024</span>
+                            <span class="blog__read-time"><i class="far fa-clock"></i> 6 min read</span>
+                        </div>
+                        <h3 class="blog__title"><a href="blog-detail.html" style="color: inherit; text-decoration: none;">Building Your Ultimate Gaming Setup</a></h3>
+                        <p class="blog__excerpt">From RGB lighting to ergonomic chairs, discover the essential components for creating the perfect gaming environment.</p>
+                        <a href="blog-detail.html" class="blog__link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog Card 3 -->
+                <article class="blog__card">
+                    <div class="blog__image">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&h=500&fit=crop&q=80" alt="Tech News">
+                        <span class="blog__category">News</span>
+                    </div>
+                    <div class="blog__content">
+                        <div class="blog__meta">
+                            <span class="blog__date"><i class="far fa-calendar"></i> Dec 10, 2024</span>
+                            <span class="blog__read-time"><i class="far fa-clock"></i> 3 min read</span>
+                        </div>
+                        <h3 class="blog__title"><a href="blog-detail.html" style="color: inherit; text-decoration: none;">Top Tech Trends to Watch in 2025</a></h3>
+                        <p class="blog__excerpt">Stay ahead of the curve with our roundup of the most exciting technology trends coming in the new year.</p>
+                        <a href="blog-detail.html" class="blog__link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <script>
         // Mobile menu toggle
         document.getElementById('menuToggle').addEventListener('click', function() {
             document.getElementById('mainNav').classList.toggle('active');
-            const icon = this.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
         });
 
         // Dropdown menu functionality

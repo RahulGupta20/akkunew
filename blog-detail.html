@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Gaming PC Build Guide for 2024 | Akku Electronics Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css?v=5">
+    <link rel="stylesheet" href="css/home.css?v=108">
+    <style>
+        .blog-detail {
+            padding: 60px 0;
+            background: #0a0a0a;
+        }
+
+        .blog-detail__container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .blog-detail__header {
+            margin-bottom: 40px;
+        }
+
+        .blog-detail__category {
+            display: inline-block;
+            padding: 6px 16px;
+            background: linear-gradient(135deg, #ED3237 0%, #FF6B00 100%);
+            color: #fff;
+            font-size: 0.875rem;
+            font-weight: 600;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .blog-detail__title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .blog-detail__meta {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+        }
+
+        .blog-detail__meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .blog-detail__meta-item i {
+            color: #ED3237;
+        }
+
+        .blog-detail__featured-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 40px;
+        }
+
+        .blog-detail__content {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .blog-detail__content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .blog-detail__content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .blog-detail__content p {
+            margin-bottom: 20px;
+        }
+
+        .blog-detail__content ul,
+        .blog-detail__content ol {
+            margin-bottom: 20px;
+            padding-left: 30px;
+        }
+
+        .blog-detail__content li {
+            margin-bottom: 10px;
+        }
+
+        .blog-detail__content blockquote {
+            border-left: 4px solid #ED3237;
+            padding: 20px 30px;
+            margin: 30px 0;
+            background: rgba(237, 50, 55, 0.1);
+            border-radius: 8px;
+            font-style: italic;
+        }
+
+        .blog-detail__content img {
+            width: 100%;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .blog-detail__share {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .blog-detail__share-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .blog-detail__share-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .blog-detail__share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .blog-detail__share-btn--facebook {
+            background: #1877f2;
+            color: #fff;
+        }
+
+        .blog-detail__share-btn--twitter {
+            background: #1da1f2;
+            color: #fff;
+        }
+
+        .blog-detail__share-btn--linkedin {
+            background: #0a66c2;
+            color: #fff;
+        }
+
+        .blog-detail__share-btn--copy {
+            background: rgba(237, 50, 55, 0.1);
+            color: #ED3237;
+            border: 1px solid rgba(237, 50, 55, 0.3);
+        }
+
+        .blog-detail__share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .related-posts {
+            padding: 60px 0;
+            background: #0a0a0a;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .related-posts__title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .blog-detail__title {
+                font-size: 1.8rem;
+            }
+
+            .blog-detail__featured-image {
+                height: 300px;
+            }
+
+            .blog-detail__content {
+                font-size: 1rem;
+            }
+
+            .blog-detail__content h2 {
+                font-size: 1.5rem;
+            }
+
+            .blog-detail__content h3 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <!-- Header -->
+    <header class="header">
+        <!-- Main Header (Sticky) -->
+        <div class="header__main">
+            <div class="container">
+                <!-- Logo -->
+                <a href="index.html" class="header__logo">
+                    <img src="assets/images/logo.png" alt="Akku Electronics">
+                </a>
+
+                <!-- Search Bar -->
+                <div class="header__search">
+                    <input type="text" placeholder="Search for products, brands, and more...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+
+                <!-- Header Actions -->
+                <div class="header__actions">
+                    <!-- Language & Currency -->
+                    <button class="header__settings-btn">
+                        <i class="fas fa-globe"></i>
+                        <span>EN / NPR</span>
+                    </button>
+
+                    <!-- Wishlist -->
+                    <a href="wishlist.html" class="header__action-item">
+                        <i class="far fa-heart"></i>
+                        <span class="badge">0</span>
+                    </a>
+
+                    <!-- Cart -->
+                    <a href="cart.html" class="header__action-item">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge">0</span>
+                    </a>
+
+                    <!-- Login/Account -->
+                    <a href="login.html" class="header__login-btn">
+                        <i class="fas fa-user"></i>
+                        <span>Login</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="header__menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation (Not Sticky) -->
+        <nav class="header__nav" id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="has-dropdown">
+                    <a href="laptops.html">Laptops</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Laptops dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="laptops.html" class="dropdown-item">Gaming Laptops</a>
+                        <a href="laptops.html" class="dropdown-item">Business Laptops</a>
+                        <a href="laptops.html" class="dropdown-item">Student Laptops</a>
+                        <a href="laptops.html" class="dropdown-item">Ultrabooks</a>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    <a href="desktops.html">Desktop PCs</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Desktop PCs dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="desktops.html" class="dropdown-item">Gaming PCs</a>
+                        <a href="desktops.html" class="dropdown-item">Workstations</a>
+                        <a href="desktops.html" class="dropdown-item">All-in-One PCs</a>
+                        <a href="desktops.html" class="dropdown-item">Mini PCs</a>
+                    </div>
+                </li>
+                <li><a href="#">Custom PC Build</a></li>
+                <li class="has-dropdown">
+                    <a href="mobiles.html">Mobile Phones</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Mobile Phones dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="mobiles.html" class="dropdown-item">Smartphones</a>
+                        <a href="mobiles.html" class="dropdown-item">Feature Phones</a>
+                        <a href="mobiles.html" class="dropdown-item">Accessories</a>
+                    </div>
+                </li>
+                <li><a href="#">Accessories</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <i class="fas fa-home"></i>
+            <a href="index.html">Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <a href="blog.html">Blog</a>
+            <i class="fas fa-chevron-right"></i>
+            <span class="current">Ultimate Gaming PC Build Guide</span>
+        </div>
+    </div>
+
+    <!-- Blog Detail -->
+    <section class="blog-detail">
+        <div class="blog-detail__container">
+            <article>
+                <div class="blog-detail__header">
+                    <span class="blog-detail__category">Guide</span>
+                    <h1 class="blog-detail__title">Ultimate Gaming PC Build Guide for 2024</h1>
+                    <div class="blog-detail__meta">
+                        <div class="blog-detail__meta-item">
+                            <i class="far fa-calendar"></i>
+                            <span>December 15, 2024</span>
+                        </div>
+                        <div class="blog-detail__meta-item">
+                            <i class="far fa-user"></i>
+                            <span>By Akku Tech Team</span>
+                        </div>
+                        <div class="blog-detail__meta-item">
+                            <i class="far fa-clock"></i>
+                            <span>5 min read</span>
+                        </div>
+                    </div>
+                </div>
+
+                <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=1200&h=600&fit=crop&q=80" alt="Gaming PC Build" class="blog-detail__featured-image">
+
+                <div class="blog-detail__content">
+                    <p>Building your own gaming PC can be one of the most rewarding experiences for any tech enthusiast. Not only do you get a system perfectly tailored to your needs, but you also gain valuable knowledge about computer hardware and how everything works together.</p>
+
+                    <p>In this comprehensive guide, we'll walk you through every step of building a high-performance gaming PC in 2024, from choosing the right components to the final assembly and testing.</p>
+
+                    <h2>Choosing Your Components</h2>
+
+                    <h3>1. Processor (CPU)</h3>
+                    <p>The CPU is the brain of your gaming PC. For gaming in 2024, we recommend:</p>
+                    <ul>
+                        <li><strong>Budget:</strong> AMD Ryzen 5 7600X or Intel Core i5-13600K</li>
+                        <li><strong>Mid-range:</strong> AMD Ryzen 7 7800X3D or Intel Core i7-14700K</li>
+                        <li><strong>High-end:</strong> AMD Ryzen 9 7950X3D or Intel Core i9-14900K</li>
+                    </ul>
+
+                    <h3>2. Graphics Card (GPU)</h3>
+                    <p>The GPU is arguably the most important component for gaming performance. Consider your target resolution and frame rate:</p>
+                    <ul>
+                        <li><strong>1080p Gaming:</strong> NVIDIA RTX 4060 Ti or AMD RX 7700 XT</li>
+                        <li><strong>1440p Gaming:</strong> NVIDIA RTX 4070 Ti or AMD RX 7900 XT</li>
+                        <li><strong>4K Gaming:</strong> NVIDIA RTX 4080/4090 or AMD RX 7900 XTX</li>
+                    </ul>
+
+                    <h3>3. Memory (RAM)</h3>
+                    <p>For gaming in 2024, 16GB is the minimum, but 32GB is recommended for future-proofing. Look for DDR5 RAM with speeds of at least 6000MHz for AMD systems or 7200MHz for Intel systems.</p>
+
+                    <h3>4. Storage</h3>
+                    <p>An NVMe SSD is essential for fast load times. We recommend:</p>
+                    <ul>
+                        <li>1TB NVMe SSD for OS and frequently played games</li>
+                        <li>Additional 2TB+ HDD or SATA SSD for game library storage</li>
+                    </ul>
+
+                    <blockquote>
+                        "The secret to a great gaming PC isn't just about buying the most expensive parts - it's about finding the right balance between performance and budget for your specific needs."
+                    </blockquote>
+
+                    <h2>Assembly Tips</h2>
+
+                    <h3>Preparation</h3>
+                    <p>Before you start building, make sure you have:</p>
+                    <ol>
+                        <li>A clean, well-lit workspace</li>
+                        <li>Anti-static wrist strap or mat</li>
+                        <li>Magnetic screwdriver set</li>
+                        <li>Cable ties for cable management</li>
+                    </ol>
+
+                    <h3>Step-by-Step Build Process</h3>
+                    <p><strong>Step 1: Install the CPU</strong> - Carefully align the CPU with the socket and secure it according to your motherboard's instructions.</p>
+
+                    <p><strong>Step 2: Install RAM</strong> - Insert your RAM modules into the correct slots (usually slots 2 and 4 for dual-channel configuration).</p>
+
+                    <p><strong>Step 3: Mount the Motherboard</strong> - Install I/O shield, then carefully place the motherboard in the case and secure with screws.</p>
+
+                    <p><strong>Step 4: Install Storage</strong> - Mount your NVMe SSD directly to the motherboard's M.2 slot.</p>
+
+                    <p><strong>Step 5: Install GPU</strong> - Remove the necessary PCIe slot covers and carefully insert your graphics card.</p>
+
+                    <p><strong>Step 6: Connect Power Supply</strong> - Install PSU and connect all necessary power cables (24-pin motherboard, 8-pin CPU, PCIe GPU power).</p>
+
+                    <p><strong>Step 7: Cable Management</strong> - Route cables neatly using tie-downs and the case's cable management features.</p>
+
+                    <h2>Testing and Optimization</h2>
+                    <p>After assembly, follow these steps:</p>
+                    <ul>
+                        <li>Double-check all connections before powering on</li>
+                        <li>Install operating system and drivers</li>
+                        <li>Run stress tests to ensure stability</li>
+                        <li>Monitor temperatures during gaming</li>
+                        <li>Adjust fan curves if needed</li>
+                    </ul>
+
+                    <h2>Common Mistakes to Avoid</h2>
+                    <ol>
+                        <li>Forgetting to install motherboard standoffs</li>
+                        <li>Not applying enough (or too much) thermal paste</li>
+                        <li>Connecting monitor to motherboard instead of GPU</li>
+                        <li>Inadequate power supply wattage</li>
+                        <li>Poor cable management affecting airflow</li>
+                    </ol>
+
+                    <h2>Conclusion</h2>
+                    <p>Building a gaming PC is an exciting journey that pays dividends in both performance and knowledge. Take your time, follow instructions carefully, and don't hesitate to seek help if needed. The gaming PC you build today will provide years of entertainment and can be upgraded over time as your needs and budget evolve.</p>
+
+                    <p>Happy building, and may your frame rates be high and your temperatures low!</p>
+                </div>
+
+                <!-- Share Buttons -->
+                <div class="blog-detail__share">
+                    <h3 class="blog-detail__share-title">Share this article</h3>
+                    <div class="blog-detail__share-buttons">
+                        <button class="blog-detail__share-btn blog-detail__share-btn--facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Facebook</span>
+                        </button>
+                        <button class="blog-detail__share-btn blog-detail__share-btn--twitter">
+                            <i class="fab fa-twitter"></i>
+                            <span>Twitter</span>
+                        </button>
+                        <button class="blog-detail__share-btn blog-detail__share-btn--linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>LinkedIn</span>
+                        </button>
+                        <button class="blog-detail__share-btn blog-detail__share-btn--copy">
+                            <i class="fas fa-link"></i>
+                            <span>Copy Link</span>
+                        </button>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Related Posts -->
+    <section class="related-posts">
+        <div class="container">
+            <h2 class="related-posts__title">Related Articles</h2>
+            <div class="blog__grid">
+                <!-- Related Post 1 -->
+                <article class="blog__card">
+                    <div class="blog__image">
+                        <img src="https://images.unsplash.com/photo-1587202372616-b43abea06c2a?w=800&h=500&fit=crop&q=80" alt="Gaming Setup">
+                        <span class="blog__category">Guide</span>
+                    </div>
+                    <div class="blog__content">
+                        <div class="blog__meta">
+                            <span class="blog__date"><i class="far fa-calendar"></i> Dec 12, 2024</span>
+                            <span class="blog__read-time"><i class="far fa-clock"></i> 6 min read</span>
+                        </div>
+                        <h3 class="blog__title">Building Your Ultimate Gaming Setup</h3>
+                        <p class="blog__excerpt">From RGB lighting to ergonomic chairs, discover the essential components for creating the perfect gaming environment.</p>
+                        <a href="blog-detail.html" class="blog__link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Related Post 2 -->
+                <article class="blog__card">
+                    <div class="blog__image">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&h=500&fit=crop&q=80" alt="Tech Trends">
+                        <span class="blog__category">News</span>
+                    </div>
+                    <div class="blog__content">
+                        <div class="blog__meta">
+                            <span class="blog__date"><i class="far fa-calendar"></i> Dec 10, 2024</span>
+                            <span class="blog__read-time"><i class="far fa-clock"></i> 3 min read</span>
+                        </div>
+                        <h3 class="blog__title">Top Tech Trends to Watch in 2025</h3>
+                        <p class="blog__excerpt">Stay ahead of the curve with our roundup of the most exciting technology trends coming in the new year.</p>
+                        <a href="blog-detail.html" class="blog__link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Related Post 3 -->
+                <article class="blog__card">
+                    <div class="blog__image">
+                        <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=800&h=500&fit=crop&q=80" alt="Smartphone">
+                        <span class="blog__category">Buying Guide</span>
+                    </div>
+                    <div class="blog__content">
+                        <div class="blog__meta">
+                            <span class="blog__date"><i class="far fa-calendar"></i> Dec 8, 2024</span>
+                            <span class="blog__read-time"><i class="far fa-clock"></i> 7 min read</span>
+                        </div>
+                        <h3 class="blog__title">Best Smartphones Under NPR 50,000</h3>
+                        <p class="blog__excerpt">Looking for a great smartphone on a budget? Check out our top picks that deliver excellent value for money.</p>
+                        <a href="blog-detail.html" class="blog__link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-v2">
+        <div class="footer-v2__main">
+            <div class="container">
+                <div class="footer-v2__grid">
+                    <!-- Column 1: Customer Service -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">CUSTOMER SERVICE</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Help & Advice</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Refund Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 2: Help & Support -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">HELP & SUPPORT</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="#">Shipping Info</a></li>
+                            <li><a href="#">Refund Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 3: Company Info -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">COMPANY INFO</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="blog.html">Our Blog</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Store Locations</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 4: Our Shop -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">Our Shop</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="#">Gaming Gears</a></li>
+                            <li><a href="#">Electronics</a></li>
+                            <li><a href="#">Laptop</a></li>
+                            <li><a href="#">Smartphone</a></li>
+                            <li><a href="#">Audio</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 5: My Account -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">MY ACCOUNT</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="login.html">Register</a></li>
+                            <li><a href="wishlist.html">Wishlist</a></li>
+                            <li><a href="my-orders.html">Track Your Orders</a></li>
+                            <li><a href="checkout.html">Checkout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-v2__bottom">
+            <div class="container">
+                <div class="footer-v2__bottom-grid">
+                    <!-- Social & Copyright -->
+                    <div class="footer-v2__social-section">
+                        <h4 class="footer-v2__bottom-title">Follow Us:</h4>
+                        <div class="footer-v2__social-links">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Payment Methods -->
+                    <div class="footer-v2__payment-section">
+                        <h4 class="footer-v2__bottom-title">We Accept:</h4>
+                        <div class="footer-v2__payment-methods">
+                            <img src="assets/images/esewa-logo.png" alt="eSewa" class="payment-logo">
+                            <img src="assets/images/khalti-logo.png" alt="Khalti" class="payment-logo">
+                            <img src="assets/images/connectIPS-logo.png" alt="ConnectIPS" class="payment-logo">
+                            <img src="assets/images/fonepay.png" alt="FonePay" class="payment-logo">
+                        </div>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="footer-v2__newsletter-section">
+                        <h4 class="footer-v2__bottom-title">Get the Latest Deals:</h4>
+                        <form class="footer-v2__newsletter-form">
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+
+                    <!-- Store Location -->
+                    <div class="footer-v2__store-location d-none">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Store Location:</strong>
+                            <span>Putalisadak - Kathmandu, Nepal</span>
+                        </div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="footer-v2__phone d-none">
+                        <i class="fas fa-headset"></i>
+                        <div>
+                            <strong>Call Us Now:</strong>
+                            <span>+977 98123412345</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="footer-v2__contact-info">
+                    <div class="footer-v2__copyright">
+                        <i class="far fa-copyright"></i>
+                        <span>2026 Akku.gg, Nepal.</span>
+                        <span>All rights reserved.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+
+        // Dropdown menu functionality
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const parentLi = this.closest('.has-dropdown');
+                const dropdownMenu = parentLi.querySelector('.dropdown-menu');
+
+                // Close all other dropdowns
+                document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+                    if (menu !== dropdownMenu) {
+                        menu.classList.remove('show');
+                        menu.closest('.has-dropdown').querySelector('.dropdown-toggle').classList.remove('active');
+                    }
+                });
+
+                // Toggle current dropdown
+                dropdownMenu.classList.toggle('show');
+                this.classList.toggle('active');
+            });
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.has-dropdown')) {
+                document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+                    menu.classList.remove('show');
+                    menu.closest('.has-dropdown').querySelector('.dropdown-toggle').classList.remove('active');
+                });
+            }
+        });
+
+        // Share button functionality
+        document.querySelectorAll('.blog-detail__share-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (this.classList.contains('blog-detail__share-btn--copy')) {
+                    navigator.clipboard.writeText(window.location.href);
+                    const originalText = this.querySelector('span').textContent;
+                    this.querySelector('span').textContent = 'Copied!';
+                    setTimeout(() => {
+                        this.querySelector('span').textContent = originalText;
+                    }, 2000);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

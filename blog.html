@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Blog & Insights | Akku Electronics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css?v=5">
+    <link rel="stylesheet" href="css/home.css?v=108">
+</head>
+<body class="dark-theme">
+    <!-- Header -->
+    <header class="header">
+        <!-- Main Header (Sticky) -->
+        <div class="header__main">
+            <div class="container">
+                <!-- Logo -->
+                <a href="index.html" class="header__logo">
+                    <img src="assets/images/logo.png" alt="Akku Electronics">
+                </a>
+
+                <!-- Search Bar -->
+                <div class="header__search">
+                    <input type="text" placeholder="Search for products, brands, and more...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+
+                <!-- Header Actions -->
+                <div class="header__actions">
+                    <!-- Language & Currency -->
+                    <button class="header__settings-btn">
+                        <i class="fas fa-globe"></i>
+                        <span>EN / NPR</span>
+                    </button>
+
+                    <!-- Wishlist -->
+                    <a href="wishlist.html" class="header__action-item">
+                        <i class="far fa-heart"></i>
+                        <span class="badge">0</span>
+                    </a>
+
+                    <!-- Cart -->
+                    <a href="cart.html" class="header__action-item">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge">0</span>
+                    </a>
+
+                    <!-- Login/Account -->
+                    <a href="login.html" class="header__login-btn">
+                        <i class="fas fa-user"></i>
+                        <span>Login</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="header__menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation (Not Sticky) -->
+        <nav class="header__nav" id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="has-dropdown">
+                    <a href="laptops.html">Laptops</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Laptops dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="laptops.html" class="dropdown-item">Gaming Laptops</a>
+                        <a href="laptops.html" class="dropdown-item">Business Laptops</a>
+                        <a href="laptops.html" class="dropdown-item">Student Laptops</a>
+                        <a href="laptops.html" class="dropdown-item">Ultrabooks</a>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    <a href="desktops.html">Desktop PCs</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Desktop PCs dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="desktops.html" class="dropdown-item">Gaming PCs</a>
+                        <a href="desktops.html" class="dropdown-item">Workstations</a>
+                        <a href="desktops.html" class="dropdown-item">All-in-One PCs</a>
+                        <a href="desktops.html" class="dropdown-item">Mini PCs</a>
+                    </div>
+                </li>
+                <li><a href="#">Custom PC Build</a></li>
+                <li class="has-dropdown">
+                    <a href="mobiles.html">Mobile Phones</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Mobile Phones dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="mobiles.html" class="dropdown-item">Smartphones</a>
+                        <a href="mobiles.html" class="dropdown-item">Feature Phones</a>
+                        <a href="mobiles.html" class="dropdown-item">Accessories</a>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    <a href="#">Peripherals</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Peripherals dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="categories.html" class="dropdown-item">Keyboards</a>
+                        <a href="categories.html" class="dropdown-item">Mice</a>
+                        <a href="categories.html" class="dropdown-item">Headphones</a>
+                        <a href="categories.html" class="dropdown-item">Monitors</a>
+                        <a href="categories.html" class="dropdown-item">Webcams</a>
+                    </div>
+                </li>
+                <li><a href="#">Deals</a></li>
+                <li class="has-dropdown active">
+                    <a href="#">Support</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Support dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Contact Us</a>
+                        <a href="#" class="dropdown-item">FAQs</a>
+                        <a href="#" class="dropdown-item">Warranty</a>
+                        <a href="#" class="dropdown-item">Track Order</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <i class="fas fa-home"></i>
+            <a href="index.html">Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <span class="current">Blog</span>
+        </div>
+    </div>
+
+    <!-- Blog Page Hero -->
+    <section class="blog-hero" style="padding: 60px 0 40px; background: linear-gradient(135deg, #1a0506 0%, #0C0304 100%); text-align: center;">
+        <div class="container">
+            <h1 style="font-size: 3rem; font-weight: 700; margin-bottom: 16px; background: linear-gradient(135deg, #ED3237 0%, #FF6B00 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Tech Insights & Guides</h1>
+            <p style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.7); max-width: 600px; margin: 0 auto;">Stay updated with the latest tech news, buying guides, and expert tips</p>
+        </div>
+    </section>
+
+    <!-- Blog Categories Filter -->
+    <section style="padding: 30px 0; background: #0a0a0a; border-bottom: 1px solid rgba(237, 50, 55, 0.1);">
+        <div class="container">
+            <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+                <button style="padding: 8px 24px; background: #ED3237; color: #fff; border: none; border-radius: 20px; font-weight: 600; cursor: pointer; transition: all 0.3s;">All Articles</button>
+                <button style="padding: 8px 24px; background: rgba(237, 50, 55, 0.1); color: #fff; border: 1px solid rgba(237, 50, 55, 0.3); border-radius: 20px; font-weight: 600; cursor: pointer; transition: all 0.3s;">Guides</button>
+                <button style="padding: 8px 24px; background: rgba(237, 50, 55, 0.1); color: #fff; border: 1px solid rgba(237, 50, 55, 0.3); border-radius: 20px; font-weight: 600; cursor: pointer; transition: all 0.3s;">Buying Guides</button>
+                <button style="padding: 8px 24px; background: rgba(237, 50, 55, 0.1); color: #fff; border: 1px solid rgba(237, 50, 55, 0.3); border-radius: 20px; font-weight: 600; cursor: pointer; transition: all 0.3s;">News</button>
+                <button style="padding: 8px 24px; background: rgba(237, 50, 55, 0.1); color: #fff; border: 1px solid rgba(237, 50, 55, 0.3); border-radius: 20px; font-weight: 600; cursor: pointer; transition: all 0.3s;">Reviews</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Articles Grid -->
+    <section class="blog" style="padding-bottom: 80px;">
+        <div class="container">
+            <div class="blog__grid">
+                <!-- Blog Card 1 -->
+                <article class="blog__card">
+                    <div class="blog__image">
+                        <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=800&h=500&fit=crop&q=80" alt="Gaming PC Build Guide">
+                        <span class="blog__category">Guide</span>
+                    </div>
+                    <div class="blog__content">
+                        <div class="blog__meta">
+                            <span class="blog__date"><i class="far fa-calendar"></i> Dec 15, 2024</span>
+                            <span class="blog__read-time"><i class="far fa-clock"></i> 5 min read</span>
+                        </div>
+                        <h3 class="blog__title"><a href="blog-detail.html" style="color: inherit; text-decoration: none;">Ultimate Gaming PC Build Guide for 2024</a></h3>
+                        <p class="blog__excerpt">Learn how to build the perfect gaming PC with our comprehensive guide covering components, compatibility, and assembly tips.</p>
+                        <a href="blog-detail.html" class="blog__link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog Card 2 -->
+                <article class="blog__card">
+                    <div class="blog__image">
+                        <img src="https://images.unsplash.com/photo-1587202372616-b43abea06c2a?w=800&h=500&fit=crop&q=80" alt="Gaming Setup Guide">
+                        <span class="blog__category">Guide</span>
+                    </div>
+                    <div class="blog__content">
+                        <div class="blog__meta">
+                            <span class="blog__date"><i class="far fa-calendar"></i> Dec 12, 2024</span>
+                            <span class="blog__read-time"><i class="far fa-clock"></i> 6 min read</span>
+                        </div>
+                        <h3 class="blog__title"><a href="blog-detail.html" style="color: inherit; text-decoration: none;">Building Your Ultimate Gaming Setup</a></h3>
+                        <p class="blog__excerpt">From RGB lighting to ergonomic chairs, discover the essential components for creating the perfect gaming environment.</p>
+                        <a href="blog-detail.html" class="blog__link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog Card 3 -->
+                <article class="blog__card">
+                    <div class="blog__image">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&h=500&fit=crop&q=80" alt="Tech News">
+                        <span class="blog__category">News</span>
+                    </div>
+                    <div class="blog__content">
+                        <div class="blog__meta">
+                            <span class="blog__date"><i class="far fa-calendar"></i> Dec 10, 2024</span>
+                            <span class="blog__read-time"><i class="far fa-clock"></i> 3 min read</span>
+                        </div>
+                        <h3 class="blog__title"><a href="blog-detail.html" style="color: inherit; text-decoration: none;">Top Tech Trends to Watch in 2025</a></h3>
+                        <p class="blog__excerpt">Stay ahead of the curve with our roundup of the most exciting technology trends coming in the new year.</p>
+                        <a href="blog-detail.html" class="blog__link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog Card 4 -->
+                <article class="blog__card">
+                    <div class="blog__image">
+                        <img src="https://images.unsplash.com/photo-1587202372616-b43abea06c2a?w=800&h=500&fit=crop&q=80" alt="RGB Setup">
+                        <span class="blog__category">Guide</span>
+                    </div>
+                    <div class="blog__content">
+                        <div class="blog__meta">
+                            <span class="blog__date"><i class="far fa-calendar"></i> Dec 8, 2024</span>
+                            <span class="blog__read-time"><i class="far fa-clock"></i> 6 min read</span>
+                        </div>
+                        <h3 class="blog__title"><a href="blog-detail.html" style="color: inherit; text-decoration: none;">RGB Lighting Setup Guide for Gaming Rooms</a></h3>
+                        <p class="blog__excerpt">Transform your gaming space with stunning RGB lighting. Learn the best practices and product recommendations.</p>
+                        <a href="blog-detail.html" class="blog__link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog Card 5 -->
+                <article class="blog__card">
+                    <div class="blog__image">
+                        <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=800&h=500&fit=crop&q=80" alt="Smartphone">
+                        <span class="blog__category">Buying Guide</span>
+                    </div>
+                    <div class="blog__content">
+                        <div class="blog__meta">
+                            <span class="blog__date"><i class="far fa-calendar"></i> Dec 5, 2024</span>
+                            <span class="blog__read-time"><i class="far fa-clock"></i> 7 min read</span>
+                        </div>
+                        <h3 class="blog__title"><a href="blog-detail.html" style="color: inherit; text-decoration: none;">Best Smartphones Under NPR 50,000</a></h3>
+                        <p class="blog__excerpt">Discover the top smartphone picks that offer the best value for money without breaking the bank.</p>
+                        <a href="blog-detail.html" class="blog__link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog Card 6 -->
+                <article class="blog__card">
+                    <div class="blog__image">
+                        <img src="https://images.unsplash.com/photo-1625948515291-69613efd103f?w=800&h=500&fit=crop&q=80" alt="Mechanical Keyboard">
+                        <span class="blog__category">Review</span>
+                    </div>
+                    <div class="blog__content">
+                        <div class="blog__meta">
+                            <span class="blog__date"><i class="far fa-calendar"></i> Dec 3, 2024</span>
+                            <span class="blog__read-time"><i class="far fa-clock"></i> 10 min read</span>
+                        </div>
+                        <h3 class="blog__title"><a href="blog-detail.html" style="color: inherit; text-decoration: none;">Mechanical Keyboard Switches: Complete Guide</a></h3>
+                        <p class="blog__excerpt">Everything you need to know about mechanical keyboard switches, from Cherry MX to custom options.</p>
+                        <a href="blog-detail.html" class="blog__link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog Card 7 -->
+                <article class="blog__card">
+                    <div class="blog__image">
+                        <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800&h=500&fit=crop&q=80" alt="Monitor Setup">
+                        <span class="blog__category">Guide</span>
+                    </div>
+                    <div class="blog__content">
+                        <div class="blog__meta">
+                            <span class="blog__date"><i class="far fa-calendar"></i> Dec 1, 2024</span>
+                            <span class="blog__read-time"><i class="far fa-clock"></i> 5 min read</span>
+                        </div>
+                        <h3 class="blog__title"><a href="blog-detail.html" style="color: inherit; text-decoration: none;">Dual Monitor Setup: Tips & Tricks</a></h3>
+                        <p class="blog__excerpt">Maximize your productivity with a dual monitor setup. Learn the best configurations and ergonomic tips.</p>
+                        <a href="blog-detail.html" class="blog__link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog Card 8 -->
+                <article class="blog__card">
+                    <div class="blog__image">
+                        <img src="https://images.unsplash.com/photo-1547082661-6cd8d8d4c87f?w=800&h=500&fit=crop&q=80" alt="GPU">
+                        <span class="blog__category">News</span>
+                    </div>
+                    <div class="blog__content">
+                        <div class="blog__meta">
+                            <span class="blog__date"><i class="far fa-calendar"></i> Nov 28, 2024</span>
+                            <span class="blog__read-time"><i class="far fa-clock"></i> 4 min read</span>
+                        </div>
+                        <h3 class="blog__title"><a href="blog-detail.html" style="color: inherit; text-decoration: none;">Latest GPU Releases and Performance Benchmarks</a></h3>
+                        <p class="blog__excerpt">Check out the latest graphics card releases and how they stack up in real-world gaming tests.</p>
+                        <a href="blog-detail.html" class="blog__link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog Card 9 -->
+                <article class="blog__card">
+                    <div class="blog__image">
+                        <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?w=800&h=500&fit=crop&q=80" alt="PC Components">
+                        <span class="blog__category">Buying Guide</span>
+                    </div>
+                    <div class="blog__content">
+                        <div class="blog__meta">
+                            <span class="blog__date"><i class="far fa-calendar"></i> Nov 25, 2024</span>
+                            <span class="blog__read-time"><i class="far fa-clock"></i> 9 min read</span>
+                        </div>
+                        <h3 class="blog__title"><a href="blog-detail.html" style="color: inherit; text-decoration: none;">PC Components Compatibility Checklist</a></h3>
+                        <p class="blog__excerpt">Avoid costly mistakes with our comprehensive compatibility guide for building your custom PC.</p>
+                        <a href="blog-detail.html" class="blog__link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Pagination -->
+            <div style="display: flex; justify-content: center; gap: 8px; margin-top: 60px;">
+                <button style="width: 40px; height: 40px; background: rgba(237, 50, 55, 0.1); border: 1px solid rgba(237, 50, 55, 0.3); border-radius: 8px; color: #fff; cursor: pointer; transition: all 0.3s;"><i class="fas fa-chevron-left"></i></button>
+                <button style="width: 40px; height: 40px; background: #ED3237; border: none; border-radius: 8px; color: #fff; cursor: pointer; font-weight: 600;">1</button>
+                <button style="width: 40px; height: 40px; background: rgba(237, 50, 55, 0.1); border: 1px solid rgba(237, 50, 55, 0.3); border-radius: 8px; color: #fff; cursor: pointer; transition: all 0.3s;">2</button>
+                <button style="width: 40px; height: 40px; background: rgba(237, 50, 55, 0.1); border: 1px solid rgba(237, 50, 55, 0.3); border-radius: 8px; color: #fff; cursor: pointer; transition: all 0.3s;">3</button>
+                <button style="width: 40px; height: 40px; background: rgba(237, 50, 55, 0.1); border: 1px solid rgba(237, 50, 55, 0.3); border-radius: 8px; color: #fff; cursor: pointer; transition: all 0.3s;"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+
+        // Dropdown menu functionality
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const parentLi = this.closest('.has-dropdown');
+                const dropdownMenu = parentLi.querySelector('.dropdown-menu');
+
+                // Close all other dropdowns
+                document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+                    if (menu !== dropdownMenu) {
+                        menu.classList.remove('show');
+                        menu.closest('.has-dropdown').querySelector('.dropdown-toggle').classList.remove('active');
+                    }
+                });
+
+                // Toggle current dropdown
+                dropdownMenu.classList.toggle('show');
+                this.classList.toggle('active');
+            });
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.has-dropdown')) {
+                document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+                    menu.classList.remove('show');
+                    menu.closest('.has-dropdown').querySelector('.dropdown-toggle').classList.remove('active');
+                });
+            }
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer-v2">
+        <div class="footer-v2__main">
+            <div class="container">
+                <div class="footer-v2__grid">
+                    <!-- Column 1: Customer Service -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">CUSTOMER SERVICE</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Help & Advice</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Refund Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 2: Help & Support -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">HELP & SUPPORT</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="#">Shipping Info</a></li>
+                            <li><a href="#">Refund Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 3: Company Info -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">COMPANY INFO</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Our Blog</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Store Locations</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 4: Our Shop -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">Our Shop</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="#">Gaming Gears</a></li>
+                            <li><a href="#">Electronics</a></li>
+                            <li><a href="#">Laptop</a></li>
+                            <li><a href="#">Smartphone</a></li>
+                            <li><a href="#">Audio</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 5: My Account -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">MY ACCOUNT</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="login.html">Register</a></li>
+                            <li><a href="wishlist.html">Wishlist</a></li>
+                            <li><a href="my-orders.html">Track Your Orders</a></li>
+                            <li><a href="checkout.html">Checkout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-v2__bottom">
+            <div class="container">
+                <div class="footer-v2__bottom-grid">
+                    <!-- Social & Copyright -->
+                    <div class="footer-v2__social-section">
+                        <h4 class="footer-v2__bottom-title">Follow Us:</h4>
+                        <div class="footer-v2__social-links">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Payment Methods -->
+                    <div class="footer-v2__payment-section">
+                        <h4 class="footer-v2__bottom-title">We Accept:</h4>
+                        <div class="footer-v2__payment-methods">
+                            <img src="assets/images/esewa-logo.png" alt="eSewa" class="payment-logo">
+                            <img src="assets/images/khalti-logo.png" alt="Khalti" class="payment-logo">
+                            <img src="assets/images/connectIPS-logo.png" alt="ConnectIPS" class="payment-logo">
+                            <img src="assets/images/fonepay.png" alt="FonePay" class="payment-logo">
+                        </div>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="footer-v2__newsletter-section">
+                        <h4 class="footer-v2__bottom-title">Get the Latest Deals:</h4>
+                        <form class="footer-v2__newsletter-form">
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+
+                    <!-- Store Location -->
+                    <div class="footer-v2__store-location d-none">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Store Location:</strong>
+                            <span>Putalisadak - Kathmandu, Nepal</span>
+                        </div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="footer-v2__phone d-none">
+                        <i class="fas fa-headset"></i>
+                        <div>
+                            <strong>Call Us Now:</strong>
+                            <span>+977 98123412345</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="footer-v2__contact-info">
+                    <div class="footer-v2__copyright">
+                        <i class="far fa-copyright"></i>
+                        <span>2026 Akku.gg, Nepal.</span>
+                        <span>All rights reserved.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
