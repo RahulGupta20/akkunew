@@ -68,7 +68,7 @@
                             <li><a class="dropdown-item" href="my-reviews.html"><i class="fas fa-star"></i> My Reviews</a></li>
                             <li><a class="dropdown-item" href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="product-detail.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                            <li><a class="dropdown-item" href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                         </ul>
                     </div>
                 </div>
@@ -84,12 +84,68 @@
         <nav class="header__nav" id="mainNav">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="#">Laptops</a></li>
-                <li><a href="#">Mobiles</a></li>
-                <li><a href="#">Accessories</a></li>
+                <li class="has-dropdown">
+                    <a href="laptops.html">Laptops</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Laptops dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="laptops.html" class="dropdown-item">Gaming Laptops</a>
+                        <a href="laptops.html" class="dropdown-item">Business Laptops</a>
+                        <a href="laptops.html" class="dropdown-item">Student Laptops</a>
+                        <a href="laptops.html" class="dropdown-item">Ultrabooks</a>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    <a href="desktops.html">Desktop PCs</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Desktop PCs dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="desktops.html" class="dropdown-item">Gaming PCs</a>
+                        <a href="desktops.html" class="dropdown-item">Workstations</a>
+                        <a href="desktops.html" class="dropdown-item">All-in-One PCs</a>
+                        <a href="desktops.html" class="dropdown-item">Mini PCs</a>
+                    </div>
+                </li>
+                <li><a href="pc-builder-v3.html">Custom PC Build</a></li>
+                <li class="has-dropdown">
+                    <a href="mobiles.html">Mobile Phones</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Mobile Phones dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="mobiles.html" class="dropdown-item">Smartphones</a>
+                        <a href="mobiles.html" class="dropdown-item">Feature Phones</a>
+                        <a href="mobiles.html" class="dropdown-item">Accessories</a>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    <a href="#">Peripherals</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Peripherals dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="categories.html" class="dropdown-item">Keyboards</a>
+                        <a href="categories.html" class="dropdown-item">Mice</a>
+                        <a href="categories.html" class="dropdown-item">Headphones</a>
+                        <a href="categories.html" class="dropdown-item">Monitors</a>
+                        <a href="categories.html" class="dropdown-item">Webcams</a>
+                    </div>
+                </li>
                 <li><a href="#">Deals</a></li>
-                <li><a href="#">Contact</a></li>
+                <li class="has-dropdown">
+                    <a href="#">Support</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Support dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Contact Us</a>
+                        <a href="#" class="dropdown-item">FAQs</a>
+                        <a href="#" class="dropdown-item">Warranty</a>
+                        <a href="#" class="dropdown-item">Track Order</a>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>

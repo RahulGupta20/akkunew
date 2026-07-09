@@ -14,47 +14,117 @@
 <body class="dark-theme">
     <!-- Header -->
     <header class="header">
+        <!-- Main Header (Sticky) -->
         <div class="header__main">
             <div class="container">
                 <a href="index.html" class="header__logo">
                     <img src="assets/images/logo.png" alt="AKKU Electronics">
                 </a>
+
+                <!-- Search Bar -->
                 <form class="header__search" action="search-results.html" method="GET">
-                    <input type="text" name="q" placeholder="Search for products, brands and more...">
+                    <input type="text" name="q" id="searchInput" placeholder="Search for products, brands and more...">
                     <button type="submit"><i class="fas fa-search"></i></button>
                 </form>
+
+                <!-- Header Actions -->
                 <div class="header__actions">
-                    <button class="header__settings-btn">
+                    <!-- Language & Currency Button -->
+                    <button class="header__settings-btn" id="openSettingsModal">
                         <i class="fas fa-globe"></i>
                         <span>EN / NPR</span>
                     </button>
-                    <a href="wishlist.html" class="header__action-item">
+
+                    <!-- Wishlist -->
+                    <a href="wishlist.html" class="header__action-item" aria-label="Wishlist" title="Wishlist">
                         <i class="fas fa-heart"></i>
                     </a>
-                    <a href="cart.html" class="header__action-item">
+
+                    <!-- Cart -->
+                    <a href="cart.html" class="header__action-item" aria-label="Shopping Cart" title="Cart">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="badge">0</span>
                     </a>
+
+                    <!-- Login Button -->
                     <a href="login.html" class="header__login-btn">
                         <i class="fas fa-sign-in-alt"></i>
                         <span>Login</span>
                     </a>
                 </div>
+
+                <!-- Mobile Menu Toggle -->
                 <button class="header__menu-toggle" id="menuToggle">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
         </div>
+        <!-- Navigation (Not Sticky) -->
         <nav class="header__nav" id="mainNav">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="category.html">Laptops</a></li>
-                <li><a href="category.html">Desktop PCs</a></li>
+                <li class="has-dropdown">
+                    <a href="laptops.html">Laptops</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Laptops dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="laptops.html" class="dropdown-item">Gaming Laptops</a>
+                        <a href="laptops.html" class="dropdown-item">Business Laptops</a>
+                        <a href="laptops.html" class="dropdown-item">Student Laptops</a>
+                        <a href="laptops.html" class="dropdown-item">Ultrabooks</a>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    <a href="desktops.html">Desktop PCs</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Desktop PCs dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="desktops.html" class="dropdown-item">Gaming PCs</a>
+                        <a href="desktops.html" class="dropdown-item">Workstations</a>
+                        <a href="desktops.html" class="dropdown-item">All-in-One PCs</a>
+                        <a href="desktops.html" class="dropdown-item">Mini PCs</a>
+                    </div>
+                </li>
                 <li><a href="pc-builder-v3.html" class="active">Custom PC Build</a></li>
-                <li><a href="category.html">Mobile Phones</a></li>
-                <li><a href="#">Peripherals</a></li>
+                <li class="has-dropdown">
+                    <a href="mobiles.html">Mobile Phones</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Mobile Phones dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="mobiles.html" class="dropdown-item">Smartphones</a>
+                        <a href="mobiles.html" class="dropdown-item">Feature Phones</a>
+                        <a href="mobiles.html" class="dropdown-item">Accessories</a>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    <a href="#">Peripherals</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Peripherals dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="categories.html" class="dropdown-item">Keyboards</a>
+                        <a href="categories.html" class="dropdown-item">Mice</a>
+                        <a href="categories.html" class="dropdown-item">Headphones</a>
+                        <a href="categories.html" class="dropdown-item">Monitors</a>
+                        <a href="categories.html" class="dropdown-item">Webcams</a>
+                    </div>
+                </li>
                 <li><a href="#">Deals</a></li>
-                <li><a href="#">Support</a></li>
+                <li class="has-dropdown">
+                    <a href="#">Support</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Support dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Contact Us</a>
+                        <a href="#" class="dropdown-item">FAQs</a>
+                        <a href="#" class="dropdown-item">Warranty</a>
+                        <a href="#" class="dropdown-item">Track Order</a>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
