@@ -1046,12 +1046,13 @@ body.dark-theme {
 }
 
 .component-card {
-  background-color: #100405;
-  border: 1px solid #1a1a1a;
+  background: linear-gradient(180deg, rgba(237, 50, 55, 0.1) 0%, rgba(255, 255, 255, 0.01) 50%, rgba(255, 255, 255, 0) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 15px;
   padding: 20px;
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
 
   &:hover {
     border-color: rgba($primary-color, 0.5);

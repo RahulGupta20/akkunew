@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refund Policy | Akku Electronics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/terms-conditions.css">
+</head>
+<body class="dark-theme">
+    <!-- Header -->
+    <header class="header">
+        <!-- Main Header (Sticky) -->
+        <div class="header__main">
+            <div class="container">
+                <a href="index.html" class="header__logo">
+                    <img src="assets/images/logo.png" alt="AKKU Electronics">
+                </a>
+
+                <!-- Search Bar -->
+                <form class="header__search" action="search-results.html" method="GET">
+                    <input type="text" name="q" id="searchInput" placeholder="Search for products, brands and more...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+
+                <!-- Header Actions -->
+                <div class="header__actions">
+                    <!-- Language & Currency Button -->
+                    <button class="header__settings-btn" id="openSettingsModal">
+                        <i class="fas fa-globe"></i>
+                        <span>EN / NPR</span>
+                    </button>
+
+                    <!-- Wishlist -->
+                    <a href="wishlist.html" class="header__action-item" aria-label="Wishlist" title="Wishlist">
+                        <i class="fas fa-heart"></i>
+                    </a>
+
+                    <!-- Cart -->
+                    <a href="cart.html" class="header__action-item" aria-label="Shopping Cart" title="Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge">0</span>
+                    </a>
+
+                    <!-- Login Button -->
+                    <a href="login.html" class="header__login-btn">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Login</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="header__menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation (Not Sticky) -->
+        <nav class="header__nav" id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="has-dropdown">
+                    <a href="laptops.html">Laptops</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Laptops dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="laptops.html" class="dropdown-item">Gaming Laptops</a>
+                        <a href="laptops.html" class="dropdown-item">Business Laptops</a>
+                        <a href="laptops.html" class="dropdown-item">Student Laptops</a>
+                        <a href="laptops.html" class="dropdown-item">Ultrabooks</a>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    <a href="desktops.html">Desktop PCs</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Desktop PCs dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="desktops.html" class="dropdown-item">Gaming PCs</a>
+                        <a href="desktops.html" class="dropdown-item">Workstations</a>
+                        <a href="desktops.html" class="dropdown-item">All-in-One PCs</a>
+                        <a href="desktops.html" class="dropdown-item">Mini PCs</a>
+                    </div>
+                </li>
+                <li><a href="pc-builder-v3.html">Custom PC Build</a></li>
+                <li class="has-dropdown">
+                    <a href="mobiles.html">Mobile Phones</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Mobile Phones dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="mobiles.html" class="dropdown-item">Smartphones</a>
+                        <a href="mobiles.html" class="dropdown-item">Feature Phones</a>
+                        <a href="mobiles.html" class="dropdown-item">Accessories</a>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    <a href="peripherals.html">Peripherals</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Peripherals dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="categories.html" class="dropdown-item">Keyboards</a>
+                        <a href="categories.html" class="dropdown-item">Mice</a>
+                        <a href="categories.html" class="dropdown-item">Headphones</a>
+                        <a href="categories.html" class="dropdown-item">Monitors</a>
+                        <a href="categories.html" class="dropdown-item">Webcams</a>
+                    </div>
+                </li>
+                <li><a href="deals.html">Deals</a></li>
+                <li class="has-dropdown">
+                    <a href="contact-us.html">Help</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Help dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="contact-us.html" class="dropdown-item">Contact Us</a>
+                        <a href="faq.html" class="dropdown-item">FAQs</a>
+                        <a href="warranty.html" class="dropdown-item">Warranty</a>
+                        <a href="track-order.html" class="dropdown-item">Track Order</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <span class="current">Refund Policy</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="legal-page">
+        <div class="container">
+            <div class="legal-layout">
+                <!-- Sidebar Navigation -->
+                <aside class="legal-sidebar">
+                    <div class="sidebar-sticky">
+                        <h3>Quick Navigation</h3>
+                        <nav class="legal-nav">
+                            <a href="#overview" class="nav-link active">Overview</a>
+                            <a href="#eligibility" class="nav-link">Refund Eligibility</a>
+                            <a href="#process" class="nav-link">Refund Process</a>
+                            <a href="#timeframe" class="nav-link">Refund Timeframe</a>
+                            <a href="#non-refundable" class="nav-link">Non-Refundable Items</a>
+                            <a href="#return-conditions" class="nav-link">Return Conditions</a>
+                            <a href="#exchange" class="nav-link">Exchanges</a>
+                            <a href="#shipping-costs" class="nav-link">Shipping Costs</a>
+                            <a href="#damaged-items" class="nav-link">Damaged Items</a>
+                            <a href="#contact" class="nav-link">Contact Us</a>
+                        </nav>
+
+                        <div class="sidebar-help">
+                            <i class="fas fa-question-circle"></i>
+                            <h4>Need Help?</h4>
+                            <p>Contact our customer support team for assistance with refunds.</p>
+                            <a href="contact-us.html" class="btn-help">Get Support</a>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Main Content -->
+                <div class="legal-content">
+                    <!-- Header -->
+                    <div class="legal-header">
+                        <h1>Refund Policy</h1>
+                        <p class="update-date"><i class="fas fa-calendar-alt"></i> Last updated: January 1, 2026</p>
+                        <div class="header-notice">
+                            <i class="fas fa-info-circle"></i>
+                            <p>At Akku Electronics, we want you to be completely satisfied with your purchase. This Refund Policy outlines the conditions and procedures for requesting refunds on products purchased from our store.</p>
+                        </div>
+                    </div>
+
+                    <!-- Overview -->
+                    <section id="overview" class="legal-section">
+                        <h2><i class="fas fa-file-alt"></i> 1. Overview</h2>
+                        <p>We offer a <strong>14-day return and refund policy</strong> from the date of delivery for most products. This means you have 14 days after receiving your item to request a return and refund.</p>
+                        <p>To be eligible for a refund, your item must be in the same condition that you received it, unworn or unused, with tags, and in its original packaging. You'll also need the receipt or proof of purchase.</p>
+
+                        <div class="info-box success">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <strong>Our Commitment:</strong> We stand behind the quality of our products and are committed to ensuring your complete satisfaction with every purchase.
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Refund Eligibility -->
+                    <section id="eligibility" class="legal-section">
+                        <h2><i class="fas fa-check-circle"></i> 2. Refund Eligibility Criteria</h2>
+
+                        <h3>2.1 Products Eligible for Refund</h3>
+                        <ul>
+                            <li><strong>Unopened products:</strong> Items that are sealed and unopened in their original packaging</li>
+                            <li><strong>Defective products:</strong> Items that are defective or not working as described</li>
+                            <li><strong>Wrong items:</strong> If you received the wrong product</li>
+                            <li><strong>Damaged in transit:</strong> Products that were damaged during shipping</li>
+                            <li><strong>Changed mind:</strong> Unopened items within 14 days (subject to 15% restocking fee)</li>
+                        </ul>
+
+                        <h3>2.2 Required Conditions</h3>
+                        <p>For your refund request to be approved, the following conditions must be met:</p>
+                        <ul>
+                            <li>Item must be returned within 14 days of delivery</li>
+                            <li>Product must be in original condition with all accessories and documentation</li>
+                            <li>Original packaging must be intact (box, manuals, cables, etc.)</li>
+                            <li>Proof of purchase (invoice or order number) must be provided</li>
+                            <li>Product serial numbers must match the original purchase</li>
+                            <li>No signs of physical damage, misuse, or wear</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <div>
+                                <strong>Important:</strong> Products with broken seals, missing accessories, or signs of use may not be eligible for a full refund. A restocking fee may apply.
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Refund Process -->
+                    <section id="process" class="legal-section">
+                        <h2><i class="fas fa-clipboard-list"></i> 3. How to Request a Refund</h2>
+
+                        <h3>3.1 Step-by-Step Process</h3>
+                        <div class="steps-container">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Contact Us</h4>
+                                    <p>Reach out to our customer service team within 14 days of delivery via:</p>
+                                    <ul>
+                                        <li>Email: <a href="mailto:returns@akku.gg">returns@akku.gg</a></li>
+                                        <li>Phone: +977 98123412345</li>
+                                        <li>Online: <a href="my-orders.html">My Orders</a> > Request Return</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Provide Information</h4>
+                                    <p>Submit the following details:</p>
+                                    <ul>
+                                        <li>Order number</li>
+                                        <li>Product name and serial number</li>
+                                        <li>Reason for return</li>
+                                        <li>Photos of the product (if defective or damaged)</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Get Approval</h4>
+                                    <p>Our team will review your request within 24-48 hours and provide:</p>
+                                    <ul>
+                                        <li>Return authorization (if approved)</li>
+                                        <li>Return shipping instructions</li>
+                                        <li>Return address details</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Ship the Product</h4>
+                                    <p>Pack the item securely with all accessories and ship it to our return center:</p>
+                                    <ul>
+                                        <li>Use the original packaging if possible</li>
+                                        <li>Include all accessories, manuals, and warranty cards</li>
+                                        <li>Keep the tracking number for your records</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="step">
+                                <div class="step-number">5</div>
+                                <div class="step-content">
+                                    <h4>Inspection & Refund</h4>
+                                    <p>Once we receive and inspect your return:</p>
+                                    <ul>
+                                        <li>Inspection takes 3-5 business days</li>
+                                        <li>You'll receive email notification of approval/rejection</li>
+                                        <li>Approved refunds are processed within 5-7 business days</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Refund Timeframe -->
+                    <section id="timeframe" class="legal-section">
+                        <h2><i class="fas fa-clock"></i> 4. Refund Processing Timeframe</h2>
+
+                        <h3>4.1 Processing Times</h3>
+                        <table class="info-table">
+                            <thead>
+                                <tr>
+                                    <th>Stage</th>
+                                    <th>Timeframe</th>
+                                    <th>Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Return Request</strong></td>
+                                    <td>24-48 hours</td>
+                                    <td>Initial review and approval</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Shipping to Us</strong></td>
+                                    <td>3-7 days</td>
+                                    <td>Depends on your location</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Inspection</strong></td>
+                                    <td>3-5 business days</td>
+                                    <td>Quality check and verification</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Refund Processing</strong></td>
+                                    <td>5-7 business days</td>
+                                    <td>From approval date</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Bank/Card Processing</strong></td>
+                                    <td>5-10 business days</td>
+                                    <td>Depends on your bank</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3>4.2 Refund Methods</h3>
+                        <p>Refunds will be issued using the same payment method used for the original purchase:</p>
+                        <ul>
+                            <li><strong>Credit/Debit Cards:</strong> 5-10 business days to reflect in your account</li>
+                            <li><strong>Digital Wallets (eSewa, Khalti):</strong> 3-5 business days</li>
+                            <li><strong>Bank Transfer:</strong> 5-7 business days</li>
+                            <li><strong>Cash on Delivery:</strong> Bank transfer or store credit (your choice)</li>
+                        </ul>
+                    </section>
+
+                    <!-- Non-Refundable Items -->
+                    <section id="non-refundable" class="legal-section">
+                        <h2><i class="fas fa-ban"></i> 5. Non-Refundable Items</h2>
+
+                        <p>The following items are <strong>not eligible for refunds</strong> under our standard policy:</p>
+
+                        <div class="non-refundable-grid">
+                            <div class="non-refundable-item">
+                                <i class="fas fa-box-open"></i>
+                                <h4>Opened Software</h4>
+                                <p>Software with broken seals or activated licenses</p>
+                            </div>
+
+                            <div class="non-refundable-item">
+                                <i class="fas fa-headphones"></i>
+                                <h4>Hygiene Products</h4>
+                                <p>Earphones, headsets with opened packaging</p>
+                            </div>
+
+                            <div class="non-refundable-item">
+                                <i class="fas fa-gift"></i>
+                                <h4>Gift Cards</h4>
+                                <p>Activated or partially used gift cards</p>
+                            </div>
+
+                            <div class="non-refundable-item">
+                                <i class="fas fa-desktop"></i>
+                                <h4>Custom Built PCs</h4>
+                                <p>Custom configured systems (unless defective)</p>
+                            </div>
+
+                            <div class="non-refundable-item">
+                                <i class="fas fa-tags"></i>
+                                <h4>Clearance Items</h4>
+                                <p>Products sold as "final sale" or "clearance"</p>
+                            </div>
+
+                            <div class="non-refundable-item">
+                                <i class="fas fa-tools"></i>
+                                <h4>Installed Products</h4>
+                                <p>Items that have been installed or modified</p>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <i class="fas fa-info-circle"></i>
+                            <div>
+                                <strong>Note:</strong> Even if a product is non-refundable, it may still be eligible for warranty service or exchange if it's defective. Please refer to our <a href="warranty.html">Warranty Policy</a> for more details.
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Return Conditions -->
+                    <section id="return-conditions" class="legal-section">
+                        <h2><i class="fas fa-box"></i> 6. Product Return Conditions</h2>
+
+                        <h3>6.1 Packaging Requirements</h3>
+                        <ul>
+                            <li>Original manufacturer's box with all labels intact</li>
+                            <li>All protective packaging materials (foam, plastic wraps)</li>
+                            <li>All bundled accessories (cables, adapters, manuals)</li>
+                            <li>Warranty cards and documentation</li>
+                            <li>Any promotional items or free gifts included</li>
+                        </ul>
+
+                        <h3>6.2 Product Condition</h3>
+                        <table class="condition-table">
+                            <thead>
+                                <tr>
+                                    <th>Condition</th>
+                                    <th>Description</th>
+                                    <th>Refund</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="condition-excellent">
+                                    <td><i class="fas fa-star"></i> <strong>Like New</strong></td>
+                                    <td>Sealed/unopened, all accessories intact</td>
+                                    <td>100% refund</td>
+                                </tr>
+                                <tr class="condition-good">
+                                    <td><i class="fas fa-check"></i> <strong>Opened - Unused</strong></td>
+                                    <td>Opened but unused, all items present</td>
+                                    <td>85% refund (15% restocking fee)</td>
+                                </tr>
+                                <tr class="condition-fair">
+                                    <td><i class="fas fa-exclamation"></i> <strong>Minor Issues</strong></td>
+                                    <td>Missing accessories or damaged packaging</td>
+                                    <td>50-70% refund (case by case)</td>
+                                </tr>
+                                <tr class="condition-poor">
+                                    <td><i class="fas fa-times"></i> <strong>Used/Damaged</strong></td>
+                                    <td>Signs of use or physical damage</td>
+                                    <td>Not eligible for refund</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <!-- Exchanges -->
+                    <section id="exchange" class="legal-section">
+                        <h2><i class="fas fa-exchange-alt"></i> 7. Exchanges</h2>
+
+                        <p>We offer product exchanges in the following situations:</p>
+
+                        <h3>7.1 Exchange Options</h3>
+                        <ul>
+                            <li><strong>Defective Products:</strong> Exchange for the same model or equivalent</li>
+                            <li><strong>Wrong Item Received:</strong> Exchange for the correct item at no cost</li>
+                            <li><strong>Different Model/Upgrade:</strong> Pay the price difference</li>
+                            <li><strong>Different Model/Downgrade:</strong> Receive refund of the difference</li>
+                        </ul>
+
+                        <h3>7.2 Exchange Process</h3>
+                        <p>The exchange process is similar to returns:</p>
+                        <ol>
+                            <li>Contact us and specify you want an exchange</li>
+                            <li>We'll arrange pickup of the original item</li>
+                            <li>Replacement will be shipped once we receive the return</li>
+                            <li>No additional shipping charges for defective/wrong items</li>
+                        </ol>
+                    </section>
+
+                    <!-- Shipping Costs -->
+                    <section id="shipping-costs" class="legal-section">
+                        <h2><i class="fas fa-shipping-fast"></i> 8. Return Shipping Costs</h2>
+
+                        <h3>8.1 Who Pays for Return Shipping?</h3>
+                        <table class="shipping-table">
+                            <thead>
+                                <tr>
+                                    <th>Reason for Return</th>
+                                    <th>Shipping Cost</th>
+                                    <th>Responsible Party</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Defective Product</td>
+                                    <td>Free</td>
+                                    <td>We cover all costs</td>
+                                </tr>
+                                <tr>
+                                    <td>Wrong Item Shipped</td>
+                                    <td>Free</td>
+                                    <td>We cover all costs</td>
+                                </tr>
+                                <tr>
+                                    <td>Damaged in Transit</td>
+                                    <td>Free</td>
+                                    <td>We cover all costs</td>
+                                </tr>
+                                <tr>
+                                    <td>Changed Mind</td>
+                                    <td>Customer pays</td>
+                                    <td>You cover shipping</td>
+                                </tr>
+                                <tr>
+                                    <td>Ordered Wrong Item</td>
+                                    <td>Customer pays</td>
+                                    <td>You cover shipping</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3>8.2 Prepaid Returns</h3>
+                        <p>For defective or wrong items, we provide:</p>
+                        <ul>
+                            <li>Prepaid return shipping label</li>
+                            <li>Free pickup service from your location (Kathmandu Valley)</li>
+                            <li>Tracking information for your return</li>
+                        </ul>
+                    </section>
+
+                    <!-- Damaged Items -->
+                    <section id="damaged-items" class="legal-section">
+                        <h2><i class="fas fa-box-damaged"></i> 9. Damaged or Defective Items</h2>
+
+                        <h3>9.1 Receiving a Damaged Item</h3>
+                        <p>If you receive a damaged or defective product:</p>
+                        <ol>
+                            <li><strong>Don't accept delivery</strong> if the outer packaging is visibly damaged</li>
+                            <li><strong>Document the damage</strong> with photos immediately upon opening</li>
+                            <li><strong>Contact us within 48 hours</strong> with photos and order details</li>
+                            <li><strong>Keep all packaging</strong> for inspection if required</li>
+                        </ol>
+
+                        <h3>9.2 Fast-Track Process</h3>
+                        <p>For damaged/defective items, we offer expedited service:</p>
+                        <ul>
+                            <li>Immediate approval upon verification (no 24-48 hour wait)</li>
+                            <li>Option for immediate replacement before returning the defective item</li>
+                            <li>Free pickup service within 24 hours</li>
+                            <li>Priority refund processing (3-5 business days)</li>
+                        </ul>
+
+                        <div class="success-box">
+                            <i class="fas fa-thumbs-up"></i>
+                            <div>
+                                <strong>Quality Assurance:</strong> All products are tested before shipping. If you receive a defective item, we sincerely apologize and will make it right immediately.
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Contact Section -->
+                    <section id="contact" class="legal-section">
+                        <h2><i class="fas fa-headset"></i> 10. Contact Customer Support</h2>
+
+                        <p>For questions about our refund policy or to initiate a return, please contact us:</p>
+
+                        <div class="contact-grid">
+                            <div class="contact-card">
+                                <i class="fas fa-envelope"></i>
+                                <h4>Email Support</h4>
+                                <p><a href="mailto:returns@akku.gg">returns@akku.gg</a></p>
+                                <span class="response-time">Response within 24 hours</span>
+                            </div>
+
+                            <div class="contact-card">
+                                <i class="fas fa-phone"></i>
+                                <h4>Phone Support</h4>
+                                <p><a href="tel:+977981234123">+977 98123412345</a></p>
+                                <span class="response-time">Mon-Sat, 9 AM - 6 PM</span>
+                            </div>
+
+                            <div class="contact-card">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <h4>Visit Our Store</h4>
+                                <p>Putalisadak, Kathmandu</p>
+                                <span class="response-time">Mon-Sat, 10 AM - 7 PM</span>
+                            </div>
+
+                            <div class="contact-card">
+                                <i class="fas fa-comments"></i>
+                                <h4>Live Chat</h4>
+                                <p>Online chat available</p>
+                                <span class="response-time">Mon-Sat, 9 AM - 6 PM</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Bottom Notice -->
+                    <div class="bottom-notice">
+                        <i class="fas fa-info-circle"></i>
+                        <p><strong>Policy Updates:</strong> We reserve the right to update this Refund Policy at any time. Any changes will be posted on this page with an updated revision date. Please review this policy periodically.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-v2">
+        <div class="footer-v2__main">
+            <div class="container">
+                <div class="footer-v2__grid">
+                    <!-- Column 1: Customer Service -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">CUSTOMER SERVICE</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="contact-us.html">Contact Us</a></li>
+                            <li><a href="faq.html">FAQs</a></li>
+                            <li><a href="faq.html">Help & Advice</a></li>
+                            <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+                            <li><a href="refund-policy.html">Refund Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 2: Help & Support -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">HELP & SUPPORT</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="track-order.html">Shipping Info</a></li>
+                            <li><a href="warranty.html">Warranty</a></li>
+                            <li><a href="refund-policy.html">Refund Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 3: Company Info -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">COMPANY INFO</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="blog.html">Our Blog</a></li>
+                            <li><a href="about-us.html">Careers</a></li>
+                            <li><a href="store-locations.html">Store Locations</a></li>
+                            <li><a href="testimonials.html">Testimonials</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 4: Our Shop -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">Our Shop</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="category.html">Gaming Gears</a></li>
+                            <li><a href="products.html">Electronics</a></li>
+                            <li><a href="laptops.html">Laptop</a></li>
+                            <li><a href="mobiles.html">Smartphone</a></li>
+                            <li><a href="peripherals.html">Audio</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 5: My Account -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">MY ACCOUNT</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="login.html">Register</a></li>
+                            <li><a href="wishlist.html">Wishlist</a></li>
+                            <li><a href="my-orders.html">Track Your Orders</a></li>
+                            <li><a href="checkout.html">Checkout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-v2__bottom">
+            <div class="container">
+                <div class="footer-v2__bottom-grid">
+                    <!-- Social & Copyright -->
+                    <div class="footer-v2__social-section">
+                        <h4 class="footer-v2__bottom-title">Follow Us:</h4>
+                        <div class="footer-v2__social-links">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Payment Methods -->
+                    <div class="footer-v2__payment-section">
+                        <h4 class="footer-v2__bottom-title">We Accept:</h4>
+                        <div class="footer-v2__payment-methods">
+                            <img src="assets/images/esewa-logo.png" alt="eSewa" class="payment-logo">
+                            <img src="assets/images/khalti-logo.png" alt="Khalti" class="payment-logo">
+                            <img src="assets/images/connectIPS-logo.png" alt="ConnectIPS" class="payment-logo">
+                            <img src="assets/images/fonepay.png" alt="FonePay" class="payment-logo">
+                        </div>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="footer-v2__newsletter-section">
+                        <h4 class="footer-v2__bottom-title">Get the Latest Deals:</h4>
+                        <form class="footer-v2__newsletter-form">
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="footer-v2__contact-info">
+                    <div class="footer-v2__copyright">
+                        <i class="far fa-copyright"></i>
+                        <span>2026 Akku.gg, Nepal.</span>
+                        <span>All rights reserved.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+            const icon = this.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Dropdown menu functionality
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const parentLi = this.closest('.has-dropdown');
+                const dropdownMenu = parentLi.querySelector('.dropdown-menu');
+
+                // Close all other dropdowns
+                document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+                    if (menu !== dropdownMenu) {
+                        menu.classList.remove('show');
+                        menu.closest('.has-dropdown').querySelector('.dropdown-toggle').classList.remove('active');
+                    }
+                });
+
+                // Toggle current dropdown
+                dropdownMenu.classList.toggle('show');
+                this.classList.toggle('active');
+            });
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.has-dropdown')) {
+                document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+                    menu.classList.remove('show');
+                    menu.closest('.has-dropdown').querySelector('.dropdown-toggle').classList.remove('active');
+                });
+            }
+        });
+
+        // Smooth scrolling for sidebar navigation
+        document.querySelectorAll('.legal-nav .nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // Remove active class from all links
+                document.querySelectorAll('.legal-nav .nav-link').forEach(l => l.classList.remove('active'));
+
+                // Add active class to clicked link
+                this.classList.add('active');
+
+                // Scroll to section
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                if (targetSection) {
+                    const headerHeight = 150;
+                    const targetPosition = targetSection.offsetTop - headerHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Update active link on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.legal-section');
+            const navLinks = document.querySelectorAll('.legal-nav .nav-link');
+
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

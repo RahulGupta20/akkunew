@@ -18,9 +18,23 @@ body {
   max-width: 100vw;
 
   &.dark-theme {
-    background: linear-gradient(135deg, #080203 0%, #100405 50%, #080203 100%);
+    background-image: url(../assets/images/bg-img.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     background-attachment: fixed;
     color: #fff;
+
+    &::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(12, 3, 4, 0.7);
+      z-index: 0;
+    }
   }
 }
 
@@ -28,11 +42,15 @@ body {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 20px;
+  position: relative;
+  z-index: 1;
 }
 
 // Breadcrumb (shared across pages) - Compact & Improved
 .breadcrumb {
   background-color: #1f0907 !important;
+  position: relative;
+  z-index: 1;
   padding: 6px 0 !important;
   font-size: 0.75rem !important;
   display: block !important;

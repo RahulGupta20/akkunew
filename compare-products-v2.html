@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Products | Akku Electronics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        /* Compare Products V2 Styles */
+        .compare-page-v2 {
+            min-height: calc(100vh - 200px);
+            padding: 40px 0;
+            background: var(--bg-primary);
+        }
+
+        .compare-header-v2 {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .compare-header-v2 h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .clear-all-btn {
+            padding: 10px 20px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .clear-all-btn:hover {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: #ef4444;
+            color: #ef4444;
+        }
+
+        .comparison-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            padding: 40px;
+        }
+
+        .compare-slot {
+            background: var(--bg-primary);
+            border: 2px dashed rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 60px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .compare-slot:hover {
+            border-color: var(--primary-color);
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        .compare-slot.has-product {
+            border-style: solid;
+            border-color: rgba(255, 255, 255, 0.1);
+            padding: 24px;
+        }
+
+        .compare-slot.has-product:hover {
+            border-color: var(--primary-color);
+        }
+
+        /* Product Slot Content */
+        .slot-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .remove-product-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 32px;
+            height: 32px;
+            background: rgba(239, 68, 68, 0.1);
+            border: none;
+            border-radius: 50%;
+            color: #ef4444;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .compare-slot.has-product:hover .remove-product-btn {
+            opacity: 1;
+        }
+
+        .remove-product-btn:hover {
+            background: #ef4444;
+            color: white;
+        }
+
+        .product-image-wrapper {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .product-image-wrapper img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .product-info {
+            width: 100%;
+        }
+
+        .product-brand {
+            font-size: 12px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .product-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.4;
+            margin-bottom: 12px;
+            min-height: 44px;
+        }
+
+        .product-price {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 16px;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .product-rating .stars {
+            display: flex;
+            gap: 2px;
+            color: #fbbf24;
+            font-size: 14px;
+        }
+
+        .product-rating .rating-count {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .view-product-btn {
+            width: 100%;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #2563eb 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .view-product-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Empty Slot */
+        .empty-slot-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .add-icon {
+            width: 80px;
+            height: 80px;
+            border: 3px dashed rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .compare-slot:hover .add-icon {
+            border-color: var(--primary-color);
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        .add-icon i {
+            font-size: 36px;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .compare-slot:hover .add-icon i {
+            color: var(--primary-color);
+        }
+
+        .add-label {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .search-box {
+            width: 100%;
+            margin-top: 16px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 16px 12px 40px;
+            background: var(--bg-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .search-box input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        /* Specification Table */
+        .specs-section {
+            max-width: 1400px;
+            margin: 40px auto 0;
+            padding: 0 24px;
+        }
+
+        .specs-container {
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .specs-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .specs-header h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .specs-filter {
+            display: flex;
+            gap: 12px;
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            background: var(--bg-primary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .specs-category {
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .specs-category td {
+            padding: 16px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .spec-row {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .spec-row:last-child {
+            border-bottom: none;
+        }
+
+        .spec-label {
+            padding: 16px 20px;
+            width: 30%;
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .spec-value {
+            padding: 16px 20px;
+            font-size: 14px;
+            color: var(--text-primary);
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .spec-value.highlight {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .spec-value.empty {
+            color: var(--text-secondary);
+            font-style: italic;
+            opacity: 0.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .comparison-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                padding: 24px;
+                gap: 16px;
+            }
+
+            .compare-header-v2 {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+
+            .compare-header-v2 h1 {
+                font-size: 24px;
+            }
+
+            .compare-slot {
+                min-height: 300px;
+                padding: 40px 20px;
+            }
+
+            .specs-container {
+                padding: 24px;
+                overflow-x: auto;
+            }
+
+            .specs-table {
+                min-width: 600px;
+            }
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <!-- Header -->
+    <header class="header">
+        <div class="header__main">
+            <div class="container">
+                <a href="index.html" class="header__logo">
+                    <img src="assets/images/logo.png" alt="AKKU Electronics">
+                </a>
+                <form class="header__search" action="search-results.html" method="GET">
+                    <input type="text" name="q" placeholder="Search for products, brands and more...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+                <div class="header__actions">
+                    <!-- Language & Currency Button -->
+                    <button class="header__settings-btn" id="openSettingsModal">
+                        <i class="fas fa-globe"></i>
+                        <span>EN / NPR</span>
+                    </button>
+
+                    <a href="wishlist.html" class="header__action-item">
+                        <i class="fas fa-heart"></i>
+                        <span class="badge">3</span>
+                    </a>
+                    <a href="cart.html" class="header__action-item">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge">2</span>
+                    </a>
+                    <div class="dropdown">
+                        <button class="header__user-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="user-avatar">RM</div>
+                            <span class="user-name">Rajesh</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li class="dropdown-header">
+                                <div class="user-avatar">RM</div>
+                                <div>
+                                    <div>Rajesh Maharjan</div>
+                                    <div>rajesh@example.com</div>
+                                </div>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="my-profile.html"><i class="fas fa-user"></i> My Profile</a></li>
+                            <li><a class="dropdown-item" href="my-orders.html"><i class="fas fa-shopping-bag"></i> My Orders</a></li>
+                            <li><a class="dropdown-item" href="wishlist.html"><i class="fas fa-heart"></i> Wishlist</a></li>
+                            <li><a class="dropdown-item" href="my-reviews.html"><i class="fas fa-star"></i> My Reviews</a></li>
+                            <li><a class="dropdown-item" href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="header__menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <nav class="header__nav" id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="laptops.html">Laptops</a></li>
+                <li><a href="desktops.html">Desktops</a></li>
+                <li><a href="mobiles.html">Mobile Phones</a></li>
+                <li><a href="peripherals.html">Peripherals</a></li>
+                <li><a href="#">Deals</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>Compare Products</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="compare-page-v2">
+        <!-- Header with Clear All -->
+        <div class="compare-header-v2">
+            <h1>Full Specification Comparison</h1>
+            <button class="clear-all-btn" id="clearAllBtn">
+                <i class="fas fa-times"></i>
+                Clear All
+            </button>
+        </div>
+
+        <!-- Comparison Grid -->
+        <div class="comparison-container">
+            <div class="comparison-grid" id="comparisonGrid">
+                <!-- Product Slot 1 (Example with product) -->
+                <div class="compare-slot has-product" data-slot="1">
+                    <button class="remove-product-btn" onclick="removeProduct(1)">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="slot-content">
+                        <div class="product-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&h=300&fit=crop" alt="Dell XPS 15">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Dell</div>
+                            <div class="product-name">XPS 15 9520 - Intel Core i7, 16GB RAM, 512GB SSD</div>
+                            <div class="product-price">NPR 245,000</div>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-count">(2,456)</span>
+                            </div>
+                            <button class="view-product-btn" onclick="window.location.href='product-detail.html'">
+                                <i class="fas fa-eye"></i>
+                                View Product
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Slot 2 (Empty) -->
+                <div class="compare-slot" data-slot="2">
+                    <div class="empty-slot-content">
+                        <div class="add-icon">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="add-label">Add to Compare</div>
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search products..." onclick="openProductSearch(2)">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Slot 3 (Empty) -->
+                <div class="compare-slot" data-slot="3">
+                    <div class="empty-slot-content">
+                        <div class="add-icon">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="add-label">Add to Compare</div>
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search products..." onclick="openProductSearch(3)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Specifications Table -->
+        <div class="specs-section" id="specsSection" style="display: none;">
+            <div class="specs-container">
+                <div class="specs-header">
+                    <h2>Detailed Specifications</h2>
+                    <div class="specs-filter">
+                        <button class="filter-btn active" onclick="filterSpecs('all')">
+                            <i class="fas fa-th"></i> All Specs
+                        </button>
+                        <button class="filter-btn" onclick="filterSpecs('differences')">
+                            <i class="fas fa-not-equal"></i> Differences Only
+                        </button>
+                    </div>
+                </div>
+
+                <table class="specs-table">
+                    <!-- Display -->
+                    <tr class="specs-category">
+                        <td colspan="4"><i class="fas fa-desktop"></i> Display</td>
+                    </tr>
+                    <tr class="spec-row">
+                        <td class="spec-label">Screen Size</td>
+                        <td class="spec-value">15.6" FHD</td>
+                        <td class="spec-value empty">-</td>
+                        <td class="spec-value empty">-</td>
+                    </tr>
+                    <tr class="spec-row">
+                        <td class="spec-label">Resolution</td>
+                        <td class="spec-value">1920 x 1080 pixels</td>
+                        <td class="spec-value empty">-</td>
+                        <td class="spec-value empty">-</td>
+                    </tr>
+                    <tr class="spec-row">
+                        <td class="spec-label">Refresh Rate</td>
+                        <td class="spec-value highlight">60Hz</td>
+                        <td class="spec-value empty">-</td>
+                        <td class="spec-value empty">-</td>
+                    </tr>
+
+                    <!-- Processor -->
+                    <tr class="specs-category">
+                        <td colspan="4"><i class="fas fa-microchip"></i> Processor</td>
+                    </tr>
+                    <tr class="spec-row">
+                        <td class="spec-label">CPU</td>
+                        <td class="spec-value">Intel Core i7-12700H</td>
+                        <td class="spec-value empty">-</td>
+                        <td class="spec-value empty">-</td>
+                    </tr>
+                    <tr class="spec-row">
+                        <td class="spec-label">Cores / Threads</td>
+                        <td class="spec-value">14 / 20</td>
+                        <td class="spec-value empty">-</td>
+                        <td class="spec-value empty">-</td>
+                    </tr>
+                    <tr class="spec-row">
+                        <td class="spec-label">Base / Boost Clock</td>
+                        <td class="spec-value">2.3 GHz / 4.7 GHz</td>
+                        <td class="spec-value empty">-</td>
+                        <td class="spec-value empty">-</td>
+                    </tr>
+
+                    <!-- Memory -->
+                    <tr class="specs-category">
+                        <td colspan="4"><i class="fas fa-memory"></i> Memory & Storage</td>
+                    </tr>
+                    <tr class="spec-row">
+                        <td class="spec-label">RAM</td>
+                        <td class="spec-value">16GB DDR5</td>
+                        <td class="spec-value empty">-</td>
+                        <td class="spec-value empty">-</td>
+                    </tr>
+                    <tr class="spec-row">
+                        <td class="spec-label">Storage</td>
+                        <td class="spec-value">512GB NVMe SSD</td>
+                        <td class="spec-value empty">-</td>
+                        <td class="spec-value empty">-</td>
+                    </tr>
+
+                    <!-- Graphics -->
+                    <tr class="specs-category">
+                        <td colspan="4"><i class="fas fa-paint-brush"></i> Graphics</td>
+                    </tr>
+                    <tr class="spec-row">
+                        <td class="spec-label">GPU</td>
+                        <td class="spec-value">NVIDIA GeForce RTX 3050 Ti</td>
+                        <td class="spec-value empty">-</td>
+                        <td class="spec-value empty">-</td>
+                    </tr>
+                    <tr class="spec-row">
+                        <td class="spec-label">VRAM</td>
+                        <td class="spec-value">4GB GDDR6</td>
+                        <td class="spec-value empty">-</td>
+                        <td class="spec-value empty">-</td>
+                    </tr>
+
+                    <!-- Battery -->
+                    <tr class="specs-category">
+                        <td colspan="4"><i class="fas fa-battery-full"></i> Battery</td>
+                    </tr>
+                    <tr class="spec-row">
+                        <td class="spec-label">Capacity</td>
+                        <td class="spec-value">86Wh</td>
+                        <td class="spec-value empty">-</td>
+                        <td class="spec-value empty">-</td>
+                    </tr>
+                    <tr class="spec-row">
+                        <td class="spec-label">Battery Life</td>
+                        <td class="spec-value">Up to 8 hours</td>
+                        <td class="spec-value empty">-</td>
+                        <td class="spec-value empty">-</td>
+                    </tr>
+
+                    <!-- Dimensions -->
+                    <tr class="specs-category">
+                        <td colspan="4"><i class="fas fa-ruler-combined"></i> Dimensions & Weight</td>
+                    </tr>
+                    <tr class="spec-row">
+                        <td class="spec-label">Dimensions</td>
+                        <td class="spec-value">344 x 230 x 18 mm</td>
+                        <td class="spec-value empty">-</td>
+                        <td class="spec-value empty">-</td>
+                    </tr>
+                    <tr class="spec-row">
+                        <td class="spec-label">Weight</td>
+                        <td class="spec-value">2.0 kg</td>
+                        <td class="spec-value empty">-</td>
+                        <td class="spec-value empty">-</td>
+                    </tr>
+
+                    <!-- Warranty -->
+                    <tr class="specs-category">
+                        <td colspan="4"><i class="fas fa-certificate"></i> Warranty & Support</td>
+                    </tr>
+                    <tr class="spec-row">
+                        <td class="spec-label">Warranty Period</td>
+                        <td class="spec-value">2 Years Official Warranty</td>
+                        <td class="spec-value empty">-</td>
+                        <td class="spec-value empty">-</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-v2">
+        <div class="footer-v2__main">
+            <div class="container">
+                <div class="footer-v2__grid">
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">CUSTOMER SERVICE</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="contact-us.html">Contact Us</a></li>
+                            <li><a href="faq.html">FAQs</a></li>
+                            <li><a href="warranty.html">Warranty</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">COMPANY INFO</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">MY ACCOUNT</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="my-orders.html">My Orders</a></li>
+                            <li><a href="wishlist.html">Wishlist</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-v2__bottom">
+            <div class="container">
+                <div class="footer-v2__copyright">
+                    <i class="far fa-copyright"></i>
+                    <span>2026 Akku.gg, Nepal. All rights reserved.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+            const icon = this.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Show specs section when at least 2 products are added
+        function checkSpecsVisibility() {
+            const hasProducts = document.querySelectorAll('.compare-slot.has-product').length;
+            const specsSection = document.getElementById('specsSection');
+            if (hasProducts >= 2) {
+                specsSection.style.display = 'block';
+            } else {
+                specsSection.style.display = 'none';
+            }
+        }
+
+        // Remove product
+        function removeProduct(slot) {
+            const slotElement = document.querySelector(`[data-slot="${slot}"]`);
+            slotElement.classList.remove('has-product');
+            slotElement.innerHTML = `
+                <div class="empty-slot-content">
+                    <div class="add-icon">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="add-label">Add to Compare</div>
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search products..." onclick="openProductSearch(${slot})">
+                    </div>
+                </div>
+            `;
+            checkSpecsVisibility();
+        }
+
+        // Clear all products
+        document.getElementById('clearAllBtn').addEventListener('click', function() {
+            if (confirm('Are you sure you want to clear all products from comparison?')) {
+                document.querySelectorAll('.compare-slot').forEach((slot, index) => {
+                    removeProduct(index + 1);
+                });
+            }
+        });
+
+        // Open product search (placeholder)
+        function openProductSearch(slot) {
+            alert(`Opening product search for slot ${slot}. This would show a modal with product selection.`);
+            // In a real implementation, this would open a modal with product search/selection
+        }
+
+        // Filter specs
+        function filterSpecs(type) {
+            // Update active button
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.closest('.filter-btn').classList.add('active');
+
+            // Filter logic (placeholder)
+            if (type === 'differences') {
+                // In real implementation, hide rows where all values are the same
+                console.log('Showing only differences');
+            } else {
+                console.log('Showing all specs');
+            }
+        }
+
+        // Initial check
+        checkSpecsVisibility();
+    </script>
+</body>
+</html>

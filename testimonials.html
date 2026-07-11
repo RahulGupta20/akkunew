@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Testimonials - Akku Electronics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css?v=5">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0a0202 0%, #1a0505 100%);
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        .testimonials-hero {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(237, 50, 55, 0.1) 0%, rgba(26, 5, 6, 0.3) 100%);
+            margin-bottom: 60px;
+        }
+
+        .testimonials-hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ED3237 0%, #ff5a5f 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .testimonials-hero p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(26, 5, 6, 0.95) 0%, rgba(12, 3, 4, 0.98) 100%);
+            border: 1px solid rgba(237, 50, 55, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(237, 50, 55, 0.5);
+            box-shadow: 0 10px 30px rgba(237, 50, 55, 0.2);
+        }
+
+        .stat-card i {
+            font-size: 40px;
+            color: #ED3237;
+            margin-bottom: 16px;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: #ED3237;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(26, 5, 6, 0.95) 0%, rgba(12, 3, 4, 0.98) 100%);
+            border: 1px solid rgba(237, 50, 55, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #ED3237 0%, #ff5a5f 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(237, 50, 55, 0.5);
+            box-shadow: 0 10px 30px rgba(237, 50, 55, 0.2);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .customer-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ED3237 0%, #ff5a5f 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            flex-shrink: 0;
+        }
+
+        .customer-info h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: #ffffff;
+        }
+
+        .customer-info .verified-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 12px;
+            color: #4CAF50;
+        }
+
+        .customer-info .verified-badge i {
+            font-size: 14px;
+        }
+
+        .rating {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 16px;
+        }
+
+        .rating i {
+            color: #FFD700;
+            font-size: 16px;
+        }
+
+        .testimonial-text {
+            font-size: 15px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+        }
+
+        .purchase-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(237, 50, 55, 0.2);
+        }
+
+        .purchase-info i {
+            color: #ED3237;
+            font-size: 14px;
+        }
+
+        .purchase-info span {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .quote-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 48px;
+            color: rgba(237, 50, 55, 0.1);
+            font-family: Georgia, serif;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, rgba(237, 50, 55, 0.1) 0%, rgba(26, 5, 6, 0.3) 100%);
+            border: 1px solid rgba(237, 50, 55, 0.2);
+            border-radius: 16px;
+            padding: 60px 40px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .cta-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #ffffff;
+        }
+
+        .cta-section p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 32px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, #ED3237 0%, #ff5a5f 100%);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(237, 50, 55, 0.4);
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .testimonials-hero h1 {
+                font-size: 32px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-section {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cta-section {
+                padding: 40px 24px;
+            }
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <!-- Header -->
+    <header class="header">
+        <!-- Main Header (Sticky) -->
+        <div class="header__main">
+            <div class="container">
+                <a href="index.html" class="header__logo">
+                    <img src="assets/images/logo.png" alt="AKKU Electronics">
+                </a>
+
+                <!-- Search Bar -->
+                <form class="header__search" action="search-results.html" method="GET">
+                    <input type="text" name="q" id="searchInput" placeholder="Search for products, brands and more...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+
+                <!-- Header Actions -->
+                <div class="header__actions">
+                    <!-- Language & Currency Button -->
+                    <button class="header__settings-btn" id="openSettingsModal">
+                        <i class="fas fa-globe"></i>
+                        <span>EN / NPR</span>
+                    </button>
+
+                    <!-- Wishlist -->
+                    <a href="wishlist.html" class="header__action-item" aria-label="Wishlist" title="Wishlist">
+                        <i class="fas fa-heart"></i>
+                    </a>
+
+                    <!-- Cart -->
+                    <a href="cart.html" class="header__action-item" aria-label="Shopping Cart" title="Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge">0</span>
+                    </a>
+
+                    <!-- Login Button -->
+                    <a href="login.html" class="header__login-btn">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Login</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="header__menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation (Not Sticky) -->
+        <nav class="header__nav" id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="has-dropdown">
+                    <a href="laptops.html">Laptops</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Laptops dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="laptops.html" class="dropdown-item">Gaming Laptops</a>
+                        <a href="laptops.html" class="dropdown-item">Business Laptops</a>
+                        <a href="laptops.html" class="dropdown-item">Student Laptops</a>
+                        <a href="laptops.html" class="dropdown-item">Ultrabooks</a>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    <a href="desktops.html">Desktop PCs</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Desktop PCs dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="desktops.html" class="dropdown-item">Gaming PCs</a>
+                        <a href="desktops.html" class="dropdown-item">Workstations</a>
+                        <a href="desktops.html" class="dropdown-item">All-in-One PCs</a>
+                        <a href="desktops.html" class="dropdown-item">Mini PCs</a>
+                    </div>
+                </li>
+                <li><a href="pc-builder-v3.html">Custom PC Build</a></li>
+                <li class="has-dropdown">
+                    <a href="mobiles.html">Mobile Phones</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Mobile Phones dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="mobiles.html" class="dropdown-item">Smartphones</a>
+                        <a href="mobiles.html" class="dropdown-item">Feature Phones</a>
+                        <a href="mobiles.html" class="dropdown-item">Accessories</a>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    <a href="peripherals.html">Peripherals</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Peripherals dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="categories.html" class="dropdown-item">Keyboards</a>
+                        <a href="categories.html" class="dropdown-item">Mice</a>
+                        <a href="categories.html" class="dropdown-item">Headphones</a>
+                        <a href="categories.html" class="dropdown-item">Monitors</a>
+                        <a href="categories.html" class="dropdown-item">Webcams</a>
+                    </div>
+                </li>
+                <li><a href="deals.html">Deals</a></li>
+                <li class="has-dropdown">
+                    <a href="contact-us.html">Help</a>
+                    <button class="dropdown-toggle" aria-label="Toggle Help dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="contact-us.html" class="dropdown-item">Contact Us</a>
+                        <a href="faq.html" class="dropdown-item">FAQs</a>
+                        <a href="warranty.html" class="dropdown-item">Warranty</a>
+                        <a href="track-order.html" class="dropdown-item">Track Order</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main style="padding: 40px 0;">
+        <div class="container">
+            <!-- Hero Section -->
+            <div class="testimonials-hero">
+                <h1>What Our Customers Say</h1>
+                <p>Read genuine reviews from thousands of satisfied customers who trust Akku Electronics for their tech needs</p>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="stats-section">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-number">50,000+</div>
+                    <div class="stat-label">Happy Customers</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-star"></i>
+                    <div class="stat-number">4.8/5</div>
+                    <div class="stat-label">Average Rating</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-comments"></i>
+                    <div class="stat-number">12,500+</div>
+                    <div class="stat-label">Reviews</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-thumbs-up"></i>
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Satisfaction Rate</div>
+                </div>
+            </div>
+
+            <!-- Testimonials Grid -->
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="testimonial-header">
+                        <div class="customer-avatar">RK</div>
+                        <div class="customer-info">
+                            <h3>Rajesh Kumar</h3>
+                            <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified Buyer</span>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Excellent service! I bought a gaming laptop and the staff helped me choose the perfect configuration. The delivery was fast and the product quality is outstanding. Highly recommended!"
+                    </p>
+                    <div class="purchase-info">
+                        <i class="fas fa-laptop"></i>
+                        <span>Purchased: ASUS ROG Strix G15</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="testimonial-header">
+                        <div class="customer-avatar">SP</div>
+                        <div class="customer-info">
+                            <h3>Sita Poudel</h3>
+                            <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified Buyer</span>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Best electronics store in Kathmandu! Their PC building service is amazing. They helped me build a custom workstation within my budget. Professional staff and great after-sales support."
+                    </p>
+                    <div class="purchase-info">
+                        <i class="fas fa-desktop"></i>
+                        <span>Purchased: Custom Workstation PC</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="testimonial-header">
+                        <div class="customer-avatar">AS</div>
+                        <div class="customer-info">
+                            <h3>Anil Shrestha</h3>
+                            <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified Buyer</span>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "I've been a loyal customer for 3 years now. Every purchase has been smooth and hassle-free. Their warranty service is also excellent - they replaced my faulty RAM within 2 days."
+                    </p>
+                    <div class="purchase-info">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Purchased: iPhone 15 Pro Max</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="testimonial-header">
+                        <div class="customer-avatar">PM</div>
+                        <div class="customer-info">
+                            <h3>Priya Maharjan</h3>
+                            <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified Buyer</span>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Great prices and genuine products. I compared prices with other stores and Akku Electronics offered the best deal. The online ordering process was simple and delivery was on time."
+                    </p>
+                    <div class="purchase-info">
+                        <i class="fas fa-laptop"></i>
+                        <span>Purchased: Dell XPS 13</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="testimonial-header">
+                        <div class="customer-avatar">BG</div>
+                        <div class="customer-info">
+                            <h3>Bikram Gurung</h3>
+                            <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified Buyer</span>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Fantastic customer service! They patiently answered all my technical questions and helped me find the perfect gaming setup. The store in Putalisadak is well-organized with a great product range."
+                    </p>
+                    <div class="purchase-info">
+                        <i class="fas fa-gamepad"></i>
+                        <span>Purchased: Gaming PC Setup</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="testimonial-header">
+                        <div class="customer-avatar">SK</div>
+                        <div class="customer-info">
+                            <h3>Sunita KC</h3>
+                            <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified Buyer</span>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Bought a MacBook for my graphic design work. The team gave excellent advice on specifications. Installation of software and initial setup was done free of charge. Very impressed!"
+                    </p>
+                    <div class="purchase-info">
+                        <i class="fas fa-laptop"></i>
+                        <span>Purchased: MacBook Pro M3</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 7 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="testimonial-header">
+                        <div class="customer-avatar">NT</div>
+                        <div class="customer-info">
+                            <h3>Nabin Tamang</h3>
+                            <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified Buyer</span>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Good experience overall. Product quality is excellent and prices are competitive. Only minor issue was delivery took a day longer than expected, but product was well-packed and in perfect condition."
+                    </p>
+                    <div class="purchase-info">
+                        <i class="fas fa-desktop"></i>
+                        <span>Purchased: HP Pavilion Desktop</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 8 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="testimonial-header">
+                        <div class="customer-avatar">MA</div>
+                        <div class="customer-info">
+                            <h3>Manisha Adhikari</h3>
+                            <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified Buyer</span>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Perfect place for tech shopping! Bought multiple items including a laptop, phone, and accessories. Everything was genuine with proper warranty. Their loyalty program also gives great discounts."
+                    </p>
+                    <div class="purchase-info">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span>Purchased: Multiple Items</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 9 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="testimonial-header">
+                        <div class="customer-avatar">SD</div>
+                        <div class="customer-info">
+                            <h3>Suresh Dhakal</h3>
+                            <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified Buyer</span>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Trustworthy seller with authentic products. I researched a lot before buying and Akku Electronics had the best reputation. The after-sales support is phenomenal - they truly care about customers."
+                    </p>
+                    <div class="purchase-info">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Purchased: Samsung Galaxy S24 Ultra</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h2>Ready to Experience Excellent Service?</h2>
+                <p>Join thousands of satisfied customers and shop with confidence at Akku Electronics</p>
+                <a href="index.html" class="cta-btn">Start Shopping</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-v2">
+        <div class="footer-v2__main">
+            <div class="container">
+                <div class="footer-v2__grid">
+                    <!-- Column 1: Customer Service -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">CUSTOMER SERVICE</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="contact-us.html">Contact Us</a></li>
+                            <li><a href="faq.html">FAQs</a></li>
+                            <li><a href="faq.html">Help & Advice</a></li>
+                            <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+                            <li><a href="refund-policy.html">Refund Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 2: Help & Support -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">HELP & SUPPORT</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="track-order.html">Shipping Info</a></li>
+                            <li><a href="compare-products-v2.html">Compare Products</a></li>
+                            <li><a href="refund-policy.html">Refund Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 3: Company Info -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">COMPANY INFO</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="blog.html">Our Blog</a></li>
+                            <li><a href="about-us.html">Careers</a></li>
+                            <li><a href="store-locations.html">Store Locations</a></li>
+                            <li><a href="testimonials.html">Testimonials</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 4: Our Shop -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">Our Shop</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="category.html">Gaming Gears</a></li>
+                            <li><a href="products.html">Electronics</a></li>
+                            <li><a href="laptops.html">Laptop</a></li>
+                            <li><a href="mobiles.html">Smartphone</a></li>
+                            <li><a href="peripherals.html">Audio</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 5: My Account -->
+                    <div class="footer-v2__column">
+                        <h3 class="footer-v2__title">MY ACCOUNT</h3>
+                        <ul class="footer-v2__links">
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="login.html">Register</a></li>
+                            <li><a href="wishlist.html">Wishlist</a></li>
+                            <li><a href="my-orders.html">Track Your Orders</a></li>
+                            <li><a href="checkout.html">Checkout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-v2__bottom">
+            <div class="container">
+                <div class="footer-v2__bottom-grid">
+                    <!-- Social & Copyright -->
+                    <div class="footer-v2__social-section">
+                        <h4 class="footer-v2__bottom-title">Follow Us:</h4>
+                        <div class="footer-v2__social-links">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Payment Methods -->
+                    <div class="footer-v2__payment-section">
+                        <h4 class="footer-v2__bottom-title">We Accept:</h4>
+                        <div class="footer-v2__payment-methods">
+                            <img src="assets/images/esewa-logo.png" alt="eSewa" class="payment-logo">
+                            <img src="assets/images/khalti-logo.png" alt="Khalti" class="payment-logo">
+                            <img src="assets/images/connectIPS-logo.png" alt="ConnectIPS" class="payment-logo">
+                            <img src="assets/images/fonepay.png" alt="FonePay" class="payment-logo">
+                        </div>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="footer-v2__newsletter-section">
+                        <h4 class="footer-v2__bottom-title">Get the Latest Deals:</h4>
+                        <form class="footer-v2__newsletter-form">
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="footer-v2__contact-info">
+                    <div class="footer-v2__copyright">
+                        <i class="far fa-copyright"></i>
+                        <span>2026 Akku.gg, Nepal.</span>
+                        <span>All rights reserved.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/common.js"></script>
+</body>
+</html>

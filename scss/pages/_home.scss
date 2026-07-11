@@ -1311,12 +1311,14 @@
   position: absolute;
   top: 12px;
   left: 12px;
-  background: $primary-color;
-  color: #fff;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 700;
+  background: linear-gradient(135deg, $secondary-color 0%, #FFD700 100%);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   z-index: 2;
 }
 
@@ -1674,12 +1676,14 @@
   position: absolute;
   top: 12px;
   left: 12px;
-  background: $primary-color;
-  color: #fff;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 700;
+  background: linear-gradient(135deg, $secondary-color 0%, #FFD700 100%);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   z-index: 10;
 }
 
@@ -1965,12 +1969,14 @@
 }
 
 .badge-discount {
-  background: rgba(237, 50, 55, 0.2);
-  color: $primary-color;
+  background: linear-gradient(135deg, $secondary-color 0%, #FFD700 100%);
+  color: white;
   padding: 4px 10px;
-  border-radius: 24px;
-  font-size: 0.7rem;
+  border-radius: 6px;
+  font-size: 11px;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 // Gaming Essentials Section
@@ -2317,16 +2323,17 @@
 
 .gaming-product__badge {
   position: absolute;
-  top: 14px;
-  left: 14px;
-  background: linear-gradient(135deg, $primary-color 0%, #FF6B00 100%);
-  color: #fff;
-  padding: 7px 16px;
-  border-radius: 24px;
-  font-size: 0.8rem;
-  font-weight: 700;
+  top: 12px;
+  left: 12px;
+  background: linear-gradient(135deg, $secondary-color 0%, #FFD700 100%);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   z-index: 10;
-  box-shadow: 0 4px 12px rgba(237, 50, 55, 0.4);
   transition: transform 0.3s ease;
 }
 
@@ -2550,7 +2557,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 4px;
   }
 
   &-category {
